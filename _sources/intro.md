@@ -1,11 +1,12 @@
-# Welcome to your Jupyter Book
+# Uvod
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://domengorjup.github.io/ps_lv/)
 
-Check out the content pages bundled with this sample book to see more.
+Tukaj najdete predloge laboratorijskih vaj pri predmetu [Procesiranje signalov](http://lab.fs.uni-lj.si/ladisk/?what=incfl&flnm=procesiranje%20signalov.php&), ki se izvaja v letnem semestru 1. letnika Magistrskega študijskega programa na Fakulteti za Strojništvo v Ljubljani.
+
+Predloge so pripravljene v obliki interaktivnih [Jupyter Notebook](https://jupyter.org/) dokumentov, katerih izvorna koda je prav tako objavljena v  namenjene pripravi in izvedbi laboratorijskih vaj.
+
+Gre za delo v nastanku, pridržujemo si pravico spremembe vsebine.
 
 ```{tableofcontents}
 ```
