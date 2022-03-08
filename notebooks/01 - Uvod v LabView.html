@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="../intro.html" />
+    <link rel="prev" title="Uvod" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -93,7 +93,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to your Jupyter Book
+   Uvod
   </a>
  </li>
 </ul>
@@ -180,11 +180,139 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/domengorjup/ps_lv/main?urlpath=tree/lv_book/notebooks/01 - Uvod v LabView.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Uvod v LabView
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prvi-program">
+   Prvi program
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uporabne-bljiznice">
+   Uporabne bljižnice
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programiranje-v-labview-u">
+   Programiranje v LabView-u
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#podatkovni-tipi">
+     Podatkovni tipi
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#podprogrami-v-labview-u">
+     Podprogrami v LabView-u
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#krmilni-stavki">
+     Krmilni stavki
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stavek-case">
+       Stavek
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Case
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#zanke-for-while">
+       Zanke (
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         For
+        </span>
+       </code>
+       ,
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         While
+        </span>
+       </code>
+       )
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#for-zanka">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           For
+          </span>
+         </code>
+         zanka
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#while-zanka">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           While
+          </span>
+         </code>
+         zanka
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generiranje-signalov">
+     Generiranje signalov
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shranjevanje-podatkov-v-datoteke">
+   Shranjevanje podatkov v datoteke
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#domaca-naloga">
+   Domača naloga
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -197,6 +325,117 @@ const thebe_selector_output = ".output, .cell_output"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Uvod v LabView
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prvi-program">
+   Prvi program
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uporabne-bljiznice">
+   Uporabne bljižnice
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#programiranje-v-labview-u">
+   Programiranje v LabView-u
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#podatkovni-tipi">
+     Podatkovni tipi
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#podprogrami-v-labview-u">
+     Podprogrami v LabView-u
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#krmilni-stavki">
+     Krmilni stavki
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stavek-case">
+       Stavek
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         Case
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#zanke-for-while">
+       Zanke (
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         For
+        </span>
+       </code>
+       ,
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         While
+        </span>
+       </code>
+       )
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#for-zanka">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           For
+          </span>
+         </code>
+         zanka
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#while-zanka">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           While
+          </span>
+         </code>
+         zanka
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generiranje-signalov">
+     Generiranje signalov
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shranjevanje-podatkov-v-datoteke">
+   Shranjevanje podatkov v datoteke
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#domaca-naloga">
+   Domača naloga
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -205,6 +444,200 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="uvod-v-labview">
 <h1>Uvod v LabView<a class="headerlink" href="#uvod-v-labview" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://www.ni.com/sl-si/shop/software/products/labview.html">NI LabView</a> je grafično programsko okolje podjetja National Instruments, ki je v prvi vrsti namenjeno aplikacijam zajema signalov, krmiljenja laboratorijskih instrumentov in avtomatizacije. Čeprav gre v osnovi za zaprto programsko okolje, LabView poleg komunikacije z National Instruments opremo omogoča uporabo različnih standardnih protokolov in s tem povezavo z različno srojno opremo.</p>
+<p>Grafični programski jezik (imenovan tudi “G”), temelji na pretoku podatkov, ki jih uporabnik vodi do programskih elementov v obliki povezav (ang. <em>wire</em>). Posamezni programski elementi se izvedejo takoj, ko imajo na voljo vse potrebne podatke, označene s povezavami, pri čemer je podprta tudi večopravilnost (<em>multiprocessing</em>).</p>
+<p>Osnovna programska struktura je “Virtualni instrument” (VI, <em>Virtual Instrument</em>), ki je sesetavljen iz <strong>blokovneg diagrama</strong> (<em>Block Diagram</em>) in <strong>krmilne plošče</strong> (<em>Front Panel</em>).</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="prvi-program">
+<h1>Prvi program<a class="headerlink" href="#prvi-program" title="Permalink to this headline">¶</a></h1>
+<p>Primer najosnovnejšega “Hello, World!” programa v LabView-u.</p>
+<p><img alt="hello-world" src="../_images/00_Hello_World.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>LabView omogoča izvoz programa v obliki <code class="docutils literal notranslate"><span class="pre">.png</span></code> slike, ki jo je mogoče naložiti v VI.</p>
+<p>Označene elemente izvozite v obliki slike z <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">-&gt;</span> <span class="pre">Create</span> <span class="pre">VI</span> <span class="pre">Snippet</span> <span class="pre">from</span> <span class="pre">Selection</span></code>.</p>
+<p>Za uvoz VI enostavno povlečete tako pripravljeno sliko v blokovni diagram.</p>
+</div>
+<p>Program poženemo z gumbom “Run” na vrhu blokovnega diagrama ali krmilne plošče.</p>
+<p><img alt="run-program" src="../_images/run_program.png" /></p>
+</div>
+<hr class="docutils" />
+<div class="tex2jax_ignore mathjax_ignore section" id="uporabne-bljiznice">
+<h1>Uporabne bljižnice<a class="headerlink" href="#uporabne-bljiznice" title="Permalink to this headline">¶</a></h1>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Bljižnica</p></th>
+<th class="text-align:left head"><p>Funkcija</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">E</span></code></p></td>
+<td class="text-align:left"><p>Priklic blokovnega diagrama</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">H</span></code></p></td>
+<td class="text-align:left"><p>Prikaz pomoči</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">space</span></code></p></td>
+<td class="text-align:left"><p>Hitro dodajanje funkcij (<em>Quick Drop</em>)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:left"><p>Počisti nepopolne povezave</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">U</span></code></p></td>
+<td class="text-align:left"><p>Samodejno razporedi elemente programa</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">shift</span> <span class="pre">+</span> <span class="pre">A</span></code></p></td>
+<td class="text-align:left"><p>Poravnaj označene elemente v vrsto</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="programiranje-v-labview-u">
+<h1>Programiranje v LabView-u<a class="headerlink" href="#programiranje-v-labview-u" title="Permalink to this headline">¶</a></h1>
+<p>S programiranjem lahko začnemo v blokovnem diagramu, kjer z <em>desnim miškinim klikom</em> prikličemo meni programskih funkcij, ali v krmilni plošči, kjer desni klik opre nabor <em>kontrolnih elementov</em>.</p>
+<p><img alt="block-diagram-front-pannel" src="../_images/blokovni_diagram_krmilna_plosca.png" /></p>
+<p>Spremembe v enem pogledu samodejno posodobijo drugega, dodajanje elementa pa zaključimo s povezavo elementov v blokovnem diagramu.</p>
+<div class="important admonition">
+<p class="admonition-title">Naloga 1</p>
+<p>Pripravimo LabView program, ki na števičnici prikaže vrednost hitrosti, podane z drsnikom, pri tem pa vrednost pretvori iz enot [m/s] v [km/h].</p>
+</div>
+<p><img alt="n01-definicija" src="../_images/n01_def_pretvorba_hitrosti.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pretok podatkov in zaporedje izvajanja programa vizualiziramo z možnostjo “Highlight execution”:</p>
+</div>
+<p><img alt="highlight-execution" src="../_images/highlight_execution.png" /></p>
+<div class="section" id="podatkovni-tipi">
+<h2>Podatkovni tipi<a class="headerlink" href="#podatkovni-tipi" title="Permalink to this headline">¶</a></h2>
+<p>Kot pri večini programskih jezikov so tudi v LabView-u pomembni podatkovni tipi v programu.</p>
+<p>Pretvorba med kompatibilnimi tipi podatkov je avtomatska (<code class="docutils literal notranslate"><span class="pre">Integer</span></code>, <code class="docutils literal notranslate"><span class="pre">Double</span></code>), za pretvorbo med nekaterimi tipi podatkov pa moramo uporabiti ustrezne funkcije.</p>
+<p>Do funkcij za pretvorbo pridemo v funkcijskem meniju blokovnega diagrama, v zavihku ustreznega podatkovnega tipa (npr. za pretvorbo med numeričnimi podatki in nizi: <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">-&gt;</span> <span class="pre">Number/String</span> <span class="pre">Conversion</span></code>).</p>
+<div class="seealso admonition">
+<p class="admonition-title">Naloga 2</p>
+<p>Poglejmo primer LabView programa, ki prikazuje pretvorbo med <code class="docutils literal notranslate"><span class="pre">Integer</span></code>, <code class="docutils literal notranslate"><span class="pre">Double</span></code> in <code class="docutils literal notranslate"><span class="pre">String</span></code> tipi podtkov.</p>
+</div>
+<p><img alt="pretvorba-podatkov" src="../_images/02_data_types.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Če pri zagonu programa pride do napake, lahko izpis napak pogledamo s klikom na “List Errors”:</p>
+</div>
+<p><img alt="list-errors" src="../_images/list_errors.png" /></p>
+</div>
+<div class="section" id="podprogrami-v-labview-u">
+<h2>Podprogrami v LabView-u<a class="headerlink" href="#podprogrami-v-labview-u" title="Permalink to this headline">¶</a></h2>
+<p>Del programa, ki ga želimo večkrat uporabiti, lahko zapakiramo v <em>podprogram</em> (<em>Sub VI</em>).</p>
+<p>Označimo del programa, ki ga želimo zapakirati v podprogram, in izberemo <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">-&gt;</span> <span class="pre">Create</span> <span class="pre">SubVI</span></code>.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Naloga 3</p>
+<p>Primer LabView program, v katerm smo del kode s pretvorbo med enotami v nalogi 1 zapakirali v podprogram.</p>
+</div>
+<p><img alt="sub-vi" src="../_images/03_sub_vi.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Po spremembi podprograma je včasih potrebno posodobiti tudi povezavo na podprogram v glavnem programu. To storimo z desnim klikom na ikono podprograma in <code class="docutils literal notranslate"><span class="pre">Relink</span> <span class="pre">to</span> <span class="pre">SubVi</span></code>.</p>
+</div>
+</div>
+<div class="section" id="krmilni-stavki">
+<h2>Krmilni stavki<a class="headerlink" href="#krmilni-stavki" title="Permalink to this headline">¶</a></h2>
+<p>Krmilni stavki, podobno kot v drugih programskih jezikih, vplivajo na potek izvajanja LabView programa.</p>
+<p>Krmilne stavke najdemo v funkcijskem meniju blokovnega diagrama, v zavihku <em>Structures</em>.</p>
+<p><img alt="structures" src="../_images/structures.png" /></p>
+<div class="section" id="stavek-case">
+<h3>Stavek <code class="docutils literal notranslate"><span class="pre">Case</span></code><a class="headerlink" href="#stavek-case" title="Permalink to this headline">¶</a></h3>
+<p>V <code class="docutils literal notranslate"><span class="pre">Case</span></code> stavku se, na podlagi izbranega pogoja, odločimo, katerega izmed vnaprej določenih delov programa izvedemo.</p>
+<p>(<code class="docutils literal notranslate"><span class="pre">Case</span></code> satvek v LabView-u je torej podoben Python <code class="docutils literal notranslate"><span class="pre">if</span></code> stavku.)</p>
+<div class="important admonition">
+<p class="admonition-title">Naloga 4</p>
+<p>Program pretvorbe enot iz naloge 1 razširimo s <code class="docutils literal notranslate"><span class="pre">Case</span></code> stavkom, s katerim na podlagi kontrolnega staikala vklopimo / izklopimo pretvorbo enot.</p>
+<p><em>Namig:</em> Začnete lahko z dodajanjem gumba v krmilni plošči, ki ga kasneje ustrezno povežete s <code class="docutils literal notranslate"><span class="pre">Case</span></code> stavkom.</p>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">Naloga 5</p>
+<p>Podprogram iz naloge 3 nadgradimo s <code class="docutils literal notranslate"><span class="pre">Case</span></code> stavkom. Pri tem moramo podprogramu dodati dodaten vhodni parameter, ki ga lahko povežemo s stikalom na krmilni plošči.</p>
+</div>
+<p><img alt="podprogram-case" src="../_images/05_podprogram_case.png" /></p>
+</div>
+<div class="section" id="zanke-for-while">
+<h3>Zanke (<code class="docutils literal notranslate"><span class="pre">For</span></code>, <code class="docutils literal notranslate"><span class="pre">While</span></code>)<a class="headerlink" href="#zanke-for-while" title="Permalink to this headline">¶</a></h3>
+<p>Zanke so namenjene iteracijam / ponovljenim izvedbam dela programa v zanki.</p>
+<div class="section" id="for-zanka">
+<h4><code class="docutils literal notranslate"><span class="pre">For</span></code> zanka<a class="headerlink" href="#for-zanka" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">For</span></code> zanke so namenjene iteriranju s točno določenim številom ponovitev.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Naloga 6</p>
+<p>Ustvarimo <code class="docutils literal notranslate"><span class="pre">for</span></code> zanko, s katero iteriramo po polju numerčnih vrednosti (<code class="docutils literal notranslate"><span class="pre">Array</span></code>).</p>
+<p>Polje najlažje pripravimo v krmilni plošči (zavihek “Data Containers”), in ga napolnimo z željenimi kontrolnimi elementi (npr. <code class="docutils literal notranslate"><span class="pre">Numeric</span> <span class="pre">control</span></code>).</p>
+</div>
+<p><img alt="array_for_loop.png" src="../_images/07_array_for_loop.png" /></p>
+<div class="important admonition">
+<p class="admonition-title">Naloga 7</p>
+<p>Program za pretvorbo enot hitrosti iz naloge 4 dopolnite tako, da bo vrednosti hitrosti v [m/s] prebiral iz numeričnega polja, in v <code class="docutils literal notranslate"><span class="pre">for</span></code> zanki ustrezno posodabljal prikaz na številčnici.</p>
+</div>
+<p><img alt="n07-definicija" src="../_images/n07_def_pretvorba_hitrosti_zanka.png" /></p>
+</div>
+<div class="section" id="while-zanka">
+<h4><code class="docutils literal notranslate"><span class="pre">While</span></code> zanka<a class="headerlink" href="#while-zanka" title="Permalink to this headline">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">While</span></code> zanko običajno uporabimo, ko želimo izvajanje programa ponavljati, dokler ga sami ne prekinemo.</p>
+<div class="important admonition">
+<p class="admonition-title">Naloga 8</p>
+<p>Program za pretvorbo enot hitrosti iz naloge 4 dopolnite tako, da bo ves čas preverjal izbrano trenutno vrednost hitrosti v [m/s] in v zanki ustrezno posodabljal prikaz na številčnici.</p>
+<p><em>Namig</em>: Vsi krmilni elementi, katerih vrednosti želite brati sproti, naj bodo znotraj zanke.</p>
+<p><em>Dodatek</em>: Poskusite za prikaz vrednosti namesto številčnice uporabiti graf (<code class="docutils literal notranslate"><span class="pre">Waveform</span> <span class="pre">Chart</span></code>).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="generiranje-signalov">
+<h2>Generiranje signalov<a class="headerlink" href="#generiranje-signalov" title="Permalink to this headline">¶</a></h2>
+<p>Čeprav bomo LabView običajno uporabljali za zajem signalov, včasih želimo signale z njim tudi generirati.</p>
+<p>Uporabimo lahko funkcijo <a class="reference external" href="https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z0000019NVOSA2&amp;l=sl-SI">“Simulate Signal”</a> (<code class="docutils literal notranslate"><span class="pre">Express</span> <span class="pre">-&gt;</span> <span class="pre">Input</span> <span class="pre">-&gt;</span> <span class="pre">Simulate</span> <span class="pre">Sig</span></code>).</p>
+<p><img alt="simulate-signal" src="../_images/simulate_signal.png" /></p>
+<div class="seealso admonition">
+<p class="admonition-title">Naloga 9</p>
+<p>Kontinuirano generirajmo in na grafu prikazujmo 1 sekundo (1000 vzorcev pri vzorni frekvenci 1000 Hz) sinusnega signala s frekvenco 1.5 Hz in amplitudo 2.</p>
+</div>
+<p><img alt="simulate-signal-loop" src="../_images/09_simulate_signal_loop.png" /></p>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="shranjevanje-podatkov-v-datoteke">
+<h1>Shranjevanje podatkov v datoteke<a class="headerlink" href="#shranjevanje-podatkov-v-datoteke" title="Permalink to this headline">¶</a></h1>
+<p>Čeprav LabView vključuje zmogljive funkcije, namenjena procesiranju signalov, bomo pri tem predmetu za obdelavo zajetih podatkov običajno uporaibli druga orodja (Python).</p>
+<p>Podatke, zajete z LabView-om, zato želimo zapisati v datoteke tako, da jih bomo kasneje lahko prebirali obdelali.</p>
+<p>Uporabna funkcija za shranjevanje podatkov v LabView-u je “Write To Measurement File” (<code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">I/O</span> <span class="pre">-&gt;</span> <span class="pre">Write</span> <span class="pre">Meas</span> <span class="pre">File</span></code>).</p>
+<p><img alt="write-lvm" src="../_images/write_meas_file.png" /></p>
+<div class="seealso admonition">
+<p class="admonition-title">Naloga 10</p>
+<p>Generiran sinusni signal shranjujmo v tekstovni obliki (<code class="docutils literal notranslate"><span class="pre">.lvm</span></code>). Odseke signala, ki jih generiramo v zanki, pripenjajmo na konec datoteke, če ta že obstaja.</p>
+</div>
+<p><img alt="simulate-signal-loop" src="../_images/10_simulate_signal_save.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Za branje zapisanih <code class="docutils literal notranslate"><span class="pre">.lvm</span></code> datotek v programskem jeziku Python lahko uporabite paket <a class="reference external" href="https://pypi.org/project/lvm-read/">lvm_read</a>. Svetujemo, da pogledate tudi primer uporabe na <a class="reference external" href="https://github.com/openmodal/lvm_read/blob/master/Showcase%20lvm_read.ipynb">tejle povezavi</a>. Osnovna uporaba je prikazana spodaj.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lvm_read</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;data/sinus.lvm&#39;</span>
+<span class="n">saved_data</span> <span class="o">=</span> <span class="n">lvm_read</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">saved_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;Decimal_Separator&#39;, &#39;Writer_Version&#39;, &#39;Reader_Version&#39;, &#39;Separator&#39;, &#39;Multi_Headings&#39;, &#39;X_Columns&#39;, &#39;Time_Pref&#39;, &#39;Operator&#39;, &#39;Date&#39;, &#39;Time&#39;, 0, &#39;Segments&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="domaca-naloga">
+<h1>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Permalink to this headline">¶</a></h1>
+<div class="warning admonition">
+<p class="admonition-title">Domača naloga</p>
+<p>Z uporabo prikazanih funkcij v LabView-u pripravite signal s predpisanimi parametri (individualizirane podatke najdete v <a class="reference external" href="https://e-ucilnica.fs.uni-lj.si/">e-učilnici</a>.</p>
+<p>V kratkem poročilu v okolju Jupyter Notebook <em>(od 3 do 10 celic s kodo)</em> raziščite in prikažite postopek branja in grafičnega prikaza shranjenega signala.</p>
+<p><strong>Dodatek</strong>: Raziščite uporabo izbrane metode procesiranja signalov (na primer iz modula <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/signal.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal</span></code></a> ali <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/fft.html"><code class="docutils literal notranslate"><span class="pre">scipy.fft</span></code></a>). Prikažite uporabo metode na shranjenem signalu.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -236,7 +669,7 @@ const thebe_selector_output = ".output, .cell_output"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to your Jupyter Book</p>
+            <p class="prev-next-title">Uvod</p>
         </div>
     </a>
 </div>
