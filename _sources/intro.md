@@ -37,7 +37,7 @@ Sistem omogoča oddajo več datotek. Če poročilo domače naloge pripravite v p
 Jupyter Notebook datoteko enostavno pretvorite v ustrezno obliko v meniju `File -> Download as`.
 ```
 
-![jupyter_pretvorba](./images/00/pretvorba_jupyter_notebook.png)
+![jupyter_pretvorba](notebooks/images/00/pretvorba_jupyter_notebook.png)
 
 ```{note}
 Gre za delo v nastanku, pridržujemo si pravico spremembe vsebine.
