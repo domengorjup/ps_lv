@@ -25,7 +25,10 @@ Naloge, ki jih boste na vajah reševali samostojno.
 ```{admonition} Preverjanje
 :class: warning
 Domače naloge in naloge, namenjene preverjanju sodelovanja na vajah.
+```
 
+```{admonition} Domače naloge
+:class: warning
 Vsebina domačih nalog bo individualizirana, podatke za svojo nalogo najdete v [e-učilnici](https://e-ucilnica.fs.uni-lj.si/).
 
 **Dodatek:** Za možnost višje ocene sodelovanja na vajah bodite pozorni na predloge rezširitve domače naloge.
@@ -36,12 +39,13 @@ Sistem omogoča oddajo več datotek. Če poročilo domače naloge pripravite v p
 
 Jupyter Notebook datoteko enostavno pretvorite v ustrezno obliko v meniju `File -> Download as`.
 ```
-
 ![jupyter_pretvorba](notebooks/images/00/pretvorba_jupyter_notebook.png)
+
 
 ```{note}
 Gre za delo v nastanku, pridržujemo si pravico spremembe vsebine.
 ```
+
 
 ## Vsebina
 
