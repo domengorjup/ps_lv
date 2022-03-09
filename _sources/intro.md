@@ -27,6 +27,7 @@ Naloge, ki jih boste na vajah reševali samostojno.
 Domače naloge in naloge, namenjene preverjanju sodelovanja na vajah.
 ```
 
+(intro-domace-naloge)=
 ```{admonition} Domače naloge
 :class: warning
 Vsebina domačih nalog bo individualizirana, podatke za svojo nalogo najdete v [e-učilnici](https://e-ucilnica.fs.uni-lj.si/).
