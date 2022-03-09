@@ -34,7 +34,9 @@ Vsebina domačih nalog bo individualizirana, podatke za svojo nalogo najdete v [
 
 **Dodatek:** Za možnost višje ocene sodelovanja na vajah bodite pozorni na predloge rezširitve domače naloge.
 
-**ODDAJA DOMAČIH NALOG** prav tako poteka preko e-učilnice. **Rok za oddajo** je *dan naslednjega predavanja pri predmetu*, če ni v nalogi definirano drugače.
+**ODDAJA DOMAČIH NALOG** prav tako poteka preko e-učilnice. 
+
+**Rok za oddajo** je *dan naslednjega predavanja pri predmetu*, če ni v nalogi definirano drugače.
 
 Sistem omogoča oddajo več datotek. Če poročilo domače naloge pripravite v programskem okolju (npr. Jupyter Notebook), ga je potrebno oddati **tudi v obliki, ki jo je mogoče brez dodatne programske opreme brati v spletnem brskalniku (npr. `.html`, `.pdf`)**. 
 
