@@ -32,9 +32,13 @@ Domače naloge in naloge, namenjene preverjanju sodelovanja na vajah.
 :class: warning
 Vsebina domačih nalog bo individualizirana, podatke za svojo nalogo najdete v [e-učilnici](https://e-ucilnica.fs.uni-lj.si/).
 
-**Dodatek:** Za možnost višje ocene sodelovanja na vajah bodite pozorni na predloge rezširitve domače naloge.
+V skaldu z naovdilom naloge pripravite **kratko** poročilo, v katerem najprej povzamete *zahteve naloge* ter *svoje podatke*. V poročilo vključite tako *kodo rešitve* kot *kratke komentarje* na nalogo (primerna oblika je npr. Jupyter Notebook).
 
-**ODDAJA DOMAČIH NALOG** prav tako poteka preko e-učilnice. 
+Če iz kakršnegakoli razloga (npr. odsotnost) **ustreznih podatkov na vaji niste uspeli pripraviti** to v poročilu komentirajte, ustrezne podatke pa v skaldu z navodilom naloge generirate sami.
+
+**Dodatek:** Za možnost višje ocene sodelovanja na vajah bodite pozorni na predloge razširitve domače naloge.
+
+**ODDAJA DOMAČIH NALOG** poteka preko e-učilnice. 
 
 **Rok za oddajo** je *dan naslednjega predavanja pri predmetu*, če ni v nalogi definirano drugače.
 
