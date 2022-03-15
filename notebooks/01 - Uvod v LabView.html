@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uvod v LabView &#8212; Procesiranje signalov - Laboratorijske vaje</title>
+    <title>1. Uvod v LabView &#8212; Procesiranje signalov - Laboratorijske vaje</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -53,6 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. LabView in Arduino, Python" href="02%20-%20LabView%20in%20Arduino%2C%20Python.html" />
     <link rel="prev" title="Uvod" href="../intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -100,7 +101,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Uvod v LabView
+   1. Uvod v LabView
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02%20-%20LabView%20in%20Arduino%2C%20Python.html">
+   2. LabView in Arduino, Python
   </a>
  </li>
 </ul>
@@ -207,44 +213,39 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Uvod v LabView
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#prvi-program">
-   Prvi program
+   1.1. Prvi program
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#uporabne-bljiznice">
-   Uporabne bljižnice
+   1.2. Uporabne bljižnice
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#programiranje-v-labview-u">
-   Programiranje v LabView-u
+   1.3. Programiranje v LabView-u
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#podatkovni-tipi">
-     Podatkovni tipi
+     1.3.1. Podatkovni tipi
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#podprogrami-v-labview-u">
-     Podprogrami v LabView-u
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#podprogrami">
+     1.3.2. Podprogrami
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#krmilni-stavki">
-     Krmilni stavki
+     1.3.3. Krmilni stavki
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#stavek-case">
-       Stavek
+       1.3.3.1. Stavek
        <code class="docutils literal notranslate">
         <span class="pre">
          Case
@@ -252,62 +253,64 @@ const thebe_selector_output = ".output, .cell_output"
        </code>
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#zanke-for-while">
-       Zanke (
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zanke-for-while">
+     1.3.4. Zanke (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       For
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       While
+      </span>
+     </code>
+     )
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#for-zanka">
+       1.3.4.1.
        <code class="docutils literal notranslate">
         <span class="pre">
          For
         </span>
        </code>
-       ,
+       zanka
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#while-zanka">
+       1.3.4.2.
        <code class="docutils literal notranslate">
         <span class="pre">
          While
         </span>
        </code>
-       )
+       zanka
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#for-zanka">
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           For
-          </span>
-         </code>
-         zanka
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#while-zanka">
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           While
-          </span>
-         </code>
-         zanka
-        </a>
-       </li>
-      </ul>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#generiranje-signalov">
-     Generiranje signalov
-    </a>
-   </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shranjevanje-podatkov-v-datoteke">
-   Shranjevanje podatkov v datoteke
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generiranje-signalov">
+   1.4. Generiranje signalov
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shranjevanje-podatkov-v-datoteke">
+   1.5. Shranjevanje podatkov v datoteke
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#domaca-naloga">
-   Domača naloga
+   1.6. Domača naloga
   </a>
  </li>
 </ul>
@@ -330,44 +333,39 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Uvod v LabView
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#prvi-program">
-   Prvi program
+   1.1. Prvi program
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#uporabne-bljiznice">
-   Uporabne bljižnice
+   1.2. Uporabne bljižnice
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#programiranje-v-labview-u">
-   Programiranje v LabView-u
+   1.3. Programiranje v LabView-u
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#podatkovni-tipi">
-     Podatkovni tipi
+     1.3.1. Podatkovni tipi
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#podprogrami-v-labview-u">
-     Podprogrami v LabView-u
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#podprogrami">
+     1.3.2. Podprogrami
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#krmilni-stavki">
-     Krmilni stavki
+     1.3.3. Krmilni stavki
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#stavek-case">
-       Stavek
+       1.3.3.1. Stavek
        <code class="docutils literal notranslate">
         <span class="pre">
          Case
@@ -375,62 +373,64 @@ const thebe_selector_output = ".output, .cell_output"
        </code>
       </a>
      </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#zanke-for-while">
-       Zanke (
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zanke-for-while">
+     1.3.4. Zanke (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       For
+      </span>
+     </code>
+     ,
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       While
+      </span>
+     </code>
+     )
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#for-zanka">
+       1.3.4.1.
        <code class="docutils literal notranslate">
         <span class="pre">
          For
         </span>
        </code>
-       ,
+       zanka
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#while-zanka">
+       1.3.4.2.
        <code class="docutils literal notranslate">
         <span class="pre">
          While
         </span>
        </code>
-       )
+       zanka
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#for-zanka">
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           For
-          </span>
-         </code>
-         zanka
-        </a>
-       </li>
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#while-zanka">
-         <code class="docutils literal notranslate">
-          <span class="pre">
-           While
-          </span>
-         </code>
-         zanka
-        </a>
-       </li>
-      </ul>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#generiranje-signalov">
-     Generiranje signalov
-    </a>
-   </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#shranjevanje-podatkov-v-datoteke">
-   Shranjevanje podatkov v datoteke
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generiranje-signalov">
+   1.4. Generiranje signalov
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shranjevanje-podatkov-v-datoteke">
+   1.5. Shranjevanje podatkov v datoteke
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#domaca-naloga">
-   Domača naloga
+   1.6. Domača naloga
   </a>
  </li>
 </ul>
@@ -443,13 +443,12 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="uvod-v-labview">
-<h1>Uvod v LabView<a class="headerlink" href="#uvod-v-labview" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>Uvod v LabView<a class="headerlink" href="#uvod-v-labview" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://www.ni.com/sl-si/shop/software/products/labview.html">NI LabView</a> je grafično programsko okolje podjetja National Instruments, ki je v prvi vrsti namenjeno aplikacijam zajema signalov, krmiljenja laboratorijskih instrumentov in avtomatizacije. Čeprav gre v osnovi za zaprto programsko okolje, LabView poleg komunikacije z National Instruments opremo omogoča uporabo različnih standardnih protokolov in s tem povezavo z različno srojno opremo.</p>
 <p>Grafični programski jezik (imenovan tudi “G”), temelji na pretoku podatkov, ki jih uporabnik vodi do programskih elementov v obliki povezav (ang. <em>wire</em>). Posamezni programski elementi se izvedejo takoj, ko imajo na voljo vse potrebne podatke, označene s povezavami, pri čemer je podprta tudi večopravilnost (<em>multiprocessing</em>).</p>
 <p>Osnovna programska struktura je “Virtualni instrument” (VI, <em>Virtual Instrument</em>), ki je sesetavljen iz <strong>blokovneg diagrama</strong> (<em>Block Diagram</em>) in <strong>krmilne plošče</strong> (<em>Front Panel</em>).</p>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="prvi-program">
-<h1>Prvi program<a class="headerlink" href="#prvi-program" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="prvi-program">
+<h2><span class="section-number">1.1. </span>Prvi program<a class="headerlink" href="#prvi-program" title="Permalink to this headline">¶</a></h2>
 <p>Primer najosnovnejšega “Hello, World!” programa v LabView-u.</p>
 <p><img alt="hello-world" src="../_images/00_Hello_World.png" /></p>
 <div class="admonition note">
@@ -462,8 +461,8 @@ const thebe_selector_output = ".output, .cell_output"
 <p><img alt="run-program" src="../_images/run_program.png" /></p>
 </div>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="uporabne-bljiznice">
-<h1>Uporabne bljižnice<a class="headerlink" href="#uporabne-bljiznice" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="uporabne-bljiznice">
+<h2><span class="section-number">1.2. </span>Uporabne bljižnice<a class="headerlink" href="#uporabne-bljiznice" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Bljižnica</p></th>
@@ -492,8 +491,8 @@ const thebe_selector_output = ".output, .cell_output"
 </tbody>
 </table>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="programiranje-v-labview-u">
-<h1>Programiranje v LabView-u<a class="headerlink" href="#programiranje-v-labview-u" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="programiranje-v-labview-u">
+<h2><span class="section-number">1.3. </span>Programiranje v LabView-u<a class="headerlink" href="#programiranje-v-labview-u" title="Permalink to this headline">¶</a></h2>
 <p>S programiranjem lahko začnemo v blokovnem diagramu, kjer z <em>desnim miškinim klikom</em> prikličemo meni programskih funkcij, ali v krmilni plošči, kjer desni klik opre nabor <em>kontrolnih elementov</em>.</p>
 <p><img alt="block-diagram-front-pannel" src="../_images/blokovni_diagram_krmilna_plosca.png" /></p>
 <p>Spremembe v enem pogledu samodejno posodobijo drugega, dodajanje elementa pa zaključimo s povezavo elementov v blokovnem diagramu.</p>
@@ -508,7 +507,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p><img alt="highlight-execution" src="../_images/highlight_execution.png" /></p>
 <div class="section" id="podatkovni-tipi">
-<h2>Podatkovni tipi<a class="headerlink" href="#podatkovni-tipi" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">1.3.1. </span>Podatkovni tipi<a class="headerlink" href="#podatkovni-tipi" title="Permalink to this headline">¶</a></h3>
 <p>Kot pri večini programskih jezikov so tudi v LabView-u pomembni podatkovni tipi v programu.</p>
 <p>Pretvorba med kompatibilnimi tipi podatkov je avtomatska (<code class="docutils literal notranslate"><span class="pre">Integer</span></code>, <code class="docutils literal notranslate"><span class="pre">Double</span></code>), za pretvorbo med nekaterimi tipi podatkov pa moramo uporabiti ustrezne funkcije.</p>
 <p>Do funkcij za pretvorbo pridemo v funkcijskem meniju blokovnega diagrama, v zavihku ustreznega podatkovnega tipa (npr. za pretvorbo med numeričnimi podatki in nizi: <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">-&gt;</span> <span class="pre">Number/String</span> <span class="pre">Conversion</span></code>).</p>
@@ -523,8 +522,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p><img alt="list-errors" src="../_images/list_errors.png" /></p>
 </div>
-<div class="section" id="podprogrami-v-labview-u">
-<h2>Podprogrami v LabView-u<a class="headerlink" href="#podprogrami-v-labview-u" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="podprogrami">
+<h3><span class="section-number">1.3.2. </span>Podprogrami<a class="headerlink" href="#podprogrami" title="Permalink to this headline">¶</a></h3>
 <p>Del programa, ki ga želimo večkrat uporabiti, lahko zapakiramo v <em>podprogram</em> (<em>Sub VI</em>).</p>
 <p>Označimo del programa, ki ga želimo zapakirati v podprogram, in izberemo <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">-&gt;</span> <span class="pre">Create</span> <span class="pre">SubVI</span></code>.</p>
 <div class="seealso admonition">
@@ -538,12 +537,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="krmilni-stavki">
-<h2>Krmilni stavki<a class="headerlink" href="#krmilni-stavki" title="Permalink to this headline">¶</a></h2>
+<h3><span class="section-number">1.3.3. </span>Krmilni stavki<a class="headerlink" href="#krmilni-stavki" title="Permalink to this headline">¶</a></h3>
 <p>Krmilni stavki, podobno kot v drugih programskih jezikih, vplivajo na potek izvajanja LabView programa.</p>
 <p>Krmilne stavke najdemo v funkcijskem meniju blokovnega diagrama, v zavihku <em>Structures</em>.</p>
 <p><img alt="structures" src="../_images/structures.png" /></p>
 <div class="section" id="stavek-case">
-<h3>Stavek <code class="docutils literal notranslate"><span class="pre">Case</span></code><a class="headerlink" href="#stavek-case" title="Permalink to this headline">¶</a></h3>
+<h4><span class="section-number">1.3.3.1. </span>Stavek <code class="docutils literal notranslate"><span class="pre">Case</span></code><a class="headerlink" href="#stavek-case" title="Permalink to this headline">¶</a></h4>
 <p>V <code class="docutils literal notranslate"><span class="pre">Case</span></code> stavku se, na podlagi izbranega pogoja, odločimo, katerega izmed vnaprej določenih delov programa izvedemo.</p>
 <p>(<code class="docutils literal notranslate"><span class="pre">Case</span></code> satvek v LabView-u je torej podoben Python <code class="docutils literal notranslate"><span class="pre">if</span></code> stavku.)</p>
 <div class="important admonition">
@@ -557,11 +556,12 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p><img alt="podprogram-case" src="../_images/05_podprogram_case.png" /></p>
 </div>
+</div>
 <div class="section" id="zanke-for-while">
-<h3>Zanke (<code class="docutils literal notranslate"><span class="pre">For</span></code>, <code class="docutils literal notranslate"><span class="pre">While</span></code>)<a class="headerlink" href="#zanke-for-while" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.3.4. </span>Zanke (<code class="docutils literal notranslate"><span class="pre">For</span></code>, <code class="docutils literal notranslate"><span class="pre">While</span></code>)<a class="headerlink" href="#zanke-for-while" title="Permalink to this headline">¶</a></h3>
 <p>Zanke so namenjene iteracijam / ponovljenim izvedbam dela programa v zanki.</p>
 <div class="section" id="for-zanka">
-<h4><code class="docutils literal notranslate"><span class="pre">For</span></code> zanka<a class="headerlink" href="#for-zanka" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.3.4.1. </span><code class="docutils literal notranslate"><span class="pre">For</span></code> zanka<a class="headerlink" href="#for-zanka" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">For</span></code> zanke so namenjene iteriranju s točno določenim številom ponovitev.</p>
 <div class="seealso admonition">
 <p class="admonition-title">Naloga 6</p>
@@ -576,7 +576,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p><img alt="n07-definicija" src="../_images/n07_def_pretvorba_hitrosti_zanka.png" /></p>
 </div>
 <div class="section" id="while-zanka">
-<h4><code class="docutils literal notranslate"><span class="pre">While</span></code> zanka<a class="headerlink" href="#while-zanka" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">1.3.4.2. </span><code class="docutils literal notranslate"><span class="pre">While</span></code> zanka<a class="headerlink" href="#while-zanka" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">While</span></code> zanko običajno uporabimo, ko želimo izvajanje programa ponavljati, dokler ga sami ne prekinemo.</p>
 <div class="important admonition">
 <p class="admonition-title">Naloga 8</p>
@@ -588,7 +588,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="generiranje-signalov">
-<h2>Generiranje signalov<a class="headerlink" href="#generiranje-signalov" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4. </span>Generiranje signalov<a class="headerlink" href="#generiranje-signalov" title="Permalink to this headline">¶</a></h2>
 <p>Čeprav bomo LabView običajno uporabljali za zajem signalov, včasih želimo signale z njim tudi generirati.</p>
 <p>Uporabimo lahko funkcijo <a class="reference external" href="https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z0000019NVOSA2&amp;l=sl-SI">“Simulate Signal”</a> (<code class="docutils literal notranslate"><span class="pre">Express</span> <span class="pre">-&gt;</span> <span class="pre">Input</span> <span class="pre">-&gt;</span> <span class="pre">Simulate</span> <span class="pre">Sig</span></code>).</p>
 <p><img alt="simulate-signal" src="../_images/simulate_signal.png" /></p>
@@ -598,9 +598,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p><img alt="simulate-signal-loop" src="../_images/09_simulate_signal_loop.png" /></p>
 </div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="shranjevanje-podatkov-v-datoteke">
-<h1>Shranjevanje podatkov v datoteke<a class="headerlink" href="#shranjevanje-podatkov-v-datoteke" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="shranjevanje-podatkov-v-datoteke">
+<h2><span class="section-number">1.5. </span>Shranjevanje podatkov v datoteke<a class="headerlink" href="#shranjevanje-podatkov-v-datoteke" title="Permalink to this headline">¶</a></h2>
 <p>Čeprav LabView vključuje zmogljive funkcije, namenjena procesiranju signalov, bomo pri tem predmetu za obdelavo zajetih podatkov običajno uporaibli druga orodja (Python).</p>
 <p>Podatke, zajete z LabView-om, zato želimo zapisati v datoteke tako, da jih bomo kasneje lahko prebirali obdelali.</p>
 <p>Uporabna funkcija za shranjevanje podatkov v LabView-u je “Write To Measurement File” (<code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">I/O</span> <span class="pre">-&gt;</span> <span class="pre">Write</span> <span class="pre">Meas</span> <span class="pre">File</span></code>).</p>
@@ -617,7 +616,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lvm_read</span>
-<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;data/sinus.lvm&#39;</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;data/01/sinus.lvm&#39;</span>
 <span class="n">saved_data</span> <span class="o">=</span> <span class="n">lvm_read</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">saved_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 </pre></div>
@@ -630,13 +629,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="domaca-naloga">
-<h1>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="domaca-naloga">
+<h2><span class="section-number">1.6. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Permalink to this headline">¶</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Domača naloga</p>
 <p>Z uporabo prikazanih funkcij v LabView-u pripravite signal s predpisanimi parametri (individualizirane podatke najdete v <a class="reference external" href="https://e-ucilnica.fs.uni-lj.si/">e-učilnici</a>.</p>
 <p>V kratkem poročilu v okolju Jupyter Notebook <em>(od 3 do 10 celic s kodo)</em> raziščite in prikažite postopek branja in grafičnega prikaza shranjenega signala (pri oddaji poročila ne pozabite tudi na berljivo datoteko, <code class="docutils literal notranslate"><span class="pre">.html</span></code> ali <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> - glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
 <p><strong>Dodatek</strong>: Raziščite uporabo poljubne izbrane metode procesiranja signalov (na primer iz modula <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/signal.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal</span></code></a> ali <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/fft.html"><code class="docutils literal notranslate"><span class="pre">scipy.fft</span></code></a>). Prikažite uporabo metode na shranjenem signalu.</p>
+</div>
 </div>
 </div>
 
@@ -671,6 +671,13 @@ const thebe_selector_output = ".output, .cell_output"
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Uvod</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="02%20-%20LabView%20in%20Arduino%2C%20Python.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>LabView in Arduino, Python</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
