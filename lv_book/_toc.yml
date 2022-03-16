@@ -3,5 +3,9 @@
 
 format: jb-book
 root: intro
+options:
+  numbered: true
+  maxdepth: 1
 chapters:
 - file: notebooks/01 - Uvod v LabView.ipynb
+- file: notebooks/02 - LabView in Arduino, Python.ipynb
