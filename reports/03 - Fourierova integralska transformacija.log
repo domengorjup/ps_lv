@@ -17,19 +17,17 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import lvm_read
-file = 'data/sinus.lvm'
-saved_data = lvm_read.read(file)
-print(saved_data.keys())
+file_2 = 'data/03/test_segments.lvm'
+loaded_data_2 = lvm_read.read(file_2)
+loaded_data_2['Segments']
 ------------------
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[1;32m~\AppData\Local\Temp/ipykernel_18788/487619402.py[0m in [0;36m<module>[1;34m[0m
-[0;32m      1[0m [1;32mimport[0m [0mlvm_read[0m[1;33m[0m[1;33m[0m[0m
-[0;32m      2[0m [0mfile[0m [1;33m=[0m [1;34m'data/sinus.lvm'[0m[1;33m[0m[1;33m[0m[0m
-[1;32m----> 3[1;33m [0msaved_data[0m [1;33m=[0m [0mlvm_read[0m[1;33m.[0m[0mread[0m[1;33m([0m[0mfile[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
-[0m[0;32m      4[0m [0mprint[0m[1;33m([0m[0msaved_data[0m[1;33m.[0m[0mkeys[0m[1;33m([0m[1;33m)[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[1;32m~\AppData\Local\Temp/ipykernel_1192/2970992039.py[0m in [0;36m<module>[1;34m[0m
+[0;32m      1[0m [0mfile_2[0m [1;33m=[0m [1;34m'data/03/test_segments.lvm'[0m[1;33m[0m[1;33m[0m[0m
+[1;32m----> 2[1;33m [0mloaded_data_2[0m [1;33m=[0m [0mlvm_read[0m[1;33m.[0m[0mread[0m[1;33m([0m[0mfile_2[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m[0;32m      3[0m [0mloaded_data_2[0m[1;33m[[0m[1;34m'Segments'[0m[1;33m][0m[1;33m[0m[1;33m[0m[0m
 
 [1;32m~\AppData\Local\Programs\Python\Python310\lib\site-packages\lvm_read.py[0m in [0;36mread[1;34m(filename, read_from_pickle, dump_file)[0m
 [0;32m    200[0m         [1;32mreturn[0m [0mlvm_data[0m[1;33m[0m[1;33m[0m[0m
@@ -45,6 +43,6 @@ print(saved_data.keys())
 [0m[0;32m     74[0m         [0mlvm_data[0m [1;33m=[0m [0mread_lines[0m[1;33m([0m[0mf[0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
 [0;32m     75[0m     [1;32mreturn[0m [0mlvm_data[0m[1;33m[0m[1;33m[0m[0m
 
-[1;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'data/sinus.lvm'
-FileNotFoundError: [Errno 2] No such file or directory: 'data/sinus.lvm'
+[1;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'data/03/test_segments.lvm'
+FileNotFoundError: [Errno 2] No such file or directory: 'data/03/test_segments.lvm'
 

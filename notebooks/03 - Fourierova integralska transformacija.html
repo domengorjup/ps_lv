@@ -1,0 +1,878 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. Fourierova integralska transformacija &#8212; Procesiranje signalov - Laboratorijske vaje</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="2. LabView in Arduino, Python" href="02%20-%20LabView%20in%20Arduino%2C%20Python.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/lv_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Procesiranje signalov - Laboratorijske vaje</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Uvod
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01%20-%20Uvod%20v%20LabView.html">
+   1. Uvod v LabView
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02%20-%20LabView%20in%20Arduino%2C%20Python.html">
+   2. LabView in Arduino, Python
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Fourierova integralska transformacija
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/03 - Fourierova integralska transformacija.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/domengorjup/ps_lv"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/domengorjup/ps_lv/issues/new?title=Issue%20on%20page%20%2Fnotebooks/03 - Fourierova integralska transformacija.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/domengorjup/ps_lv/main?urlpath=tree/lv_book/notebooks/03 - Fourierova integralska transformacija.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fourierova-transformacija-v-pythonu">
+   3.1. Fourierova transformacija v Pythonu
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dft-realnega-signala">
+   3.2. DFT realnega signala
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#obdelava-zajetega-signala">
+     3.2.1. Obdelava zajetega signala
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dolocitev-parametrov-zajetega-signala-s-scipy-optimize-curve-fit">
+       3.2.1.1. Določitev parametrov zajetega signala s
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         scipy.optimize.curve_fit
+        </span>
+       </code>
+       :
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diskretna-fourierova-transformacija-zajetega-signala">
+     3.2.2. (Diskretna) Fourierova transformacija zajetega signala
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#domaca-naloga">
+   3.3. Domača naloga
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Fourierova integralska transformacija</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fourierova-transformacija-v-pythonu">
+   3.1. Fourierova transformacija v Pythonu
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dft-realnega-signala">
+   3.2. DFT realnega signala
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#obdelava-zajetega-signala">
+     3.2.1. Obdelava zajetega signala
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dolocitev-parametrov-zajetega-signala-s-scipy-optimize-curve-fit">
+       3.2.1.1. Določitev parametrov zajetega signala s
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         scipy.optimize.curve_fit
+        </span>
+       </code>
+       :
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diskretna-fourierova-transformacija-zajetega-signala">
+     3.2.2. (Diskretna) Fourierova transformacija zajetega signala
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#domaca-naloga">
+   3.3. Domača naloga
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="fourierova-integralska-transformacija">
+<h1><span class="section-number">3. </span>Fourierova integralska transformacija<a class="headerlink" href="#fourierova-integralska-transformacija" title="Permalink to this headline">¶</a></h1>
+<p>Fourierova transformacija je matematično orodje, s katerim preslikamo signale <strong>iz časovne v frekvenčno domeno</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Fourierova transformacija in njen inverz sta integralski preslikavi, ki ste ju definirali na predavanjih:</p>
+<div class="math notranslate nohighlight">
+\[
+X(f)=\int_{-\infty}^{+\infty} x(t)\,e^{-\textrm{i}\,2\pi\,f\,t}\,\textrm{d} t,
+\qquad
+x(t)=\int_{-\infty}^{+\infty} X(f)\,e^{\textrm{i}\,2\pi\,f\,t}\,\textrm{d} f.
+\]</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Realni (pomerjeni) signali običajno niso podani v obiliki funkcijskega predpisa <span class="math notranslate nohighlight">\(x(t)\)</span>, temveč so podani v obliki časovne vrste vrdnosti signla, pomerjene pri diskretnih časovnih točkaj, <span class="math notranslate nohighlight">\(x(n\,\Delta t)\)</span>.</p>
+<p>V praksi bomo zato pogosto raje govorii o <strong>Diskretni Fourierovi transformaciji (DFT)</strong>, definirani na predpostavki diskretno vzorčenega s konstantnim časovnim korakom,
+katere rezultat je <em>diskretna frekvenčna prdstavitev signala s konstantnim korakom v frekvenčni domeni</em>, <span class="math notranslate nohighlight">\(X(k\,\Delta f)\)</span>.</p>
+<p>Na področju procesiranja signalov je izrednega pomena tudi numerično učinkovit algoritem <strong>Hitre Fourierove transformacije (FFT)</strong>, ki omogoča časovno-frekvenčno preslikavo zajetih diskretnih signalov v realnem času.</p>
+<p>O DFT in FFT boste več govorili na enem od naslednjih predavanj.</p>
+</div>
+<div class="section" id="fourierova-transformacija-v-pythonu">
+<h2><span class="section-number">3.1. </span>Fourierova transformacija v Pythonu<a class="headerlink" href="#fourierova-transformacija-v-pythonu" title="Permalink to this headline">¶</a></h2>
+<p>Poglejmo si uporabo algortima (diskretne) Fourierove transformacije, implementiranega v Numpy in Scipy, na primeru sinusnega signala z amplitudo <span class="math notranslate nohighlight">\(A\)</span> ter sekundno frekvenco <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>Na predavanjih ste povedali, da velja:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = A\,\sin(2\pi\,p\,t) = \frac{A}{2\,\textrm{i}}\,
+\left(e^{\textrm{i}\,2\pi\,p\,t)}-e^{-\textrm{i}\,2\pi\,p\,t)}
+\right)
+\]</div>
+<p>Fourierova transformacija <span class="math notranslate nohighlight">\(x(t)\)</span> pa je:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{F}_{t}\left( A\,\sin(2\pi\,p\,t)\right)=
+\frac{\mathrm{i} A}{2} \delta(f - p) - \frac{\mathrm{i} A}{2}\delta(f + p)
+\]</div>
+<p>Pripravimo funkcijo za vizualizacijo Fourierove transformacije sinusnega signala:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fourier_sin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Vizualizacija fourierove transformacije sinusnega signala z amplitudo</span>
+<span class="sd">    `A` in frekvenco `p` Hz.</span>
+<span class="sd">    </span>
+<span class="sd">    Vrne amplitudo spektra pri frekvenci `p`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">A_p</span> <span class="o">=</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">A</span><span class="o">/</span><span class="mi">2</span>
+    
+    <span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="p">])</span>
+    <span class="n">amp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="n">A_p</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">A_p</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">freq</span><span class="p">)):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">amp</span><span class="p">[</span><span class="n">i</span><span class="p">])],</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">amp</span><span class="p">),</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;analitični amplitudni spekter&#39;</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$f [Hz]$&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">fourier_sin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija_10_0.png" src="../_images/03 - Fourierova integralska transformacija_10_0.png" />
+</div>
+</div>
+<p>Pripravimo sinusni signal in poglejmo rezultat DFT:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">p</span><span class="o">*</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Izračun FFT poljubnega signala:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Izračun FFT realnega signala:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">freq_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">dt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fourier_sin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Numpy FFT poljubnega signala&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_r</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_r</span><span class="p">),</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Numpy FFT realnega signala&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija_17_0.png" src="../_images/03 - Fourierova integralska transformacija_17_0.png" />
+</div>
+</div>
+<p>Opzimo, da se teoretične in dobljene amplitude ne ujemajo.</p>
+<div class="important admonition">
+<p class="admonition-title">Naloga 1 (10 minut)</p>
+<p>Raziščite implementacijo skaliranja (normalizacije) <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.fft.html">diskretne Fourierove transformacije v Numpy</a> in zgornjo kodo nadgradite tako, da se bodo dobljene amplitude ujemale s teoretičnimi.</p>
+<p><em>Dodatek</em>: Raziščite možnosti povečanja frekvenčne ločljivosti (<span class="math notranslate nohighlight">\(\downarrow \Delta f\)</span>) pri uporabi diskretne fourierove transformacije. S katerim parametrom zajema signala je ta poezana? (Namig: argmument <code class="docutils literal notranslate"><span class="pre">n</span></code> funkcije <code class="docutils literal notranslate"><span class="pre">np.fft.rfft</span></code>.)</p>
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input tag_hide-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija_21_0.png" src="../_images/03 - Fourierova integralska transformacija_21_0.png" />
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input tag_hide-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija_23_0.png" src="../_images/03 - Fourierova integralska transformacija_23_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="dft-realnega-signala">
+<h2><span class="section-number">3.2. </span>DFT realnega signala<a class="headerlink" href="#dft-realnega-signala" title="Permalink to this headline">¶</a></h2>
+<div class="important admonition" id="naloga-2">
+<p class="admonition-title">Naloga 2 (30 min)</p>
+<p>Z uporabo generatorja signalov in Arduino zajemnega sistema pripravite ter zajamite dva signala različnih oblik s parametri iz podatkov domače naloge 3, ki jih najdete v <a class="reference external" href="https://e-ucilnica.fs.uni-lj.si/course/view.php?id=328">e-učilnici</a>.</p>
+<p>Pri zajemu podatkov lahko uporabite LabView program, ki ste ga pripravili na prejšnji vaji, ali pa program, ki ga najdete spodaj.</p>
+<p>Ne pozabite programa pred zajemom prirediti tako, da bo:</p>
+<ul class="simple">
+<li><p>deloval z vašim zajemnim sitemom (nastavitev COM vrat, mesto shranjevanja .lvm datoteke),</p></li>
+<li><p>če program omogoča nastavitev občutljivosti, te nastavite na vrednost 1,</p></li>
+<li><p>omogočal nastavitev časa trajana segmenta (namesto števila vzorcev v segmentu),</p></li>
+<li><p>zajel signal glede na parametre naloge (pozor, tokrat shranjujemo le en segment meritve).</p></li>
+</ul>
+<p>Nalogo lahko rešujete v parih, tako, da si ustrezno razdelite delo (nastavitev generatorja signala, zajem signalov).</p>
+<p>Osnovna navodila za uporabo generatorja signalov RIGOL DG 1022 najdete v <a class="reference internal" href="02%20-%20LabView%20in%20Arduino%2C%20Python.html#uporaba-rigol"><span class="std std-ref">predlogi prejšnje laboratorijske vaje</span></a>.</p>
+</div>
+<p><img alt="labview-png" src="../_images/07_continuous_N_channels_closed_loop_saving_new_feedback1.png" /></p>
+<p>Prenesete lahko tudi <a class="reference download internal" download="" href="../_downloads/fe35982e9ec10d562dca252f2f56a11d/labview_zajem.zip"><code class="xref download docutils literal notranslate"><span class="pre">zip</span> <span class="pre">arhiv</span> <span class="pre">programa</span></code></a>.</p>
+<div class="section" id="obdelava-zajetega-signala">
+<h3><span class="section-number">3.2.1. </span>Obdelava zajetega signala<a class="headerlink" href="#obdelava-zajetega-signala" title="Permalink to this headline">¶</a></h3>
+<div class="seealso admonition">
+<p class="admonition-title">Naloga 3 (15 min)</p>
+<ul class="simple">
+<li><p>Sinusni signal, zajet pri prejšnji nalogi, naložimo v Python program.</p></li>
+<li><p>Določimo parametre (amplitudo <span class="math notranslate nohighlight">\(A\)</span>, frekvenco <span class="math notranslate nohighlight">\(p\)</span>, fazni zamik <span class="math notranslate nohighlight">\(\varphi\)</span>) zajetega signala (<code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit</span></code>).</p></li>
+<li><p>Amplitudni spekter zajetega sinusnega signala primerjajmo s teoretičnim amplitudnim spektrom funkcije <span class="math notranslate nohighlight">\(A \, \sin(2\, \pi \, p \, t)\)</span>.</p></li>
+</ul>
+</div>
+<p>Pri branju podatkov, shranjnih v <code class="docutils literal notranslate"><span class="pre">.lvm</span></code> datoteke, si lahko pomagate s paketom <a class="reference external" href="https://pypi.org/project/lvm-read/"><code class="docutils literal notranslate"><span class="pre">lvm_read</span></code></a>.</p>
+<p>Primer uporabe si poglejmo spodaj.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lvm_read</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;data/03/sinus.lvm&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">lvm_read</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;Segments&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Segment podatkov je v slovarju shranjen s ključem zaporednega indeksa. Vsak posameni segment je prav tako slovar, v katerem do surovih shranjenih podatkov dostopamo s ključem <code class="docutils literal notranslate"><span class="pre">'data'</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kanali</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+<span class="n">kanali</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(500, 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Posamezni stolpci podatkov predstavljajo po en shranjen kanal:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">signal</span> <span class="o">=</span> <span class="n">kanali</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">signal</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(500,)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Časovni vektor lahko pripravimo na podlagi znane frekvence vzorčenja:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># vzorcev / s</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">signal</span><span class="p">))</span> <span class="o">/</span> <span class="n">fs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;kanal 1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;napetost [V]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1fb70c09930&gt;
+</pre></div>
+</div>
+<img alt="../_images/03 - Fourierova integralska transformacija_37_1.png" src="../_images/03 - Fourierova integralska transformacija_37_1.png" />
+</div>
+</div>
+<div class="section" id="dolocitev-parametrov-zajetega-signala-s-scipy-optimize-curve-fit">
+<h4><span class="section-number">3.2.1.1. </span>Določitev parametrov zajetega signala s <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit</span></code>:<a class="headerlink" href="#dolocitev-parametrov-zajetega-signala-s-scipy-optimize-curve-fit" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Definiramo funkcijo modela našega signala, katere prvi parameter je neodvisna spremenljivka <span class="math notranslate nohighlight">\(t\)</span>, ostali argumenti pa so iskani parametri:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">model</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">V_0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Model funkcije `A*sin(2*pi*p*t + phi) + V_0` za aproksimacijo.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">p</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="n">phi</span><span class="p">)</span> <span class="o">+</span> <span class="n">V_0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Določimo smiselne začetne približke:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A_0</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">signal</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span> <span class="o">-</span> <span class="n">A_0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span> <span class="o">+</span> <span class="n">A_0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;signal [V]&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija_44_0.png" src="../_images/03 - Fourierova integralska transformacija_44_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">find_peaks</span>
+<span class="n">i_vrhov</span> <span class="o">=</span> <span class="n">find_peaks</span><span class="p">(</span><span class="n">signal</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">t_vrhov</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i_vrhov</span><span class="p">]</span>
+<span class="n">p_0</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">t_vrhov</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t_vrhov</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i_vrhov</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">t</span><span class="p">[</span><span class="n">i_vrhov</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">p_0</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">signal</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">signal</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;signal [V]&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija_46_0.png" src="../_images/03 - Fourierova integralska transformacija_46_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">V_0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;signal [V]&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija_48_0.png" src="../_images/03 - Fourierova integralska transformacija_48_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normal_signal</span> <span class="o">=</span> <span class="p">(</span><span class="n">signal</span> <span class="o">-</span> <span class="n">V_0</span><span class="p">)</span> <span class="o">/</span> <span class="n">A_0</span>
+<span class="n">phi_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arcsin</span><span class="p">(</span><span class="n">normal_signal</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">normal_signal</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">normal_signal</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">phi_0</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;normaiziran signal [V]&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44.997822182694726
+</pre></div>
+</div>
+<img alt="../_images/03 - Fourierova integralska transformacija_50_1.png" src="../_images/03 - Fourierova integralska transformacija_50_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="p">[</span><span class="n">A_0</span><span class="p">,</span> <span class="n">p_0</span><span class="p">,</span> <span class="n">phi_0</span><span class="p">,</span> <span class="n">V_0</span><span class="p">])</span>
+<span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">V_0</span> <span class="o">=</span> <span class="n">popt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">model</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">phi</span><span class="p">,</span> <span class="n">V_0</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;aproksimiran signal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="s1">&#39;k.&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;zajet signal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;signal [V]&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija_52_0.png" src="../_images/03 - Fourierova integralska transformacija_52_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="diskretna-fourierova-transformacija-zajetega-signala">
+<h3><span class="section-number">3.2.2. </span>(Diskretna) Fourierova transformacija zajetega signala<a class="headerlink" href="#diskretna-fourierova-transformacija-zajetega-signala" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fourier_sin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">S</span><span class="p">),</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;zajeti signal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija_55_0.png" src="../_images/03 - Fourierova integralska transformacija_55_0.png" />
+</div>
+</div>
+<p>Odprava statične (DC) komponte:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">signal</span> <span class="o">-</span> <span class="n">V_0</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fourier_sin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">S_1</span><span class="p">),</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;zajeti signal brez statične komponente&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija_58_0.png" src="../_images/03 - Fourierova integralska transformacija_58_0.png" />
+</div>
+</div>
+<p>Pogosto pri realnih signalih izračunamo amplitudni spekter le pri pozitivnih frekvencah.</p>
+<p>Da se energija signala ohrani, dobljen enostranski spekter ustrezno skaliramo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">signal</span> <span class="o">-</span> <span class="n">V_0</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">S_r</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">*=</span> <span class="mi">2</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fourier_sin</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">S_r</span><span class="p">),</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;enostranski spekter realnega signala&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;amplituda zajetega signala&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">p</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/03 - Fourierova integralska transformacija_61_0.png" src="../_images/03 - Fourierova integralska transformacija_61_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">S_1</span><span class="p">)),</span>  <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">S_r</span><span class="p">)),</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="domaca-naloga">
+<h2><span class="section-number">3.3. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Permalink to this headline">¶</a></h2>
+<div class="warning admonition">
+<p class="admonition-title">Domača naloga</p>
+<ul class="simple">
+<li><p>Oba signala, zajeta pri <a class="reference internal" href="#naloga-2"><span class="std std-ref">Nalogi 2</span></a>, odprite v programu Python.</p></li>
+<li><p>Prikažite in primerjajte njuna amplitudna ter fazna spektra.</p></li>
+<li><p>Enaka signala generirajte tudi numerično (na primer z uporabo <code class="docutils literal notranslate"><span class="pre">scipy.signal</span></code>). Primerjajte amplitudna in fazna spektra zajetih ter numeirčno pripravljenih signalov.</p></li>
+</ul>
+<p>Pripravite kratko poročilo v okolju Jupyter Notebook <em>(od 3 do 10 celic s kodo)</em>, iz katerega naj bodo razvidni podatki nalge (iz tabele), ter da ste vse parametre pri izvedbi naloge tudi upoštevali (ustrezno izpišite obliko signala…).
+Poročilo oddajte tudi v <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> obliki (glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
+<p><strong>Dodatek</strong>: Raziščite lastnost časovnega premika Fourierove transformacije, in:</p>
+<ul class="simple">
+<li><p>ocenite časovni zamik med zajetima in generiranima signaloma.</p></li>
+<li><p>Zajeta signala v frekvenčni domeni z uporabo lastnosti časovnega zamika poravnajte z generiranima.</p></li>
+<li><p>Poravnana signala preslikajte nazaj v časovno domeno (<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.fft.irfft.html#numpy.fft.irfft"><code class="docutils literal notranslate"><span class="pre">np.fft.irfft</span></code></a>) in rezultat poravnave prikažite.</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lastnost časovnega premika je opisana v <a class="reference external" href="https://jankoslavic.github.io/procesiranje_signalov/notebooks/03%20-%20Fourierova%20integralska%20transformacija.html#casovni-premik-ang-time-shifting">predlogi predavanja 3</a>. Časovni premik signala za vrednost <span class="math notranslate nohighlight">\(t_0\)</span> je v frekvenčni domeni opisan z:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{F}\{x(t-t_0)\} = e^{-\textrm{i}\,2\pi\,f\,t_0}\,X(f).
+\]</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02%20-%20LabView%20in%20Arduino%2C%20Python.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>LabView in Arduino, Python</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Domen Gorjup<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
