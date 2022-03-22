@@ -34,7 +34,7 @@ Vsebina domačih nalog bo individualizirana, podatke za svojo nalogo najdete v [
 
 V skaldu z naovdilom naloge pripravite **kratko** poročilo, v katerem najprej povzamete *zahteve naloge* ter *svoje podatke*. V poročilo vključite tako *kodo rešitve* kot *kratke komentarje* na nalogo (primerna oblika je npr. Jupyter Notebook).
 
-Če iz kakršnegakoli razloga (npr. odsotnost) **ustreznih podatkov na vaji niste uspeli pripraviti** to v poročilu komentirajte, ustrezne podatke pa v skaldu z navodilom naloge generirate sami.
+Če iz kakršnegakoli razloga (npr. odsotnost) **ustreznih podatkov na vaji niste uspeli pripraviti** to v poročilu komentirajte, ustrezne podatke pa v skaldu z navodilom naloge generirate sami (na primer z uporabo `scipy.signal`).
 
 **Dodatek:** Za možnost višje ocene sodelovanja na vajah bodite pozorni na predloge razširitve domače naloge.
 
@@ -42,11 +42,22 @@ V skaldu z naovdilom naloge pripravite **kratko** poročilo, v katerem najprej p
 
 **Rok za oddajo** je *dan naslednjega predavanja pri predmetu*, če ni v nalogi definirano drugače.
 
-Sistem omogoča oddajo več datotek. Če poročilo domače naloge pripravite v programskem okolju (npr. Jupyter Notebook), ga je potrebno oddati **tudi v obliki, ki jo je mogoče brez dodatne programske opreme brati v spletnem brskalniku (npr. `.html`, `.pdf`)**. 
+Sistem omogoča oddajo več datotek. Če poročilo domače naloge pripravite v programskem okolju (npr. Jupyter Notebook), ga je potrebno v e-učilnico naložiti **tudi v obliki, ki jo je mogoče brez dodatne programske opreme brati v spletnem brskalniku (npr. `.html`, `.pdf`)**. 
 
 Jupyter Notebook datoteko enostavno pretvorite v ustrezno obliko v meniju `File -> Download as`.
 ```
 ![jupyter_pretvorba](notebooks/images/00/pretvorba_jupyter_notebook.png)
+
+```{admonition} Kriterij ocenjevanja sprotnega dela
+:class: warning
+| <div style="width:65pt">Ocena [%]</div> | Komentar |
+| ----- | -------- |
+| < 70 | Minimalne zahteve naloge niso izpolnjene / poročilo ni ustrezno oddano. |
+| (70, 75] | Osnovne zahteve naloge so izpolnjene s pomanjkljivostmi (npr. neustrezno predstavljeni podatki naloge, nepopolno opremljeni grafi, brez komentarja osnovnih ugotovitev...). |
+| (75, 80] | Izpolnjene osnovne zahteve naloge, urejeno poročilo. |
+| (80, 90] | Izpolnjene osnovne zahteve naloge, dodatna vsebina s pomanjkljivostmi (npr. pomankljivo interpretirani rezultati...). |
+| (90, 100] | Ustrezno uporabljena, predstavljena in interpretirana dodatna vsebina. |
+```
 
 
 ```{note}

@@ -9,3 +9,4 @@ options:
 chapters:
 - file: notebooks/01 - Uvod v LabView.ipynb
 - file: notebooks/02 - LabView in Arduino, Python.ipynb
+- file: notebooks/03 - Fourierova integralska transformacija.ipynb
