@@ -42,9 +42,9 @@ V skaldu z naovdilom naloge pripravite **kratko** poročilo, v katerem najprej p
 
 **Rok za oddajo** je *dan naslednjega predavanja pri predmetu*, če ni v nalogi definirano drugače.
 
-Sistem omogoča oddajo več datotek. Če poročilo domače naloge pripravite v programskem okolju (npr. Jupyter Notebook), ga je potrebno v e-učilnico naložiti **tudi v obliki, ki jo je mogoče brez dodatne programske opreme brati v spletnem brskalniku (npr. `.html`, `.pdf`)**. 
+Sistem omogoča oddajo več datotek. Če poročilo domače naloge pripravite v programskem okolju (npr. Jupyter Notebook), v e-učilnico oddajte **tudi poročilo v `.pdf` obliki**. 
 
-Jupyter Notebook datoteko enostavno pretvorite v ustrezno obliko v meniju `File -> Download as`.
+Jupyter Notebook datoteko enostavno pretvorite v PDF `File -> Print Preview -> Print to PDF`.
 ```
 ![jupyter_pretvorba](notebooks/images/00/pretvorba_jupyter_notebook.png)
 
