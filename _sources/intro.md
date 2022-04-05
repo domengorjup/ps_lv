@@ -32,7 +32,7 @@ Domače naloge in naloge, namenjene preverjanju sodelovanja na vajah.
 :class: warning
 Vsebina domačih nalog bo individualizirana, podatke za svojo nalogo najdete v [e-učilnici](https://e-ucilnica.fs.uni-lj.si/).
 
-V skaldu z naovdilom naloge pripravite **kratko** poročilo, v katerem najprej povzamete *zahteve naloge* ter *svoje podatke*. V poročilo vključite tako *kodo rešitve* kot *kratke komentarje* na nalogo (primerna oblika je npr. Jupyter Notebook).
+V skaldu z naovdilom naloge pripravite **kratko** poročilo (*od 3 do največ 10 celic s kodo*), v katerem najprej povzamete *zahteve naloge* ter *svoje podatke*. V poročilo vključite tako *kodo rešitve* kot *kratke komentarje* na nalogo (primerna oblika je npr. Jupyter Notebook).
 
 Če iz kakršnegakoli razloga (npr. odsotnost) **ustreznih podatkov na vaji niste uspeli pripraviti** to v poročilu komentirajte, ustrezne podatke pa v skaldu z navodilom naloge generirate sami (na primer z uporabo `scipy.signal`).
 
