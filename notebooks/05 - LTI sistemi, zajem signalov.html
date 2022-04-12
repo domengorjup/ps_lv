@@ -233,6 +233,23 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#zajem-signalov-za-dolocitev-prenosnih-funkcij-lti-sistema">
    5.1. Zajem signalov za določitev prenosnih funkcij LTI sistema
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#merilni-sistem">
+     5.1.1. Merilni sistem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#labview-program">
+     5.1.2. LabView program
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#meritev">
+     5.1.3. Meritev
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#domaca-naloga">
@@ -263,6 +280,23 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#zajem-signalov-za-dolocitev-prenosnih-funkcij-lti-sistema">
    5.1. Zajem signalov za določitev prenosnih funkcij LTI sistema
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#merilni-sistem">
+     5.1.1. Merilni sistem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#labview-program">
+     5.1.2. LabView program
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#meritev">
+     5.1.3. Meritev
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#domaca-naloga">
@@ -314,19 +348,137 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="zajem-signalov-za-dolocitev-prenosnih-funkcij-lti-sistema">
 <h2><span class="section-number">5.1. </span>Zajem signalov za določitev prenosnih funkcij LTI sistema<a class="headerlink" href="#zajem-signalov-za-dolocitev-prenosnih-funkcij-lti-sistema" title="Permalink to this headline">¶</a></h2>
 <p>Pri eksperimentalni karakterizaciji LTI sistema torej določamo razmerje med odzivom sistema in znanim signlom vzbujanja, na podlagi izmerjenih signalov <span class="math notranslate nohighlight">\(x(t)\)</span>, <span class="math notranslate nohighlight">\(f(t)\)</span>.</p>
-<p>Namen te vaje je spoznati laboratorijsko opremo in izvesti postopek meritve signalov, potrebnih, za določitev prenosnih funkcij mehanskega LTI sistema.</p>
+<p>Namen te vaje je spoznati laboratorijsko opremo in izvesti meritve signalov, potrebnih za določitev prenosnih funkcij mehanskega LTI sistema.</p>
+<div class="warning admonition">
+<p class="admonition-title">Naloga: Meritev prenosnih funkcij jeklenega nosilca</p>
+<p>Pripravite zajemni sistem in opravite meritve odziva (pospeška) jeklenega nosilca na impulzno vzbujanje v različnih točkah. Vsak naj izvede meritev odziva (pospšeka) nosilca pri <strong>vzbujanju z modalnim kladivom v točki, podani v tabeli podatkov</strong>, ki jo najdete v e-učilnici.</p>
+<p>Delo v laboratoriju bo potekalo <strong>skupinsko</strong>. Nalogo sestavljajo trije vsebinski deli, ki so podrobneje opisani spodaj:</p>
+<ol class="simple">
+<li><p>Postavitev in povezava merilne opreme.</p></li>
+<li><p>Priprava LabView programa za zajeem signalov.</p></li>
+<li><p>Meritev signalov vzbujevalne sile in odziva sistema pri impulznem vzbujanju v različnih točkah.</p></li>
+</ol>
+</div>
+<div class="section" id="merilni-sistem">
+<h3><span class="section-number">5.1.1. </span>Merilni sistem<a class="headerlink" href="#merilni-sistem" title="Permalink to this headline">¶</a></h3>
+<p>Merilna veriga je sestavljena iz naslednjih komponent:</p>
+<ul class="simple">
+<li><p>Merilna kartica <a class="reference external" href="https://www.ni.com/sl-si/support/model.ni-9234.html">NI 9234</a>:</p>
+<ul>
+<li><p>4 analogni vhodni kanali (BNC priključek).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\pm\)</span> 5 V.</p></li>
+<li><p>Frekvenca vzorčenja do 51200 Hz (dovoljene vrednosti: <span class="math notranslate nohighlight">\(51200 / n\)</span>, <span class="math notranslate nohighlight">\(n \in [1, 2, 3, \dots, 31]\)</span>).</p></li>
+<li><p>24-bitna ločljvost.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Jeklen nosilec:</p>
+<ul>
+<li><p>Dolžina: 500 mm.</p></li>
+<li><p>11 označenih merilnih mest (na pozicijah <span class="math notranslate nohighlight">\([25, 475]\)</span> mm, razmik <span class="math notranslate nohighlight">\(45\)</span> mm).</p></li>
+<li><p>Meritev odziva na lokaciji <span class="math notranslate nohighlight">\(0\)</span>, vzbujanje na lokacijah <span class="math notranslate nohighlight">\(i \in [1, 2, \dots 10]\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Modalno kladivo <a class="reference external" href="https://www.pcb.com/products?m=TLD086C03">PCB TLD086C03</a>:</p>
+<ul>
+<li><p>IEPE silomer.</p></li>
+<li><p>BNC povezava z analognim vhodom merilne kartice.</p></li>
+<li><p>Merilno območje: <span class="math notranslate nohighlight">\(\pm\)</span> 2224 N.</p></li>
+<li><p>Občutljivost: podatek na škatli instrumenta.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Pospeškomer <a class="reference external" href="https://www.pcb.com/products?model=333B30">PCB  333B30</a>:</p>
+<ul>
+<li><p>IEPE pospeškomer.</p></li>
+<li><p>BNC povezava z analognim vhodom merilne kartice.</p></li>
+<li><p>Merilno območje: <span class="math notranslate nohighlight">\(\pm\)</span> 490 <span class="math notranslate nohighlight">\(m/s^2\)</span>.</p></li>
+<li><p>Občutljivost: podatek na škatli instrumenta.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Merilni osebni računalnik (USB povezava).</p></li>
+</ul>
 <div class="important admonition">
-<p class="admonition-title">Meritev prenosnih funkcij jeklenega nosilca</p>
-<p>Z uporabo laboratorijske merilne opreme in programskega okolja LabView pripravite zajemni sistem in opravite meritve odziva (pospeška) jeklenega nosilca na impulzno vzbujanje v različnih točkah.</p>
-<p>Delo v laboratoriju (priprava zajemnega sistema, izvedba meritve) bo potekalo <strong>skupinsko</strong>.</p>
-<p>Vsak naj izvede meritev odziva nosilca pri <strong>vzbujanju z modalnim kladivom v točki, podani v tabeli podatkov</strong>, ki jo najdete v e-učilnici.</p>
+<p class="admonition-title">1. Postavitev merilne verige</p>
+<p>Povežite merilno verigo zajemnega sistema. Pomagajte si z zgornjim opisom meirlne opreme ter spodnjo sliko.</p>
+<p>Pri povezavi merilnih zaznaval (pospeškomer, silomer) na merilno kartico lahko uporabite poljubne vhodne kanale. Poskrbite, da boste izbiro upoštevali pri nastavitvi LabView programa.</p>
+<p><img alt="zajemni-sistem" src="../_images/00_zajemni_sistem.png" /></p>
+</div>
+</div>
+<div class="section" id="labview-program">
+<h3><span class="section-number">5.1.2. </span>LabView program<a class="headerlink" href="#labview-program" title="Permalink to this headline">¶</a></h3>
+<div class="important admonition">
+<p class="admonition-title">2. Priprava LabView programa</p>
+<p>Pripravite LabView program za zajem signalov vzbujanja in odziva opazovanega nosilca.</p>
+<p>Glavne nastavitve zajema so:</p>
+<ul class="simple">
+<li><p>Frekvenca vzorčenja: 25600 Hz,</p></li>
+<li><p>Dolžina zajetega signala po vsakem udarcu: 1 s (25600 točk),</p></li>
+<li><p>Število predvzorcev (shranjenih pred detekcijo udarca): 100,</p></li>
+<li><p>Shranjevanje datotek: oblika <code class="docutils literal notranslate"><span class="pre">.lvm</span></code>, posamezen udarec v segmentu.</p></li>
+</ul>
+<p>Program naj v zanki (do ročne prikinive):</p>
+<ul>
+<li><p>Zajema signale pospeška in sile na ustreznih kanalih merilne kartice (<a class="reference external" href="https://knowledge.ni.com/KnowledgeArticleDetails?id=kA03q000000x0QHCAY&amp;l=sl-SI"><code class="docutils literal notranslate"><span class="pre">Express</span> <span class="pre">-&gt;</span> <span class="pre">Input</span> <span class="pre">-&gt;</span> <span class="pre">DAQ</span> <span class="pre">Assistant</span></code></a>):</p>
+<ul class="simple">
+<li><p>nastavite zajem vzbujanja (“Force (IEPE)”) in odziva (“Acceleration IEPE”) na povezanih kanalih,</p></li>
+</ul>
+<p><img alt="channels" src="../_images/01_physical_channels.png" /></p>
+<ul class="simple">
+<li><p>nastavite občutljivosti zaznaval in parametre zajema v skladu s podatki,</p></li>
+</ul>
+<p><img alt="acquisotion-config" src="../_images/05_channel_config.png" /></p>
+<ul class="simple">
+<li><p>(zajete signale lahko sproti prikazujete (<code class="docutils literal notranslate"><span class="pre">Desni</span> <span class="pre">klik</span> <span class="pre">na</span> <span class="pre">signal</span> <span class="pre">-&gt;</span> <span class="pre">Create</span> <span class="pre">Graph</span> <span class="pre">indicator</span></code>)).</p></li>
+</ul>
+</li>
+<li><p>Proži shranjevanje in prikaz, ko je zaznan udarec (<code class="docutils literal notranslate"><span class="pre">Express</span> <span class="pre">-&gt;</span> <span class="pre">Signal</span> <span class="pre">Manipulation</span> <span class="pre">-&gt;</span> <span class="pre">Trigger</span> <span class="pre">and</span> <span class="pre">Gate</span></code>):</p>
+<ul class="simple">
+<li><p>nastavite ustrezen nivo sile, ki predstavlja zazavo udarca,</p></li>
+<li><p>nastavite ustrezni kanal sprožilca (“Trigger channel”),</p></li>
+<li><p>nastavite predpisano število predvzorcev (“Pre samples”),</p></li>
+<li><p>nastavite ustrezno število shranjenih vzorcev po zaznavi udarca (“Samples”).</p></li>
+</ul>
+<p><img alt="trigger" src="../_images/07_trigger_settings.png" /></p>
+</li>
+<li><p><em>Če</em> je zaznan udarec (<code class="docutils literal notranslate"><span class="pre">Trigger</span> <span class="pre">and</span> <span class="pre">Gate:</span> <span class="pre">Data</span> <span class="pre">Available</span></code>) zapiše nastavljeno število vzorcev iz sprožilca v <code class="docutils literal notranslate"><span class="pre">lvm</span></code> datoteko:</p>
+<ul class="simple">
+<li><p>poskrbite, da bo vsaka ponovitev meritve prebrana kot posamezni segment datoteke (“Segment headers”).</p></li>
+</ul>
+</li>
+<li><p>(Po zaznanem udarcu lahko signal iz sprožilca prikažete na grafu.)</p></li>
+<li><p>(Prikažete lahko tudi graf frekvenčnega spektra signala v sprožilcu (<code class="docutils literal notranslate"><span class="pre">Express</span> <span class="pre">-&gt;</span> <span class="pre">Signal</span> <span class="pre">Analysis</span> <span class="pre">-&gt;</span> <span class="pre">Spectral</span></code>).)</p></li>
+</ul>
+</div>
+<p>Primer blokovnega diagrama in krmilne plošče zaključenega programa:</p>
+<p><img alt="vi" src="../_images/08_vi.png" /></p>
+</div>
+<div class="section" id="meritev">
+<h3><span class="section-number">5.1.3. </span>Meritev<a class="headerlink" href="#meritev" title="Permalink to this headline">¶</a></h3>
+<div class="important admonition">
+<p class="admonition-title">3. Izvedba meritve signalov</p>
+<p>Pri ustrenzo pripravljenem LabView programu se zajem posameznega segmenta (udarca) sproži samodejno z uporabo sprožilca (<code class="docutils literal notranslate"><span class="pre">Trigger</span> <span class="pre">and</span> <span class="pre">gate</span></code>).</p>
+<p>Pri izvajanju meritve poskrbite, da:</p>
+<ul class="simple">
+<li><p>ste sistem vzbudili z udarcem na označenem mestu, v smeri normalno na zgornjo ploskev nosilca,</p></li>
+<li><p>sila posameznega udarca ni previsoka (primerna sila udarca: <span class="math notranslate nohighlight">\(~200\)</span> N),</p></li>
+<li><p>v zajetem segmentu ni večkratnih zadetkov (preverite, da je v signalu sprožilca en sam izrazit vrh sile).</p></li>
+</ul>
+<p><img alt="double-hit" src="../_images/09_neustrezno_dvojni_udarec.png" /></p>
+</div>
 </div>
 </div>
 <div class="section" id="domaca-naloga">
 <h2><span class="section-number">5.2. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Permalink to this headline">¶</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Domača naloga</p>
-<p>V okolju Jupyter Notebook pripravite kratko poročilo <em>(od 3 do 10 celic s kodo)</em> z rezultati meritev, ki ste jih izvedli na vaji, v katerem naj bodo razvidni podatki naloge. Poročilo naj vsebuje:</p>
+<p>V okolju Jupyter Notebook pripravite kratko poročilo <em>(od 3 do 10 celic s kodo)</em> z rezultati in kratkim komentarjem meritev, ki ste jih izvedli na vaji, v katerem naj bodo razvidni podatki naloge. Poročilo naj vsebuje tudi:</p>
 <ul class="simple">
 <li><p>prikaz (časovne vrste ter amplitudne spektre) vseh meritev, ki ste jih opravili v skupini (pri vseh podanih točkah vzbujanja),</p></li>
 <li><p>prikaz časovne vrste ter amplitudnega spektra vaše meritve (pri vzbujanju v točki, podani v podatkih naloge),</p></li>
