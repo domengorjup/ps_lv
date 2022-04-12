@@ -11,3 +11,4 @@ chapters:
 - file: notebooks/02 - LabView in Arduino, Python.ipynb
 - file: notebooks/03 - Fourierova integralska transformacija.ipynb
 - file: notebooks/04 - Lastnosti Fourierove transformacije.ipynb
+- file: notebooks/05 - LTI sistemi, zajem signalov.ipynb
