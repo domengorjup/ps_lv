@@ -12,3 +12,4 @@ chapters:
 - file: notebooks/03 - Fourierova integralska transformacija.ipynb
 - file: notebooks/04 - Lastnosti Fourierove transformacije.ipynb
 - file: notebooks/05 - LTI sistemi, zajem signalov.ipynb
+- file: notebooks/06 - LTI sistemi 2, prenosne funkcije.ipynb
