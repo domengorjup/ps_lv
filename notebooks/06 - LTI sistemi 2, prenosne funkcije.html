@@ -867,7 +867,14 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">N_w</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">l_w</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
 <span class="n">w_force</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="n">w_force</span><span class="p">[:</span><span class="n">N_w</span><span class="p">]</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">windows</span><span class="o">.</span><span class="n">tukey</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)[</span><span class="o">-</span><span class="n">N_w</span><span class="p">:]</span>
-<span class="n">w_f</span> <span class="o">=</span> <span class="n">w_force</span> <span class="o">*</span> <span class="n">w_exponential</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ker smo na signalu odziva uporabili eksponentno okno, moramo <em>eksponentno okno uporabiti tudi na signalu sile</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w_f</span> <span class="o">=</span> <span class="n">w_force</span> <span class="o">*</span> <span class="n">w_exponential</span>
 </pre></div>
 </div>
 </div>
@@ -889,7 +896,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06 - LTI sistemi 2, prenosne funkcije_63_0.png" src="../_images/06 - LTI sistemi 2, prenosne funkcije_63_0.png" />
+<img alt="../_images/06 - LTI sistemi 2, prenosne funkcije_65_0.png" src="../_images/06 - LTI sistemi 2, prenosne funkcije_65_0.png" />
 </div>
 </div>
 <p>Uporaba force okna:</p>
@@ -916,7 +923,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06 - LTI sistemi 2, prenosne funkcije_66_0.png" src="../_images/06 - LTI sistemi 2, prenosne funkcije_66_0.png" />
+<img alt="../_images/06 - LTI sistemi 2, prenosne funkcije_68_0.png" src="../_images/06 - LTI sistemi 2, prenosne funkcije_68_0.png" />
 </div>
 </div>
 </div>
@@ -941,7 +948,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/06 - LTI sistemi 2, prenosne funkcije_69_0.png" src="../_images/06 - LTI sistemi 2, prenosne funkcije_69_0.png" />
+<img alt="../_images/06 - LTI sistemi 2, prenosne funkcije_71_0.png" src="../_images/06 - LTI sistemi 2, prenosne funkcije_71_0.png" />
 </div>
 </div>
 </div>
