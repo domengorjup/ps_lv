@@ -785,13 +785,14 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">F_primer</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">*=</span> <span class="mi">2</span>
 
 <span class="n">w</span><span class="p">,</span> <span class="n">H_primer</span> <span class="o">=</span> <span class="n">sistem_primer</span><span class="o">.</span><span class="n">freqresp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">freq</span><span class="p">)</span>
+<span class="n">H_okno</span> <span class="o">=</span> <span class="n">X_okno</span><span class="o">/</span><span class="n">F_primer</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_okno</span><span class="o">/</span><span class="n">F_primer</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;z eksponentnim oknom&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">H_okno</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;z eksponentnim oknom&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">H_primer</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;sympy.lti&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">1e-9</span><span class="p">,</span> <span class="mf">1e-2</span><span class="p">)</span>
