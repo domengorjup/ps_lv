@@ -388,10 +388,10 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 <div class="important admonition">
 <p class="admonition-title">Naloga 1 (10 minut)</p>
-<p>Za primer signala:
-$<span class="math notranslate nohighlight">\(x(t) = X_1 \, \sin(2\pi \, f_1 \, t) + X_2 \, \cos(2\pi \, f_2 \, t)\)</span>$</p>
+<p>Za primer signala:</p>
+<p><span class="math notranslate nohighlight">\(x(t) = X_1 \, \sin(2\pi \, f_1 \, t) + X_2 \, \cos(2\pi \, f_2 \, t)\)</span></p>
 <p>simulirajte vzorčenje s z vzorčno frekvenco <span class="math notranslate nohighlight">\(f_s\)</span>, nato pa še z vzorčno frekvenco <span class="math notranslate nohighlight">\(f_s / 2\)</span>.</p>
-<p>Prikažite obe časovni vrsti, s pomočjo izrisa amplitudnih spektraov obeh signalov pa komentirajte pojav frekvenčnega prekrivanja.</p>
+<p>Prikažite obe časovni vrsti, s pomočjo izrisa amplitudnih spektrov obeh signalov pa komentirajte pojav frekvenčnega prekrivanja.</p>
 <p>Podatki:</p>
 </div>
 <div class="cell docutils container">
@@ -405,69 +405,20 @@ $<span class="math notranslate nohighlight">\(x(t) = X_1 \, \sin(2\pi \, f_1 \, 
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span>
-<span class="n">T</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">X_1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f_1</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">X_2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f_2</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
-</pre></div>
+<div class="cell tag_remove-input docutils container">
 </div>
+<div class="cell tag_remove-input docutils container">
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_2</span> <span class="o">=</span> <span class="n">x</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">t_2</span> <span class="o">=</span> <span class="n">t</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">dt_2</span> <span class="o">=</span> <span class="n">t_2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t_2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">fs_2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">dt_2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f_s$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_2</span><span class="p">,</span> <span class="n">x_2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f_s/2$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x(t)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <img alt="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_12_0.png" src="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_12_0.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">*=</span> <span class="mi">2</span>
-<span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">dt</span><span class="p">)</span>
-</pre></div>
+<div class="cell tag_remove-input docutils container">
 </div>
+<div class="cell tag_remove-input docutils container">
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x_2</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_2</span><span class="p">)</span>
-<span class="n">X_2</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">*=</span> <span class="mi">2</span>
-<span class="n">freq_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_2</span><span class="p">),</span> <span class="n">t_2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f_s$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f_s/2$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fs_2</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;X(f)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
-</pre></div>
-</div>
-</div>
+<div class="cell tag_hide-input tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <img alt="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_15_0.png" src="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_15_0.png" />
 </div>
@@ -510,7 +461,7 @@ $<span class="math notranslate nohighlight">\(x(t) = X_1 \, \sin(2\pi \, f_1 \, 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Temp/ipykernel_17604/1568578183.py:2: RuntimeWarning: divide by zero encountered in log10
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Temp/ipykernel_12320/1568578183.py:2: RuntimeWarning: divide by zero encountered in log10
   ax.plot(freq, 20*np.log10(np.abs(h)), c=&#39;k&#39;)
 </pre></div>
 </div>
@@ -559,7 +510,7 @@ $<span class="math notranslate nohighlight">\(x(t) = X_1 \, \sin(2\pi \, f_1 \, 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Temp/ipykernel_17604/1088635885.py:2: RuntimeWarning: divide by zero encountered in log10
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Temp/ipykernel_12320/1088635885.py:2: RuntimeWarning: divide by zero encountered in log10
   ax.plot(freq, 20*np.log10(np.abs(h)), c=&#39;k&#39;)
 </pre></div>
 </div>
