@@ -415,11 +415,11 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <ul class="simple">
-<li><p>Silomer <a class="reference external" href="https://www.pcb.com/products?model=208c04">PCB 208C04</a>:</p>
+<li><p>Silomer <a class="reference external" href="https://www.pcb.com/products?model=208c01">PCB 208C01</a>:</p>
 <ul>
 <li><p>IEPE silomer.</p></li>
 <li><p>BNC povezava z analognim vhodom merilne kartice.</p></li>
-<li><p>Merilno območje: <span class="math notranslate nohighlight">\(\pm\)</span> 44 kN.</p></li>
+<li><p>Merilno območje: <span class="math notranslate nohighlight">\(\pm\)</span> 4.4 N.</p></li>
 <li><p>Občutljivost: podatek na škatli instrumenta.</p></li>
 </ul>
 </li>
@@ -442,10 +442,17 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <ul class="simple">
-<li><p>Analogni visokoprepustni filter.</p></li>
+<li><p>Analogni visokoprepustni filter.</p>
+<ul>
+<li><p>frekvenca odreza: 2.8 Hz</p></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li><p>AC Ojačevalnik analognega signala.</p>
+<ul class="simple">
+<li><p>največja dopustna vhodna napetost: <span class="math notranslate nohighlight">\(\pm 1\)</span> V (<strong>ustrezno nastavite največjo napetost izhodnega kanala AO kartice!</strong>)</p></li>
+</ul>
 <p><strong>V izogib poškodbam merilne opreme pred meritvijo ojačanje napajalnika postavite na 0!</strong></p>
 <p>Ustrenzo nastavitev ojačanja poiščite pred začetkom meritve.</p>
 </li>
@@ -482,7 +489,7 @@ Preverite, da nastavitve opravil ustrezajo predpisanim parametrom zajema in gene
 <li><p>Trajanje vsakega generirranega segmenta: 2 s,</p></li>
 <li><p>Kontinuirano generiranje segmentov (<code class="docutils literal notranslate"><span class="pre">Continuous</span> <span class="pre">Samples</span></code>).</p></li>
 <li><p>Profil naključnega vzbujevlanega signala konstantne amplitude na območju <span class="math notranslate nohighlight">\([10, 3000] Hz\)</span>,</p></li>
-<li><p>Povprečne amplitude vzbujevalne sile: <strong>3 N RMS</strong>.</p></li>
+<li><p>Povprečne amplitude vzbujevalne sile: <strong>1 N RMS</strong>.</p></li>
 </ul>
 <p><img alt="output_task" src="../_images/03_output_task.png" /></p>
 <p><strong>Python Program</strong> naj v zanki:</p>
@@ -510,11 +517,12 @@ Preverite, da nastavitve opravil ustrezajo predpisanim parametrom zajema in gene
 <p>Vsak naj zajame predpisano število segmentov meritve odziva sistema v točki, predpisani v podatih naloge.</p>
 <p>Ker uporabljamo eno samo zaznavalo pospeška, je treba tega pred meritvijo namestiti na ustrezno merilno mesto. Za pritrditev uporabite majhno količino voščenega lepila.</p>
 <p><img alt="wax" src="../_images/05_UJ_0216_Beeswax.png" /></p>
-<p><em>Pred začetkom meritve nastavite ojačanaje ojačevalnika signla tako, da boste v meritvi dosegli predpisano povprečno amplitudo sile (3 N RMS)!</em> <strong>Preliminarno meritev začnite z ojačanjem 0, in tega ustrezno povečajte.</strong></p>
+<p><em>Pred začetkom meritve nastavite ojačanaje ojačevalnika signla tako, da boste v meritvi dosegli predpisano povprečno amplitudo sile (1 N RMS)!</em> <strong>Preliminarno meritev začnite z ojačanjem 0, in tega ustrezno povečajte.</strong></p>
 <p>Ko ste ustrezno nastaivli merilni sistem, NI MAX opravila in parametre Python programa, meritev poženete z zagonom funkcije <code class="docutils literal notranslate"><span class="pre">IO_meritev()</span></code> v poglavju “Meritev” Python programa.</p>
 <p>Pri izvajanju meritve poskrbite, da:</p>
 <ul class="simple">
 <li><p>je pospeškomer nameščen na ustrenzno merilno mesto,</p></li>
+<li><p>je največja amplituda generiranega signala v dopustnih mejah <span class="math notranslate nohighlight">\(\pm 1\)</span> V,</p></li>
 <li><p>je ojačanje napajalnika nastavljeno tako, da vzbujate z ustreno amplitudo sile,</p></li>
 <li><p>ste zajeli ustrezno število segmentov meritve,</p></li>
 <li><p>zajete podatke shranite tako, da jih boste lahko kasneje odpirali in obdelali v Pythonu.</p></li>
