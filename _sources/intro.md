@@ -34,7 +34,6 @@ Vsebina domačih nalog bo individualizirana, podatke za svojo nalogo najdete v [
 
 V skaldu z naovdilom naloge pripravite **kratko** poročilo (*od 3 do 10 celic s kodo*), v katerem najprej povzamete *zahteve naloge* ter *svoje podatke*. V poročilo vključite tako *kodo rešitve* kot *kratke komentarje* na nalogo (primerna oblika je npr. Jupyter Notebook).
 
-Če iz kakršnegakoli razloga (npr. odsotnost) **ustreznih podatkov na vaji niste uspeli pripraviti** to v poročilu komentirajte, ustrezne podatke pa v skaldu z navodilom naloge generirate sami (na primer z uporabo `scipy.signal`).
 
 **Dodatek:** Za možnost višje ocene sodelovanja na vajah bodite pozorni na predloge razširitve domače naloge.
 
@@ -52,16 +51,12 @@ Jupyter Notebook datoteko enostavno pretvorite v PDF `File -> Print Preview -> P
 :class: warning
 | <div style="width:65pt">Ocena [%]</div> | Komentar |
 | ----- | -------- |
-| < 70 | Minimalne zahteve naloge niso izpolnjene / poročilo ni ustrezno oddano. |
-| (70, 75] | Osnovne zahteve naloge so izpolnjene s pomanjkljivostmi (npr. neustrezno predstavljeni podatki naloge, nepopolno opremljeni grafi, brez komentarja osnovnih ugotovitev...). |
-| (75, 80] | Izpolnjene osnovne zahteve naloge, urejeno poročilo. |
+| < 50 | Na vajo niste ustrezno pripravljeni **in** minimalne zahteve naloge niso izpolnjene / poročilo ni ustrezno oddano. |
+| < 60 | Na vajo niste ustrezno pripravljeni **ali** minimalne zahteve domače naloge niso izpolnjene. |
+| (60, 70] | Osnovne zahteve naloge so izpolnjene s pomanjkljivostmi (npr. neustrezno predstavljeni podatki naloge, nepopolno opremljeni grafi, brez komentarja osnovnih ugotovitev...). |
+| (70, 80] | Izpolnjene osnovne zahteve naloge, zadostno poročilo. |
 | (80, 90] | Izpolnjene osnovne zahteve naloge, dodatna vsebina s pomanjkljivostmi (npr. pomankljivo interpretirani rezultati...). |
 | (90, 100] | Ustrezno uporabljena, predstavljena in interpretirana dodatna vsebina. |
-```
-
-
-```{note}
-Gre za delo v nastanku, pridržujemo si pravico spremembe vsebine.
 ```
 
 
