@@ -6,6 +6,12 @@ Tukaj najdete predloge laboratorijskih vaj pri predmetu [Procesiranje signalov](
 
 Predloge so pripravljene v obliki interaktivnih [Jupyter Notebook](https://jupyter.org/) dokumentov, katerih izvorna koda je prav tako objavljena in je namenjena pripravi in izvedbi laboratorijskih vaj.
 
+```{admonition} Sodelovanje na vajah
+:class: warning
+Na laboratorijskih vajah se bomo ukvarjali z zajemom in obdelavo realnih signalov. Na vaje zato **pridite pripravljeni** tako, da vnaprej preštudirate predlogo vaje, ki se vsebinsko navezuje tudi na aktualno predavanje. Sodelovanje na vajah bomo preverjali s tedenskimi nalogami.
+```
+
+
 Poseben pomen v predlogah imajo označeni okvirčki, v katerih so zapisne:
 
 ```{note}
