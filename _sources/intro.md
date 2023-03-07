@@ -63,6 +63,8 @@ Jupyter Notebook datoteko enostavno pretvorite v PDF `File -> Print Preview -> P
 | (70, 80] | Izpolnjene osnovne zahteve naloge, zadostno poročilo. |
 | (80, 90] | Izpolnjene osnovne zahteve naloge, dodatna vsebina s pomanjkljivostmi (npr. pomankljivo interpretirani rezultati...). |
 | (90, 100] | Ustrezno uporabljena, predstavljena in interpretirana dodatna vsebina. |
+
+V primeru **zamude** se ocena domače naloge zniža (10% / dan).
 ```
 
 
