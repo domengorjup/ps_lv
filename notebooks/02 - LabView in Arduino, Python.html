@@ -388,7 +388,6 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="tex2jax_ignore mathjax_ignore section" id="labview-in-arduino-python">
 <h1><span class="section-number">2. </span>LabView in Arduino, Python<a class="headerlink" href="#labview-in-arduino-python" title="Permalink to this headline">¶</a></h1>
 <p>Kljub sicer zaprti strukturi je del LabView ekosistema tudi upravljanik paketov <a class="reference external" href="https://www.vipm.io/">“VI Package manager (VIPM)”</a>, kjer lahko uporabniki delijo LabView kodo in pakete, s katerimi je mogoča uporaba funkcionalnost in opreme, ki je sam LabView sicer ne podpira.</p>
-<p>Za nekomercialno rabo je v istem sklopu na voljo tudi <a class="reference external" href="https://www.ni.com/sl-si/shop/labview/select-edition/labview-community-edition.html">LabView Community Edition</a>, ki omogoča brezplačn uporabo osnovnih funkcij LabView-a.</p>
 <div class="note admonition">
 <p class="admonition-title">Namestitev LabView Community Edition</p>
 <p>Za nekomercialno rabo je brezplačno na voljo <a class="reference external" href="https://www.ni.com/sl-si/shop/labview/select-edition/labview-community-edition.html">LabView Community Edition</a>, ki omogoča uporabo vseh osnovnih funkcij LabView-a, ki jih potrebujemo pri Procesiranju signalov.</p>
@@ -434,7 +433,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <p>Pred zajemom signalov z Arduinom (<strong>preden priključimo signalni kabel na vhodni terminal</strong>) moramo torej <strong>vedno preveriti, da je sistem napajan preko USB povezave</strong>, ter da <strong>signal, ki ga priključimo na kateregakoli od vhodnih terminalov, v mejah</strong>:</p>
 <div class="math notranslate nohighlight">
-\[V_{\mathrm{in}} = V_{\mathrm{offset}} + V_{\mathrm{PP}} \in [0, 5] \mathrm{ V}\]</div>
+\[V_{\mathrm{in}} = V_{\mathrm{offset}} \pm V_{\mathrm{PP}} / 2 \in [0, 5] \mathrm{ V}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V_offset</span> <span class="o">=</span> <span class="mf">2.5</span>
@@ -453,8 +452,8 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;merilno območje&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;dopustno območje&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">V_offset</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">signal</span><span class="p">),</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">signal</span><span class="p">),</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mf">5.5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;signal&#39;</span><span class="p">)</span>
@@ -646,7 +645,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1d325c73430&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x204a74776a0&gt;
 </pre></div>
 </div>
 <img alt="../_images/02 - LabView in Arduino, Python_40_1.png" src="../_images/02 - LabView in Arduino, Python_40_1.png" />
@@ -698,7 +697,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1d323ac2aa0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x204a74d5ff0&gt;
 </pre></div>
 </div>
 <img alt="../_images/02 - LabView in Arduino, Python_46_1.png" src="../_images/02 - LabView in Arduino, Python_46_1.png" />
@@ -740,7 +739,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1d325b8bc70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x204a758c9a0&gt;
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
@@ -755,9 +754,9 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="warning admonition">
 <p class="admonition-title">Domača naloga</p>
 <ul class="simple">
-<li><p>Z uporabo prikazanih funkcij v LabView-u zajamite signal s predpisanimi parametri, pripravljen z uporabo generatorja signalov (individualizirane podatke najdete v <a class="reference external" href="https://e-ucilnica.fs.uni-lj.si/">e-učilnici</a>.</p></li>
+<li><p>Z uporabo prikazanih funkcij v LabView-u zajamite signal s predpisanimi parametri, pripravljen z uporabo generatorja signalov (individualizirane podatke najdete v <a class="reference external" href="https://e-ucilnica.fs.uni-lj.si/">e-učilnici</a>).</p></li>
 <li><p>Grafično predstavite “surove” podatke.</p></li>
-<li><p>Na zajetem signalu smiselno prikažite uporabo predpisaneih numeričnih podtopkov (<code class="docutils literal notranslate"><span class="pre">obdelava_#</span></code> v tabeli s podatki).</p></li>
+<li><p>Na zajetem signalu smiselno prikažite uporabo predpisaneih numeričnih postopkov (<code class="docutils literal notranslate"><span class="pre">obdelava_#</span></code> v tabeli s podatki).</p></li>
 </ul>
 <p>Pripravite kratko poročilo v okolju Jupyter Notebook <em>(od 3 do 10 celic s kodo)</em>, iz katerega naj bodo razvidni podatki nalge (iz tabele), ter da ste vse parametre pri izvedbi naloge tudi upoštevali (ustrezno izpišite obliko signala…).
 Poročilo oddajte tudi v <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> obliki (glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
