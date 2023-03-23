@@ -5,3 +5,4 @@ disp_filename: data\temp_file\disp_002.pkl
 disp_shape: (7, 3750, 2)
 analysis_run <0>: finished: 2023-02-17 08:43:59.486364	last time point: 791
 analysis_run <1>: finished: 2023-03-07 09:38:20.415714	last time point: 1082
+analysis_run <2>: finished: 2023-03-22 11:36:32.607245	last time point: 936
