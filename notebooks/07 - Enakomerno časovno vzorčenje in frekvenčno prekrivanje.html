@@ -251,18 +251,23 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#domaca-naloga">
+   7.1. Domača naloga
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#diskretizacija-signalov">
-   7.1. Diskretizacija signalov
+   7.2. Diskretizacija signalov
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#enakomerno-casovno-vzorcenje">
-     7.1.1. Enakomerno časovno vzorčenje
+     7.2.1. Enakomerno časovno vzorčenje
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#frekvencno-prekrivanje-aliasing">
-     7.1.2. Frekvenčno prekrivanje (
+     7.2.2. Frekvenčno prekrivanje (
      <em>
       aliasing
      </em>
@@ -271,22 +276,17 @@ const thebe_selector_output = ".output, .cell_output"
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#filtriranje-za-odpravo-frekvencnega-nalaganja">
-       7.1.2.1. Filtriranje za odpravo frekvenčnega nalaganja
+       7.2.2.1. Filtriranje za odpravo frekvenčnega nalaganja
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#kvantizacija">
-     7.1.3. Kvantizacija
+     7.2.3. Kvantizacija
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#domaca-naloga">
-   7.2. Domača naloga
-  </a>
  </li>
 </ul>
 
@@ -309,18 +309,23 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#domaca-naloga">
+   7.1. Domača naloga
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#diskretizacija-signalov">
-   7.1. Diskretizacija signalov
+   7.2. Diskretizacija signalov
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#enakomerno-casovno-vzorcenje">
-     7.1.1. Enakomerno časovno vzorčenje
+     7.2.1. Enakomerno časovno vzorčenje
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#frekvencno-prekrivanje-aliasing">
-     7.1.2. Frekvenčno prekrivanje (
+     7.2.2. Frekvenčno prekrivanje (
      <em>
       aliasing
      </em>
@@ -329,22 +334,17 @@ const thebe_selector_output = ".output, .cell_output"
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#filtriranje-za-odpravo-frekvencnega-nalaganja">
-       7.1.2.1. Filtriranje za odpravo frekvenčnega nalaganja
+       7.2.2.1. Filtriranje za odpravo frekvenčnega nalaganja
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#kvantizacija">
-     7.1.3. Kvantizacija
+     7.2.3. Kvantizacija
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#domaca-naloga">
-   7.2. Domača naloga
-  </a>
  </li>
 </ul>
 
@@ -365,12 +365,24 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="enakomerno-casovno-vzorcenje-in-frekvencno-prekrivanje">
 <h1><span class="section-number">7. </span>Enakomerno časovno vzorčenje in frekvenčno prekrivanje<a class="headerlink" href="#enakomerno-casovno-vzorcenje-in-frekvencno-prekrivanje" title="Permalink to this headline">¶</a></h1>
-<p>Pri procesiranju merjenih podatkov imamo opravka z diskretno vzorčenimi signali. Pomembno se je zavedati lastnosti procesa diskretizacije sicer zveznih časovnih signalov, katerih osnove si bomo pogledali na tej vaji.</p>
+<p>Pri procesiranju merjenih podatkov imamo opravka z diskretno vzorčenimi signali. Pomembno se je zavedati lastnosti procesa diskretizacije sicer zveznih časovnih signalov, katerega osnove si bomo pogledali na tej vaji.</p>
+<div class="section" id="domaca-naloga">
+<h2><span class="section-number">7.1. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Permalink to this headline">¶</a></h2>
+<div class="warning admonition">
+<p class="admonition-title">Domača naloga</p>
+<p>Z uporabo generatorja signalov in zajemnega sistema Arduino pripravite signal(e), s katerim boste demonstrirali v podatkih določeno lastnost diskretizacije signalov. Pri generiranju in zajemu signalov uporabite v podatkih predpisane parametre, manjkajoče parametre pa določite v skladu s predpisano lastnostjo diskretizacije.</p>
+<p><strong>Dodatek</strong>: Signal(e) pripravite tako, da boste lahko prikazali tudi drugo od obravnavanih lastnosti diskretizacije (<em>časovno vzorčenje</em> oz. <em>kvantizacija</em>). Tudi to na kratko komentirajte.</p>
+<p>LabView program za zajem signalov lahko prenesete v obliki <a class="reference download internal" download="" href="../_downloads/fe35982e9ec10d562dca252f2f56a11d/labview_zajem.zip"><code class="xref download docutils literal notranslate"><span class="pre">zip</span> <span class="pre">arhiva</span></code></a>.</p>
+<p><em>Da bo delo na generatorju signalov potekalo čimbolj učinkovito, lahko izbrane parametre signala in zajema najprej preizkusite z numerično simulacijo. Pomagajte si z zgornjimi primeri in modulom <code class="docutils literal notranslate"><span class="pre">scipy.signal</span></code>.</em></p>
+<p>Pripravite kratko poročilo v okolju Jupyter Notebook <em>(od 3 do 10 celic s kodo)</em>, v katerem naj bodo razvidni podatki naloge ter prikazan vpliv določene lastnosti diskretizacije s kratkimi komentarji, podprtimi s teoretičnimi izhodišči.</p>
+<p>Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> obliki (glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
+</div>
+</div>
 <div class="section" id="diskretizacija-signalov">
-<h2><span class="section-number">7.1. </span>Diskretizacija signalov<a class="headerlink" href="#diskretizacija-signalov" title="Permalink to this headline">¶</a></h2>
-<p>Diskretizacija je postopek, pri katerem v času zvezno sprmenljivko pretvorimo v diskretne vrednosti, primerne za predstavitev v računalniškem pomnilniku. Sestavljata jo dva ločena procesa, <strong>vzorčenje</strong> in <strong>kvantizacija</strong>.</p>
+<h2><span class="section-number">7.2. </span>Diskretizacija signalov<a class="headerlink" href="#diskretizacija-signalov" title="Permalink to this headline">¶</a></h2>
+<p>Diskretizacija je postopek, pri katerem v času zvezno spremenljivko pretvorimo v diskretne vrednosti, primerne za predstavitev v računalniškem pomnilniku. Sestavljata jo dva ločena procesa, <strong>vzorčenje</strong> in <strong>kvantizacija</strong>.</p>
 <div class="section" id="enakomerno-casovno-vzorcenje">
-<h3><span class="section-number">7.1.1. </span>Enakomerno časovno vzorčenje<a class="headerlink" href="#enakomerno-casovno-vzorcenje" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.1. </span>Enakomerno časovno vzorčenje<a class="headerlink" href="#enakomerno-casovno-vzorcenje" title="Permalink to this headline">¶</a></h3>
 <p>Vzorčenje je postopek diskretizacije <em>neodvisne spremenljivke</em> (časa) zveznega procesa.</p>
 <p>Glavni parameter časovnega vzorčenja je <strong>interval (perioda) vzorčenja</strong>, <span class="math notranslate nohighlight">\(\Delta t\)</span>, ki definira <strong>frekvenco vzorčenja</strong>, <span class="math notranslate nohighlight">\(f_s = 1 / \Delta t\)</span>.</p>
 <p>Zvezni časovni signal tako vzorčimo pri diskretnih vrednostih časa <span class="math notranslate nohighlight">\(n \, \Delta t\)</span>.</p>
@@ -389,7 +401,7 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 </div>
 <div class="section" id="frekvencno-prekrivanje-aliasing">
-<h3><span class="section-number">7.1.2. </span>Frekvenčno prekrivanje (<em>aliasing</em>)<a class="headerlink" href="#frekvencno-prekrivanje-aliasing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.2. </span>Frekvenčno prekrivanje (<em>aliasing</em>)<a class="headerlink" href="#frekvencno-prekrivanje-aliasing" title="Permalink to this headline">¶</a></h3>
 <p>Posledica periodičnosti Fourierove transformacije diskretnega signala je, da so frekvenčne komponente signla, višje od <span class="math notranslate nohighlight">\(f_s/2\)</span>, zrcaljene preko meje <span class="math notranslate nohighlight">\(f_s/2\)</span> in povzročajo t. i. <strong>frekvenčno prekrivanje</strong>. To povzroča anomalije v diskretno vzorčenem signalu.</p>
 <p>Frekvenco <span class="math notranslate nohighlight">\(f_N = f_s / 2\)</span> imenujemo tudi <em>Nyquistova frekvenca</em>.</p>
 <div class="admonition note">
@@ -401,7 +413,7 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 <p class="admonition-title">Naloga 1 (10 minut)</p>
 <p>Za primer signala:</p>
 <p><span class="math notranslate nohighlight">\(x(t) = X_1 \, \sin(2\pi \, f_1 \, t) + X_2 \, \cos(2\pi \, f_2 \, t)\)</span></p>
-<p>simulirajte vzorčenje s z vzorčno frekvenco <span class="math notranslate nohighlight">\(f_s\)</span>, nato pa še z vzorčno frekvenco <span class="math notranslate nohighlight">\(f_s / 2\)</span>.</p>
+<p>simulirajte vzorčenje z vzorčno frekvenco <span class="math notranslate nohighlight">\(f_s\)</span>, nato pa še z vzorčno frekvenco <span class="math notranslate nohighlight">\(f_s / 2\)</span>.</p>
 <p>Prikažite obe časovni vrsti, s pomočjo izrisa amplitudnih spektrov obeh signalov pa komentirajte pojav frekvenčnega prekrivanja.</p>
 <p>Podatki:</p>
 </div>
@@ -422,7 +434,7 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_12_0.png" src="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_12_0.png" />
+<img alt="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_14_0.png" src="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_14_0.png" />
 </div>
 </div>
 <div class="cell tag_remove-input docutils container">
@@ -431,11 +443,11 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 <div class="cell tag_hide-input tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_15_0.png" src="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_15_0.png" />
+<img alt="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_17_0.png" src="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_17_0.png" />
 </div>
 </div>
 <div class="section" id="filtriranje-za-odpravo-frekvencnega-nalaganja">
-<h4><span class="section-number">7.1.2.1. </span>Filtriranje za odpravo frekvenčnega nalaganja<a class="headerlink" href="#filtriranje-za-odpravo-frekvencnega-nalaganja" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">7.2.2.1. </span>Filtriranje za odpravo frekvenčnega nalaganja<a class="headerlink" href="#filtriranje-za-odpravo-frekvencnega-nalaganja" title="Permalink to this headline">¶</a></h4>
 <p>Frekvenčno nalaganje merjenega signala lahko preprečimo z uporabo nizkopasovnega filtriranja (ang. <em>anti-aliasing filter</em>), ki mora biti izvedeno <em>pred časovnim vzorčenjem signala</em>.</p>
 <div class="seealso admonition">
 <p class="admonition-title">Naloga 2 (10 minut)</p>
@@ -472,14 +484,14 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Temp/ipykernel_23488/1568578183.py:2: RuntimeWarning: divide by zero encountered in log10
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Temp/ipykernel_21084/1568578183.py:2: RuntimeWarning: divide by zero encountered in log10
   ax.plot(freq, 20*np.log10(np.abs(h)), c=&#39;k&#39;)
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;X(f)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_21_2.png" src="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_21_2.png" />
+<img alt="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_23_2.png" src="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_23_2.png" />
 </div>
 </div>
 <p>Filtriranje signala</p>
@@ -521,17 +533,17 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Temp/ipykernel_23488/1088635885.py:2: RuntimeWarning: divide by zero encountered in log10
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Temp/ipykernel_21084/1088635885.py:2: RuntimeWarning: divide by zero encountered in log10
   ax.plot(freq, 20*np.log10(np.abs(h)), c=&#39;k&#39;)
 </pre></div>
 </div>
-<img alt="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_25_1.png" src="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_25_1.png" />
+<img alt="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_27_1.png" src="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_27_1.png" />
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="kvantizacija">
-<h3><span class="section-number">7.1.3. </span>Kvantizacija<a class="headerlink" href="#kvantizacija" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.3. </span>Kvantizacija<a class="headerlink" href="#kvantizacija" title="Permalink to this headline">¶</a></h3>
 <p>Kvantizacija je postopek diskretizacije <em>odvisne spremenljivke</em> zveznega procesa <span class="math notranslate nohighlight">\(x(t)\)</span>.</p>
 <p>Glavni parameter časovnega vzorčenja je <strong>število diskretnih nivojev</strong>, ki jih odvisna spremenljivka pri procesu kvantizacije lahko zavzame, ki določa <strong>dinamični razpon</strong> (globino) procesa. Običajno je podano s <strong>številom bitov</strong> <span class="math notranslate nohighlight">\(b\)</span> AD pretvornika. Prav tako je pri tem pomembno območje kvanzizacije <span class="math notranslate nohighlight">\(A = x_{\text{max}} - x_{\text{min}}\)</span>, ki določa interval možnih vrednosti neodvisne spremenljivke <span class="math notranslate nohighlight">\(x \in [x_{\text{min}}, x_{\text{max}}]\)</span>.</p>
 <p>Število diskretnih vrednosti kvantiziranega signala je:</p>
@@ -552,7 +564,7 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">adc_range</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">adc_range</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">adc_range</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">adc_range</span><span class="p">)</span> 
 <span class="n">b</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="n">std_e</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
@@ -588,7 +600,7 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_quantized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bits</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">adc_range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_quantized</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bits</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">adc_range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Kvantizacija signala `x` z izbranimi parametri (s predavanj).</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -631,7 +643,7 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_36_0.png" src="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_36_0.png" />
+<img alt="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_38_0.png" src="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_38_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -657,7 +669,7 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_38_0.png" src="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_38_0.png" />
+<img alt="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_40_0.png" src="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_40_0.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -672,21 +684,9 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_39_0.png" src="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_39_0.png" />
+<img alt="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_41_0.png" src="../_images/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje_41_0.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="domaca-naloga">
-<h2><span class="section-number">7.2. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Permalink to this headline">¶</a></h2>
-<div class="warning admonition">
-<p class="admonition-title">Domača naloga</p>
-<p>Z uporabo generatorja signalov in zajemnega sistema Arduino pripravite signal(e), s katerim boste demonstrirali v podatkih določeno lastnost diskretizacije signalov. Pri generiranju in zajemu signalov uporabite v podatkih predpisane parametre, manjkajoče parametre pa določite v skladu s predpisano lastnostjo diskretizacije.</p>
-<p><strong>Dodatek</strong>: Signal(e) pripravite tako, da boste lahko prikazali tudi drugo od obravnavanih lastnosti diskretizacije (<em>časovno vzorčenje</em> oz. <em>kvantizacija</em>). Tudi to na kratko komentirajte.</p>
-<p>LabView program za zajem signalov lahko prenesete v obliki <a class="reference download internal" download="" href="../_downloads/fe35982e9ec10d562dca252f2f56a11d/labview_zajem.zip"><code class="xref download docutils literal notranslate"><span class="pre">zip</span> <span class="pre">arhiva</span></code></a>.</p>
-<p><em>Da bo delo na generatorju signalov potekalo čimbolj učinkovito, lahko izbrane parametre signala in zajema najprej preizkusite z numerično simulacijo. Pomagajte si z zgornjimi primeri in modulom <code class="docutils literal notranslate"><span class="pre">scipy.signal</span></code>.</em></p>
-<p>Pripravite kratko poročilo v okolju Jupyter Notebook <em>(od 3 do 10 celic s kodo)</em>, v katerem naj bodo razvidni podatki naloge ter prikazan vpliv določene lastnosti diskretizacije s kratkimi komentarji, podprtimi s teoretičnimi izhodišči.</p>
-<p>Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> obliki (glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
 </div>
 </div>
 </div>
