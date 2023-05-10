@@ -319,7 +319,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>zajeto frekvenčno območje in frekvenčna ločljivost,</p></li>
 <li><p>ocena gostote porazdelitve verjetnosti vrednosti <span class="math notranslate nohighlight">\(p(x)\)</span> zajetega signala <span class="math notranslate nohighlight">\(x(t)\)</span>,</p></li>
 <li><p>enostranska ter dvostranska avtospektralna gostota moči, <span class="math notranslate nohighlight">\(G_{XX}\)</span> in <span class="math notranslate nohighlight">\(S_{XX}\)</span>,</p></li>
-<li><p>prvi štirje <em>centralni spektralni</em> momenti (<span class="math notranslate nohighlight">\(m_0\)</span>, <span class="math notranslate nohighlight">\(m_1\)</span>, <span class="math notranslate nohighlight">\(m_2\)</span>, <span class="math notranslate nohighlight">\(m_3\)</span>) zajetega signala.</p></li>
+<li><p>prvi štirje <em>centralni statistični</em> momenti (<span class="math notranslate nohighlight">\(m_0\)</span>, <span class="math notranslate nohighlight">\(m_1\)</span>, <span class="math notranslate nohighlight">\(m_2\)</span>, <span class="math notranslate nohighlight">\(m_3\)</span>) zajetega signala.</p></li>
 </ul>
 <p><strong>Dodatek</strong>:</p>
 <ul class="simple">
@@ -396,7 +396,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 <div class="seealso admonition">
 <p class="admonition-title">Primer 2</p>
 <p>Normalno porazdeljena naključna spremenljivka <span class="math notranslate nohighlight">\(x\)</span> z <span class="math notranslate nohighlight">\(N=1000\)</span> vzorci, srednjo vrednostjo <span class="math notranslate nohighlight">\(\mu = 5\)</span> in standardno deviacijo <span class="math notranslate nohighlight">\(\sigma = 2\)</span> predstavlja realizacijo N ponovitev naključnega dogodka.</p>
-<p>Ocenimo prva dva centralna momenta funkcije gostote verjetnosti (<span class="math notranslate nohighlight">\(n = [1, 2]\)</span>):</p>
+<p>Ocenimo prva dva centralna statistična momenta funkcije gostote verjetnosti (<span class="math notranslate nohighlight">\(n = [1, 2]\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
 \sigma^n(t)= E[(x(t)-\mu_x)^n] = \int_{-\infty}^{+\infty} (x-\mu_x)^n\, p(x)\, \textrm{d} x
@@ -433,7 +433,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.1263880373444406e-16
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-4.263256414560601e-17
 </pre></div>
 </div>
 </div>
@@ -446,7 +446,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.048830405554429
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.7801553205012244
 </pre></div>
 </div>
 </div>
@@ -687,7 +687,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.749108971270822, 0.7497257075140199)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.8499253222013201, 0.8570514668346096)
 </pre></div>
 </div>
 </div>
