@@ -16,3 +16,4 @@ chapters:
 - file: notebooks/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje.ipynb
 - file: notebooks/08 - DFT in osnove naključnih procesov.ipynb
 - file: notebooks/09 - Naključno vzbujanje, zajem signalov.ipynb
+- file: notebooks/10 - Naključno vzbujanje 2, prenosne funkcije.ipynb
