@@ -55,6 +55,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="10. Naključno vzbujanje - ocena frekvenčnih prenosnih funkcij" href="10%20-%20Naklju%C4%8Dno%20vzbujanje%202%2C%20prenosne%20funkcije.html" />
     <link rel="prev" title="8. DFT in osnove naključnih procesov" href="08%20-%20DFT%20in%20osnove%20naklju%C4%8Dnih%20procesov.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -143,6 +144,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    9. Naključno vzbujanje - zajem signalov
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10%20-%20Naklju%C4%8Dno%20vzbujanje%202%2C%20prenosne%20funkcije.html">
+   10. Naključno vzbujanje - ocena frekvenčnih prenosnih funkcij
   </a>
  </li>
 </ul>
@@ -266,23 +272,6 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cenilke-frekvencne-prenosne-funkcije">
-   9.2. Cenilke frekvenčne prenosne funkcije
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#izracun-povprecenih-spektralnih-gostot-moci-z-welchevo-metodo">
-     9.2.1. Izračun povprečenih spektralnih gostot moči z Welchevo metodo
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#domaca-naloga">
-   9.3. Domača naloga
-  </a>
- </li>
 </ul>
 
             </nav>
@@ -320,23 +309,6 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#cenilke-frekvencne-prenosne-funkcije">
-   9.2. Cenilke frekvenčne prenosne funkcije
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#izracun-povprecenih-spektralnih-gostot-moci-z-welchevo-metodo">
-     9.2.1. Izračun povprečenih spektralnih gostot moči z Welchevo metodo
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#domaca-naloga">
-   9.3. Domača naloga
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -371,10 +343,10 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Določamo razmerje med odzivom sistema in znanim signlom vzbujanja, na podlagi izmerjenih signalov <span class="math notranslate nohighlight">\(x(t)\)</span>, <span class="math notranslate nohighlight">\(f(t)\)</span> pri <em>naključnem, širokospektralnem, stacionarnem</em> vzbujanju.</p>
 <p>Namen te vaje je spoznati laboratorijsko opremo in izvesti meritve signalov, potrebnih za določitev prenosnih funkcij mehanskega LTI sistema.</p>
 <div class="warning admonition">
-<p class="admonition-title">Naloga: Meritev prenosnih funkcij jeklenega nosilca</p>
+<p class="admonition-title">Naloga: Meritev signalov za določitev prenosnih funkcij jeklenega nosilca</p>
 <p>Pripravite zajemni sistem in opravite meritve odziva (pospeška) jeklenega nosilca na naključno vzbujanje.</p>
 <p>Vsak naj izvede <strong>meritev odziva (pospšeka) nosilca v točki, podani v tabeli podatkov</strong>, ki jo najdete v e-učilnici.</p>
-<p>Strukturo vzbujamo z naključnim širokospektralnim profilom na elektrodinamskem stresalniku preko povezovalne palice (<em>stingerja</em>), v pripravljeni točki <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<p>Strukturo vzbujamo z naključnim širokospektralnim profilom z uporabo elektrodinamskega stresalnika preko povezovalne palice (<em>stingerja</em>), v pripravljeni točki <span class="math notranslate nohighlight">\(0\)</span>.</p>
 <p>Delo v laboratoriju bo potekalo <strong>skupinsko</strong>. Nalogo sestavljajo trije vsebinski deli, ki so podrobneje opisani spodaj:</p>
 <ol class="simple">
 <li><p>Postavitev in povezava merilne opreme.</p></li>
@@ -484,7 +456,7 @@ Preverite, da nastavitve opravil ustrezajo predpisanim parametrom zajema in gene
 <p><img alt="input_task" src="../_images/02_input_task.png" /></p>
 <p>Glavne nastavitve <strong>generiranja</strong> so:</p>
 <ul class="simple">
-<li><p>Ena kanal: <em>naetost</em> signala na stresalniku.</p></li>
+<li><p>Ena kanal: <em>napetost</em> signala na stresalniku.</p></li>
 <li><p>Število vzorcev v sekundi: 20000 Hz</p></li>
 <li><p>Trajanje vsakega generirranega segmenta: 2 s,</p></li>
 <li><p>Kontinuirano generiranje segmentov (<code class="docutils literal notranslate"><span class="pre">Continuous</span> <span class="pre">Samples</span></code>).</p></li>
@@ -517,7 +489,7 @@ Preverite, da nastavitve opravil ustrezajo predpisanim parametrom zajema in gene
 <p>Vsak naj zajame predpisano število segmentov meritve odziva sistema v točki, predpisani v podatih naloge.</p>
 <p>Ker uporabljamo eno samo zaznavalo pospeška, je treba tega pred meritvijo namestiti na ustrezno merilno mesto. Za pritrditev uporabite majhno količino voščenega lepila.</p>
 <p><img alt="wax" src="../_images/05_UJ_0216_Beeswax.png" /></p>
-<p><em>Pred začetkom meritve nastavite ojačanaje ojačevalnika signla tako, da boste v meritvi dosegli predpisano povprečno amplitudo sile (1 N RMS)!</em> <strong>Preliminarno meritev začnite z ojačanjem 0, in tega ustrezno povečajte.</strong></p>
+<p><em>Pred začetkom meritve nastavite ojačanaje (gain) ojačevalnika signla tako, da boste v meritvi dosegli predpisano povprečno amplitudo sile (1 N RMS)!</em> <strong>Preliminarno meritev začnite z ojačanjem 0, in tega ustrezno povečajte.</strong></p>
 <p>Ko ste ustrezno nastaivli merilni sistem, NI MAX opravila in parametre Python programa, meritev poženete z zagonom funkcije <code class="docutils literal notranslate"><span class="pre">IO_meritev()</span></code> v poglavju “Meritev” Python programa.</p>
 <p>Pri izvajanju meritve poskrbite, da:</p>
 <ul class="simple">
@@ -528,148 +500,10 @@ Preverite, da nastavitve opravil ustrezajo predpisanim parametrom zajema in gene
 <li><p>zajete podatke shranite tako, da jih boste lahko kasneje odpirali in obdelali v Pythonu.</p></li>
 </ul>
 </div>
-</div>
-</div>
-<div class="section" id="cenilke-frekvencne-prenosne-funkcije">
-<h2><span class="section-number">9.2. </span>Cenilke frekvenčne prenosne funkcije<a class="headerlink" href="#cenilke-frekvencne-prenosne-funkcije" title="Permalink to this headline">¶</a></h2>
-<p>Pri realnih meritvah se no moremo izogniti naključnega šuma (merilne napake) v zajetieh signalih.</p>
-<p>Ob upoštevanju odziva LTI sistmeov na naklučno vzbujanje z merilno napako, lahko zapišemo različne cenilke frekvenčnih prenosnih funkcij:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Cenilka <span class="math notranslate nohighlight">\(H_1(\omega)\)</span> prepostavlja nezanemarljivo količino naključnega šuma pri meritvi signala <em>odziva</em> <span class="math notranslate nohighlight">\(x(t)\)</span>. Izračunamo jo:</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation}
-H_1(\omega) = \frac{S_{fx}(\omega)}{S{ff }(\omega)}.
-\end{equation}
-\]</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Cenilka <span class="math notranslate nohighlight">\(H_2(\omega)\)</span> prepostavlja nezanemarljivo količino naključnega šuma pri meritvi signala <em>vzbujanja</em> <span class="math notranslate nohighlight">\(f(t)\)</span>. Izračunamo jo:</p>
-<div class="math notranslate nohighlight">
-\[
-\begin{equation}
-H_2(\omega) = \frac{S_{xx}(\omega)}{S{xf}(\omega)}.
-\end{equation}
-\]</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Kvaliteto meritve lahko ocenimo s <strong>koherenco</strong>. Ta je definirana kot:</p>
-<div class="math notranslate nohighlight">
-\[
-\gamma_{fx}^2(f)=\frac{|G_{fx}(f)|^2}{G_{ff}(f)\,G_{xx}(f)}
-=\frac{|S_{fx}(f)|^2}{S_{ff}(f)\,S_{xx}(f)}
-= \frac{H_1(\omega)}{H_2(\omega)}
-\]</div>
-<p>Koherenca ima vrednosti na območju <span class="math notranslate nohighlight">\(\gamma_{fx}^2(f) \in [0, 1]\)</span>. Podaja merilo linearne odvisnosti signalov na vhodu (vzbujanje, <span class="math notranslate nohighlight">\(f\)</span>) in izhodu (odziv, <span class="math notranslate nohighlight">\(x\)</span>) sistema.</p>
-<p><strong>Pozor:</strong> Izračun koherence je smiselen samo, če so spektralne gostote moči <span class="math notranslate nohighlight">\(S_{fx}\)</span>, <span class="math notranslate nohighlight">\(S_{xx}\)</span>, <span class="math notranslate nohighlight">\(S_{ff}\)</span> določene s povprečenjem več zajtih segmentov naključnega procesa!</p>
-</div>
-<div class="section" id="izracun-povprecenih-spektralnih-gostot-moci-z-welchevo-metodo">
-<h3><span class="section-number">9.2.1. </span>Izračun povprečenih spektralnih gostot moči z Welchevo metodo<a class="headerlink" href="#izracun-povprecenih-spektralnih-gostot-moci-z-welchevo-metodo" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Welch%27s_method">Welcheva metoda</a> določi (križne in avto-) spektralne gostote moči signalov z uporabo povprečenja in oknjenja podanega signala, segmentiranega s prekrivanjem posameznih odsekov.</p>
-<p>V Scipy je implementirana v <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.csd.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal.csd</span></code></a> (križno-spektralna gostota moči) <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.welch.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal.welch</span></code></a> (avtospektralna gostota moči). Glavni parametri <code class="docutils literal notranslate"><span class="pre">scipy.signal.csd</span></code> so:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> : prvi signal.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">y</span></code> : drugi signal.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">fs</span></code> : frekvenca vzorčenja signalov <code class="docutils literal notranslate"><span class="pre">x</span></code> in <code class="docutils literal notranslate"><span class="pre">y</span></code>,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">window</span></code> : okno, ki naj se uporabi na posameznem segmentu. Privzeto <code class="docutils literal notranslate"><span class="pre">&quot;Hann&quot;</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">nperseg</span></code> : dolžina posameznega odseka signala pri segmentiranju,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">noverlap</span></code> : število vzorcev, ki se med segmenti prekrivajo. Prvizezo polovica <code class="docutils literal notranslate"><span class="pre">nperseg</span></code>.</p></li>
-</ul>
-<p>Primer uporabe:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">csd</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="mf">7.5</span> <span class="c1"># Hz</span>
-<span class="n">T</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1"># s</span>
-<span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">T</span><span class="p">)</span> <span class="o">/</span> <span class="n">fs</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">*</span><span class="mf">0.5</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">*</span><span class="mf">0.5</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;x(t)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;y(t)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x, y [/]&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/09 - Naključno vzbujanje, zajem signalov_31_0.png" src="../_images/09 - Naključno vzbujanje, zajem signalov_31_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freq</span><span class="p">,</span> <span class="n">S_xy</span> <span class="o">=</span> <span class="n">csd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">fs</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="s1">&#39;hamming&#39;</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">fs</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">freq</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">freq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">S_xy</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;S_xy&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/09 - Naključno vzbujanje, zajem signalov_33_0.png" src="../_images/09 - Naključno vzbujanje, zajem signalov_33_0.png" />
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="domaca-naloga">
-<h2><span class="section-number">9.3. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Permalink to this headline">¶</a></h2>
 <div class="warning admonition">
-<p class="admonition-title">Domača naloga</p>
-<p>V okolju Jupyter Notebook pripravite kratko poročilo <em>(od 3 do 10 celic s kodo)</em> z rezultati in kratkim komentarjem meritev, ki ste jih izvedli na vaji, v katerem naj bodo razvidni podatki naloge. Poročilo naj vsebuje tudi:</p>
-<ul class="simple">
-<li><p>prikaz časovne vrste ter amplitudnega spektra vaše meritve (pri vzbujanju v točki, podani v podatkih naloge),</p></li>
-<li><p>prikaz frekvenčne prenosne funkcije v vaši izmerjeni točki (<span class="math notranslate nohighlight">\(i\)</span>), ki jo ocenite z <span class="math notranslate nohighlight">\(\alpha_i(\omega) = X_i(\omega) / F_i(\omega)\)</span>.</p></li>
-<li><p>prikaz frekvenčne prenosne funkcije v vaši izmerjeni točki (<span class="math notranslate nohighlight">\(i\)</span>), izračunane s cenilko <span class="math notranslate nohighlight">\(H_1(\omega)\)</span>. Pri tem povprečite spektre izmerjenih signalov, razdeljenih na segmente dolžine 2 s.</p></li>
-</ul>
-<p><strong>Dodatek</strong>:</p>
-<ul class="simple">
-<li><p>Izračunajte in prikažite obe cenilki frekvenčne prenosne funkcije (<span class="math notranslate nohighlight">\(H_1\)</span>, <span class="math notranslate nohighlight">\(H_2\)</span>).</p>
-<ul>
-<li><p>Križne- in avtospektre signalov pri tem izračunajte s povprečenjem z metodo Welch (<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.csd.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal.csd</span></code></a>),</p></li>
-<li><p>posamezni segment Welch izračuna PSD in CSD naj bo <span class="math notranslate nohighlight">\(1 s\)</span> zajetega signala, s 50% prekrivanjem segmentov,</p></li>
-<li><p>na posameznem segmentu naj se, za zagotavljanje predpostavke periodičnosti, uporabi <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.windows.hamming.html#scipy.signal.windows.hamming"><code class="docutils literal notranslate"><span class="pre">Hamming</span></code></a> okno.</p></li>
-</ul>
-</li>
-<li><p>Na kratko prikažite in komentirajte vpliv <em>dolžine segmenta</em> Welch metode ter <em>obliko uporabljenega okna</em>.</p></li>
-<li><p>Izračunajte in prikažite tudi koherenco meritve FRF <span class="math notranslate nohighlight">\(\gamma^2_{fx}(\omega)\)</span>.</p></li>
-</ul>
-<p>Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> obliki (glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
+<p class="admonition-title">Pozor!</p>
+<p>Signale, zajete pri današnji vaji, boste potrebovali pri prihodnjih vajah in domači nalogi. Poskrbite, da ste podatke shranili v berljivi obliki in da boste naslednjič do njih imeli dostop.</p>
+</div>
 </div>
 </div>
 </div>
@@ -705,6 +539,13 @@ H_2(\omega) = \frac{S_{xx}(\omega)}{S{xf}(\omega)}.
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">8. </span>DFT in osnove naključnih procesov</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="10%20-%20Naklju%C4%8Dno%20vzbujanje%202%2C%20prenosne%20funkcije.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Naključno vzbujanje - ocena frekvenčnih prenosnih funkcij</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
