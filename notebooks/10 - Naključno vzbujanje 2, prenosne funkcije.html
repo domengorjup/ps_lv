@@ -542,7 +542,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x20a6f0115d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1a7395ad510&gt;
 </pre></div>
 </div>
 <img alt="../_images/10 - Naključno vzbujanje 2, prenosne funkcije_21_1.png" src="../_images/10 - Naključno vzbujanje 2, prenosne funkcije_21_1.png" />
@@ -647,7 +647,7 @@ H_2(\omega) = \frac{S_{xx}(\omega)}{S{xf}(\omega)}.
 <div class="section" id="izracun-povprecenih-spektralnih-gostot-moci-s-prekrivanjem-segmentov-in-uporabo-oken">
 <h3><span class="section-number">10.3.2. </span>Izračun povprečenih spektralnih gostot moči s prekrivanjem segmentov in uporabo oken<a class="headerlink" href="#izracun-povprecenih-spektralnih-gostot-moci-s-prekrivanjem-segmentov-in-uporabo-oken" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Welch%27s_method">Welcheva metoda</a> določi (križne in avto-) spektralne gostote moči signalov z uporabo povprečenja in oknjenja podanega signala, segmentiranega s prekrivanjem posameznih odsekov.</p>
-<p>V Scipy je implementirana v <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.csd.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal.csd</span></code></a> (križno-spektralna gostota moči) <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.welch.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal.welch</span></code></a> (avtospektralna gostota moči). Glavni parametri <code class="docutils literal notranslate"><span class="pre">scipy.signal.csd</span></code> so:</p>
+<p>V Scipy je implementirana v <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.csd.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal.csd</span></code></a> (križno-spektralna gostota moči) in <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.welch.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal.welch</span></code></a> (avtospektralna gostota moči). Glavni parametri <code class="docutils literal notranslate"><span class="pre">scipy.signal.csd</span></code> so:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">x</span></code> : prvi signal.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">y</span></code> : drugi signal.</p></li>
