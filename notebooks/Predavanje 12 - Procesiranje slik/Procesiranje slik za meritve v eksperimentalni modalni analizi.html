@@ -1,50 +1,60 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Procesiranje slik za meritve v eksperimentalni modalni analizi &#8212; Procesiranje signalov - Laboratorijske vaje</title>
-    
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -53,360 +63,341 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Predavanje 12 - Procesiranje slik/Procesiranje slik za meritve v eksperimentalni modalni analizi';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/lv_logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Procesiranje signalov - Laboratorijske vaje</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/lv_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/lv_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Uvod
+                </a>
+            </li>
+        </ul>
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../intro.html">
-   Uvod
-  </a>
- </li>
-</ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../01%20-%20Uvod%20v%20LabView.html">
-   1. Uvod v LabView
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02%20-%20LabView%20in%20Arduino%2C%20Python.html">
-   2. LabView in Arduino, Python
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03%20-%20Fourierova%20integralska%20transformacija.html">
-   3. Fourierova integralska transformacija
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../04%20-%20Lastnosti%20Fourierove%20transformacije.html">
-   4. Lastnosti Fourierove transformacije
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../05%20-%20LTI%20sistemi%2C%20zajem%20signalov.html">
-   5. Linearni, časovno invariatni (LTI) sistemi - zajem signalov
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../06%20-%20LTI%20sistemi%202%2C%20prenosne%20funkcije.html">
-   6. Linearni, časovno invariatni (LTI) sistemi 2 - prenosne funkcije
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../07%20-%20Enakomerno%20%C4%8Dasovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">
-   7. Enakomerno časovno vzorčenje in frekvenčno prekrivanje
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../08%20-%20DFT%20in%20osnove%20naklju%C4%8Dnih%20procesov.html">
-   8. DFT in osnove naključnih procesov
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.html">
-   9. Naključno vzbujanje - zajem signalov
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../01%20-%20Uvod%20v%20LabView.html">1. Uvod v LabView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02%20-%20LabView%20in%20Arduino%2C%20Python.html">2. LabView in Arduino, Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03%20-%20Fourierova%20integralska%20transformacija.html">3. Fourierova integralska transformacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04%20-%20Lastnosti%20Fourierove%20transformacije.html">4. Lastnosti Fourierove transformacije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05%20-%20LTI%20sistemi%2C%20zajem%20signalov.html">5. Linearni, časovno invariatni (LTI) sistemi - zajem signalov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06%20-%20LTI%20sistemi%202%2C%20prenosne%20funkcije.html">6. Linearni, časovno invariatni (LTI) sistemi 2 - prenosne funkcije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07%20-%20Enakomerno%20%C4%8Dasovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">7. Enakomerno časovno vzorčenje in frekvenčno prekrivanje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08%20-%20DFT%20in%20osnove%20naklju%C4%8Dnih%20procesov.html">8. DFT in osnove naključnih procesov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.html">9. Naključno vzbujanje - zajem signalov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10%20-%20Naklju%C4%8Dno%20vzbujanje%202%2C%20prenosne%20funkcije.html">10. Naključno vzbujanje - ocena frekvenčnih prenosnih funkcij</a></li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/notebooks/Predavanje 12 - Procesiranje slik/Procesiranje slik za meritve v eksperimentalni modalni analizi.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+</nav></div>
     </div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
-            <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/domengorjup/ps_lv"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/domengorjup/ps_lv/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Predavanje 12 - Procesiranje slik/Procesiranje slik za meritve v eksperimentalni modalni analizi.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+      </div>
+      
+      <main id="main-content" class="bd-main">
         
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-</div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
+<div class="article-header-buttons">
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/domengorjup/ps_lv/main?urlpath=tree/lv_book/notebooks/Predavanje 12 - Procesiranje slik/Procesiranje slik za meritve v eksperimentalni modalni analizi.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
 
-        </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#slikovne-meritve">
-   Slikovne meritve
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#parametri-zajema">
-     Parametri zajema
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#osvetlitev">
-     Osvetlitev
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#priprava-povrsine-merjenca">
-     Priprava površine merjenca
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pogoste-tezave-pri-slikovnih-meritvah">
-     Pogoste težave pri slikovnih meritvah
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#neustrezno-izostrena-slika">
-       Neustrezno izostrena slika
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#neustrezna-osvetlitev">
-       Neustrezna osvetlitev
-      </a>
-     </li>
-    </ul>
-   </li>
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/domengorjup/ps_lv" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/domengorjup/ps_lv/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Predavanje 12 - Procesiranje slik/Procesiranje slik za meritve v eksperimentalni modalni analizi.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dolocitev-pomikov-na-slikah-z-metodo-opticnega-toka">
-   Določitev pomikov na slikah z metodo optičnega toka
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#metoda-lucas-kanade">
-   Metoda Lucas-Kanade:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#izracun-frf">
-   Izračun FRF
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#eskperimentalna-modalna-analiza-samo-slikovna-meritev">
-   Eskperimentalna modalna analiza (samo slikovna meritev):
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#eskperimentalna-modalna-analiza-hibridna-metoda">
-   Eskperimentalna modalna analiza - hibridna metoda
-  </a>
- </li>
-</ul>
+</div>
 
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/Predavanje 12 - Procesiranje slik/Procesiranje slik za meritve v eksperimentalni modalni analizi.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Procesiranje slik za meritve v eksperimentalni modalni analizi</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slikovne-meritve">Slikovne meritve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametri-zajema">Parametri zajema</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osvetlitev">Osvetlitev</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priprava-povrsine-merjenca">Priprava površine merjenca</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pogoste-tezave-pri-slikovnih-meritvah">Pogoste težave pri slikovnih meritvah</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neustrezno-izostrena-slika">Neustrezno izostrena slika</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neustrezna-osvetlitev">Neustrezna osvetlitev</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dolocitev-pomikov-na-slikah-z-metodo-opticnega-toka">Določitev pomikov na slikah z metodo optičnega toka</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metoda-lucas-kanade">Metoda Lucas-Kanade:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izracun-frf">Izračun FRF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eskperimentalna-modalna-analiza-samo-slikovna-meritev">Eskperimentalna modalna analiza (samo slikovna meritev):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eskperimentalna-modalna-analiza-hibridna-metoda">Eskperimentalna modalna analiza - hibridna metoda</a></li>
+</ul>
             </nav>
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Procesiranje slik za meritve v eksperimentalni modalni analizi</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#slikovne-meritve">
-   Slikovne meritve
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#parametri-zajema">
-     Parametri zajema
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#osvetlitev">
-     Osvetlitev
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#priprava-povrsine-merjenca">
-     Priprava površine merjenca
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pogoste-tezave-pri-slikovnih-meritvah">
-     Pogoste težave pri slikovnih meritvah
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#neustrezno-izostrena-slika">
-       Neustrezno izostrena slika
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#neustrezna-osvetlitev">
-       Neustrezna osvetlitev
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dolocitev-pomikov-na-slikah-z-metodo-opticnega-toka">
-   Določitev pomikov na slikah z metodo optičnega toka
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#metoda-lucas-kanade">
-   Metoda Lucas-Kanade:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#izracun-frf">
-   Izračun FRF
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#eskperimentalna-modalna-analiza-samo-slikovna-meritev">
-   Eskperimentalna modalna analiza (samo slikovna meritev):
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#eskperimentalna-modalna-analiza-hibridna-metoda">
-   Eskperimentalna modalna analiza - hibridna metoda
-  </a>
- </li>
-</ul>
 
-                        </nav>
-                    </div>
-                </div>
-            </div>
-            
-              <div>
+              
                 
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <div class="tex2jax_ignore mathjax_ignore section" id="procesiranje-slik-za-meritve-v-eksperimentalni-modalni-analizi">
-<h1>Procesiranje slik za meritve v eksperimentalni modalni analizi<a class="headerlink" href="#procesiranje-slik-za-meritve-v-eksperimentalni-modalni-analizi" title="Permalink to this headline">¶</a></h1>
+<h1>Procesiranje slik za meritve v eksperimentalni modalni analizi<a class="headerlink" href="#procesiranje-slik-za-meritve-v-eksperimentalni-modalni-analizi" title="Permalink to this heading">#</a></h1>
 <hr class="docutils" />
 <h1>Table of Contents<span class="tocSkip"></span></h1>
 <div class="toc"><ul class="toc-item"><li><span><a href="#Slikovne-meritve" data-toc-modified-id="Slikovne-meritve-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Slikovne meritve</a></span><ul class="toc-item"><li><span><a href="#Parametri-zajema" data-toc-modified-id="Parametri-zajema-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Parametri zajema</a></span></li><li><span><a href="#Osvetlitev" data-toc-modified-id="Osvetlitev-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Osvetlitev</a></span></li><li><span><a href="#Priprava-površine-merjenca" data-toc-modified-id="Priprava-površine-merjenca-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Priprava površine merjenca</a></span></li><li><span><a href="#Pogoste-težave-pri-slikovnih-meritvah" data-toc-modified-id="Pogoste-težave-pri-slikovnih-meritvah-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Pogoste težave pri slikovnih meritvah</a></span><ul class="toc-item"><li><span><a href="#Neustrezno-izostrena-slika" data-toc-modified-id="Neustrezno-izostrena-slika-1.4.1"><span class="toc-item-num">1.4.1&nbsp;&nbsp;</span>Neustrezno izostrena slika</a></span></li><li><span><a href="#Neustrezna-osvetlitev" data-toc-modified-id="Neustrezna-osvetlitev-1.4.2"><span class="toc-item-num">1.4.2&nbsp;&nbsp;</span>Neustrezna osvetlitev</a></span></li></ul></li></ul></li><li><span><a href="#Določitev-pomikov-na-slikah-z-metodo-optičnega-toka-(Simplified-Optical-Flow)" data-toc-modified-id="Določitev-pomikov-na-slikah-z-metodo-optičnega-toka-(Simplified-Optical-Flow)-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Določitev pomikov na slikah z metodo optičnega toka (<em>Simplified Optical Flow</em>)</a></span></li><li><span><a href="#Metoda-Lucas-Kanade:" data-toc-modified-id="Metoda-Lucas-Kanade:-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Metoda Lucas-Kanade:</a></span></li><li><span><a href="#Izračun-FRF" data-toc-modified-id="Izračun-FRF-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Izračun FRF</a></span></li><li><span><a href="#Eskperimentalna-modalna-analiza-(samo-slikovn-meritev):" data-toc-modified-id="Eskperimentalna-modalna-analiza-(samo-slikovn-meritev):-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Eskperimentalna modalna analiza (samo slikovn meritev):</a></span></li><li><span><a href="#Eskperimentalna-modalna-analiza---hibridna-metoda" data-toc-modified-id="Eskperimentalna-modalna-analiza---hibridna-metoda-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Eskperimentalna modalna analiza - hibridna metoda</a></span></li></ul></div><p>V tej predstavitvi so uporabljeni naslednji paketi:</p>
@@ -440,12 +431,16 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\numpy\distutils\ccompiler.py:17: DeprecationWarning: The distutils.sysconfig module is deprecated, use sysconfig instead
-  from distutils.sysconfig import customize_compiler
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyEMA\__init__.py:12: UserWarning: This is the last version of pyEMA and will not longer be maintained since it is moving to the SDyPy package. To use the latest code from SDyPy: `pip install sdypy` and `from sdypy import EMA`.
-  warnings.warn(&#39;This is the last version of pyEMA and will not longer be maintained since it is moving to the SDyPy package. To use the latest code from SDyPy: `pip install sdypy` and `from sdypy import EMA`.&#39;)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 15&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">import</span> <span class="nn">lvm_read</span>
+<span class="ne">---&gt; </span><span class="mi">15</span> <span class="kn">import</span> <span class="nn">pyFRF</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">import</span> <span class="nn">pyidi</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="kn">import</span> <span class="nn">pyEMA</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pyFRF&#39;
 </pre></div>
 </div>
 </div>
@@ -463,7 +458,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 <span class="k">def</span> <span class="nf">show_modal_data</span><span class="p">(</span><span class="n">nat_freq</span><span class="p">,</span> <span class="n">damping</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Show modal data in a table-like structure.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Show modal data in a table-like structure.&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   Nat. f.      Damping&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="mi">23</span><span class="o">*</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nat_freq</span><span class="p">):</span>
@@ -471,7 +466,7 @@ const thebe_selector_output = ".output, .cell_output"
         
 
 <span class="k">def</span> <span class="nf">plot_mode_shape</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Plot a mode shape in a consistent fashion.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot a mode shape in a consistent fashion.&quot;&quot;&quot;</span>
     <span class="n">plot</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">shape</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">shape</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> 
                      <span class="n">style</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">frequency</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -483,7 +478,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="section" id="slikovne-meritve">
-<h2>Slikovne meritve<a class="headerlink" href="#slikovne-meritve" title="Permalink to this headline">¶</a></h2>
+<h2>Slikovne meritve<a class="headerlink" href="#slikovne-meritve" title="Permalink to this heading">#</a></h2>
 <p><strong>Postavitev eksperimenta:</strong></p>
 <img src="figures/experiment_setup.jpg" width="80%"><p><strong>Vzbujanje z modalnim kladivom:</strong></p>
 <video controls loop src="figures/experiment.mp4" width="100%" rotate="270deg"/><p>Datoteke s slikami:</p>
@@ -502,14 +497,6 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyMRAW.py:91: UserWarning: Not 12bit (8 bits)! clipped values?
-  warnings.warn(&#39;Not 12bit ({:g} bits)! clipped values?&#39;.format(bits))
-C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyMRAW.py:103: UserWarning: Clipped footage! (Total frame: 3750, Original total frame: 7500)
-  warnings.warn(&#39;Clipped footage! (Total frame: {}, Original total frame: {})&#39;.format(cih[&#39;Total Frame&#39;], cih[&#39;Original Total Frame&#39;] ))
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -520,12 +507,12 @@ C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyMRAW.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_15_0.png" src="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_15_0.png" />
+<img alt="../../_images/e96648f89217394ea6817c6ced12d86ec1f85aa4b88b7253f2a2dcd323305312.png" src="../../_images/e96648f89217394ea6817c6ced12d86ec1f85aa4b88b7253f2a2dcd323305312.png" />
 </div>
 </div>
 <p><em>Posnetek je prilagojen prikazu in je zato slabše kavlaitete. Za natančne meritve običajno zajamemo zel oveliko količino podatkov.</em></p>
 <video controls loop src="figures/video.MOV" width="950" rotate="270deg"/><div class="section" id="parametri-zajema">
-<h3>Parametri zajema<a class="headerlink" href="#parametri-zajema" title="Permalink to this headline">¶</a></h3>
+<h3>Parametri zajema<a class="headerlink" href="#parametri-zajema" title="Permalink to this heading">#</a></h3>
 <p>Parametri nastavitve kamere so zapisani v atributu <code class="docutils literal notranslate"><span class="pre">info</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -634,7 +621,7 @@ C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyMRAW.
 </div>
 </div>
 <div class="section" id="osvetlitev">
-<h3>Osvetlitev<a class="headerlink" href="#osvetlitev" title="Permalink to this headline">¶</a></h3>
+<h3>Osvetlitev<a class="headerlink" href="#osvetlitev" title="Permalink to this heading">#</a></h3>
 <p>Ustrezna osvetlitev je eden najpomembnejših parametrov pri zajemu slik s hitro kamero.</p>
 <p>Pri oceni ustreznosti osvetlitve si lahko pomagamo s hitrogramom sivinskih vrendosti:</p>
 <div class="cell docutils container">
@@ -658,12 +645,12 @@ C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyMRAW.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_22_0.png" src="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_22_0.png" />
+<img alt="../../_images/fef89bee9ebfc8feb218027ef76d2d7eae4278a033b6b95b1849b77715ac7f26.png" src="../../_images/fef89bee9ebfc8feb218027ef76d2d7eae4278a033b6b95b1849b77715ac7f26.png" />
 </div>
 </div>
 </div>
 <div class="section" id="priprava-povrsine-merjenca">
-<h3>Priprava površine merjenca<a class="headerlink" href="#priprava-povrsine-merjenca" title="Permalink to this headline">¶</a></h3>
+<h3>Priprava površine merjenca<a class="headerlink" href="#priprava-povrsine-merjenca" title="Permalink to this heading">#</a></h3>
 <p>Za delovanje metod določanja pomikov s slik na osnovi gradientov sivinskih vrendosti je nujno, da je površina merjenca ustrezno pripravljena.</p>
 <p>Pogosto na opazovano površino apliciramo visokokontrasntni vzorec pack (<em>speckle</em>) ali črt. Identifikacija pomikov je najzaneslivejša v smeri gradienta sivinskih vrendosti.</p>
 <div class="cell docutils container">
@@ -694,14 +681,14 @@ C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyMRAW.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_25_0.png" src="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_25_0.png" />
+<img alt="../../_images/52d384b2867b94645911926a9c6dcd2831054ee1dcf0be42ea724d7e685fee35.png" src="../../_images/52d384b2867b94645911926a9c6dcd2831054ee1dcf0be42ea724d7e685fee35.png" />
 </div>
 </div>
 </div>
 <div class="section" id="pogoste-tezave-pri-slikovnih-meritvah">
-<h3>Pogoste težave pri slikovnih meritvah<a class="headerlink" href="#pogoste-tezave-pri-slikovnih-meritvah" title="Permalink to this headline">¶</a></h3>
+<h3>Pogoste težave pri slikovnih meritvah<a class="headerlink" href="#pogoste-tezave-pri-slikovnih-meritvah" title="Permalink to this heading">#</a></h3>
 <div class="section" id="neustrezno-izostrena-slika">
-<h4>Neustrezno izostrena slika<a class="headerlink" href="#neustrezno-izostrena-slika" title="Permalink to this headline">¶</a></h4>
+<h4>Neustrezno izostrena slika<a class="headerlink" href="#neustrezno-izostrena-slika" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">layout_fname</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;data/focus.cih&#39;</span>
@@ -730,12 +717,12 @@ C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyMRAW.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_29_0.png" src="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_29_0.png" />
+<img alt="../../_images/1059be389952c2dcb0852b193a8c2bcfd2d4a923b289729b2b36c60500b26755.png" src="../../_images/1059be389952c2dcb0852b193a8c2bcfd2d4a923b289729b2b36c60500b26755.png" />
 </div>
 </div>
 </div>
 <div class="section" id="neustrezna-osvetlitev">
-<h4>Neustrezna osvetlitev<a class="headerlink" href="#neustrezna-osvetlitev" title="Permalink to this headline">¶</a></h4>
+<h4>Neustrezna osvetlitev<a class="headerlink" href="#neustrezna-osvetlitev" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">light_fname</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;data/illumination.cih&#39;</span>
@@ -776,16 +763,14 @@ C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyMRAW.
   warnings.warn(
 </pre></div>
 </div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "502b3130573643458b87b45cb54e4166"}
-</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "e6dee802995546f18da5f675f510991a", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="dolocitev-pomikov-na-slikah-z-metodo-opticnega-toka">
-<h2>Določitev pomikov na slikah z metodo optičnega toka<a class="headerlink" href="#dolocitev-pomikov-na-slikah-z-metodo-opticnega-toka" title="Permalink to this headline">¶</a></h2>
+<h2>Določitev pomikov na slikah z metodo optičnega toka<a class="headerlink" href="#dolocitev-pomikov-na-slikah-z-metodo-opticnega-toka" title="Permalink to this heading">#</a></h2>
 <p>Svetlost na sliki se ohranja:
 $<span class="math notranslate nohighlight">\(
 	f(x, y, t) = f(x + \Delta x, y + \Delta y, t+ \Delta t).
@@ -844,7 +829,7 @@ s(x_j,y_k,t)=\frac{f_0(x_j,y_k)-f(x_j,y_k,t)}{|\nabla f_0|}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_43_0.png" src="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_43_0.png" />
+<img alt="../../_images/e85dcdfe2848fc8b0003331f960c3eb1f50668d27c4de8118d2030a8442ddcfc.png" src="../../_images/e85dcdfe2848fc8b0003331f960c3eb1f50668d27c4de8118d2030a8442ddcfc.png" />
 </div>
 </div>
 <p>Enačba optičnega toka:</p>
@@ -872,10 +857,10 @@ s(x_j,y_k,t)=\frac{f_0(x_j,y_k)-f(x_j,y_k,t)}{|\nabla f_0|}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1dc7505e470&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1ec652ad420&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_46_1.png" src="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_46_1.png" />
+<img alt="../../_images/fdd198753a26a65beafb29516572ab9aae33001530404a9eb46c17d206523609.png" src="../../_images/fdd198753a26a65beafb29516572ab9aae33001530404a9eb46c17d206523609.png" />
 </div>
 </div>
 <p>Izračun pomikov s <code class="docutils literal notranslate"><span class="pre">pyidi</span></code>:</p>
@@ -902,115 +887,7 @@ s(x_j,y_k,t)=\frac{f_0(x_j,y_k)-f(x_j,y_k,t)}{|\nabla f_0|}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                      | 0/3750 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▌                                                        | 105/3750 [00:00&lt;00:03, 1028.87it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|███▎                                                       | 208/3750 [00:00&lt;00:03, 933.07it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|████▉                                                      | 312/3750 [00:00&lt;00:03, 977.43it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|██████▍                                                   | 419/3750 [00:00&lt;00:03, 1012.25it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|████████▏                                                 | 527/3750 [00:00&lt;00:03, 1035.29it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|█████████▊                                                | 637/3750 [00:00&lt;00:02, 1055.26it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|███████████▍                                              | 743/3750 [00:00&lt;00:02, 1035.21it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|█████████████▎                                            | 857/3750 [00:00&lt;00:02, 1067.39it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|███████████████                                           | 974/3750 [00:00&lt;00:02, 1096.35it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 29%|████████████████▍                                        | 1084/3750 [00:01&lt;00:02, 1023.27it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 32%|██████████████████                                       | 1188/3750 [00:01&lt;00:02, 1009.82it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 35%|███████████████████▋                                     | 1296/3750 [00:01&lt;00:02, 1028.71it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 37%|█████████████████████▎                                   | 1400/3750 [00:01&lt;00:02, 1021.09it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 40%|███████████████████████                                  | 1515/3750 [00:01&lt;00:02, 1057.44it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 43%|████████████████████████▋                                | 1627/3750 [00:01&lt;00:01, 1073.60it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 46%|██████████████████████████▎                              | 1735/3750 [00:01&lt;00:02, 1005.04it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 49%|████████████████████████████▍                             | 1837/3750 [00:01&lt;00:02, 896.10it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 51%|█████████████████████████████▊                            | 1930/3750 [00:01&lt;00:02, 858.71it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 54%|███████████████████████████████▎                          | 2024/3750 [00:02&lt;00:01, 879.30it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|████████████████████████████████▋                         | 2114/3750 [00:02&lt;00:02, 804.03it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 59%|██████████████████████████████████▏                       | 2213/3750 [00:02&lt;00:01, 849.41it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 62%|███████████████████████████████████▊                      | 2318/3750 [00:02&lt;00:01, 903.60it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 64%|█████████████████████████████████████▎                    | 2411/3750 [00:02&lt;00:01, 888.32it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 67%|██████████████████████████████████████▉                   | 2520/3750 [00:02&lt;00:01, 944.04it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 70%|████████████████████████████████████████▋                 | 2632/3750 [00:02&lt;00:01, 991.82it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 73%|█████████████████████████████████████████▊               | 2748/3750 [00:02&lt;00:00, 1036.11it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 76%|███████████████████████████████████████████▌             | 2862/3750 [00:02&lt;00:00, 1065.15it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 79%|█████████████████████████████████████████████▏           | 2975/3750 [00:03&lt;00:00, 1081.53it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 82%|██████████████████████████████████████████████▉          | 3084/3750 [00:03&lt;00:00, 1044.77it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 85%|█████████████████████████████████████████████████▎        | 3190/3750 [00:03&lt;00:00, 973.60it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 88%|██████████████████████████████████████████████████▉       | 3290/3750 [00:03&lt;00:00, 979.26it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 90%|████████████████████████████████████████████████████▍     | 3389/3750 [00:03&lt;00:00, 953.99it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 93%|██████████████████████████████████████████████████████    | 3492/3750 [00:03&lt;00:00, 973.62it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 96%|███████████████████████████████████████████████████████▌  | 3595/3750 [00:03&lt;00:00, 988.20it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 99%|████████████████████████████████████████████████████████▎| 3701/3750 [00:03&lt;00:00, 1008.40it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████████████████████████████| 3750/3750 [00:03&lt;00:00, 986.23it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████████████████████████████| 3750/3750 [00:07&lt;00:00, 478.55it/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Averaging...
@@ -1041,15 +918,15 @@ Finished!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1dc7509e110&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1ec65ecd630&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_53_1.png" src="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_53_1.png" />
+<img alt="../../_images/2573221dddf1cb1316c14f59edbd3debeda396698293a277980c4340a133f20f.png" src="../../_images/2573221dddf1cb1316c14f59edbd3debeda396698293a277980c4340a133f20f.png" />
 </div>
 </div>
 </div>
 <div class="section" id="metoda-lucas-kanade">
-<h2>Metoda Lucas-Kanade:<a class="headerlink" href="#metoda-lucas-kanade" title="Permalink to this headline">¶</a></h2>
+<h2>Metoda Lucas-Kanade:<a class="headerlink" href="#metoda-lucas-kanade" title="Permalink to this heading">#</a></h2>
 <p>Če enačbe optičnega toka zapišemo za podobmočje več točk na sliki, dobimo predoločen sistem enačb.</p>
 <p>Rešitev predoločenega sistema v smislu najmanjše kvadratične napake nam da pomik podobmočja:</p>
 <div class="math notranslate nohighlight">
@@ -1110,7 +987,7 @@ SSD(\Delta \mathbf{x}) = \sum\limits_{x, y} \big[f(\mathbf{x} + \Delta \mathbf{x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_60_0.png" src="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_60_0.png" />
+<img alt="../../_images/b9c1dc31abdf4fdac2f706cbf8b2677719d049438e5197ec8470f49e9dec04f1.png" src="../../_images/b9c1dc31abdf4fdac2f706cbf8b2677719d049438e5197ec8470f49e9dec04f1.png" />
 </div>
 </div>
 <p>Izrčaun pomikov:</p>
@@ -1121,114 +998,31 @@ SSD(\Delta \mathbf{x}) = \sum\limits_{x, y} \big[f(\mathbf{x} + \Delta \mathbf{x
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyidi\methods\_lucas_kanade.py:556: ResourceWarning: unclosed file &lt;_io.BufferedReader name=&#39;data\\temp_file\\settings.pkl&#39;&gt;
-  settings_old = pickle.load(open(self.settings_filename, &#39;rb&#39;))
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
-C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyidi\methods\_lucas_kanade.py:568: ResourceWarning: unclosed file &lt;_io.BufferedReader name=&#39;data\\temp_file\\points.pkl&#39;&gt;
-  points = pickle.load(open(os.path.join(self.temp_dir, &#39;points.pkl&#39;), &#39;rb&#39;))
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-- Resuming last analysis ---
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Starting new analysis ---
  
-Computation start: 2023-05-10 12:36:55.061865
+Computation start: 2022-05-31 09:17:18.199292
 </pre></div>
 </div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "8b06788ce0b0432f89a476fa5da23206"}
-</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\tornado\ioloop.py:263: DeprecationWarning: There is no current event loop
-  loop = asyncio.get_event_loop()
-sys:1: ResourceWarning: unclosed socket &lt;zmq.Socket(zmq.PUSH) at 0x1dc75528ac0&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyidi\methods\_lucas_kanade.py:464: ResourceWarning: unclosed file &lt;_io.BufferedWriter name=&#39;data\\temp_file\\settings.pkl&#39;&gt;
+  pickle.dump(settings, open(self.settings_filename, &#39;wb&#39;))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyidi\methods\_lucas_kanade.py:466: ResourceWarning: unclosed file &lt;_io.BufferedWriter name=&#39;data\\temp_file\\points.pkl&#39;&gt;
+  pickle.dump(self.video.points, open(self.points_filename, &#39;wb&#39;))
 ResourceWarning: Enable tracemalloc to get the object allocation traceback
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sys:1: ResourceWarning: unclosed socket &lt;zmq.Socket(zmq.PUSH) at 0x1dc754ffc40&gt;
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d046a8090f4d4b21bb569e0f2fe6e29a", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Computation duration: 00:01:45.95
+data\camera_pyidi_analysis\analysis_001\ analysis_001
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_27816</span><span class="o">/</span><span class="mf">952502707.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">displacements_lk</span> <span class="o">=</span> <span class="n">video</span><span class="o">.</span><span class="n">get_displacements</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mf">8e-5</span>
-
-<span class="nn">~\AppData\Local\Programs\Python\Python310\lib\site-packages\pyidi\pyidi.py</span> in <span class="ni">get_displacements</span><span class="nt">(self, autosave, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span><span class="sd">         if hasattr(self, &#39;method&#39;):</span>
-<span class="ne">--&gt; </span><span class="mi">179</span><span class="sd">             self.method.calculate_displacements(self, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">180</span><span class="sd">             self.displacements = self.method.displacements</span>
-<span class="g g-Whitespace">    </span><span class="mi">181</span><span class="sd"> </span>
-
-<span class="nn">~\AppData\Local\Programs\Python\Python310\lib\site-packages\pyidi\methods\_lucas_kanade.py</span> in <span class="ni">calculate_displacements</span><span class="nt">(self, video, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">186</span><span class="sd">                 self.create_temp_files(init_multi=True)</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span><span class="sd"> </span>
-<span class="ne">--&gt; </span><span class="mi">188</span><span class="sd">             self.displacements = multi(video, self.processes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">189</span><span class="sd">             # return?</span>
-<span class="g g-Whitespace">    </span><span class="mi">190</span><span class="sd"> </span>
-
-<span class="nn">~\AppData\Local\Programs\Python\Python310\lib\site-packages\pyidi\methods\_lucas_kanade.py</span> in <span class="ni">multi</span><span class="nt">(video, processes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">696</span><span class="sd">             for i, p in enumerate(points_split):</span>
-<span class="g g-Whitespace">    </span><span class="mi">697</span><span class="sd">                 mcore.run(worker, p, idi_kwargs, method_kwargs, i)</span>
-<span class="ne">--&gt; </span><span class="mi">698</span><span class="sd">             returns = mcore.returns()</span>
-<span class="g g-Whitespace">    </span><span class="mi">699</span><span class="sd"> </span>
-<span class="g g-Whitespace">    </span><span class="mi">700</span><span class="sd">         out = []</span>
-
-<span class="nn">~\AppData\Local\Programs\Python\Python310\lib\site-packages\mantichora\main.py</span> in <span class="ni">returns</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span><span class="sd"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">77</span><span class="sd">         &quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">78</span>         <span class="n">pairs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">receive_all</span><span class="p">()</span> <span class="c1"># list of pairs (runid, result)</span>
-<span class="g g-Whitespace">     </span><span class="mi">79</span>         <span class="k">return</span> <span class="p">[</span><span class="n">p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">pairs</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">80</span> 
-
-<span class="nn">~\AppData\Local\Programs\Python\Python310\lib\site-packages\mantichora\main.py</span> in <span class="ni">receive_all</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span> 
-<span class="g g-Whitespace">    </span><span class="mi">109</span>     <span class="k">def</span> <span class="nf">receive_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">110</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hub</span><span class="o">.</span><span class="n">receive</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span> 
-<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="k">def</span> <span class="nf">terminate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">~\AppData\Local\Programs\Python\Python310\lib\site-packages\mantichora\hubmp.py</span> in <span class="ni">receive</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">162</span>         <span class="n">messages</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span> <span class="c1"># a list of (task_idx, result)</span>
-<span class="g g-Whitespace">    </span><span class="mi">163</span>         <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_ongoing_tasks</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">164</span>             <span class="n">messages</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_receive_finished</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">165</span> 
-<span class="g g-Whitespace">    </span><span class="mi">166</span>         <span class="c1"># sort in the order of task_idx</span>
-
-<span class="nn">~\AppData\Local\Programs\Python\Python310\lib\site-packages\mantichora\hubmp.py</span> in <span class="ni">_receive_finished</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>     <span class="k">def</span> <span class="nf">_receive_finished</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">175</span>         <span class="n">messages</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span> <span class="c1"># a list of (task_idx, result)</span>
-<span class="ne">--&gt; </span><span class="mi">176</span>         <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">result_queue</span><span class="o">.</span><span class="n">empty</span><span class="p">():</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span>             <span class="n">message</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">result_queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span>             <span class="n">messages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-
-<span class="nn">~\AppData\Local\Programs\Python\Python310\lib\multiprocessing\queues.py</span> in <span class="ni">empty</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span> 
-<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="k">def</span> <span class="nf">empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">129</span>         <span class="k">return</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_poll</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span> 
-<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="k">def</span> <span class="nf">full</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">~\AppData\Local\Programs\Python\Python310\lib\multiprocessing\connection.py</span> in <span class="ni">poll</span><span class="nt">(self, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">260</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_check_closed</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">261</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_check_readable</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">262</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_poll</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">263</span> 
-<span class="g g-Whitespace">    </span><span class="mi">264</span>     <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-
-<span class="nn">~\AppData\Local\Programs\Python\Python310\lib\multiprocessing\connection.py</span> in <span class="ni">_poll</span><span class="nt">(self, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">333</span>                         <span class="n">_winapi</span><span class="o">.</span><span class="n">PeekNamedPipe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_handle</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">334</span>                 <span class="k">return</span> <span class="kc">True</span>
-<span class="ne">--&gt; </span><span class="mi">335</span>             <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">wait</span><span class="p">([</span><span class="bp">self</span><span class="p">],</span> <span class="n">timeout</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">336</span> 
-<span class="g g-Whitespace">    </span><span class="mi">337</span>         <span class="k">def</span> <span class="nf">_get_more_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ov</span><span class="p">,</span> <span class="n">maxsize</span><span class="p">):</span>
-
-<span class="nn">~\AppData\Local\Programs\Python\Python310\lib\multiprocessing\connection.py</span> in <span class="ni">wait</span><span class="nt">(object_list, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">886</span>             <span class="c1"># request that overlapped reads stop</span>
-<span class="g g-Whitespace">    </span><span class="mi">887</span>             <span class="k">for</span> <span class="n">ov</span> <span class="ow">in</span> <span class="n">ov_list</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">888</span>                 <span class="n">ov</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">889</span> 
-<span class="g g-Whitespace">    </span><span class="mi">890</span>             <span class="c1"># wait for all overlapped reads to stop</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sys:1: ResourceWarning: unclosed socket &lt;zmq.Socket(zmq.PUSH) at 0x1ec65ccb160&gt;
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyidi\pyidi.py:225: ResourceWarning: unclosed file &lt;_io.BufferedWriter name=&#39;data\\camera_pyidi_analysis\\analysis_002\\results.pkl&#39;&gt;
+  pickle.dump(self.displacements, open(os.path.join(root, &#39;results.pkl&#39;), &#39;wb&#39;), protocol=-1)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyidi\pyidi.py:226: ResourceWarning: unclosed file &lt;_io.BufferedWriter name=&#39;data\\camera_pyidi_analysis\\analysis_002\\points.pkl&#39;&gt;
+  pickle.dump(self.points, open(os.path.join(root, &#39;points.pkl&#39;), &#39;wb&#39;), protocol=-1)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
 </pre></div>
 </div>
 </div>
@@ -1262,7 +1056,7 @@ ResourceWarning: Enable tracemalloc to get the object allocation traceback
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1ec65dca320&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_65_1.png" src="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_65_1.png" />
+<img alt="../../_images/17c080660827bb1255c7f5e98cfd9f9bd627446f52ee2a26f6bca3fcccea4966.png" src="../../_images/17c080660827bb1255c7f5e98cfd9f9bd627446f52ee2a26f6bca3fcccea4966.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1274,7 +1068,7 @@ ResourceWarning: Enable tracemalloc to get the object allocation traceback
 </div>
 </div>
 <div class="section" id="izracun-frf">
-<h2>Izračun FRF<a class="headerlink" href="#izracun-frf" title="Permalink to this headline">¶</a></h2>
+<h2>Izračun FRF<a class="headerlink" href="#izracun-frf" title="Permalink to this heading">#</a></h2>
 <p>Izračun amplitudnih spektrov pomikov:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1360,12 +1154,12 @@ ResourceWarning: Enable tracemalloc to get the object allocation traceback
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_79_0.png" src="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_79_0.png" />
+<img alt="../../_images/8163c25d36810ec47e4c4a1a63c0bc22a0d436d8fe60a887e454f73c735954e6.png" src="../../_images/8163c25d36810ec47e4c4a1a63c0bc22a0d436d8fe60a887e454f73c735954e6.png" />
 </div>
 </div>
 </div>
 <div class="section" id="eskperimentalna-modalna-analiza-samo-slikovna-meritev">
-<h2>Eskperimentalna modalna analiza (samo slikovna meritev):<a class="headerlink" href="#eskperimentalna-modalna-analiza-samo-slikovna-meritev" title="Permalink to this headline">¶</a></h2>
+<h2>Eskperimentalna modalna analiza (samo slikovna meritev):<a class="headerlink" href="#eskperimentalna-modalna-analiza-samo-slikovna-meritev" title="Permalink to this heading">#</a></h2>
 <p>Za eksperimentalno modalnoa analizo uporabimo paket <a class="reference external" href="https://github.com/ladisk/pyidi"><code class="docutils literal notranslate"><span class="pre">pyEMA</span></code></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1448,7 +1242,7 @@ SHIFT + RIGHT mouse button to erase the last pick.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_90_0.png" src="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_90_0.png" />
+<img alt="../../_images/f2553786507e834f30b52a1c754bbcb9e834797bfedc67cce960774d35b68d49.png" src="../../_images/f2553786507e834f30b52a1c754bbcb9e834797bfedc67cce960774d35b68d49.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1460,12 +1254,12 @@ SHIFT + RIGHT mouse button to erase the last pick.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_91_0.png" src="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_91_0.png" />
+<img alt="../../_images/ad5e003a20618db8a43eddac7c8b42cc324609cac4af0aa697e3ac185871dd84.png" src="../../_images/ad5e003a20618db8a43eddac7c8b42cc324609cac4af0aa697e3ac185871dd84.png" />
 </div>
 </div>
 </div>
 <div class="section" id="eskperimentalna-modalna-analiza-hibridna-metoda">
-<h2>Eskperimentalna modalna analiza - hibridna metoda<a class="headerlink" href="#eskperimentalna-modalna-analiza-hibridna-metoda" title="Permalink to this headline">¶</a></h2>
+<h2>Eskperimentalna modalna analiza - hibridna metoda<a class="headerlink" href="#eskperimentalna-modalna-analiza-hibridna-metoda" title="Permalink to this heading">#</a></h2>
 <p>Pri hibridni metodi kombiniramo pomike s slik z visoko prostorsko ločljivostjo in meritve pospeška z visoko natančnostjo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1521,7 +1315,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_100_0.png" src="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_100_0.png" />
+<img alt="../../_images/ff1e32269cc9f0284b6080b6d471fcd8d289a2b1ae607fd592d46791579545cf.png" src="../../_images/ff1e32269cc9f0284b6080b6d471fcd8d289a2b1ae607fd592d46791579545cf.png" />
 </div>
 </div>
 <p>Poli modela FRF so izrčaunani s hibridno metodo na podlagi meritev pospeška:</p>
@@ -1613,7 +1407,7 @@ SHIFT + RIGHT mouse button to erase the last pick.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_110_0.png" src="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_110_0.png" />
+<img alt="../../_images/7d2e0a6619db32b2d25cdb67cd206dce246819be433e929aa8b0b597d158f58e.png" src="../../_images/7d2e0a6619db32b2d25cdb67cd206dce246819be433e929aa8b0b597d158f58e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1634,7 +1428,7 @@ SHIFT + RIGHT mouse button to erase the last pick.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1ec65bba2c0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_111_1.png" src="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_111_1.png" />
+<img alt="../../_images/0f30092e271ca3e0f177fe674336aa5e2b0f2f8dcf875bd0454d5dee9a025a59.png" src="../../_images/0f30092e271ca3e0f177fe674336aa5e2b0f2f8dcf875bd0454d5dee9a025a59.png" />
 </div>
 </div>
 <p>Na ta način smo pri stabilizaciji zaznali dodatno lasnto obliko:</p>
@@ -1651,7 +1445,7 @@ SHIFT + RIGHT mouse button to erase the last pick.
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1ec6937b280&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_113_1.png" src="../../_images/Procesiranje slik za meritve v eksperimentalni modalni analizi_113_1.png" />
+<img alt="../../_images/bde003aa0a5629bcd0aa10936ebdf9c5b9b6346970cbbdd1469899c8bbf7de1c.png" src="../../_images/bde003aa0a5629bcd0aa10936ebdf9c5b9b6346970cbbdd1469899c8bbf7de1c.png" />
 </div>
 </div>
 </div>
@@ -1669,7 +1463,7 @@ SHIFT + RIGHT mouse button to erase the last pick.
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./notebooks\Predavanje 12 - Procesiranje slik"
         },
         predefinedOutput: true
@@ -1677,30 +1471,98 @@ SHIFT + RIGHT mouse button to erase the last pick.
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slikovne-meritve">Slikovne meritve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametri-zajema">Parametri zajema</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osvetlitev">Osvetlitev</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priprava-povrsine-merjenca">Priprava površine merjenca</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pogoste-tezave-pri-slikovnih-meritvah">Pogoste težave pri slikovnih meritvah</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neustrezno-izostrena-slika">Neustrezno izostrena slika</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neustrezna-osvetlitev">Neustrezna osvetlitev</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dolocitev-pomikov-na-slikah-z-metodo-opticnega-toka">Določitev pomikov na slikah z metodo optičnega toka</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metoda-lucas-kanade">Metoda Lucas-Kanade:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izracun-frf">Izračun FRF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eskperimentalna-modalna-analiza-samo-slikovna-meritev">Eskperimentalna modalna analiza (samo slikovna meritev):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eskperimentalna-modalna-analiza-hibridna-metoda">Eskperimentalna modalna analiza - hibridna metoda</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-</div>
+          </div>
+          <footer class="bd-footer-content">
             
-        </div>
-    </div>
-    <footer class="footer">
-  <p>
-    
-      By Domen Gorjup<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
-
-
-      </div>
-    </div>
+<div class="bd-footer-content__inner container">
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <div class="footer-item">
+    
+<p class="component-author">
+By Domen Gorjup
+</p>
 
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
