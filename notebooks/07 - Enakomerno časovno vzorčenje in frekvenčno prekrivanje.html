@@ -1,13 +1,13 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>7. Enakomerno časovno vzorčenje in frekvenčno prekrivanje &#8212; Procesiranje signalov - Laboratorijske vaje</title>
   
   
@@ -18,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje';</script>
@@ -77,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -121,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -140,9 +138,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -152,12 +152,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/lv_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/lv_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/lv_logo.png" class="logo__image only-light" alt="Procesiranje signalov - Laboratorijske vaje - Home"/>
+    <script>document.write(`<img src="../_static/lv_logo.png" class="logo__image only-dark" alt="Procesiranje signalov - Laboratorijske vaje - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -331,6 +342,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -340,6 +352,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -371,7 +384,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domaca-naloga">7.1. Domača naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga">7.1. Naloga</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diskretizacija-signalov">7.2. Diskretizacija signalov</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enakomerno-casovno-vzorcenje">7.2.1. Enakomerno časovno vzorčenje</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frekvencno-prekrivanje-aliasing">7.2.2. Frekvenčno prekrivanje (<em>aliasing</em>)</a><ul class="nav section-nav flex-column">
@@ -390,7 +403,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -406,11 +419,11 @@ document.write(`
 </div>
 </details>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="enakomerno-casovno-vzorcenje-in-frekvencno-prekrivanje">
-<h1><span class="section-number">7. </span>Enakomerno časovno vzorčenje in frekvenčno prekrivanje<a class="headerlink" href="#enakomerno-casovno-vzorcenje-in-frekvencno-prekrivanje" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="enakomerno-casovno-vzorcenje-in-frekvencno-prekrivanje">
+<h1><span class="section-number">7. </span>Enakomerno časovno vzorčenje in frekvenčno prekrivanje<a class="headerlink" href="#enakomerno-casovno-vzorcenje-in-frekvencno-prekrivanje" title="Link to this heading">#</a></h1>
 <p>Pri procesiranju merjenih podatkov imamo opravka z diskretno vzorčenimi signali. Pomembno se je zavedati lastnosti procesa diskretizacije sicer zveznih časovnih signalov, katerega osnove si bomo pogledali na tej vaji.</p>
-<div class="section" id="domaca-naloga">
-<h2><span class="section-number">7.1. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Permalink to this heading">#</a></h2>
+<section id="naloga">
+<h2><span class="section-number">7.1. </span>Naloga<a class="headerlink" href="#naloga" title="Link to this heading">#</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Domača naloga</p>
 <p>Z uporabo generatorja signalov in zajemnega sistema Arduino pripravite signal(e), s katerim boste demonstrirali v podatkih določeno lastnost diskretizacije signalov. Pri generiranju in zajemu signalov uporabite v podatkih predpisane parametre, manjkajoče parametre pa določite v skladu s predpisano lastnostjo diskretizacije.</p>
@@ -420,12 +433,13 @@ document.write(`
 <p>Pripravite kratko poročilo v okolju Jupyter Notebook <em>(od 3 do 10 celic s kodo)</em>, v katerem naj bodo razvidni podatki naloge ter prikazan vpliv določene lastnosti diskretizacije s kratkimi komentarji, podprtimi s teoretičnimi izhodišči.</p>
 <p>Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> obliki (glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
 </div>
-</div>
-<div class="section" id="diskretizacija-signalov">
-<h2><span class="section-number">7.2. </span>Diskretizacija signalov<a class="headerlink" href="#diskretizacija-signalov" title="Permalink to this heading">#</a></h2>
+</section>
+<hr class="docutils" />
+<section id="diskretizacija-signalov">
+<h2><span class="section-number">7.2. </span>Diskretizacija signalov<a class="headerlink" href="#diskretizacija-signalov" title="Link to this heading">#</a></h2>
 <p>Diskretizacija je postopek, pri katerem v času zvezno spremenljivko pretvorimo v diskretne vrednosti, primerne za predstavitev v računalniškem pomnilniku. Sestavljata jo dva ločena procesa, <strong>vzorčenje</strong> in <strong>kvantizacija</strong>.</p>
-<div class="section" id="enakomerno-casovno-vzorcenje">
-<h3><span class="section-number">7.2.1. </span>Enakomerno časovno vzorčenje<a class="headerlink" href="#enakomerno-casovno-vzorcenje" title="Permalink to this heading">#</a></h3>
+<section id="enakomerno-casovno-vzorcenje">
+<h3><span class="section-number">7.2.1. </span>Enakomerno časovno vzorčenje<a class="headerlink" href="#enakomerno-casovno-vzorcenje" title="Link to this heading">#</a></h3>
 <p>Vzorčenje je postopek diskretizacije <em>neodvisne spremenljivke</em> (časa) zveznega procesa.</p>
 <p>Glavni parameter časovnega vzorčenja je <strong>interval (perioda) vzorčenja</strong>, <span class="math notranslate nohighlight">\(\Delta t\)</span>, ki definira <strong>frekvenco vzorčenja</strong>, <span class="math notranslate nohighlight">\(f_s = 1 / \Delta t\)</span>.</p>
 <p>Zvezni časovni signal tako vzorčimo pri diskretnih vrednostih časa <span class="math notranslate nohighlight">\(n \, \Delta t\)</span>.</p>
@@ -442,9 +456,9 @@ X_s(f)=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,f\,n\,\
 X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 \]</div>
 </div>
-</div>
-<div class="section" id="frekvencno-prekrivanje-aliasing">
-<h3><span class="section-number">7.2.2. </span>Frekvenčno prekrivanje (<em>aliasing</em>)<a class="headerlink" href="#frekvencno-prekrivanje-aliasing" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="frekvencno-prekrivanje-aliasing">
+<h3><span class="section-number">7.2.2. </span>Frekvenčno prekrivanje (<em>aliasing</em>)<a class="headerlink" href="#frekvencno-prekrivanje-aliasing" title="Link to this heading">#</a></h3>
 <p>Posledica periodičnosti Fourierove transformacije diskretnega signala je, da so frekvenčne komponente signla, višje od <span class="math notranslate nohighlight">\(f_s/2\)</span>, zrcaljene preko meje <span class="math notranslate nohighlight">\(f_s/2\)</span> in povzročajo t. i. <strong>frekvenčno prekrivanje</strong>. To povzroča anomalije v diskretno vzorčenem signalu.</p>
 <p>Frekvenco <span class="math notranslate nohighlight">\(f_N = f_s / 2\)</span> imenujemo tudi <em>Nyquistova frekvenca</em>.</p>
 <div class="admonition note">
@@ -477,7 +491,7 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/6cf9526393c888e783a0d364cfcec8d0cb356bc70e37a438bde5f8debc04dc8a.png" src="../_images/6cf9526393c888e783a0d364cfcec8d0cb356bc70e37a438bde5f8debc04dc8a.png" />
+<img alt="../_images/fa1d7f88572929a39e8c57fedaf60698c6b0788cd2c00540c3de5350eabfcbfe.png" src="../_images/fa1d7f88572929a39e8c57fedaf60698c6b0788cd2c00540c3de5350eabfcbfe.png" />
 </div>
 </div>
 <div class="cell tag_remove-input docutils container">
@@ -486,11 +500,11 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 <div class="cell tag_hide-input tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/fddfab6c429255ddb6508250c340efb55b17c8c37e0490ffcf4e7de0594029ad.png" src="../_images/fddfab6c429255ddb6508250c340efb55b17c8c37e0490ffcf4e7de0594029ad.png" />
+<img alt="../_images/f1f8d0f3d72fb03c07a9d312e5697b288e795f71523db55ca696f34cce0456ff.png" src="../_images/f1f8d0f3d72fb03c07a9d312e5697b288e795f71523db55ca696f34cce0456ff.png" />
 </div>
 </div>
-<div class="section" id="filtriranje-za-odpravo-frekvencnega-nalaganja">
-<h4><span class="section-number">7.2.2.1. </span>Filtriranje za odpravo frekvenčnega nalaganja<a class="headerlink" href="#filtriranje-za-odpravo-frekvencnega-nalaganja" title="Permalink to this heading">#</a></h4>
+<section id="filtriranje-za-odpravo-frekvencnega-nalaganja">
+<h4><span class="section-number">7.2.2.1. </span>Filtriranje za odpravo frekvenčnega nalaganja<a class="headerlink" href="#filtriranje-za-odpravo-frekvencnega-nalaganja" title="Link to this heading">#</a></h4>
 <p>Frekvenčno nalaganje merjenega signala lahko preprečimo z uporabo nizkopasovnega filtriranja (ang. <em>anti-aliasing filter</em>), ki mora biti izvedeno <em>pred časovnim vzorčenjem signala</em>.</p>
 <div class="seealso admonition">
 <p class="admonition-title">Naloga 2 (10 minut)</p>
@@ -533,14 +547,10 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Temp\ipykernel_22428\1568578183.py:2: RuntimeWarning: divide by zero encountered in log10
-  ax.plot(freq, 20*np.log10(np.abs(h)), c=&#39;k&#39;)
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;X(f)&#39;)
 </pre></div>
 </div>
-<img alt="../_images/7383c778af0fe4c102d24986667edc5582e04753ae214284fa972d91d642c394.png" src="../_images/7383c778af0fe4c102d24986667edc5582e04753ae214284fa972d91d642c394.png" />
+<img alt="../_images/0fd1687966552572c2d0811642fafab50f1db30b3a6e476a8b7615a3c5796fe7.png" src="../_images/0fd1687966552572c2d0811642fafab50f1db30b3a6e476a8b7615a3c5796fe7.png" />
 </div>
 </div>
 <p>Filtriranje signala</p>
@@ -588,17 +598,13 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Temp\ipykernel_22428\1088635885.py:2: RuntimeWarning: divide by zero encountered in log10
-  ax.plot(freq, 20*np.log10(np.abs(h)), c=&#39;k&#39;)
-</pre></div>
-</div>
-<img alt="../_images/6760df70f66a2b690d1ab5ea17f7c00ae442a305e253e22db7b1438b407e62a3.png" src="../_images/6760df70f66a2b690d1ab5ea17f7c00ae442a305e253e22db7b1438b407e62a3.png" />
+<img alt="../_images/b4e0ac998a9b6b859216787d5a3e6a757581d8d46442ba207ff8c8b29e27c5c4.png" src="../_images/b4e0ac998a9b6b859216787d5a3e6a757581d8d46442ba207ff8c8b29e27c5c4.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="kvantizacija">
-<h3><span class="section-number">7.2.3. </span>Kvantizacija<a class="headerlink" href="#kvantizacija" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="kvantizacija">
+<h3><span class="section-number">7.2.3. </span>Kvantizacija<a class="headerlink" href="#kvantizacija" title="Link to this heading">#</a></h3>
 <p>Kvantizacija je postopek diskretizacije <em>odvisne spremenljivke</em> zveznega procesa <span class="math notranslate nohighlight">\(x(t)\)</span>.</p>
 <p>Glavni parameter časovnega vzorčenja je <strong>število diskretnih nivojev</strong>, ki jih odvisna spremenljivka pri procesu kvantizacije lahko zavzame, ki določa <strong>dinamični razpon</strong> (globino) procesa. Običajno je podano s <strong>številom bitov</strong> <span class="math notranslate nohighlight">\(b\)</span> AD pretvornika. Prav tako je pri tem pomembno območje kvanzizacije <span class="math notranslate nohighlight">\(A = x_{\text{max}} - x_{\text{min}}\)</span>, ki določa interval možnih vrednosti neodvisne spremenljivke <span class="math notranslate nohighlight">\(x \in [x_{\text{min}}, x_{\text{max}}]\)</span>.</p>
 <p>Število diskretnih vrednosti kvantiziranega signala je:</p>
@@ -704,7 +710,7 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/7310452a0f403ea4a73f129ffab36c3bd75a50e67c37d2c099badedb1e144f9c.png" src="../_images/7310452a0f403ea4a73f129ffab36c3bd75a50e67c37d2c099badedb1e144f9c.png" />
+<img alt="../_images/e758ccb9ea3dbf8b6e46ba8a2f3944124f6a006f679de99b947d557d5233766c.png" src="../_images/e758ccb9ea3dbf8b6e46ba8a2f3944124f6a006f679de99b947d557d5233766c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -736,7 +742,7 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b696a5ba9829a16d516b0d90d58d018770c56607810156ea2f5da0958ee594bd.png" src="../_images/b696a5ba9829a16d516b0d90d58d018770c56607810156ea2f5da0958ee594bd.png" />
+<img alt="../_images/cd722837e2f0247fc4ee7657c8fd470da55a75d518686c05e1247c9266440536.png" src="../_images/cd722837e2f0247fc4ee7657c8fd470da55a75d518686c05e1247c9266440536.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -757,12 +763,12 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b17247f0dbf78e1803f853d5d3771843e841315e9da729c5c3149a523f6776ab.png" src="../_images/b17247f0dbf78e1803f853d5d3771843e841315e9da729c5c3149a523f6776ab.png" />
+<img alt="../_images/b86ae89f7509a5da71a2b32d46afa305a6a8eadd9da410abf3fba599ddcb248a.png" src="../_images/b86ae89f7509a5da71a2b32d46afa305a6a8eadd9da410abf3fba599ddcb248a.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -792,7 +798,7 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="06%20-%20LTI%20sistemi%202%2C%20prenosne%20funkcije.html"
@@ -821,13 +827,14 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domaca-naloga">7.1. Domača naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga">7.1. Naloga</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diskretizacija-signalov">7.2. Diskretizacija signalov</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enakomerno-casovno-vzorcenje">7.2.1. Enakomerno časovno vzorčenje</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frekvencno-prekrivanje-aliasing">7.2.2. Frekvenčno prekrivanje (<em>aliasing</em>)</a><ul class="nav section-nav flex-column">
@@ -858,9 +865,10 @@ By Domen Gorjup
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -884,8 +892,8 @@ By Domen Gorjup
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,13 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>6. Linearni, časovno invariatni (LTI) sistemi 2 - prenosne funkcije &#8212; Procesiranje signalov - Laboratorijske vaje</title>
   
   
@@ -18,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/06 - LTI sistemi 2, prenosne funkcije';</script>
@@ -77,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -121,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -140,9 +138,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -152,12 +152,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/lv_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/lv_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/lv_logo.png" class="logo__image only-light" alt="Procesiranje signalov - Laboratorijske vaje - Home"/>
+    <script>document.write(`<img src="../_static/lv_logo.png" class="logo__image only-dark" alt="Procesiranje signalov - Laboratorijske vaje - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -331,6 +342,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -340,6 +352,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -371,21 +384,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opis-lti-sistemov">6.1. Opis LTI sistemov</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frekvencna-domena">6.1.1. Frekvenčna domena</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domaca-naloga">6.1. Domača naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opis-lti-sistemov">6.2. Opis LTI sistemov</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frekvencna-domena">6.2.1. Frekvenčna domena</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obdelava-signalov-za-oceno-impulzne-prenosne-funkcije">6.2. Obdelava signalov za oceno impulzne prenosne funkcije</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekponentno-okno">6.2.1. Ekponentno okno</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-uporabe-eksponentnega-okna-na-numericnem-modelu">6.2.1.1. Primer uporabe eksponentnega okna na numeričnem modelu</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-eksponentnega-okna-na-meritvi-nosilca">6.2.1.2. Uporaba eksponentnega okna na meritvi nosilca</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obdelava-signalov-za-oceno-impulzne-prenosne-funkcije">6.3. Obdelava signalov za oceno impulzne prenosne funkcije</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekponentno-okno">6.3.1. Ekponentno okno</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-uporabe-eksponentnega-okna-na-numericnem-modelu">6.3.1.1. Primer uporabe eksponentnega okna na numeričnem modelu</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-eksponentnega-okna-na-meritvi-nosilca">6.3.1.2. Uporaba eksponentnega okna na meritvi nosilca</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#force-okno">6.2.2. Force okno</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frf-z-okni">6.2.3. FRF z okni</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#force-okno">6.3.2. Force okno</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frf-z-okni">6.3.3. FRF z okni</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domaca-naloga">6.3. Domača naloga</a></li>
 </ul>
             </nav>
         </div>
@@ -395,10 +408,48 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <div class="cell tag_hide-input tag_remove-input docutils container">
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">12.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">]</span>
+<span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">14</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="linearni-casovno-invariatni-lti-sistemi-2-prenosne-funkcije">
+<h1><span class="section-number">6. </span>Linearni, časovno invariatni (LTI) sistemi 2 - prenosne funkcije<a class="headerlink" href="#linearni-casovno-invariatni-lti-sistemi-2-prenosne-funkcije" title="Link to this heading">#</a></h1>
+<section id="domaca-naloga">
+<h2><span class="section-number">6.1. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Link to this heading">#</a></h2>
+<div class="warning admonition">
+<p class="admonition-title">Domača naloga</p>
+<p>N podlagi meritev nosilca, ki ste jih v skupini zajeli na prejšnji vaji, izračunajte in prikažite frekvenčne prenosne funkcije pospešenosti za vse pomerjene lokacije vzbujanja na nosilcu. Pri obdelavi zajetih signalov ustrezno uporabite eksponentno okno ter “force” okno s parametri iz podatkov naloge.</p>
+<p>V okolju Jupyter Notebook pripravite kratko poročilo <em>(od 3 do 10 celic s kodo)</em> z rezultati in kratkimi komentarji, v katerem naj bodo razvidni tudi podatki naloge.</p>
+<p>Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> obliki (glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
+<p><strong>Dodatek</strong>:
+Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno obliko obravnavanega nosilca.</p>
+<p><em>Lastna oblika</em> podaja razmerje amplitud odziva sistema na vzbujanje v različnih točkah <span class="math notranslate nohighlight">\(i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\{A\}^r = \{A_0^r, A_1^r, \dots A_i^r \dots A_n^r\}\]</div>
+<p>kjer so <span class="math notranslate nohighlight">\(A^r_i\)</span> t. i. modalne konstante sistema pri lastni frekvenci <span class="math notranslate nohighlight">\(\omega_r\)</span>.</p>
+<p>Modalne konstante lahko ocenite <em>s poljubno metodo</em> (glejte spodnji zaznamek).</p>
+<p>Za identifikacijo modalnih konstant lahko uporabite tudi paket <a class="reference external" href="https://pypi.org/project/pyEMA/">pyEMA</a>. Pomagate si lahko s <a class="reference external" href="https://github.com/ladisk/pyEMA/blob/master/pyEMA%20Showcase.ipynb">temle primerom uporabe</a>.</p>
+</div>
+<div class="info admonition">
+<p class="admonition-title">Metoda največjih amplitud</p>
+<p>Ena najpreprostejših metod modalne identifikacije je <a class="reference external" href="https://link.springer.com/article/10.1007/s42452-019-0806-8#Sec2">metoda največjih amplitud</a> (<em>Peak amplitue</em>, tudi <em>Peak Picking method</em>):</p>
+<p><span class="math notranslate nohighlight">\(\omega_r = \text{arg max}(|\alpha(\omega)|)\)</span> (krožna frekvenca resonančnega vrha)</p>
+<p><span class="math notranslate nohighlight">\(\eta_r = \frac{\omega_a - \omega_b}{\omega_r}\)</span> (razmernik dušenja), kjer sta <span class="math notranslate nohighlight">\(\omega_a\)</span> in <span class="math notranslate nohighlight">\(\omega_b\)</span> t. i. točki polovične moči v okolici <span class="math notranslate nohighlight">\(\omega_r\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(|\alpha(\omega_{a, b})| = \frac{|\alpha(\omega_r)|} {\sqrt{2}}\)</span></p>
+<p>Iz FPF za posamezno obravnavano točko <span class="math notranslate nohighlight">\(i\)</span> pa lahko določite modalne konstante:</p>
+<p><span class="math notranslate nohighlight">\(A^r_i = |\alpha_i(\omega_r)| \, \omega_r^2 \, \eta_r\)</span></p>
+</div>
+<hr class="docutils" />
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -416,8 +467,6 @@ document.write(`
 </div>
 </details>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="linearni-casovno-invariatni-lti-sistemi-2-prenosne-funkcije">
-<h1><span class="section-number">6. </span>Linearni, časovno invariatni (LTI) sistemi 2 - prenosne funkcije<a class="headerlink" href="#linearni-casovno-invariatni-lti-sistemi-2-prenosne-funkcije" title="Permalink to this heading">#</a></h1>
 <p><strong>Frekvenčna prenosna funkcija</strong> <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> predstavlja razmerje med (kompleksnimi) amplitudami harmonskega odziva in vzbujana opazovanega sistema:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -439,15 +488,16 @@ document.write(`
 	\alpha(\omega)=\mathcal{F}\{h(t)\}.
 \]</div>
 </div>
-<div class="section" id="opis-lti-sistemov">
-<h2><span class="section-number">6.1. </span>Opis LTI sistemov<a class="headerlink" href="#opis-lti-sistemov" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="opis-lti-sistemov">
+<h2><span class="section-number">6.2. </span>Opis LTI sistemov<a class="headerlink" href="#opis-lti-sistemov" title="Link to this heading">#</a></h2>
 <p>Odzivni model LTI sistema opišemo z njegovo prenosno funkcijo.</p>
 <p>Poglejmo primer enostavnega linearnega oscilatorja, ki ga opisuje gibalna enačba:</p>
 <div class="math notranslate nohighlight">
 \[m \, \ddot{x} + c \, \dot{x} + k \, x = f(t)\]</div>
 <p><img alt="lin-oscilator" src="../_images/lin_oscilator.png" /></p>
-<div class="section" id="frekvencna-domena">
-<h3><span class="section-number">6.1.1. </span>Frekvenčna domena<a class="headerlink" href="#frekvencna-domena" title="Permalink to this heading">#</a></h3>
+<section id="frekvencna-domena">
+<h3><span class="section-number">6.2.1. </span>Frekvenčna domena<a class="headerlink" href="#frekvencna-domena" title="Link to this heading">#</a></h3>
 <p>Frekvenčna prenosna funkcija dušenega linearnega oscilatorja je podana z:</p>
 <div class="math notranslate nohighlight">
 \[\alpha(\omega) = X(\omega) / F(\omega) = \frac{1}{-\omega^2 \, m + \mathrm{i} \, \omega \, c + k}\]</div>
@@ -516,7 +566,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c6ec36688520b3b93c9437abcacf27fb1127739301287951a901ddcec54adecf.png" src="../_images/c6ec36688520b3b93c9437abcacf27fb1127739301287951a901ddcec54adecf.png" />
+<img alt="../_images/3a01f04c63e92b18b9bd7527fa4283b4c400a802269cf02018fd613fdf82eb8a.png" src="../_images/3a01f04c63e92b18b9bd7527fa4283b4c400a802269cf02018fd613fdf82eb8a.png" />
 </div>
 </div>
 <div class="important admonition">
@@ -559,20 +609,20 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/fd3098d8757195d1685484bcd7fe972995be1969980a14bf4b7e9a9cab592dc6.png" src="../_images/fd3098d8757195d1685484bcd7fe972995be1969980a14bf4b7e9a9cab592dc6.png" />
+<img alt="../_images/97222000da1dbb61edf55897c7b8630cc67b3ee27c3f0bca2807514334ecd21f.png" src="../_images/97222000da1dbb61edf55897c7b8630cc67b3ee27c3f0bca2807514334ecd21f.png" />
 </div>
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/562343a2dea6aecca28bcb87751f318515cd2069cf399168d511c5f6c2f82046.png" src="../_images/562343a2dea6aecca28bcb87751f318515cd2069cf399168d511c5f6c2f82046.png" />
+<img alt="../_images/94c2ff1cb859e364054c155d7df9d944b50f93dcdbe4eb53714c1e64c498fcbe.png" src="../_images/94c2ff1cb859e364054c155d7df9d944b50f93dcdbe4eb53714c1e64c498fcbe.png" />
 </div>
 </div>
 <p>Opazimo, da sta izračunani impulzni prenosni funkciji različno normirani.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/cbf24e0632939937ff21cd908c45a1ea2aaf05e8af45fc1ca6b3c4642fa605c1.png" src="../_images/cbf24e0632939937ff21cd908c45a1ea2aaf05e8af45fc1ca6b3c4642fa605c1.png" />
+<img alt="../_images/d820d9b6d5418783d6709aed4818760103033bf2bf60f911de246581f5a10468.png" src="../_images/d820d9b6d5418783d6709aed4818760103033bf2bf60f911de246581f5a10468.png" />
 </div>
 </div>
 <div class="important admonition">
@@ -626,27 +676,27 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/f57144e344dd35b1dad34a0841ea21f54a050413e18fbbf7c5a8bc09522bc582.png" src="../_images/f57144e344dd35b1dad34a0841ea21f54a050413e18fbbf7c5a8bc09522bc582.png" />
+<img alt="../_images/5f605ec3a93a2d7ddd09aced53c9d9b2f72aa8cfcf8fdd4c3c896765b7767c27.png" src="../_images/5f605ec3a93a2d7ddd09aced53c9d9b2f72aa8cfcf8fdd4c3c896765b7767c27.png" />
 </div>
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/73c3c24bd363fce1ed8db84c401dcc8d9c4259474617f427a38e7855b287e24c.png" src="../_images/73c3c24bd363fce1ed8db84c401dcc8d9c4259474617f427a38e7855b287e24c.png" />
+<img alt="../_images/6d1f889c38c5712f86797dfb59cbeac3879405ac43c105808e9dff37f8319d91.png" src="../_images/6d1f889c38c5712f86797dfb59cbeac3879405ac43c105808e9dff37f8319d91.png" />
 </div>
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/bfde68c83c9250ba020ced0b15599d7a229df9ce63236fa35ce45ad4159227cb.png" src="../_images/bfde68c83c9250ba020ced0b15599d7a229df9ce63236fa35ce45ad4159227cb.png" />
+<img alt="../_images/dd71fc63576dff0912d7045237a2378361969a3384af0bf4190b3d36354e8dc1.png" src="../_images/dd71fc63576dff0912d7045237a2378361969a3384af0bf4190b3d36354e8dc1.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="obdelava-signalov-za-oceno-impulzne-prenosne-funkcije">
-<h2><span class="section-number">6.2. </span>Obdelava signalov za oceno impulzne prenosne funkcije<a class="headerlink" href="#obdelava-signalov-za-oceno-impulzne-prenosne-funkcije" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+<section id="obdelava-signalov-za-oceno-impulzne-prenosne-funkcije">
+<h2><span class="section-number">6.3. </span>Obdelava signalov za oceno impulzne prenosne funkcije<a class="headerlink" href="#obdelava-signalov-za-oceno-impulzne-prenosne-funkcije" title="Link to this heading">#</a></h2>
 <div class="seealso admonition">
 <p class="admonition-title">Naloga 3 (30 minut): Prenosne funkcije nosilca</p>
 <p>Na primeru nosilca, obravnavanega na prejšnji vaji, ocenimo izmerjene frekvenčne prenosne funkcije nosilca.</p>
@@ -711,7 +761,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c7348af968b565488caa22f17eaa3383b5e4551c18bfde15c69b8763c545f237.png" src="../_images/c7348af968b565488caa22f17eaa3383b5e4551c18bfde15c69b8763c545f237.png" />
+<img alt="../_images/621e7f3c74d8ac82572dba2363d81e84b450d1798e746f8c7e7304c9ca9d5457.png" src="../_images/621e7f3c74d8ac82572dba2363d81e84b450d1798e746f8c7e7304c9ca9d5457.png" />
 </div>
 </div>
 <p>Opazimo, da se v opazovanem časovnem intervalu zajet odziv sistema ne izniha popolnoma.</p>
@@ -752,7 +802,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/eaf5bdede569402faf04668170ee38f83cd49f86d4f2dfff90f7b3e9354f5d6c.png" src="../_images/eaf5bdede569402faf04668170ee38f83cd49f86d4f2dfff90f7b3e9354f5d6c.png" />
+<img alt="../_images/7470e30aa09d0a40652712ae92b6ab5f981dfdc9503e4550e59e6ffa351f56a7.png" src="../_images/7470e30aa09d0a40652712ae92b6ab5f981dfdc9503e4550e59e6ffa351f56a7.png" />
 </div>
 </div>
 <p>Ocenimo frekvenčno prenosno funkcijo:</p>
@@ -778,11 +828,11 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/901edb7d1695d57b97ca1770a4bf2630a1e34a00bf4072930e7b0147126a2c19.png" src="../_images/901edb7d1695d57b97ca1770a4bf2630a1e34a00bf4072930e7b0147126a2c19.png" />
+<img alt="../_images/c560bc94a6567fa693aad146e2631a613bbb2f3eea9d61ccc5593e4aa8745fa4.png" src="../_images/c560bc94a6567fa693aad146e2631a613bbb2f3eea9d61ccc5593e4aa8745fa4.png" />
 </div>
 </div>
-<div class="section" id="ekponentno-okno">
-<h3><span class="section-number">6.2.1. </span>Ekponentno okno<a class="headerlink" href="#ekponentno-okno" title="Permalink to this heading">#</a></h3>
+<section id="ekponentno-okno">
+<h3><span class="section-number">6.3.1. </span>Ekponentno okno<a class="headerlink" href="#ekponentno-okno" title="Link to this heading">#</a></h3>
 <p>Da zadostimo prdpostavki periodičnosti signala v primeru, ko se odziv sistema v zajetem časovnem intervalu ne izniha, uporabimo t. i. <em>eksponentno okno</em>:</p>
 <div class="math notranslate nohighlight">
 \[w_e(t) = \mathrm{e}^{-t / \tau}\]</div>
@@ -805,8 +855,8 @@ document.write(`
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="primer-uporabe-eksponentnega-okna-na-numericnem-modelu">
-<h4><span class="section-number">6.2.1.1. </span>Primer uporabe eksponentnega okna na numeričnem modelu<a class="headerlink" href="#primer-uporabe-eksponentnega-okna-na-numericnem-modelu" title="Permalink to this heading">#</a></h4>
+<section id="primer-uporabe-eksponentnega-okna-na-numericnem-modelu">
+<h4><span class="section-number">6.3.1.1. </span>Primer uporabe eksponentnega okna na numeričnem modelu<a class="headerlink" href="#primer-uporabe-eksponentnega-okna-na-numericnem-modelu" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k2</span> <span class="o">=</span>  <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
@@ -843,7 +893,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/0e30b37beb04892637be7e142c5489c4e9d42b1bce2ca36ab9843bdf59035a4d.png" src="../_images/0e30b37beb04892637be7e142c5489c4e9d42b1bce2ca36ab9843bdf59035a4d.png" />
+<img alt="../_images/ca18f202328a3595bb93723e56810af9e669fdf44f2b28b7e3d8cec0fbce1113.png" src="../_images/ca18f202328a3595bb93723e56810af9e669fdf44f2b28b7e3d8cec0fbce1113.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -870,7 +920,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/4255597c595c3df0eb81354901f042feea82e794d5c85b533060d892ecfef31d.png" src="../_images/4255597c595c3df0eb81354901f042feea82e794d5c85b533060d892ecfef31d.png" />
+<img alt="../_images/effd45a156f1c8e9d5f2677fbc5116c5c8b7431b452d7f96801b3fff1f12c3ba.png" src="../_images/effd45a156f1c8e9d5f2677fbc5116c5c8b7431b452d7f96801b3fff1f12c3ba.png" />
 </div>
 </div>
 <p>Ker v opazovanem časovnem oknu nismo zajeli popolnoma periodičnega signala, v amplitudnem spektru opazimo pojav <em>frekvenčnega odtekanja</em> (ang. <a class="reference external" href="https://en.wikipedia.org/wiki/Spectral_leakage"><em>Spectral Leakage</em></a>).</p>
@@ -901,7 +951,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8f31211dc2e7818a68ee495504af529b8b1ba6847582012e986678b3624b7832.png" src="../_images/8f31211dc2e7818a68ee495504af529b8b1ba6847582012e986678b3624b7832.png" />
+<img alt="../_images/d3aace7c6daf557b3fe8bbefd14002754231d80d47ffc71819a0f8b2758ca113.png" src="../_images/d3aace7c6daf557b3fe8bbefd14002754231d80d47ffc71819a0f8b2758ca113.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -934,13 +984,13 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/2ac8edc75f141949f29738955906adc72985cf0e89c7e7b8e2000217490006e8.png" src="../_images/2ac8edc75f141949f29738955906adc72985cf0e89c7e7b8e2000217490006e8.png" />
+<img alt="../_images/f82504dad7e9ec715f161b3b94dac565ff6b09456bb1e638c76cdb8ad8bd6e57.png" src="../_images/f82504dad7e9ec715f161b3b94dac565ff6b09456bb1e638c76cdb8ad8bd6e57.png" />
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="uporaba-eksponentnega-okna-na-meritvi-nosilca">
-<h4><span class="section-number">6.2.1.2. </span>Uporaba eksponentnega okna na meritvi nosilca<a class="headerlink" href="#uporaba-eksponentnega-okna-na-meritvi-nosilca" title="Permalink to this heading">#</a></h4>
+<section id="uporaba-eksponentnega-okna-na-meritvi-nosilca">
+<h4><span class="section-number">6.3.1.2. </span>Uporaba eksponentnega okna na meritvi nosilca<a class="headerlink" href="#uporaba-eksponentnega-okna-na-meritvi-nosilca" title="Link to this heading">#</a></h4>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -965,7 +1015,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8cd892c0787f26c91dd62dbb11bda7487bb24f613d7108823ab1f223c7cd19c7.png" src="../_images/8cd892c0787f26c91dd62dbb11bda7487bb24f613d7108823ab1f223c7cd19c7.png" />
+<img alt="../_images/4b62f44bcf3a554ec7afab4d5642d2db46c1ccd5b08fb76b2ef25e1de2231772.png" src="../_images/4b62f44bcf3a554ec7afab4d5642d2db46c1ccd5b08fb76b2ef25e1de2231772.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -997,13 +1047,13 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/9f9b3530e7ad84f944ed1e881b2054b927e62f9c0ef6567e6fa8f35c13e48fde.png" src="../_images/9f9b3530e7ad84f944ed1e881b2054b927e62f9c0ef6567e6fa8f35c13e48fde.png" />
+<img alt="../_images/62b2351cdc894788d042b53a07cb8e287487735155777297774a0e9d4ea6e3c9.png" src="../_images/62b2351cdc894788d042b53a07cb8e287487735155777297774a0e9d4ea6e3c9.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="force-okno">
-<h3><span class="section-number">6.2.2. </span>Force okno<a class="headerlink" href="#force-okno" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="force-okno">
+<h3><span class="section-number">6.3.2. </span>Force okno<a class="headerlink" href="#force-okno" title="Link to this heading">#</a></h3>
 <p>Da zmanjšamo vpliv šuma na vhodnem signalu <span class="math notranslate nohighlight">\(f(t)\)</span> uporabimo t. i. <em>“force” okno</em>, s katerim izničimo vrednosti signala sile po koncu udarca.</p>
 <p>Parameter “force” okna je dolžina segmenta okna (v obliki deleža skupne dolžine signala) z enotsko amplitudo, ki jo bomo označili z <span class="math notranslate nohighlight">\(l_w\)</span>.</p>
 <p>Pri pripravi “force” okna si lahko pomagamo z oknom cosinusnega upada <code class="docutils literal notranslate"><span class="pre">scipy.signal.windows.tukey</span></code>.</p>
@@ -1048,7 +1098,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/a9172a2cdf8d29d784429478a8b64732dc490c41157533cc01edb14539f62426.png" src="../_images/a9172a2cdf8d29d784429478a8b64732dc490c41157533cc01edb14539f62426.png" />
+<img alt="../_images/b3fd3537aaa912de5c0666e0ef3aad4d78185ff91946d172bca227261156ee47.png" src="../_images/b3fd3537aaa912de5c0666e0ef3aad4d78185ff91946d172bca227261156ee47.png" />
 </div>
 </div>
 <p>Uporaba force okna:</p>
@@ -1081,12 +1131,12 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b86686e7f1f32814fe59c7eaf8968643d6b924fc14e6c2e2ae671ea8422c6652.png" src="../_images/b86686e7f1f32814fe59c7eaf8968643d6b924fc14e6c2e2ae671ea8422c6652.png" />
+<img alt="../_images/83c0eeb4159a197e261b1017d56a6ac7ee148077d99ebf507a41ed10597fa2aa.png" src="../_images/83c0eeb4159a197e261b1017d56a6ac7ee148077d99ebf507a41ed10597fa2aa.png" />
 </div>
 </div>
-</div>
-<div class="section" id="frf-z-okni">
-<h3><span class="section-number">6.2.3. </span>FRF z okni<a class="headerlink" href="#frf-z-okni" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="frf-z-okni">
+<h3><span class="section-number">6.3.3. </span>FRF z okni<a class="headerlink" href="#frf-z-okni" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FRF_w</span> <span class="o">=</span> <span class="n">A_w</span> <span class="o">/</span> <span class="n">F_w</span>
@@ -1112,38 +1162,12 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/a0a99efc052681e665bc73c1671a29209eb5e536dceeffadbe1a770f70883cd2.png" src="../_images/a0a99efc052681e665bc73c1671a29209eb5e536dceeffadbe1a770f70883cd2.png" />
+<img alt="../_images/80580452e86f2101cbde0a80806a462cfa7b35f97efcb9bf4f11d5693fea7a48.png" src="../_images/80580452e86f2101cbde0a80806a462cfa7b35f97efcb9bf4f11d5693fea7a48.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="domaca-naloga">
-<h2><span class="section-number">6.3. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Permalink to this heading">#</a></h2>
-<div class="warning admonition">
-<p class="admonition-title">Domača naloga</p>
-<p>N podlagi meritev nosilca, ki ste jih v skupini zajeli na prejšnji vaji, izračunajte in prikažite frekvenčne prenosne funkcije pospešenosti za vse pomerjene lokacije vzbujanja na nosilcu. Pri obdelavi zajetih signalov ustrezno uporabite eksponentno okno ter “force” okno s parametri iz podatkov naloge.</p>
-<p>V okolju Jupyter Notebook pripravite kratko poročilo <em>(od 3 do 10 celic s kodo)</em> z rezultati in kratkimi komentarji, v katerem naj bodo razvidni tudi podatki naloge.</p>
-<p>Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> obliki (glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
-<p><strong>Dodatek</strong>:
-Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno obliko obravnavanega nosilca.</p>
-<p><em>Lastna oblika</em> podaja razmerje amplitud odziva sistema na vzbujanje v različnih točkah <span class="math notranslate nohighlight">\(i\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\{A\}^r = \{A_0^r, A_1^r, \dots A_i^r \dots A_n^r\}\]</div>
-<p>kjer so <span class="math notranslate nohighlight">\(A^r_i\)</span> t. i. modalne konstante sistema pri lastni frekvenci <span class="math notranslate nohighlight">\(\omega_r\)</span>.</p>
-<p>Modalne konstante lahko ocenite <em>s poljubno metodo</em> (glejte spodnji zaznamek).</p>
-<p>Za identifikacijo modalnih konstant lahko uporabite tudi paket <a class="reference external" href="https://pypi.org/project/pyEMA/">pyEMA</a>. Pomagate si lahko s <a class="reference external" href="https://github.com/ladisk/pyEMA/blob/master/pyEMA%20Showcase.ipynb">temle primerom uporabe</a>.</p>
-</div>
-<div class="info admonition">
-<p class="admonition-title">Metoda največjih amplitud</p>
-<p>Ena najpreprostejših metod modalne identifikacije je <a class="reference external" href="https://link.springer.com/article/10.1007/s42452-019-0806-8#Sec2">metoda največjih amplitud</a> (<em>Peak amplitue</em>, tudi <em>Peak Picking method</em>):</p>
-<p><span class="math notranslate nohighlight">\(\omega_r = \text{arg max}(|\alpha(\omega)|)\)</span> (krožna frekvenca resonančnega vrha)</p>
-<p><span class="math notranslate nohighlight">\(\eta_r = \frac{\omega_a - \omega_b}{\omega_r}\)</span> (razmernik dušenja), kjer sta <span class="math notranslate nohighlight">\(\omega_a\)</span> in <span class="math notranslate nohighlight">\(\omega_b\)</span> t. i. točki polovične moči v okolici <span class="math notranslate nohighlight">\(\omega_r\)</span>:</p>
-<p><span class="math notranslate nohighlight">\(|\alpha(\omega_{a, b})| = \frac{|\alpha(\omega_r)|} {\sqrt{2}}\)</span></p>
-<p>Iz FPF za posamezno obravnavano točko <span class="math notranslate nohighlight">\(i\)</span> pa lahko določite modalne konstante:</p>
-<p><span class="math notranslate nohighlight">\(A^r_i = |\alpha_i(\omega_r)| \, \omega_r^2 \, \eta_r\)</span></p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1173,7 +1197,7 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="05%20-%20LTI%20sistemi%2C%20zajem%20signalov.html"
@@ -1202,27 +1226,28 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opis-lti-sistemov">6.1. Opis LTI sistemov</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frekvencna-domena">6.1.1. Frekvenčna domena</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domaca-naloga">6.1. Domača naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opis-lti-sistemov">6.2. Opis LTI sistemov</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frekvencna-domena">6.2.1. Frekvenčna domena</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obdelava-signalov-za-oceno-impulzne-prenosne-funkcije">6.2. Obdelava signalov za oceno impulzne prenosne funkcije</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekponentno-okno">6.2.1. Ekponentno okno</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-uporabe-eksponentnega-okna-na-numericnem-modelu">6.2.1.1. Primer uporabe eksponentnega okna na numeričnem modelu</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-eksponentnega-okna-na-meritvi-nosilca">6.2.1.2. Uporaba eksponentnega okna na meritvi nosilca</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obdelava-signalov-za-oceno-impulzne-prenosne-funkcije">6.3. Obdelava signalov za oceno impulzne prenosne funkcije</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekponentno-okno">6.3.1. Ekponentno okno</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-uporabe-eksponentnega-okna-na-numericnem-modelu">6.3.1.1. Primer uporabe eksponentnega okna na numeričnem modelu</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-eksponentnega-okna-na-meritvi-nosilca">6.3.1.2. Uporaba eksponentnega okna na meritvi nosilca</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#force-okno">6.2.2. Force okno</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frf-z-okni">6.2.3. FRF z okni</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#force-okno">6.3.2. Force okno</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frf-z-okni">6.3.3. FRF z okni</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domaca-naloga">6.3. Domača naloga</a></li>
 </ul>
   </nav></div>
 
@@ -1244,9 +1269,10 @@ By Domen Gorjup
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1270,8 +1296,8 @@ By Domen Gorjup
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

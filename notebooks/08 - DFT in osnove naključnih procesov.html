@@ -1,13 +1,13 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>8. DFT in osnove naključnih procesov &#8212; Procesiranje signalov - Laboratorijske vaje</title>
   
   
@@ -18,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/08 - DFT in osnove naključnih procesov';</script>
@@ -77,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -121,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -140,9 +138,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -152,12 +152,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/lv_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/lv_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/lv_logo.png" class="logo__image only-light" alt="Procesiranje signalov - Laboratorijske vaje - Home"/>
+    <script>document.write(`<img src="../_static/lv_logo.png" class="logo__image only-dark" alt="Procesiranje signalov - Laboratorijske vaje - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -331,6 +342,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -340,6 +352,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -371,8 +384,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diskretna-fourierova-transformacija">8.1. Diskretna Fourierova transformacija</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#osnove-nakljucnih-procesov">8.2. Osnove naključnih procesov</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domaca-naloga">8.1. Domača naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diskretna-fourierova-transformacija">8.2. Diskretna Fourierova transformacija</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#osnove-nakljucnih-procesov">8.3. Osnove naključnih procesov</a></li>
 </ul>
             </nav>
         </div>
@@ -382,7 +396,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -399,8 +413,10 @@ document.write(`
 </div>
 </details>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="dft-in-osnove-nakljucnih-procesov">
-<h1><span class="section-number">8. </span>DFT in osnove naključnih procesov<a class="headerlink" href="#dft-in-osnove-nakljucnih-procesov" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="dft-in-osnove-nakljucnih-procesov">
+<h1><span class="section-number">8. </span>DFT in osnove naključnih procesov<a class="headerlink" href="#dft-in-osnove-nakljucnih-procesov" title="Link to this heading">#</a></h1>
+<section id="domaca-naloga">
+<h2><span class="section-number">8.1. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Link to this heading">#</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Naloga</p>
 <p>Z uporabo generatorja signalov in zajemnega sistema Arduino zajamite naključni signal s parametri (srednjo vrednostjo <span class="math notranslate nohighlight">\(m\)</span>, amplitudo <span class="math notranslate nohighlight">\(A\)</span>) iz podatkov naloge. Zajem podatkov izvedite tako, da boste pri pretvorbi zajetega signala v frekvnečno domeno dobili spekter na podanem frekvenčnem območju <span class="math notranslate nohighlight">\([0, f_k]\)</span> ter z ločljivostjo v frekvenčni domeni <span class="math notranslate nohighlight">\(\Delta f\)</span> iz podatkov naloge.</p>
@@ -419,9 +435,10 @@ document.write(`
 </ul>
 <p>Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> obliki (glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
 </div>
+</section>
 <hr class="docutils" />
-<div class="section" id="diskretna-fourierova-transformacija">
-<h2><span class="section-number">8.1. </span>Diskretna Fourierova transformacija<a class="headerlink" href="#diskretna-fourierova-transformacija" title="Permalink to this heading">#</a></h2>
+<section id="diskretna-fourierova-transformacija">
+<h2><span class="section-number">8.2. </span>Diskretna Fourierova transformacija<a class="headerlink" href="#diskretna-fourierova-transformacija" title="Link to this heading">#</a></h2>
 <p>Računamo Fourierovo transformacijo <em>diskretnega signala</em>, <span class="math notranslate nohighlight">\(x_n = x(n\,\Delta t)\)</span>. Kadar imamo končno mnogo vzorčenih podatkov (<span class="math notranslate nohighlight">\(N\)</span>) in gre <span class="math notranslate nohighlight">\(n=[0,1,\dots,N-1]\)</span>, uporabimo diskretno Fourierovo transformacijo (DFT).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -477,10 +494,10 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="osnove-nakljucnih-procesov">
-<h2><span class="section-number">8.2. </span>Osnove naključnih procesov<a class="headerlink" href="#osnove-nakljucnih-procesov" title="Permalink to this heading">#</a></h2>
+<section id="osnove-nakljucnih-procesov">
+<h2><span class="section-number">8.3. </span>Osnove naključnih procesov<a class="headerlink" href="#osnove-nakljucnih-procesov" title="Link to this heading">#</a></h2>
 <p>Procese, ki jih ne moremo obravnavati kot deterministične, pogosto modeliramo kot <strong>naključne procese</strong>.</p>
 <p>Za te je značilno, da njijovih dejanjskih vrednosti v času <span class="math notranslate nohighlight">\(x(t)\)</span> ne moremo natančno predvideti, lahko pa z določeno verjetnostjo <em>sklepamo o porazdelitvi njihovih vrednost</em>. Tako definiramo funkcijo <em>gostote porazdelitve verjetnost</em>, <span class="math notranslate nohighlight">\(p(x)\)</span>, ki podaja verjetnost, da se bo v vzorcu naključne spremenljivke <span class="math notranslate nohighlight">\(x(t)\)</span> pojavila določena vrednost <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>Lastnosti takih signalov je pogosto smiselno obravnavati v frekvenčni domeni.</p>
@@ -524,7 +541,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.029132914089132e-16
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.5934809855243655e-16
 </pre></div>
 </div>
 </div>
@@ -537,7 +554,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.31820222329084
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.95154662606539
 </pre></div>
 </div>
 </div>
@@ -570,7 +587,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/6763d177ec2ba2c0384b67dd51b8d962201da25a7a2c10e53c88c783cb06bfc4.png" src="../_images/6763d177ec2ba2c0384b67dd51b8d962201da25a7a2c10e53c88c783cb06bfc4.png" />
+<img alt="../_images/88e5595f2c63d52f2fe6328b4028a22f2fd8b073a08fcc5eeb05cc119717e533.png" src="../_images/88e5595f2c63d52f2fe6328b4028a22f2fd8b073a08fcc5eeb05cc119717e533.png" />
 </div>
 </div>
 <p>Porazdelitev verjetnosti ni nujno normalna (Gaussova):</p>
@@ -598,7 +615,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b6274770802899c0429488b2b869c4847f9d3e32b19718b437a69e473ffef040.png" src="../_images/b6274770802899c0429488b2b869c4847f9d3e32b19718b437a69e473ffef040.png" />
+<img alt="../_images/ad87c9cc168d156366cf781a22bc7baf69f001e284501d250394837d3db08307.png" src="../_images/ad87c9cc168d156366cf781a22bc7baf69f001e284501d250394837d3db08307.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -622,7 +639,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/a9819535bc314f2f31d0aafd86d7c93e199fddab03e68ee87b7ac741568d1181.png" src="../_images/a9819535bc314f2f31d0aafd86d7c93e199fddab03e68ee87b7ac741568d1181.png" />
+<img alt="../_images/685e77e2d4fd01a048f50cdcc6e442d13f1c7d12b2fe58b8f322e7e009837c95.png" src="../_images/685e77e2d4fd01a048f50cdcc6e442d13f1c7d12b2fe58b8f322e7e009837c95.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -666,7 +683,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/44f220a618d5488fb44b6fdc72cee9069744814f9d9277b290724d74b5dd5a36.png" src="../_images/44f220a618d5488fb44b6fdc72cee9069744814f9d9277b290724d74b5dd5a36.png" />
+<img alt="../_images/95c0da460aea0bf5fea527ce1fe0a1bd5501285c8009f09e29bb472e6880db0c.png" src="../_images/95c0da460aea0bf5fea527ce1fe0a1bd5501285c8009f09e29bb472e6880db0c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -699,7 +716,17 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/6a0d1e9879b21d682268513c70f854417e41db293954f06832975f36f3b1fd52.png" src="../_images/6a0d1e9879b21d682268513c70f854417e41db293954f06832975f36f3b1fd52.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:10: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:10: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+C:\Users\Domen\AppData\Local\Temp\ipykernel_22880\4143161239.py:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  ax[0].set_ylabel(&#39;$\mu_x(t)$&#39;);
+C:\Users\Domen\AppData\Local\Temp\ipykernel_22880\4143161239.py:10: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+  ax[1].set_ylabel(&#39;$\sigma^2_x(t)$&#39;);
+</pre></div>
+</div>
+<img alt="../_images/0a63b115f6edba8e5dc6fbf76ab634c283c24e7eaf5e670b058929490580d381.png" src="../_images/0a63b115f6edba8e5dc6fbf76ab634c283c24e7eaf5e670b058929490580d381.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -759,7 +786,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/f4db6ee457e5259069c53232a7b2f08a25c2dfc28f04679ba129714a27d95521.png" src="../_images/f4db6ee457e5259069c53232a7b2f08a25c2dfc28f04679ba129714a27d95521.png" />
+<img alt="../_images/9b58b043e47689e50234982eeef6c76895dc07ba01062e1d326d1844781bdbb7.png" src="../_images/9b58b043e47689e50234982eeef6c76895dc07ba01062e1d326d1844781bdbb7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -784,7 +811,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/371358038e838e16f7777506eb03e56ef37bb3ae5b3a1381bf5ab4444bfbf498.png" src="../_images/371358038e838e16f7777506eb03e56ef37bb3ae5b3a1381bf5ab4444bfbf498.png" />
+<img alt="../_images/355ee1e076c5cbc1e375cc151dae330ba000cd8e2e6e6ee7d34b784b80b89daa.png" src="../_images/355ee1e076c5cbc1e375cc151dae330ba000cd8e2e6e6ee7d34b784b80b89daa.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -825,7 +852,17 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/dcc3199d430d181b70b3e67a6b0db73e21786ab024fcd20a289bec437aab08a2.png" src="../_images/dcc3199d430d181b70b3e67a6b0db73e21786ab024fcd20a289bec437aab08a2.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:1: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+C:\Users\Domen\AppData\Local\Temp\ipykernel_22880\3078550257.py:1: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  plt.plot(freq, np.abs(G_aa_), label=&#39;$\mathcal{F}(R_{aa})$&#39;)
+C:\Users\Domen\AppData\Local\Temp\ipykernel_22880\3078550257.py:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  plt.plot(freq, np.abs(G_aa), label=&#39;$\mathcal{F}(A)* \cdot \mathcal{F}(A) * T$&#39;)
+</pre></div>
+</div>
+<img alt="../_images/63c34acb184c4632e2397596567d834faf106f91f198b988c09012f525ed7bf7.png" src="../_images/63c34acb184c4632e2397596567d834faf106f91f198b988c09012f525ed7bf7.png" />
 </div>
 </div>
 <p>Parsevalov teorem:</p>
@@ -836,13 +873,13 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.8367980993204002, 0.8376138711027542)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.671527593135215, 0.6750020963325427)
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -872,7 +909,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="07%20-%20Enakomerno%20%C4%8Dasovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html"
@@ -901,14 +938,16 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diskretna-fourierova-transformacija">8.1. Diskretna Fourierova transformacija</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#osnove-nakljucnih-procesov">8.2. Osnove naključnih procesov</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domaca-naloga">8.1. Domača naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diskretna-fourierova-transformacija">8.2. Diskretna Fourierova transformacija</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#osnove-nakljucnih-procesov">8.3. Osnove naključnih procesov</a></li>
 </ul>
   </nav></div>
 
@@ -930,9 +969,10 @@ By Domen Gorjup
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -956,8 +996,8 @@ By Domen Gorjup
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

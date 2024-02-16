@@ -1,13 +1,13 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>10. Naključno vzbujanje - ocena frekvenčnih prenosnih funkcij &#8212; Procesiranje signalov - Laboratorijske vaje</title>
   
   
@@ -18,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/10 - Naključno vzbujanje 2, prenosne funkcije';</script>
@@ -76,10 +72,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -120,11 +115,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,9 +137,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -151,12 +151,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/lv_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/lv_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/lv_logo.png" class="logo__image only-light" alt="Procesiranje signalov - Laboratorijske vaje - Home"/>
+    <script>document.write(`<img src="../_static/lv_logo.png" class="logo__image only-dark" alt="Procesiranje signalov - Laboratorijske vaje - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -330,6 +341,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -339,6 +351,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -387,7 +400,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -405,8 +418,8 @@ document.write(`
 </div>
 </details>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="nakljucno-vzbujanje-ocena-frekvencnih-prenosnih-funkcij">
-<h1><span class="section-number">10. </span>Naključno vzbujanje - ocena frekvenčnih prenosnih funkcij<a class="headerlink" href="#nakljucno-vzbujanje-ocena-frekvencnih-prenosnih-funkcij" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="nakljucno-vzbujanje-ocena-frekvencnih-prenosnih-funkcij">
+<h1><span class="section-number">10. </span>Naključno vzbujanje - ocena frekvenčnih prenosnih funkcij<a class="headerlink" href="#nakljucno-vzbujanje-ocena-frekvencnih-prenosnih-funkcij" title="Link to this heading">#</a></h1>
 <p>Spomnimo se:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -416,15 +429,15 @@ document.write(`
 	\alpha(\omega) = \frac{X(\omega)}{F(\omega)}
 \]</div>
 </div>
-<p>Določamo razmerje med odzivom sistema <span class="math notranslate nohighlight">\(x(t)\)</span> in znanim signlom vzbujanja <span class="math notranslate nohighlight">\(f(t)\)</span>, ki smo jih pomerili na <span class="xref myst">vaji 9</span>. Signali so bili pridobljeni z uporabo <em>naključnega, širokospektralnega, stacionarnega</em> vzbujanja.</p>
+<p>Določamo razmerje med odzivom sistema <span class="math notranslate nohighlight">\(x(t)\)</span> in znanim signlom vzbujanja <span class="math notranslate nohighlight">\(f(t)\)</span>, ki smo jih pomerili na <a class="reference internal" href="#./notebooks/09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.ipynb"><span class="xref myst">vaji 9</span></a>. Signali so bili pridobljeni z uporabo <em>naključnega, širokospektralnega, stacionarnega</em> vzbujanja.</p>
 <p>Namen te vaje je spoznati metode procesiranja signalov za določitev cenilk frekvenčnih prenosnih funkcij linearnega sitema na podlagi tovrstnih meritev.</p>
-<div class="section" id="domaca-naloga">
-<h2><span class="section-number">10.1. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Permalink to this heading">#</a></h2>
+<section id="domaca-naloga">
+<h2><span class="section-number">10.1. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Link to this heading">#</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Domača naloga</p>
 <p>V okolju Jupyter Notebook pripravite kratko poročilo <em>(od 3 do 10 celic s kodo)</em> z rezultati in kratkim komentarjem izvedenih meritev ter izračunanih celinke frekvenčne prenosne funkcije glede na podatke naloge. Dodeljeni podatki naloge naj bodo v poročilu navedeni. Poročilo naj vsebuje:</p>
 <ul class="simple">
-<li><p>prikaz PSD vaše meritve (povprečje vseh segmentov, v točki, določeni v podatkih <span class="xref myst">naloge 9</span>),</p></li>
+<li><p>prikaz PSD vaše meritve (povprečje vseh segmentov, v točki, določeni v podatkih <a class="reference internal" href="#./notebooks/09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.ipynb"><span class="xref myst">naloge 9</span></a>),</p></li>
 <li><p>prikaz frekvenčne prenosne funkcije v vaši izmerjeni točki (<span class="math notranslate nohighlight">\(i\)</span>), ki jo ocenite z <span class="math notranslate nohighlight">\(\alpha_i(\omega) = X_i(\omega) / F_i(\omega)\)</span>.</p></li>
 <li><p>prikaz frekvenčne prenosne funkcije v vaši izmerjeni točki (<span class="math notranslate nohighlight">\(i\)</span>), izračunane s cenilko <span class="math notranslate nohighlight">\(H_1(\omega)\)</span> ali <span class="math notranslate nohighlight">\(H_2(\omega)\)</span> (glede na podatke naloge). Pri tem povprečite spektre (<span class="math notranslate nohighlight">\(G_{xy}\)</span>) izmerjenih signalov, razdeljenih na segmente dolžine 2 s.</p></li>
 </ul>
@@ -441,12 +454,13 @@ document.write(`
 </ul>
 <p>Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> obliki (glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
 </div>
-</div>
-<div class="section" id="branje-izmerjenih-signalov">
-<h2><span class="section-number">10.2. </span>Branje izmerjenih signalov<a class="headerlink" href="#branje-izmerjenih-signalov" title="Permalink to this heading">#</a></h2>
+</section>
+<hr class="docutils" />
+<section id="branje-izmerjenih-signalov">
+<h2><span class="section-number">10.2. </span>Branje izmerjenih signalov<a class="headerlink" href="#branje-izmerjenih-signalov" title="Link to this heading">#</a></h2>
 <div class="seealso admonition">
 <p class="admonition-title">Parametri izvedene meritve</p>
-<p>Frekvenčne prenosne funkcije jeklenega nosilca bomo izračunali na podlagi meritev, izvedenih pri <span class="xref myst">vaji 9</span>.</p>
+<p>Frekvenčne prenosne funkcije jeklenega nosilca bomo izračunali na podlagi meritev, izvedenih pri <a class="reference internal" href="#./notebooks/09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.ipynb"><span class="xref myst">vaji 9</span></a>.</p>
 <p>Pri procesiranju zajetih signalov so pomembni tudi parametri izvdene meritve. Če ste meritvah sledili navodilom, so osnovni parametri vaših signalov naslednji:</p>
 <p>Osnovni parametri zajema:</p>
 <ul class="simple">
@@ -582,12 +596,12 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/dd7b72971e24fd0534fff1c7ef224ef3ac8fd0d376028741447e6085a3e13ccf.png" src="../_images/dd7b72971e24fd0534fff1c7ef224ef3ac8fd0d376028741447e6085a3e13ccf.png" />
+<img alt="../_images/65b4a72b8f1dfc1b537a7de20d94ebf59b0ba370f43597787be5b8c72efa8932.png" src="../_images/65b4a72b8f1dfc1b537a7de20d94ebf59b0ba370f43597787be5b8c72efa8932.png" />
 </div>
 </div>
-</div>
-<div class="section" id="cenilke-frekvencne-prenosne-funkcije">
-<h2><span class="section-number">10.3. </span>Cenilke frekvenčne prenosne funkcije<a class="headerlink" href="#cenilke-frekvencne-prenosne-funkcije" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="cenilke-frekvencne-prenosne-funkcije">
+<h2><span class="section-number">10.3. </span>Cenilke frekvenčne prenosne funkcije<a class="headerlink" href="#cenilke-frekvencne-prenosne-funkcije" title="Link to this heading">#</a></h2>
 <p>Pri realnih meritvah se no moremo izogniti naključnega šuma (merilne napake) v zajetieh signalih.</p>
 <p>Ob upoštevanju odziva LTI sistmeov na naklučno vzbujanje z merilno napako, lahko zapišemo različne cenilke frekvenčnih prenosnih funkcij:</p>
 <div class="admonition note">
@@ -622,8 +636,8 @@ H_2(\omega) = \frac{S_{xx}(\omega)}{S{xf}(\omega)}.
 <p>Koherenca ima vrednosti na območju <span class="math notranslate nohighlight">\(\gamma_{fx}^2(f) \in [0, 1]\)</span>. Podaja merilo linearne odvisnosti signalov na vhodu (vzbujanje, <span class="math notranslate nohighlight">\(f\)</span>) in izhodu (odziv, <span class="math notranslate nohighlight">\(x\)</span>) sistema.</p>
 <p><strong>Pozor:</strong> Izračun koherence je smiselen samo, če so spektralne gostote moči <span class="math notranslate nohighlight">\(S_{fx}\)</span>, <span class="math notranslate nohighlight">\(S_{xx}\)</span>, <span class="math notranslate nohighlight">\(S_{ff}\)</span> določene s povprečenjem več zajtih segmentov naključnega procesa!</p>
 </div>
-<div class="section" id="izracun-cenilke-h1">
-<h3><span class="section-number">10.3.1. </span>Izračun cenilke <span class="math notranslate nohighlight">\(H1\)</span><a class="headerlink" href="#izracun-cenilke-h1" title="Permalink to this heading">#</a></h3>
+<section id="izracun-cenilke-h1">
+<h3><span class="section-number">10.3.1. </span>Izračun cenilke <span class="math notranslate nohighlight">\(H1\)</span><a class="headerlink" href="#izracun-cenilke-h1" title="Link to this heading">#</a></h3>
 <p>Izračun spektrov (ker bomo pri izračunu FR spektre delili med sabo, normiranje ni potrebno)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -659,7 +673,7 @@ H_2(\omega) = \frac{S_{xx}(\omega)}{S{xf}(\omega)}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/aaf9c87a5e77b431cd8769875cca3d18ac29d3b9da63cf99f12a80cd2ed70651.png" src="../_images/aaf9c87a5e77b431cd8769875cca3d18ac29d3b9da63cf99f12a80cd2ed70651.png" />
+<img alt="../_images/daa9a333bf5e41ad6c99f5cf58e87b917172f901fa8b74bf8c9eba048267b188.png" src="../_images/daa9a333bf5e41ad6c99f5cf58e87b917172f901fa8b74bf8c9eba048267b188.png" />
 </div>
 </div>
 <p>S povpečenjem</p>
@@ -689,12 +703,12 @@ H_2(\omega) = \frac{S_{xx}(\omega)}{S{xf}(\omega)}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/5a5a8789fdfdf145d2bb954e543ff67a673f1bec5fc65b90f0c407e2addb354e.png" src="../_images/5a5a8789fdfdf145d2bb954e543ff67a673f1bec5fc65b90f0c407e2addb354e.png" />
+<img alt="../_images/fd4e2f5440aa11fba8f4385a3a5fcc5eee053d81564471c50585b5fa61744b5a.png" src="../_images/fd4e2f5440aa11fba8f4385a3a5fcc5eee053d81564471c50585b5fa61744b5a.png" />
 </div>
 </div>
-</div>
-<div class="section" id="izracun-povprecenih-spektralnih-gostot-moci-s-prekrivanjem-segmentov-in-uporabo-oken">
-<h3><span class="section-number">10.3.2. </span>Izračun povprečenih spektralnih gostot moči s prekrivanjem segmentov in uporabo oken<a class="headerlink" href="#izracun-povprecenih-spektralnih-gostot-moci-s-prekrivanjem-segmentov-in-uporabo-oken" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="izracun-povprecenih-spektralnih-gostot-moci-s-prekrivanjem-segmentov-in-uporabo-oken">
+<h3><span class="section-number">10.3.2. </span>Izračun povprečenih spektralnih gostot moči s prekrivanjem segmentov in uporabo oken<a class="headerlink" href="#izracun-povprecenih-spektralnih-gostot-moci-s-prekrivanjem-segmentov-in-uporabo-oken" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Welch%27s_method">Welcheva metoda</a> določi (križne in avto-) spektralne gostote moči signalov z uporabo povprečenja in oknjenja podanega signala, segmentiranega s prekrivanjem posameznih odsekov.</p>
 <p>V Scipy je implementirana v <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.csd.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal.csd</span></code></a> (križno-spektralna gostota moči) in <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.welch.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal.welch</span></code></a> (avtospektralna gostota moči). Glavni parametri <code class="docutils literal notranslate"><span class="pre">scipy.signal.csd</span></code> so:</p>
 <ul class="simple">
@@ -705,9 +719,9 @@ H_2(\omega) = \frac{S_{xx}(\omega)}{S{xf}(\omega)}.
 <li><p><code class="docutils literal notranslate"><span class="pre">nperseg</span></code> : dolžina posameznega odseka signala pri segmentiranju,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">noverlap</span></code> : število vzorcev, ki se med segmenti prekrivajo. Prvizeto polovica <code class="docutils literal notranslate"><span class="pre">nperseg</span></code>.</p></li>
 </ul>
-</div>
-<div class="section" id="cenilka-h2-z-metodo-welch">
-<h3><span class="section-number">10.3.3. </span>Cenilka <span class="math notranslate nohighlight">\(H2\)</span> z metodo Welch<a class="headerlink" href="#cenilka-h2-z-metodo-welch" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="cenilka-h2-z-metodo-welch">
+<h3><span class="section-number">10.3.3. </span>Cenilka <span class="math notranslate nohighlight">\(H2\)</span> z metodo Welch<a class="headerlink" href="#cenilka-h2-z-metodo-welch" title="Link to this heading">#</a></h3>
 <p>Ker imamo v vseh segmentih naključno vzbujanje, lahko zajete segmente združimo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -763,12 +777,12 @@ H_2(\omega) = \frac{S_{xx}(\omega)}{S{xf}(\omega)}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/611ef398b92ec4ce941a13356172f03cc30da04b920af7fefa141d2bd6a136a0.png" src="../_images/611ef398b92ec4ce941a13356172f03cc30da04b920af7fefa141d2bd6a136a0.png" />
+<img alt="../_images/f04f5f96285b1ec37741ae51b6720ea09b63519635c9bbbffbca2f65838dd7e0.png" src="../_images/f04f5f96285b1ec37741ae51b6720ea09b63519635c9bbbffbca2f65838dd7e0.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -798,7 +812,7 @@ H_2(\omega) = \frac{S_{xx}(\omega)}{S{xf}(\omega)}.
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.html"
@@ -817,6 +831,7 @@ H_2(\omega) = \frac{S_{xx}(\omega)}{S{xf}(\omega)}.
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -853,9 +868,10 @@ By Domen Gorjup
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -879,8 +895,8 @@ By Domen Gorjup
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,13 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>9. Naključno vzbujanje - zajem signalov &#8212; Procesiranje signalov - Laboratorijske vaje</title>
   
   
@@ -18,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/09 - Naključno vzbujanje, zajem signalov';</script>
@@ -77,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -121,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -140,9 +138,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -152,12 +152,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/lv_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/lv_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/lv_logo.png" class="logo__image only-light" alt="Procesiranje signalov - Laboratorijske vaje - Home"/>
+    <script>document.write(`<img src="../_static/lv_logo.png" class="logo__image only-dark" alt="Procesiranje signalov - Laboratorijske vaje - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -331,6 +342,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -340,6 +352,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -371,9 +384,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zajem-signalov-za-dolocitev-prenosnih-funkcij-z-nakljucnim-vzbujanjem">9.1. Zajem signalov za določitev prenosnih funkcij z naključnim vzbujanjem</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merilni-sistem">9.1.1. Merilni sistem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meritev">9.1.2. Meritev</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zajem-signalov-za-dolocitev-prenosnih-funkcij-z-nakljucnim-vzbujanjem">9.1. Zajem signalov za določitev prenosnih funkcij z naključnim vzbujanjem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga">9.2. Naloga</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merilni-sistem">9.2.1. Merilni sistem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meritev">9.2.2. Meritev</a></li>
 </ul>
 </li>
 </ul>
@@ -385,7 +399,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -402,8 +416,8 @@ document.write(`
 </div>
 </details>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="nakljucno-vzbujanje-zajem-signalov">
-<h1><span class="section-number">9. </span>Naključno vzbujanje - zajem signalov<a class="headerlink" href="#nakljucno-vzbujanje-zajem-signalov" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="nakljucno-vzbujanje-zajem-signalov">
+<h1><span class="section-number">9. </span>Naključno vzbujanje - zajem signalov<a class="headerlink" href="#nakljucno-vzbujanje-zajem-signalov" title="Link to this heading">#</a></h1>
 <p>Spomnimo se:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -413,10 +427,13 @@ document.write(`
 	\alpha(\omega) = \frac{X(\omega)}{F(\omega)}
 \]</div>
 </div>
-<div class="section" id="zajem-signalov-za-dolocitev-prenosnih-funkcij-z-nakljucnim-vzbujanjem">
-<h2><span class="section-number">9.1. </span>Zajem signalov za določitev prenosnih funkcij z naključnim vzbujanjem<a class="headerlink" href="#zajem-signalov-za-dolocitev-prenosnih-funkcij-z-nakljucnim-vzbujanjem" title="Permalink to this heading">#</a></h2>
+<section id="zajem-signalov-za-dolocitev-prenosnih-funkcij-z-nakljucnim-vzbujanjem">
+<h2><span class="section-number">9.1. </span>Zajem signalov za določitev prenosnih funkcij z naključnim vzbujanjem<a class="headerlink" href="#zajem-signalov-za-dolocitev-prenosnih-funkcij-z-nakljucnim-vzbujanjem" title="Link to this heading">#</a></h2>
 <p>Določamo razmerje med odzivom sistema in znanim signlom vzbujanja, na podlagi izmerjenih signalov <span class="math notranslate nohighlight">\(x(t)\)</span>, <span class="math notranslate nohighlight">\(f(t)\)</span> pri <em>naključnem, širokospektralnem, stacionarnem</em> vzbujanju.</p>
 <p>Namen te vaje je spoznati laboratorijsko opremo in izvesti meritve signalov, potrebnih za določitev prenosnih funkcij mehanskega LTI sistema.</p>
+</section>
+<section id="naloga">
+<h2><span class="section-number">9.2. </span>Naloga<a class="headerlink" href="#naloga" title="Link to this heading">#</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Naloga: Meritev signalov za določitev prenosnih funkcij jeklenega nosilca</p>
 <p>Pripravite zajemni sistem in opravite meritve odziva (pospeška) jeklenega nosilca na naključno vzbujanje.</p>
@@ -429,8 +446,9 @@ document.write(`
 <li><p>Meritev signalov vzbujevalne sile in odziva sistema v različnih točkah pri naključnem vzbujanju.</p></li>
 </ol>
 </div>
-<div class="section" id="merilni-sistem">
-<h3><span class="section-number">9.1.1. </span>Merilni sistem<a class="headerlink" href="#merilni-sistem" title="Permalink to this heading">#</a></h3>
+<hr class="docutils" />
+<section id="merilni-sistem">
+<h3><span class="section-number">9.2.1. </span>Merilni sistem<a class="headerlink" href="#merilni-sistem" title="Link to this heading">#</a></h3>
 <p>Merilna veriga je sestavljena iz naslednjih komponent:</p>
 <ul class="simple">
 <li><p>Jeklen nosilec:</p>
@@ -557,9 +575,9 @@ Preverite, da nastavitve opravil ustrezajo predpisanim parametrom zajema in gene
 <p>Uporabite lahko že pripravljen <a class="reference download internal" download="" href="../_downloads/e3481386657f93e05c69640ee0e42f96/meritev_python.zip"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">program</span> <span class="pre">zajema</span></code></a>. Po potrebi ga spremenite, da bodo parametri meritve ustrezali predpisanim (zgoraj).</p>
 <p><strong>Pozor:</strong> Vse nastavitve parametrov merilne opreme (nastavitev kanalov, občutjivost, frekenca vzorčenja, enote, št. vzorcev v segmentu) nastavite v NI MAX task-u! V Python programu nastavite parametre, povezane z obdelavo signalov (št. zajetih segmentov, profil signala vzbujanja, shranjevanje podatkov v datoteke).</p>
 </div>
-</div>
-<div class="section" id="meritev">
-<h3><span class="section-number">9.1.2. </span>Meritev<a class="headerlink" href="#meritev" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="meritev">
+<h3><span class="section-number">9.2.2. </span>Meritev<a class="headerlink" href="#meritev" title="Link to this heading">#</a></h3>
 <div class="important admonition">
 <p class="admonition-title">3. Izvedba meritve signalov</p>
 <p>Vsak naj zajame predpisano število segmentov meritve odziva sistema v točki, predpisani v podatih naloge.</p>
@@ -580,9 +598,9 @@ Preverite, da nastavitve opravil ustrezajo predpisanim parametrom zajema in gene
 <p class="admonition-title">Pozor!</p>
 <p>Signale, zajete pri današnji vaji, boste potrebovali pri prihodnjih vajah in domači nalogi. Poskrbite, da ste podatke shranili v berljivi obliki in da boste naslednjič do njih imeli dostop.</p>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -612,7 +630,7 @@ Preverite, da nastavitve opravil ustrezajo predpisanim parametrom zajema in gene
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="08%20-%20DFT%20in%20osnove%20naklju%C4%8Dnih%20procesov.html"
@@ -641,15 +659,17 @@ Preverite, da nastavitve opravil ustrezajo predpisanim parametrom zajema in gene
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zajem-signalov-za-dolocitev-prenosnih-funkcij-z-nakljucnim-vzbujanjem">9.1. Zajem signalov za določitev prenosnih funkcij z naključnim vzbujanjem</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merilni-sistem">9.1.1. Merilni sistem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meritev">9.1.2. Meritev</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zajem-signalov-za-dolocitev-prenosnih-funkcij-z-nakljucnim-vzbujanjem">9.1. Zajem signalov za določitev prenosnih funkcij z naključnim vzbujanjem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga">9.2. Naloga</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merilni-sistem">9.2.1. Merilni sistem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meritev">9.2.2. Meritev</a></li>
 </ul>
 </li>
 </ul>
@@ -673,9 +693,10 @@ By Domen Gorjup
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -699,8 +720,8 @@ By Domen Gorjup
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

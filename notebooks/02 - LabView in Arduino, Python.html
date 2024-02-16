@@ -1,13 +1,13 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>2. LabView in Arduino, Python &#8212; Procesiranje signalov - Laboratorijske vaje</title>
   
   
@@ -18,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/02 - LabView in Arduino, Python';</script>
@@ -77,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -121,11 +116,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -140,9 +138,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -152,12 +152,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/lv_logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/lv_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/lv_logo.png" class="logo__image only-light" alt="Procesiranje signalov - Laboratorijske vaje - Home"/>
+    <script>document.write(`<img src="../_static/lv_logo.png" class="logo__image only-dark" alt="Procesiranje signalov - Laboratorijske vaje - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -331,6 +342,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -340,6 +352,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -371,18 +384,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linx">2.1. LINX</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arduino-uno-atmega328p">2.1.1. Arduino Uno (Atmega328p)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-in-arduino">2.1.2. LabView in Arduino</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#povezava-z-arduinom-in-prvi-program">2.1.2.1. Povezava z Arduinom in prvi program</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#avtomatizacija-z-arduinom-digitalni-i-o-terminali">2.1.2.2. Avtomatizacija z Arduinom - digitalni I/O terminali</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga">2.1. Naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-hobbyist-toolkit">2.2. LabView Hobbyist Toolkit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arduino-uno-atmega328p">2.2.1. Arduino Uno (Atmega328p)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-in-arduino">2.2.2. LabView in Arduino</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#povezava-z-arduinom-in-prvi-program">2.2.2.1. Povezava z Arduinom in prvi program</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#avtomatizacija-z-arduinom-digitalni-i-o-terminali">2.2.2.2. Avtomatizacija z Arduinom - digitalni I/O terminali</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zajem-podatkov-z-arduinom">2.2. Zajem podatkov z Arduinom</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-branje-in-obdelava-zajetih-signalov">2.3. Python - branje in obdelava zajetih signalov</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domaca-naloga">2.4. Domača naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zajem-podatkov-z-arduinom">2.3. Zajem podatkov z Arduinom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-branje-in-obdelava-zajetih-signalov">2.4. Python - branje in obdelava zajetih signalov</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-generatorja-signalov-rigol-dg1022">2.5. Uporaba generatorja signalov (RIGOL DG1022)</a></li>
 </ul>
             </nav>
@@ -393,42 +406,57 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
+  <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
-</details>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="labview-in-arduino-python">
-<h1><span class="section-number">2. </span>LabView in Arduino, Python<a class="headerlink" href="#labview-in-arduino-python" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="labview-in-arduino-python">
+<h1><span class="section-number">2. </span>LabView in Arduino, Python<a class="headerlink" href="#labview-in-arduino-python" title="Link to this heading">#</a></h1>
+<section id="naloga">
+<h2><span class="section-number">2.1. </span>Naloga<a class="headerlink" href="#naloga" title="Link to this heading">#</a></h2>
+<div class="warning admonition">
+<p class="admonition-title">Naloga</p>
+<ul class="simple">
+<li><p>Z uporabo prikazanih funkcij v LabView-u zajamite signal s predpisanimi parametri, pripravljen z uporabo generatorja signalov (individualizirane podatke najdete v <a class="reference external" href="https://e-ucilnica.fs.uni-lj.si/">e-učilnici</a>).</p></li>
+<li><p>Grafično predstavite “surove” podatke.</p></li>
+<li><p>Na zajetem signalu smiselno prikažite uporabo predpisaneih numeričnih postopkov (<code class="docutils literal notranslate"><span class="pre">obdelava_#</span></code> v tabeli s podatki).</p></li>
+</ul>
+<p>Pripravite kratko poročilo v okolju Jupyter Notebook <em>(od 3 do 10 celic s kodo)</em>, iz katerega naj bodo razvidni podatki nalge (iz tabele), ter da ste vse parametre pri izvedbi naloge tudi upoštevali (ustrezno izpišite obliko signala…).
+Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> obliki (glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
+<p><strong>Dodatek</strong>: Raziščite in prikažite uporabo frekvenčnega filtriranja podatkov, katerega namen je odprava neželenega visokofrekvenčnega šuma v zajetem signalu (uporaite lahko  <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.lfilter.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal.lfilter</span></code></a>). Pred tem zajetemu signalu po potrebi dodajte aditivno naključno komponento (šum).</p>
+</div>
+<hr class="docutils" />
 <p>Kljub sicer zaprti strukturi je del LabView ekosistema tudi upravljanik paketov <a class="reference external" href="https://www.vipm.io/">“VI Package manager (VIPM)”</a>, kjer lahko uporabniki delijo LabView kodo in pakete, s katerimi je mogoča uporaba funkcionalnost in opreme, ki je sam LabView sicer ne podpira.</p>
 <div class="note admonition">
 <p class="admonition-title">Namestitev LabView Community Edition</p>
 <p>Za nekomercialno rabo je brezplačno na voljo <a class="reference external" href="https://www.ni.com/sl-si/shop/labview/select-edition/labview-community-edition.html">LabView Community Edition</a>, ki omogoča uporabo vseh osnovnih funkcij LabView-a, ki jih potrebujemo pri Procesiranju signalov.</p>
 <p>LabView Community Edition je že pripravljen za uporabo s sistemom Arduino, ki ga bomo pri temu predmetu uporabljali za zajem signalov. Če želite preiszkusiti delovanje programa na lastni opremi, sledite <a class="reference external" href="https://learn.ni.com/learn/article/getting-started-with-arduino-and-labview-community-edition">navodilom na tejle povezavi</a>.</p>
+<p><strong>Pozor:</strong> Zaradi težav pri povezovanju z našim zajemnim sistemom v novejših verzijah programa priporočamo prenos in namestitev starejše različice (Version) <strong>2022</strong></p>
 </div>
-<div class="section" id="linx">
-<h2><span class="section-number">2.1. </span>LINX<a class="headerlink" href="#linx" title="Permalink to this heading">#</a></h2>
-<p>Eden izmed brezplačnih paketov, razvitih s strani skupnosti, je tudi <a class="reference external" href="https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z0000019TmpSAE&amp;l=sl-SI">LabView Hobbyist Toolkit (LINX)</a>, ki omogoča uporabo LabView za upravljanje s strojno opremo Arduino, Raspberry Pi, in BeagleBone Black.</p>
-<p>Če ste namestili LabView Community Edition, je LINX na vašem sistemu že nameščen.</p>
-<div class="section" id="arduino-uno-atmega328p">
-<h3><span class="section-number">2.1.1. </span>Arduino Uno (Atmega328p)<a class="headerlink" href="#arduino-uno-atmega328p" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="labview-hobbyist-toolkit">
+<h2><span class="section-number">2.2. </span>LabView Hobbyist Toolkit<a class="headerlink" href="#labview-hobbyist-toolkit" title="Link to this heading">#</a></h2>
+<p>Eden izmed brezplačnih paketov, razvitih s strani skupnosti, je tudi <a class="reference external" href="https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z0000019TmpSAE&amp;amp;l=sl-SI">LabView Hobbyist Toolkit (nekoč LINX)</a>, ki omogoča uporabo LabView za upravljanje s strojno opremo Arduino, Raspberry Pi, in BeagleBone Black.</p>
+<p>Če ste namestili LabView Community Edition, je LabView Hobbyist Toolkit na vašem sistemu že nameščen.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Za lažje delo z zajemnim sistemom Arduino v nadaljevanju je priporočljivo, da v nastavitvah programa LabView v meniju <strong>Tools &gt; Options &gt; Environment</strong> označite možnost <strong>Automatically close VISA sessions</strong>.</p>
+</div>
+<p><img alt="visa_sessions" src="../_images/000_visa_sessions.png" /></p>
+<section id="arduino-uno-atmega328p">
+<h3><span class="section-number">2.2.1. </span>Arduino Uno (Atmega328p)<a class="headerlink" href="#arduino-uno-atmega328p" title="Link to this heading">#</a></h3>
 <p>Pri Procesiranju signalov bomo zaradi enostavne integracije v LabView zajemne sisteme in možnosti analogno-digitalne pretvorbe spoznali osnove uporabe razvojne plošče <a class="reference external" href="http://store.arduino.cc/products/arduino-uno-rev3">Arduino Uno</a>, ki temelji na mikrokrmilniku <a class="reference external" href="https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf">Atmega328p</a>.</p>
 <p>Specifikacije plošče Arduino Uno, bistvene pri aplikacijah analogno digitalne pretvorbe in zajema signalov, so zbrane v spodnji tabeli.</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Parameter</p></th>
-<th class="text-left head"><p>Vrednost</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Parameter</p></th>
+<th class="head text-left"><p>Vrednost</p></th>
 </tr>
 </thead>
 <tbody>
@@ -505,26 +533,36 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c42b084185fbf82a50cc204b301fe206aa8133d6108c7a08ef2be15899b15e69.png" src="../_images/c42b084185fbf82a50cc204b301fe206aa8133d6108c7a08ef2be15899b15e69.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+C:\Users\Domen\AppData\Local\Temp\ipykernel_17196\930176927.py:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  plt.plot([0, 0], [0, 0], &#39;-.&#39;, c=&#39;k&#39;, lw=1, label=&#39;$V_{\mathrm{offset}}$&#39;)
+C:\Users\Domen\AppData\Local\Temp\ipykernel_17196\930176927.py:20: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  plt.text(0.26, 3, &#39;$V_{\mathrm{PP}}$&#39;, fontsize=14,)
+</pre></div>
+</div>
+<img alt="../_images/590ddb33404fb6967838a52b8f83a646a96625a1a548af32611991939a9c9371.png" src="../_images/590ddb33404fb6967838a52b8f83a646a96625a1a548af32611991939a9c9371.png" />
 </div>
 </div>
-</div>
-<div class="section" id="labview-in-arduino">
-<h3><span class="section-number">2.1.2. </span>LabView in Arduino<a class="headerlink" href="#labview-in-arduino" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="labview-in-arduino">
+<h3><span class="section-number">2.2.2. </span>LabView in Arduino<a class="headerlink" href="#labview-in-arduino" title="Link to this heading">#</a></h3>
 <p>Paket LINX omogoča dostop do analognih vhodnih kanalov ter digitalnih I/O kanalov Arduino plošče iz LabView-a. Podpira tudi povezavo Arduina z zunanjimi napravami, na primer preko SPI ali I2C serijske povezave.</p>
 <p>Do podprtih programskih elementov dostopamo preko posebnega menija v naboru funkcij blokovnega diagrama, <code class="docutils literal notranslate"><span class="pre">MakerHub</span> <span class="pre">-&gt;</span> <span class="pre">LINX</span></code>.</p>
 <p><img alt="linx_functions" src="../_images/makerhub_functions.png" /></p>
-<div class="section" id="povezava-z-arduinom-in-prvi-program">
-<h4><span class="section-number">2.1.2.1. </span>Povezava z Arduinom in prvi program<a class="headerlink" href="#povezava-z-arduinom-in-prvi-program" title="Permalink to this heading">#</a></h4>
+<section id="povezava-z-arduinom-in-prvi-program">
+<h4><span class="section-number">2.2.2.1. </span>Povezava z Arduinom in prvi program<a class="headerlink" href="#povezava-z-arduinom-in-prvi-program" title="Link to this heading">#</a></h4>
 <p>Za vzpostavitev povezave z Arduinom v LabView-u uporabimo posebno funkciji knjižnice LINX, <code class="docutils literal notranslate"><span class="pre">Open</span></code>.</p>
 <p>Osnovni parameter pri odpiranju povezave so <em>COM serijska vrata</em>, preko katerih je Arduino povezan na naš računalnik. Če je v sistem povezanih več podobnih serijskih naprav, lahko serijska vrata povezanega Arduina najdete z orodjem <code class="docutils literal notranslate"><span class="pre">Upravitelj</span> <span class="pre">naprav</span> <span class="pre">(Device</span> <span class="pre">Manager)</span></code>.</p>
 <p><img alt="device_manager" src="../_images/device_manager_com.png" /></p>
 <p>Druga pomembna nastavitev je hitrost serijske povezave (<em>baud rate</em>) z Arduinom. Privzeta vrednsot je <code class="docutils literal notranslate"><span class="pre">9600</span></code>, najvišja, ki jo Arduino Uno dopušča, pa <code class="docutils literal notranslate"><span class="pre">115200</span></code>.</p>
 <p>Po zaključenem delu z Arduinom v LabView programu moramo povezavo <strong>zapreti s funkcijo <code class="docutils literal notranslate"><span class="pre">Close</span></code></strong>, sicer bomo pri ponovnem poskusu vzpostavitve povezave imeli težave! Programa zato <strong>ne smemo nasilno prekiniti iz orodne vrstice LabView-a</strong>!</p>
 <p><img alt="open_close" src="../_images/00_open_close.png" /></p>
-</div>
-<div class="section" id="avtomatizacija-z-arduinom-digitalni-i-o-terminali">
-<h4><span class="section-number">2.1.2.2. </span>Avtomatizacija z Arduinom - digitalni I/O terminali<a class="headerlink" href="#avtomatizacija-z-arduinom-digitalni-i-o-terminali" title="Permalink to this heading">#</a></h4>
+</section>
+<section id="avtomatizacija-z-arduinom-digitalni-i-o-terminali">
+<h4><span class="section-number">2.2.2.2. </span>Avtomatizacija z Arduinom - digitalni I/O terminali<a class="headerlink" href="#avtomatizacija-z-arduinom-digitalni-i-o-terminali" title="Link to this heading">#</a></h4>
 <p>Čeprav Arduino vključuje relativno zmogljiv 10-bitni analogno-digitalni pretvornik s 6 analognimi vhodnimi kanali, zaradi relativno omejene procesorske moči <em>pogosto ni optimalna izbira za naprednejše aplikacije zajema signalov</em> (za potrebe tega predmeta pa so zmogljivosti Arduina seveda zadostne).</p>
 <p>Bolj tipično področje uporabe je zato avtomatizacija in integracija različnih merilnih elementov in strojne opreme. To omogoča širok nabor večnamenskih digitalnih I/O terminalov (GPIO).</p>
 <p>Poglejmo si osnovno uporabo GPIO kanalov Arduina, na primeru vklopa / izklopa LED luči, integrirane na Arduino plošči, katere stanje je povezano z vrednostjo GPIO terminala <code class="docutils literal notranslate"><span class="pre">13</span></code>.</p>
@@ -550,11 +588,11 @@ document.write(`
 </ul>
 <p>Namig: na prejšnji vaji smo na grafu izrisovali numerične vrednosti, prebrano stanje digitalnega terminala pa je treba pred prikazom ustrezno pretvoriti!</p>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="zajem-podatkov-z-arduinom">
-<h2><span class="section-number">2.2. </span>Zajem podatkov z Arduinom<a class="headerlink" href="#zajem-podatkov-z-arduinom" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+</section>
+<section id="zajem-podatkov-z-arduinom">
+<h2><span class="section-number">2.3. </span>Zajem podatkov z Arduinom<a class="headerlink" href="#zajem-podatkov-z-arduinom" title="Link to this heading">#</a></h2>
 <p>Pri zajemu podatkov gre običajno za pretvorbo merilnega signala (el. napetost) v digitalno obliko, ki poteka na A-D pretvorniku. Arduino Uno ima na voljo 6 analognih vhodov, ki so povezani za ADC komponento plošče.</p>
 <p>Za pretvorbo in zajem posamezne točke signala na analognih vhodih lahko uporabimo funkcijo “AnalogRead” (<code class="docutils literal notranslate"><span class="pre">Makerhub</span> <span class="pre">-&gt;</span> <span class="pre">LINX</span> <span class="pre">-&gt;</span> <span class="pre">Peripheral</span> <span class="pre">-&gt;</span> <span class="pre">Analog</span> <span class="pre">-&gt;</span> <span class="pre">Read</span></code>), ki omogoča hkratni zajem na več kanalih hkrati.</p>
 <div class="admonition note">
@@ -596,9 +634,9 @@ document.write(`
 <p><img alt="closed-loop-saving" src="../_images/07_continuous_N_channels_closed_loop_saving_new_feedback.png" /></p>
 <p>Pri tem je uporabljen tudi naslednji podprogram:</p>
 <p><img alt="closed-loop-saving-subvi" src="../_images/07_01_clip_fs_SubVI.png" /></p>
-</div>
-<div class="section" id="python-branje-in-obdelava-zajetih-signalov">
-<h2><span class="section-number">2.3. </span>Python - branje in obdelava zajetih signalov<a class="headerlink" href="#python-branje-in-obdelava-zajetih-signalov" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="python-branje-in-obdelava-zajetih-signalov">
+<h2><span class="section-number">2.4. </span>Python - branje in obdelava zajetih signalov<a class="headerlink" href="#python-branje-in-obdelava-zajetih-signalov" title="Link to this heading">#</a></h2>
 <p>Pri branju podatkov, shranjnih v <code class="docutils literal notranslate"><span class="pre">.lvm</span></code> datoteke, si lahko pomagate s paketom <a class="reference external" href="https://pypi.org/project/lvm-read/"><code class="docutils literal notranslate"><span class="pre">lvm_read</span></code></a>.</p>
 <p>Primer uporabe si poglejmo spodaj.</p>
 <div class="cell docutils container">
@@ -675,10 +713,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x29dfd1e78e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x244c70e99a0&gt;
 </pre></div>
 </div>
-<img alt="../_images/c37fc3be17b7e2b2e6086d3244c523374f3242ff57f7121c537449979d21dd1f.png" src="../_images/c37fc3be17b7e2b2e6086d3244c523374f3242ff57f7121c537449979d21dd1f.png" />
+<img alt="../_images/b8dcddca96b1205a8335381172a51b50bb05cde97c3385ee6f70b616082ba65d.png" src="../_images/b8dcddca96b1205a8335381172a51b50bb05cde97c3385ee6f70b616082ba65d.png" />
 </div>
 </div>
 <p>Poglejmo še primer, ko je v <code class="docutils literal notranslate"><span class="pre">.lvm</span></code> datoteki shranjenih več segmentov, ki so pri shranjevanju ločeni z glavami (<em>header</em>):</p>
@@ -727,10 +765,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x29dfb046ce0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x244c4f60590&gt;
 </pre></div>
 </div>
-<img alt="../_images/ab5732af137348706ae4eef245ef7671bfa7c54f70dbad10e93cd05afa255dff.png" src="../_images/ab5732af137348706ae4eef245ef7671bfa7c54f70dbad10e93cd05afa255dff.png" />
+<img alt="../_images/b8301fb5e8fc93db6aff8a60f748ee42d80f80bb42034da9e0310f4fb8e03494.png" src="../_images/b8301fb5e8fc93db6aff8a60f748ee42d80f80bb42034da9e0310f4fb8e03494.png" />
 </div>
 </div>
 <p>Lahko pa vse segmente združite (in poljubno obdelujete) z uporabo ustreznih Numpy funkcij:</p>
@@ -769,32 +807,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x29dfd39a110&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x244c703e2d0&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 432x288 with 0 Axes&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="../_images/fab4106c6d4e6a4b5bcc93847f9d8c6fb174edda59a7574801e66e8cdaf0aded.png" src="../_images/fab4106c6d4e6a4b5bcc93847f9d8c6fb174edda59a7574801e66e8cdaf0aded.png" />
+<img alt="../_images/5fa878f2b57c3c820e37cb72b78da0d8c280d4b9d32f33ea03970c93f0a94088.png" src="../_images/5fa878f2b57c3c820e37cb72b78da0d8c280d4b9d32f33ea03970c93f0a94088.png" />
 </div>
 </div>
-</div>
-<div class="section" id="domaca-naloga">
-<h2><span class="section-number">2.4. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Permalink to this heading">#</a></h2>
-<div class="warning admonition">
-<p class="admonition-title">Domača naloga</p>
-<ul class="simple">
-<li><p>Z uporabo prikazanih funkcij v LabView-u zajamite signal s predpisanimi parametri, pripravljen z uporabo generatorja signalov (individualizirane podatke najdete v <a class="reference external" href="https://e-ucilnica.fs.uni-lj.si/">e-učilnici</a>).</p></li>
-<li><p>Grafično predstavite “surove” podatke.</p></li>
-<li><p>Na zajetem signalu smiselno prikažite uporabo predpisaneih numeričnih postopkov (<code class="docutils literal notranslate"><span class="pre">obdelava_#</span></code> v tabeli s podatki).</p></li>
-</ul>
-<p>Pripravite kratko poročilo v okolju Jupyter Notebook <em>(od 3 do 10 celic s kodo)</em>, iz katerega naj bodo razvidni podatki nalge (iz tabele), ter da ste vse parametre pri izvedbi naloge tudi upoštevali (ustrezno izpišite obliko signala…).
-Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> obliki (glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
-<p><strong>Dodatek</strong>: Raziščite in prikažite uporabo frekvenčnega filtriranja podatkov, katerega namen je odprava neželenega visokofrekvenčnega šuma v zajetem signalu (uporaite lahko  <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.lfilter.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal.lfilter</span></code></a>). Pred tem zajetemu signalu po potrebi dodajte aditivno naključno komponento (šum).</p>
-</div>
-</div>
-<div class="section" id="uporaba-generatorja-signalov-rigol-dg1022">
-<span id="uporaba-rigol"></span><h2><span class="section-number">2.5. </span>Uporaba generatorja signalov (RIGOL DG1022)<a class="headerlink" href="#uporaba-generatorja-signalov-rigol-dg1022" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="uporaba-generatorja-signalov-rigol-dg1022">
+<span id="uporaba-rigol"></span><h2><span class="section-number">2.5. </span>Uporaba generatorja signalov (RIGOL DG1022)<a class="headerlink" href="#uporaba-generatorja-signalov-rigol-dg1022" title="Link to this heading">#</a></h2>
 <p>Za simulacijo predpisane oblike periodičnega signala bomo uporabili generator signala.</p>
 <p>Spodanja slika prikazuje nadzorno ploščo modela RIGOL DG1022.</p>
 <p><img alt="rigol-dg1022" src="../_images/rigol_dg1022.png" /></p>
@@ -805,8 +829,8 @@ Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre"
 <p class="admonition-title">Opozorilo</p>
 <p>Preden vključite oddajanje signala z ustreznim <code class="docutils literal notranslate"><span class="pre">Channel</span></code> gumbom <strong>preverite, da so vse nastavitve izbranega kanala pravilne, in da niste presegli merilnega območja zajemnega sistema</strong>. Šele za tem priključite zajemni sistem na izhodni kanal generatorja signala!</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -836,7 +860,7 @@ Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre"
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="01%20-%20Uvod%20v%20LabView.html"
@@ -865,24 +889,25 @@ Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre"
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linx">2.1. LINX</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arduino-uno-atmega328p">2.1.1. Arduino Uno (Atmega328p)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-in-arduino">2.1.2. LabView in Arduino</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#povezava-z-arduinom-in-prvi-program">2.1.2.1. Povezava z Arduinom in prvi program</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#avtomatizacija-z-arduinom-digitalni-i-o-terminali">2.1.2.2. Avtomatizacija z Arduinom - digitalni I/O terminali</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga">2.1. Naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-hobbyist-toolkit">2.2. LabView Hobbyist Toolkit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arduino-uno-atmega328p">2.2.1. Arduino Uno (Atmega328p)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-in-arduino">2.2.2. LabView in Arduino</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#povezava-z-arduinom-in-prvi-program">2.2.2.1. Povezava z Arduinom in prvi program</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#avtomatizacija-z-arduinom-digitalni-i-o-terminali">2.2.2.2. Avtomatizacija z Arduinom - digitalni I/O terminali</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zajem-podatkov-z-arduinom">2.2. Zajem podatkov z Arduinom</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-branje-in-obdelava-zajetih-signalov">2.3. Python - branje in obdelava zajetih signalov</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domaca-naloga">2.4. Domača naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zajem-podatkov-z-arduinom">2.3. Zajem podatkov z Arduinom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-branje-in-obdelava-zajetih-signalov">2.4. Python - branje in obdelava zajetih signalov</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-generatorja-signalov-rigol-dg1022">2.5. Uporaba generatorja signalov (RIGOL DG1022)</a></li>
 </ul>
   </nav></div>
@@ -905,9 +930,10 @@ By Domen Gorjup
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -931,8 +957,8 @@ By Domen Gorjup
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
