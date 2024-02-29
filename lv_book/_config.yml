@@ -4,6 +4,7 @@
 title: Procesiranje signalov - Laboratorijske vaje
 author: Domen Gorjup
 logo: lv_logo.png
+copyright: "2024"
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -30,3 +31,7 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+
+# sphinx:  
+#   config:
+#     html_show_copyright: false

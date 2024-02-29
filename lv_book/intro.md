@@ -1,8 +1,12 @@
-# Uvod
+*Zbirka predlog za laboratorijske vaje pri predmetu*
+
+# Procesiranje signalov
+
+## Uvod
 
 [![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://domengorjup.github.io/ps_lv/)
 
-Tukaj najdete predloge laboratorijskih vaj pri predmetu [Procesiranje signalov](https://www.ladisk.si/?what=incfl&flnm=procesiranje%20signalov.php&), ki se izvaja v letnem semestru 1. letnika Magistrskega študijskega programa na Fakulteti za Strojništvo v Ljubljani.
+Tukaj najdete predloge laboratorijskih vaj pri predmetu [Procesiranje signalov](https://www.ladisk.si/?what=incfl&flnm=procesiranje%20signalov.php), ki se izvaja v letnem semestru 1. letnika Magistrskega študijskega programa na Fakulteti za Strojništvo v Ljubljani.
 
 Predloge so pripravljene v obliki interaktivnih [Jupyter Notebook](https://jupyter.org/) dokumentov, katerih izvorna koda je prav tako objavljena in je namenjena pripravi in izvedbi laboratorijskih vaj.
 
@@ -38,7 +42,7 @@ Domače naloge in naloge, namenjene preverjanju sodelovanja na vajah.
 :class: warning
 Vsebina domačih nalog bo individualizirana, podatke za svojo nalogo najdete v [e-učilnici](https://e-ucilnica.fs.uni-lj.si/).
 
-V skaldu z naovdilom naloge pripravite **kratko** poročilo (od 3 do **maksimalno 10 celic s kodo**), v katerem najprej povzamete *zahteve naloge* ter *svoje podatke*. V poročilo vključite tako *kodo rešitve* kot *kratke komentarje* na nalogo (primerna oblika je npr. Jupyter Notebook).
+V skaldu z navodilom naloge pripravite **kratko** poročilo (od 3 do **maksimalno 10 celic s kodo**), v katerem najprej povzamete *zahteve naloge* ter *svoje podatke*. V poročilo vključite tako *kodo rešitve* kot *kratke komentarje* na nalogo (primerna oblika je npr. Jupyter Notebook).
 
 
 **Dodatek:** Za možnost višje ocene sodelovanja na vajah bodite pozorni na predloge razširitve domače naloge.
