@@ -60,6 +60,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/08 - DFT in osnove naključnih procesov';</script>
+    <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="9. Naključno vzbujanje - zajem signalov" href="09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.html" />
@@ -174,7 +175,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Uvod
+                    Procesiranje signalov
                 </a>
             </li>
         </ul>
@@ -414,9 +415,9 @@ document.write(`
 </details>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="dft-in-osnove-nakljucnih-procesov">
-<h1><span class="section-number">8. </span>DFT in osnove naključnih procesov<a class="headerlink" href="#dft-in-osnove-nakljucnih-procesov" title="Link to this heading">#</a></h1>
+<h1>DFT in osnove naključnih procesov<a class="headerlink" href="#dft-in-osnove-nakljucnih-procesov" title="Link to this heading">#</a></h1>
 <section id="domaca-naloga">
-<h2><span class="section-number">8.1. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Link to this heading">#</a></h2>
+<h2>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Link to this heading">#</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Naloga</p>
 <p>Z uporabo generatorja signalov in zajemnega sistema Arduino zajamite naključni signal s parametri (srednjo vrednostjo <span class="math notranslate nohighlight">\(m\)</span>, amplitudo <span class="math notranslate nohighlight">\(A\)</span>) iz podatkov naloge. Zajem podatkov izvedite tako, da boste pri pretvorbi zajetega signala v frekvnečno domeno dobili spekter na podanem frekvenčnem območju <span class="math notranslate nohighlight">\([0, f_k]\)</span> ter z ločljivostjo v frekvenčni domeni <span class="math notranslate nohighlight">\(\Delta f\)</span> iz podatkov naloge.</p>
@@ -438,7 +439,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="diskretna-fourierova-transformacija">
-<h2><span class="section-number">8.2. </span>Diskretna Fourierova transformacija<a class="headerlink" href="#diskretna-fourierova-transformacija" title="Link to this heading">#</a></h2>
+<h2>Diskretna Fourierova transformacija<a class="headerlink" href="#diskretna-fourierova-transformacija" title="Link to this heading">#</a></h2>
 <p>Računamo Fourierovo transformacijo <em>diskretnega signala</em>, <span class="math notranslate nohighlight">\(x_n = x(n\,\Delta t)\)</span>. Kadar imamo končno mnogo vzorčenih podatkov (<span class="math notranslate nohighlight">\(N\)</span>) in gre <span class="math notranslate nohighlight">\(n=[0,1,\dots,N-1]\)</span>, uporabimo diskretno Fourierovo transformacijo (DFT).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -497,7 +498,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </section>
 <hr class="docutils" />
 <section id="osnove-nakljucnih-procesov">
-<h2><span class="section-number">8.3. </span>Osnove naključnih procesov<a class="headerlink" href="#osnove-nakljucnih-procesov" title="Link to this heading">#</a></h2>
+<h2>Osnove naključnih procesov<a class="headerlink" href="#osnove-nakljucnih-procesov" title="Link to this heading">#</a></h2>
 <p>Procese, ki jih ne moremo obravnavati kot deterministične, pogosto modeliramo kot <strong>naključne procese</strong>.</p>
 <p>Za te je značilno, da njijovih dejanjskih vrednosti v času <span class="math notranslate nohighlight">\(x(t)\)</span> ne moremo natančno predvideti, lahko pa z določeno verjetnostjo <em>sklepamo o porazdelitvi njihovih vrednost</em>. Tako definiramo funkcijo <em>gostote porazdelitve verjetnost</em>, <span class="math notranslate nohighlight">\(p(x)\)</span>, ki podaja verjetnost, da se bo v vzorcu naključne spremenljivke <span class="math notranslate nohighlight">\(x(t)\)</span> pojavila določena vrednost <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>Lastnosti takih signalov je pogosto smiselno obravnavati v frekvenčni domeni.</p>
@@ -972,7 +973,7 @@ By Domen Gorjup
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

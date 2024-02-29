@@ -60,8 +60,10 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/10 - Naključno vzbujanje 2, prenosne funkcije';</script>
+    <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Procesiranje signalov" href="../about.html" />
     <link rel="prev" title="9. Naključno vzbujanje - zajem signalov" href="09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -173,7 +175,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Uvod
+                    Procesiranje signalov
                 </a>
             </li>
         </ul>
@@ -419,7 +421,7 @@ document.write(`
 </details>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="nakljucno-vzbujanje-ocena-frekvencnih-prenosnih-funkcij">
-<h1><span class="section-number">10. </span>Naključno vzbujanje - ocena frekvenčnih prenosnih funkcij<a class="headerlink" href="#nakljucno-vzbujanje-ocena-frekvencnih-prenosnih-funkcij" title="Link to this heading">#</a></h1>
+<h1>Naključno vzbujanje - ocena frekvenčnih prenosnih funkcij<a class="headerlink" href="#nakljucno-vzbujanje-ocena-frekvencnih-prenosnih-funkcij" title="Link to this heading">#</a></h1>
 <p>Spomnimo se:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -432,7 +434,7 @@ document.write(`
 <p>Določamo razmerje med odzivom sistema <span class="math notranslate nohighlight">\(x(t)\)</span> in znanim signlom vzbujanja <span class="math notranslate nohighlight">\(f(t)\)</span>, ki smo jih pomerili na <a class="reference internal" href="#./notebooks/09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.ipynb"><span class="xref myst">vaji 9</span></a>. Signali so bili pridobljeni z uporabo <em>naključnega, širokospektralnega, stacionarnega</em> vzbujanja.</p>
 <p>Namen te vaje je spoznati metode procesiranja signalov za določitev cenilk frekvenčnih prenosnih funkcij linearnega sitema na podlagi tovrstnih meritev.</p>
 <section id="domaca-naloga">
-<h2><span class="section-number">10.1. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Link to this heading">#</a></h2>
+<h2>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Link to this heading">#</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Domača naloga</p>
 <p>V okolju Jupyter Notebook pripravite kratko poročilo <em>(od 3 do 10 celic s kodo)</em> z rezultati in kratkim komentarjem izvedenih meritev ter izračunanih celinke frekvenčne prenosne funkcije glede na podatke naloge. Dodeljeni podatki naloge naj bodo v poročilu navedeni. Poročilo naj vsebuje:</p>
@@ -457,7 +459,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="branje-izmerjenih-signalov">
-<h2><span class="section-number">10.2. </span>Branje izmerjenih signalov<a class="headerlink" href="#branje-izmerjenih-signalov" title="Link to this heading">#</a></h2>
+<h2>Branje izmerjenih signalov<a class="headerlink" href="#branje-izmerjenih-signalov" title="Link to this heading">#</a></h2>
 <div class="seealso admonition">
 <p class="admonition-title">Parametri izvedene meritve</p>
 <p>Frekvenčne prenosne funkcije jeklenega nosilca bomo izračunali na podlagi meritev, izvedenih pri <a class="reference internal" href="#./notebooks/09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.ipynb"><span class="xref myst">vaji 9</span></a>.</p>
@@ -601,7 +603,7 @@ document.write(`
 </div>
 </section>
 <section id="cenilke-frekvencne-prenosne-funkcije">
-<h2><span class="section-number">10.3. </span>Cenilke frekvenčne prenosne funkcije<a class="headerlink" href="#cenilke-frekvencne-prenosne-funkcije" title="Link to this heading">#</a></h2>
+<h2>Cenilke frekvenčne prenosne funkcije<a class="headerlink" href="#cenilke-frekvencne-prenosne-funkcije" title="Link to this heading">#</a></h2>
 <p>Pri realnih meritvah se no moremo izogniti naključnega šuma (merilne napake) v zajetieh signalih.</p>
 <p>Ob upoštevanju odziva LTI sistmeov na naklučno vzbujanje z merilno napako, lahko zapišemo različne cenilke frekvenčnih prenosnih funkcij:</p>
 <div class="admonition note">
@@ -637,7 +639,7 @@ H_2(\omega) = \frac{S_{xx}(\omega)}{S{xf}(\omega)}.
 <p><strong>Pozor:</strong> Izračun koherence je smiselen samo, če so spektralne gostote moči <span class="math notranslate nohighlight">\(S_{fx}\)</span>, <span class="math notranslate nohighlight">\(S_{xx}\)</span>, <span class="math notranslate nohighlight">\(S_{ff}\)</span> določene s povprečenjem več zajtih segmentov naključnega procesa!</p>
 </div>
 <section id="izracun-cenilke-h1">
-<h3><span class="section-number">10.3.1. </span>Izračun cenilke <span class="math notranslate nohighlight">\(H1\)</span><a class="headerlink" href="#izracun-cenilke-h1" title="Link to this heading">#</a></h3>
+<h3>Izračun cenilke <span class="math notranslate nohighlight">\(H1\)</span><a class="headerlink" href="#izracun-cenilke-h1" title="Link to this heading">#</a></h3>
 <p>Izračun spektrov (ker bomo pri izračunu FR spektre delili med sabo, normiranje ni potrebno)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -708,7 +710,7 @@ H_2(\omega) = \frac{S_{xx}(\omega)}{S{xf}(\omega)}.
 </div>
 </section>
 <section id="izracun-povprecenih-spektralnih-gostot-moci-s-prekrivanjem-segmentov-in-uporabo-oken">
-<h3><span class="section-number">10.3.2. </span>Izračun povprečenih spektralnih gostot moči s prekrivanjem segmentov in uporabo oken<a class="headerlink" href="#izracun-povprecenih-spektralnih-gostot-moci-s-prekrivanjem-segmentov-in-uporabo-oken" title="Link to this heading">#</a></h3>
+<h3>Izračun povprečenih spektralnih gostot moči s prekrivanjem segmentov in uporabo oken<a class="headerlink" href="#izracun-povprecenih-spektralnih-gostot-moci-s-prekrivanjem-segmentov-in-uporabo-oken" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Welch%27s_method">Welcheva metoda</a> določi (križne in avto-) spektralne gostote moči signalov z uporabo povprečenja in oknjenja podanega signala, segmentiranega s prekrivanjem posameznih odsekov.</p>
 <p>V Scipy je implementirana v <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.csd.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal.csd</span></code></a> (križno-spektralna gostota moči) in <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.welch.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal.welch</span></code></a> (avtospektralna gostota moči). Glavni parametri <code class="docutils literal notranslate"><span class="pre">scipy.signal.csd</span></code> so:</p>
 <ul class="simple">
@@ -721,7 +723,7 @@ H_2(\omega) = \frac{S_{xx}(\omega)}{S{xf}(\omega)}.
 </ul>
 </section>
 <section id="cenilka-h2-z-metodo-welch">
-<h3><span class="section-number">10.3.3. </span>Cenilka <span class="math notranslate nohighlight">\(H2\)</span> z metodo Welch<a class="headerlink" href="#cenilka-h2-z-metodo-welch" title="Link to this heading">#</a></h3>
+<h3>Cenilka <span class="math notranslate nohighlight">\(H2\)</span> z metodo Welch<a class="headerlink" href="#cenilka-h2-z-metodo-welch" title="Link to this heading">#</a></h3>
 <p>Ker imamo v vseh segmentih naključno vzbujanje, lahko zajete segmente združimo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -823,6 +825,15 @@ H_2(\omega) = \frac{S_{xx}(\omega)}{S{xf}(\omega)}.
         <p class="prev-next-title"><span class="section-number">9. </span>Naključno vzbujanje - zajem signalov</p>
       </div>
     </a>
+    <a class="right-next"
+       href="../about.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Procesiranje signalov</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -871,7 +882,7 @@ By Domen Gorjup
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

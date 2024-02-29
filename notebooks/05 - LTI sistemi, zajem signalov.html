@@ -60,6 +60,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/05 - LTI sistemi, zajem signalov';</script>
+    <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="6. Linearni, časovno invariatni (LTI) sistemi 2 - prenosne funkcije" href="06%20-%20LTI%20sistemi%202%2C%20prenosne%20funkcije.html" />
@@ -174,7 +175,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Uvod
+                    Procesiranje signalov
                 </a>
             </li>
         </ul>
@@ -418,10 +419,10 @@ document.write(`
 </details>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="linearni-casovno-invariatni-lti-sistemi-zajem-signalov">
-<h1><span class="section-number">5. </span>Linearni, časovno invariatni (LTI) sistemi - zajem signalov<a class="headerlink" href="#linearni-casovno-invariatni-lti-sistemi-zajem-signalov" title="Link to this heading">#</a></h1>
+<h1>Linearni, časovno invariatni (LTI) sistemi - zajem signalov<a class="headerlink" href="#linearni-casovno-invariatni-lti-sistemi-zajem-signalov" title="Link to this heading">#</a></h1>
 <p>Odzivni model linarnih, časovno invariantnih (ang. <em>Linear, Time-Invariant, LTI</em>) sistemov okarakteriziramo s t. i. <strong>prenosnimi funkcijami</strong>, ki povezujejo signale odziva in vzbujanja sistema, v frekvenčni (<em>frekvenčna prenosna funkcija</em>, <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span>) oz. časovni (<em>impulzna prenosna funkcija</em>, <span class="math notranslate nohighlight">\(h(t)\)</span>) domeni.</p>
 <section id="domaca-naloga">
-<h2><span class="section-number">5.1. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Link to this heading">#</a></h2>
+<h2>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Link to this heading">#</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Domača naloga</p>
 <p>V okolju Jupyter Notebook pripravite kratko poročilo <em>(od 3 do 10 celic s kodo)</em> z rezultati in kratkim komentarjem meritev, ki jih boste izvedli na vaji, v katerem naj bodo razvidni podatki naloge. Poročilo naj vsebuje tudi:</p>
@@ -461,7 +462,7 @@ document.write(`
 </div>
 </section>
 <section id="zajem-signalov-za-dolocitev-prenosnih-funkcij-lti-sistema">
-<h2><span class="section-number">5.2. </span>Zajem signalov za določitev prenosnih funkcij LTI sistema<a class="headerlink" href="#zajem-signalov-za-dolocitev-prenosnih-funkcij-lti-sistema" title="Link to this heading">#</a></h2>
+<h2>Zajem signalov za določitev prenosnih funkcij LTI sistema<a class="headerlink" href="#zajem-signalov-za-dolocitev-prenosnih-funkcij-lti-sistema" title="Link to this heading">#</a></h2>
 <p>Pri eksperimentalni karakterizaciji LTI sistema torej določamo razmerje med odzivom sistema in znanim signlom vzbujanja, na podlagi izmerjenih signalov <span class="math notranslate nohighlight">\(x(t)\)</span>, <span class="math notranslate nohighlight">\(f(t)\)</span>.</p>
 <p>Namen te vaje je spoznati laboratorijsko opremo in izvesti meritve signalov, potrebnih za določitev prenosnih funkcij mehanskega LTI sistema.</p>
 <div class="warning admonition">
@@ -475,7 +476,7 @@ document.write(`
 </ol>
 </div>
 <section id="merilni-sistem">
-<h3><span class="section-number">5.2.1. </span>Merilni sistem<a class="headerlink" href="#merilni-sistem" title="Link to this heading">#</a></h3>
+<h3>Merilni sistem<a class="headerlink" href="#merilni-sistem" title="Link to this heading">#</a></h3>
 <p>Merilna veriga je sestavljena iz naslednjih komponent:</p>
 <ul class="simple">
 <li><p>Merilna kartica <a class="reference external" href="https://www.ni.com/sl-si/support/model.ni-9234.html">NI 9234</a>:</p>
@@ -527,7 +528,7 @@ document.write(`
 </div>
 </section>
 <section id="labview-program">
-<h3><span class="section-number">5.2.2. </span>LabView program<a class="headerlink" href="#labview-program" title="Link to this heading">#</a></h3>
+<h3>LabView program<a class="headerlink" href="#labview-program" title="Link to this heading">#</a></h3>
 <div class="important admonition">
 <p class="admonition-title">2. Priprava LabView programa</p>
 <p>Pripravite LabView program za zajem signalov vzbujanja in odziva opazovanega nosilca.</p>
@@ -575,7 +576,7 @@ document.write(`
 <p><img alt="vi" src="../_images/08_vi.png" /></p>
 </section>
 <section id="meritev">
-<h3><span class="section-number">5.2.3. </span>Meritev<a class="headerlink" href="#meritev" title="Link to this heading">#</a></h3>
+<h3>Meritev<a class="headerlink" href="#meritev" title="Link to this heading">#</a></h3>
 <div class="important admonition">
 <p class="admonition-title">3. Izvedba meritve signalov</p>
 <p>Pri ustrenzo pripravljenem LabView programu se zajem posameznega segmenta (udarca) sproži samodejno z uporabo sprožilca (<code class="docutils literal notranslate"><span class="pre">Trigger</span> <span class="pre">and</span> <span class="pre">gate</span></code>).</p>
@@ -686,7 +687,7 @@ By Domen Gorjup
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

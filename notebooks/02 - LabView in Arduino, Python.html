@@ -60,6 +60,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/02 - LabView in Arduino, Python';</script>
+    <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3. Fourierova integralska transformacija" href="03%20-%20Fourierova%20integralska%20transformacija.html" />
@@ -174,7 +175,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Uvod
+                    Procesiranje signalov
                 </a>
             </li>
         </ul>
@@ -417,9 +418,9 @@ document.write(`
 </div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="labview-in-arduino-python">
-<h1><span class="section-number">2. </span>LabView in Arduino, Python<a class="headerlink" href="#labview-in-arduino-python" title="Link to this heading">#</a></h1>
+<h1>LabView in Arduino, Python<a class="headerlink" href="#labview-in-arduino-python" title="Link to this heading">#</a></h1>
 <section id="naloga">
-<h2><span class="section-number">2.1. </span>Naloga<a class="headerlink" href="#naloga" title="Link to this heading">#</a></h2>
+<h2>Naloga<a class="headerlink" href="#naloga" title="Link to this heading">#</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Naloga</p>
 <ul class="simple">
@@ -441,7 +442,7 @@ Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre"
 </div>
 </section>
 <section id="labview-hobbyist-toolkit">
-<h2><span class="section-number">2.2. </span>LabView Hobbyist Toolkit<a class="headerlink" href="#labview-hobbyist-toolkit" title="Link to this heading">#</a></h2>
+<h2>LabView Hobbyist Toolkit<a class="headerlink" href="#labview-hobbyist-toolkit" title="Link to this heading">#</a></h2>
 <p>Eden izmed brezplačnih paketov, razvitih s strani skupnosti, je tudi <a class="reference external" href="https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z0000019TmpSAE&amp;amp;l=sl-SI">LabView Hobbyist Toolkit (nekoč LINX)</a>, ki omogoča uporabo LabView za upravljanje s strojno opremo Arduino, Raspberry Pi, in BeagleBone Black.</p>
 <p>Če ste namestili LabView Community Edition, je LabView Hobbyist Toolkit na vašem sistemu že nameščen.</p>
 <div class="admonition note">
@@ -450,7 +451,7 @@ Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre"
 </div>
 <p><img alt="visa_sessions" src="../_images/000_visa_sessions.png" /></p>
 <section id="arduino-uno-atmega328p">
-<h3><span class="section-number">2.2.1. </span>Arduino Uno (Atmega328p)<a class="headerlink" href="#arduino-uno-atmega328p" title="Link to this heading">#</a></h3>
+<h3>Arduino Uno (Atmega328p)<a class="headerlink" href="#arduino-uno-atmega328p" title="Link to this heading">#</a></h3>
 <p>Pri Procesiranju signalov bomo zaradi enostavne integracije v LabView zajemne sisteme in možnosti analogno-digitalne pretvorbe spoznali osnove uporabe razvojne plošče <a class="reference external" href="http://store.arduino.cc/products/arduino-uno-rev3">Arduino Uno</a>, ki temelji na mikrokrmilniku <a class="reference external" href="https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf">Atmega328p</a>.</p>
 <p>Specifikacije plošče Arduino Uno, bistvene pri aplikacijah analogno digitalne pretvorbe in zajema signalov, so zbrane v spodnji tabeli.</p>
 <table class="table">
@@ -548,12 +549,12 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_15000\930176927.py:20: SyntaxWarning
 </div>
 </section>
 <section id="labview-in-arduino">
-<h3><span class="section-number">2.2.2. </span>LabView in Arduino<a class="headerlink" href="#labview-in-arduino" title="Link to this heading">#</a></h3>
+<h3>LabView in Arduino<a class="headerlink" href="#labview-in-arduino" title="Link to this heading">#</a></h3>
 <p>Paket LINX omogoča dostop do analognih vhodnih kanalov ter digitalnih I/O kanalov Arduino plošče iz LabView-a. Podpira tudi povezavo Arduina z zunanjimi napravami, na primer preko SPI ali I2C serijske povezave.</p>
 <p>Do podprtih programskih elementov dostopamo preko posebnega menija v naboru funkcij blokovnega diagrama, <code class="docutils literal notranslate"><span class="pre">MakerHub</span> <span class="pre">-&gt;</span> <span class="pre">LINX</span></code>.</p>
 <p><img alt="linx_functions" src="../_images/makerhub_functions.png" /></p>
 <section id="povezava-z-arduinom-in-prvi-program">
-<h4><span class="section-number">2.2.2.1. </span>Povezava z Arduinom in prvi program<a class="headerlink" href="#povezava-z-arduinom-in-prvi-program" title="Link to this heading">#</a></h4>
+<h4>Povezava z Arduinom in prvi program<a class="headerlink" href="#povezava-z-arduinom-in-prvi-program" title="Link to this heading">#</a></h4>
 <p>Za vzpostavitev povezave z Arduinom v LabView-u uporabimo posebno funkciji knjižnice LINX, <code class="docutils literal notranslate"><span class="pre">Open</span></code>.</p>
 <p>Osnovni parameter pri odpiranju povezave so <em>COM serijska vrata</em>, preko katerih je Arduino povezan na naš računalnik. Če je v sistem povezanih več podobnih serijskih naprav, lahko serijska vrata povezanega Arduina najdete z orodjem <code class="docutils literal notranslate"><span class="pre">Upravitelj</span> <span class="pre">naprav</span> <span class="pre">(Device</span> <span class="pre">Manager)</span></code>.</p>
 <p><img alt="device_manager" src="../_images/device_manager_com.png" /></p>
@@ -562,7 +563,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_15000\930176927.py:20: SyntaxWarning
 <p><img alt="open_close" src="../_images/00_open_close.png" /></p>
 </section>
 <section id="avtomatizacija-z-arduinom-digitalni-i-o-terminali">
-<h4><span class="section-number">2.2.2.2. </span>Avtomatizacija z Arduinom - digitalni I/O terminali<a class="headerlink" href="#avtomatizacija-z-arduinom-digitalni-i-o-terminali" title="Link to this heading">#</a></h4>
+<h4>Avtomatizacija z Arduinom - digitalni I/O terminali<a class="headerlink" href="#avtomatizacija-z-arduinom-digitalni-i-o-terminali" title="Link to this heading">#</a></h4>
 <p>Čeprav Arduino vključuje relativno zmogljiv 10-bitni analogno-digitalni pretvornik s 6 analognimi vhodnimi kanali, zaradi relativno omejene procesorske moči <em>pogosto ni optimalna izbira za naprednejše aplikacije zajema signalov</em> (za potrebe tega predmeta pa so zmogljivosti Arduina seveda zadostne).</p>
 <p>Bolj tipično področje uporabe je zato avtomatizacija in integracija različnih merilnih elementov in strojne opreme. To omogoča širok nabor večnamenskih digitalnih I/O terminalov (GPIO).</p>
 <p>Poglejmo si osnovno uporabo GPIO kanalov Arduina, na primeru vklopa / izklopa LED luči, integrirane na Arduino plošči, katere stanje je povezano z vrednostjo GPIO terminala <code class="docutils literal notranslate"><span class="pre">13</span></code>.</p>
@@ -592,7 +593,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_15000\930176927.py:20: SyntaxWarning
 </section>
 </section>
 <section id="zajem-podatkov-z-arduinom">
-<h2><span class="section-number">2.3. </span>Zajem podatkov z Arduinom<a class="headerlink" href="#zajem-podatkov-z-arduinom" title="Link to this heading">#</a></h2>
+<h2>Zajem podatkov z Arduinom<a class="headerlink" href="#zajem-podatkov-z-arduinom" title="Link to this heading">#</a></h2>
 <p>Pri zajemu podatkov gre običajno za pretvorbo merilnega signala (el. napetost) v digitalno obliko, ki poteka na A-D pretvorniku. Arduino Uno ima na voljo 6 analognih vhodov, ki so povezani za ADC komponento plošče.</p>
 <p>Za pretvorbo in zajem posamezne točke signala na analognih vhodih lahko uporabimo funkcijo “AnalogRead” (<code class="docutils literal notranslate"><span class="pre">Makerhub</span> <span class="pre">-&gt;</span> <span class="pre">LINX</span> <span class="pre">-&gt;</span> <span class="pre">Peripheral</span> <span class="pre">-&gt;</span> <span class="pre">Analog</span> <span class="pre">-&gt;</span> <span class="pre">Read</span></code>), ki omogoča hkratni zajem na več kanalih hkrati.</p>
 <div class="admonition note">
@@ -636,7 +637,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_15000\930176927.py:20: SyntaxWarning
 <p><img alt="closed-loop-saving-subvi" src="../_images/07_01_clip_fs_SubVI.png" /></p>
 </section>
 <section id="python-branje-in-obdelava-zajetih-signalov">
-<h2><span class="section-number">2.4. </span>Python - branje in obdelava zajetih signalov<a class="headerlink" href="#python-branje-in-obdelava-zajetih-signalov" title="Link to this heading">#</a></h2>
+<h2>Python - branje in obdelava zajetih signalov<a class="headerlink" href="#python-branje-in-obdelava-zajetih-signalov" title="Link to this heading">#</a></h2>
 <p>Pri branju podatkov, shranjnih v <code class="docutils literal notranslate"><span class="pre">.lvm</span></code> datoteke, si lahko pomagate s paketom <a class="reference external" href="https://pypi.org/project/lvm-read/"><code class="docutils literal notranslate"><span class="pre">lvm_read</span></code></a>.</p>
 <p>Primer uporabe si poglejmo spodaj.</p>
 <div class="cell docutils container">
@@ -818,7 +819,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_15000\930176927.py:20: SyntaxWarning
 </div>
 </section>
 <section id="uporaba-generatorja-signalov-rigol-dg1022">
-<span id="uporaba-rigol"></span><h2><span class="section-number">2.5. </span>Uporaba generatorja signalov (RIGOL DG1022)<a class="headerlink" href="#uporaba-generatorja-signalov-rigol-dg1022" title="Link to this heading">#</a></h2>
+<span id="uporaba-rigol"></span><h2>Uporaba generatorja signalov (RIGOL DG1022)<a class="headerlink" href="#uporaba-generatorja-signalov-rigol-dg1022" title="Link to this heading">#</a></h2>
 <p>Za simulacijo predpisane oblike periodičnega signala bomo uporabili generator signala.</p>
 <p>Spodanja slika prikazuje nadzorno ploščo modela RIGOL DG1022.</p>
 <p><img alt="rigol-dg1022" src="../_images/rigol_dg1022.png" /></p>
@@ -933,7 +934,7 @@ By Domen Gorjup
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

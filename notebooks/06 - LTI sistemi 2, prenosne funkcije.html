@@ -60,6 +60,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/06 - LTI sistemi 2, prenosne funkcije';</script>
+    <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="7. Enakomerno časovno vzorčenje in frekvenčno prekrivanje" href="07%20-%20Enakomerno%20%C4%8Dasovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html" />
@@ -174,7 +175,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Uvod
+                    Procesiranje signalov
                 </a>
             </li>
         </ul>
@@ -423,9 +424,9 @@ document.write(`
 </div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="linearni-casovno-invariatni-lti-sistemi-2-prenosne-funkcije">
-<h1><span class="section-number">6. </span>Linearni, časovno invariatni (LTI) sistemi 2 - prenosne funkcije<a class="headerlink" href="#linearni-casovno-invariatni-lti-sistemi-2-prenosne-funkcije" title="Link to this heading">#</a></h1>
+<h1>Linearni, časovno invariatni (LTI) sistemi 2 - prenosne funkcije<a class="headerlink" href="#linearni-casovno-invariatni-lti-sistemi-2-prenosne-funkcije" title="Link to this heading">#</a></h1>
 <section id="domaca-naloga">
-<h2><span class="section-number">6.1. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Link to this heading">#</a></h2>
+<h2>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Link to this heading">#</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Domača naloga</p>
 <p>N podlagi meritev nosilca, ki ste jih v skupini zajeli na prejšnji vaji, izračunajte in prikažite frekvenčne prenosne funkcije pospešenosti za vse pomerjene lokacije vzbujanja na nosilcu. Pri obdelavi zajetih signalov ustrezno uporabite eksponentno okno ter “force” okno s parametri iz podatkov naloge.</p>
@@ -490,14 +491,14 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 </div>
 </section>
 <section id="opis-lti-sistemov">
-<h2><span class="section-number">6.2. </span>Opis LTI sistemov<a class="headerlink" href="#opis-lti-sistemov" title="Link to this heading">#</a></h2>
+<h2>Opis LTI sistemov<a class="headerlink" href="#opis-lti-sistemov" title="Link to this heading">#</a></h2>
 <p>Odzivni model LTI sistema opišemo z njegovo prenosno funkcijo.</p>
 <p>Poglejmo primer enostavnega linearnega oscilatorja, ki ga opisuje gibalna enačba:</p>
 <div class="math notranslate nohighlight">
 \[m \, \ddot{x} + c \, \dot{x} + k \, x = f(t)\]</div>
 <p><img alt="lin-oscilator" src="../_images/lin_oscilator.png" /></p>
 <section id="frekvencna-domena">
-<h3><span class="section-number">6.2.1. </span>Frekvenčna domena<a class="headerlink" href="#frekvencna-domena" title="Link to this heading">#</a></h3>
+<h3>Frekvenčna domena<a class="headerlink" href="#frekvencna-domena" title="Link to this heading">#</a></h3>
 <p>Frekvenčna prenosna funkcija dušenega linearnega oscilatorja je podana z:</p>
 <div class="math notranslate nohighlight">
 \[\alpha(\omega) = X(\omega) / F(\omega) = \frac{1}{-\omega^2 \, m + \mathrm{i} \, \omega \, c + k}\]</div>
@@ -696,7 +697,7 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 </section>
 </section>
 <section id="obdelava-signalov-za-oceno-impulzne-prenosne-funkcije">
-<h2><span class="section-number">6.3. </span>Obdelava signalov za oceno impulzne prenosne funkcije<a class="headerlink" href="#obdelava-signalov-za-oceno-impulzne-prenosne-funkcije" title="Link to this heading">#</a></h2>
+<h2>Obdelava signalov za oceno impulzne prenosne funkcije<a class="headerlink" href="#obdelava-signalov-za-oceno-impulzne-prenosne-funkcije" title="Link to this heading">#</a></h2>
 <div class="seealso admonition">
 <p class="admonition-title">Naloga 3 (30 minut): Prenosne funkcije nosilca</p>
 <p>Na primeru nosilca, obravnavanega na prejšnji vaji, ocenimo izmerjene frekvenčne prenosne funkcije nosilca.</p>
@@ -832,7 +833,7 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 </div>
 </div>
 <section id="ekponentno-okno">
-<h3><span class="section-number">6.3.1. </span>Ekponentno okno<a class="headerlink" href="#ekponentno-okno" title="Link to this heading">#</a></h3>
+<h3>Ekponentno okno<a class="headerlink" href="#ekponentno-okno" title="Link to this heading">#</a></h3>
 <p>Da zadostimo prdpostavki periodičnosti signala v primeru, ko se odziv sistema v zajetem časovnem intervalu ne izniha, uporabimo t. i. <em>eksponentno okno</em>:</p>
 <div class="math notranslate nohighlight">
 \[w_e(t) = \mathrm{e}^{-t / \tau}\]</div>
@@ -856,7 +857,7 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 </div>
 <hr class="docutils" />
 <section id="primer-uporabe-eksponentnega-okna-na-numericnem-modelu">
-<h4><span class="section-number">6.3.1.1. </span>Primer uporabe eksponentnega okna na numeričnem modelu<a class="headerlink" href="#primer-uporabe-eksponentnega-okna-na-numericnem-modelu" title="Link to this heading">#</a></h4>
+<h4>Primer uporabe eksponentnega okna na numeričnem modelu<a class="headerlink" href="#primer-uporabe-eksponentnega-okna-na-numericnem-modelu" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k2</span> <span class="o">=</span>  <span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
@@ -990,7 +991,7 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 </section>
 <hr class="docutils" />
 <section id="uporaba-eksponentnega-okna-na-meritvi-nosilca">
-<h4><span class="section-number">6.3.1.2. </span>Uporaba eksponentnega okna na meritvi nosilca<a class="headerlink" href="#uporaba-eksponentnega-okna-na-meritvi-nosilca" title="Link to this heading">#</a></h4>
+<h4>Uporaba eksponentnega okna na meritvi nosilca<a class="headerlink" href="#uporaba-eksponentnega-okna-na-meritvi-nosilca" title="Link to this heading">#</a></h4>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -1053,7 +1054,7 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 </section>
 </section>
 <section id="force-okno">
-<h3><span class="section-number">6.3.2. </span>Force okno<a class="headerlink" href="#force-okno" title="Link to this heading">#</a></h3>
+<h3>Force okno<a class="headerlink" href="#force-okno" title="Link to this heading">#</a></h3>
 <p>Da zmanjšamo vpliv šuma na vhodnem signalu <span class="math notranslate nohighlight">\(f(t)\)</span> uporabimo t. i. <em>“force” okno</em>, s katerim izničimo vrednosti signala sile po koncu udarca.</p>
 <p>Parameter “force” okna je dolžina segmenta okna (v obliki deleža skupne dolžine signala) z enotsko amplitudo, ki jo bomo označili z <span class="math notranslate nohighlight">\(l_w\)</span>.</p>
 <p>Pri pripravi “force” okna si lahko pomagamo z oknom cosinusnega upada <code class="docutils literal notranslate"><span class="pre">scipy.signal.windows.tukey</span></code>.</p>
@@ -1136,7 +1137,7 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 </div>
 </section>
 <section id="frf-z-okni">
-<h3><span class="section-number">6.3.3. </span>FRF z okni<a class="headerlink" href="#frf-z-okni" title="Link to this heading">#</a></h3>
+<h3>FRF z okni<a class="headerlink" href="#frf-z-okni" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">FRF_w</span> <span class="o">=</span> <span class="n">A_w</span> <span class="o">/</span> <span class="n">F_w</span>
@@ -1272,7 +1273,7 @@ By Domen Gorjup
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

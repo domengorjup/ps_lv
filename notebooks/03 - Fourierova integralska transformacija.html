@@ -60,6 +60,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/03 - Fourierova integralska transformacija';</script>
+    <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="4. Lastnosti Fourierove transformacije" href="04%20-%20Lastnosti%20Fourierove%20transformacije.html" />
@@ -174,7 +175,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Uvod
+                    Procesiranje signalov
                 </a>
             </li>
         </ul>
@@ -407,9 +408,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="fourierova-integralska-transformacija">
-<h1><span class="section-number">3. </span>Fourierova integralska transformacija<a class="headerlink" href="#fourierova-integralska-transformacija" title="Link to this heading">#</a></h1>
+<h1>Fourierova integralska transformacija<a class="headerlink" href="#fourierova-integralska-transformacija" title="Link to this heading">#</a></h1>
 <section id="domaca-naloga">
-<h2><span class="section-number">3.1. </span>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Link to this heading">#</a></h2>
+<h2>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Link to this heading">#</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Domača naloga</p>
 <ul class="simple">
@@ -448,7 +449,7 @@ katere rezultat je <em>diskretna frekvenčna prdstavitev signala s konstantnim k
 </div>
 </section>
 <section id="fourierova-transformacija-v-pythonu">
-<h2><span class="section-number">3.2. </span>Fourierova transformacija v Pythonu<a class="headerlink" href="#fourierova-transformacija-v-pythonu" title="Link to this heading">#</a></h2>
+<h2>Fourierova transformacija v Pythonu<a class="headerlink" href="#fourierova-transformacija-v-pythonu" title="Link to this heading">#</a></h2>
 <p>Poglejmo si uporabo algortima (diskretne) Fourierove transformacije, implementiranega v Numpy in Scipy, na primeru sinusnega signala z amplitudo <span class="math notranslate nohighlight">\(A\)</span> ter sekundno frekvenco <span class="math notranslate nohighlight">\(p\)</span>.</p>
 <p>Na predavanjih ste povedali, da velja:</p>
 <div class="math notranslate nohighlight">
@@ -581,7 +582,7 @@ x(t) = A\,\sin(2\pi\,p\,t) = \frac{A}{2\,\textrm{i}}\,
 </div>
 </section>
 <section id="dft-realnega-signala">
-<h2><span class="section-number">3.3. </span>DFT realnega signala<a class="headerlink" href="#dft-realnega-signala" title="Link to this heading">#</a></h2>
+<h2>DFT realnega signala<a class="headerlink" href="#dft-realnega-signala" title="Link to this heading">#</a></h2>
 <div class="important admonition" id="naloga-2">
 <p class="admonition-title">Naloga 2 (30 min)</p>
 <p>Z uporabo generatorja signalov in Arduino zajemnega sistema pripravite ter zajamite dva signala različnih oblik s parametri iz podatkov domače naloge 3, ki jih najdete v <a class="reference external" href="https://e-ucilnica.fs.uni-lj.si/course/view.php?id=328">e-učilnici</a>.</p>
@@ -601,7 +602,7 @@ x(t) = A\,\sin(2\pi\,p\,t) = \frac{A}{2\,\textrm{i}}\,
 <p><img alt="labview-podprogram" src="../_images/podprogram_clip_fs.png" /></p>
 <p>Oboje lahko prenesete lahko tudi v obliki <a class="reference download internal" download="" href="../_downloads/fe35982e9ec10d562dca252f2f56a11d/labview_zajem.zip"><code class="xref download docutils literal notranslate"><span class="pre">zip</span> <span class="pre">arhiva</span></code></a>.</p>
 <section id="obdelava-zajetega-signala">
-<h3><span class="section-number">3.3.1. </span>Obdelava zajetega signala<a class="headerlink" href="#obdelava-zajetega-signala" title="Link to this heading">#</a></h3>
+<h3>Obdelava zajetega signala<a class="headerlink" href="#obdelava-zajetega-signala" title="Link to this heading">#</a></h3>
 <div class="seealso admonition">
 <p class="admonition-title">Naloga 3 (15 min)</p>
 <ul class="simple">
@@ -688,7 +689,7 @@ x(t) = A\,\sin(2\pi\,p\,t) = \frac{A}{2\,\textrm{i}}\,
 </div>
 </div>
 <section id="dolocitev-parametrov-zajetega-signala-s-scipy-optimize-curve-fit">
-<h4><span class="section-number">3.3.1.1. </span>Določitev parametrov zajetega signala s <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit</span></code>:<a class="headerlink" href="#dolocitev-parametrov-zajetega-signala-s-scipy-optimize-curve-fit" title="Link to this heading">#</a></h4>
+<h4>Določitev parametrov zajetega signala s <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit</span></code>:<a class="headerlink" href="#dolocitev-parametrov-zajetega-signala-s-scipy-optimize-curve-fit" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
@@ -852,7 +853,7 @@ x(t) = A\,\sin(2\pi\,p\,t) = \frac{A}{2\,\textrm{i}}\,
 </section>
 </section>
 <section id="diskretna-fourierova-transformacija-zajetega-signala">
-<h3><span class="section-number">3.3.2. </span>(Diskretna) Fourierova transformacija zajetega signala<a class="headerlink" href="#diskretna-fourierova-transformacija-zajetega-signala" title="Link to this heading">#</a></h3>
+<h3>(Diskretna) Fourierova transformacija zajetega signala<a class="headerlink" href="#diskretna-fourierova-transformacija-zajetega-signala" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fft</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
@@ -954,7 +955,7 @@ x(t) = A\,\sin(2\pi\,p\,t) = \frac{A}{2\,\textrm{i}}\,
 </section>
 </section>
 <section id="amplitudni-in-fazni-spekter-realnega-signala">
-<h2><span class="section-number">3.4. </span>Amplitudni in fazni spekter realnega signala<a class="headerlink" href="#amplitudni-in-fazni-spekter-realnega-signala" title="Link to this heading">#</a></h2>
+<h2>Amplitudni in fazni spekter realnega signala<a class="headerlink" href="#amplitudni-in-fazni-spekter-realnega-signala" title="Link to this heading">#</a></h2>
 <p>Poglejmo primer amplitudnega in faznega spektra realnega signala z dvema harmonskima komponentama.</p>
 <p>Parametri signala:</p>
 <div class="cell docutils container">
@@ -1197,7 +1198,7 @@ By Domen Gorjup
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

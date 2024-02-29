@@ -60,6 +60,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/07 - Enakomerno časovno vzorčenje in frekvenčno prekrivanje';</script>
+    <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="8. DFT in osnove naključnih procesov" href="08%20-%20DFT%20in%20osnove%20naklju%C4%8Dnih%20procesov.html" />
@@ -174,7 +175,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    Uvod
+                    Procesiranje signalov
                 </a>
             </li>
         </ul>
@@ -420,10 +421,10 @@ document.write(`
 </details>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="enakomerno-casovno-vzorcenje-in-frekvencno-prekrivanje">
-<h1><span class="section-number">7. </span>Enakomerno časovno vzorčenje in frekvenčno prekrivanje<a class="headerlink" href="#enakomerno-casovno-vzorcenje-in-frekvencno-prekrivanje" title="Link to this heading">#</a></h1>
+<h1>Enakomerno časovno vzorčenje in frekvenčno prekrivanje<a class="headerlink" href="#enakomerno-casovno-vzorcenje-in-frekvencno-prekrivanje" title="Link to this heading">#</a></h1>
 <p>Pri procesiranju merjenih podatkov imamo opravka z diskretno vzorčenimi signali. Pomembno se je zavedati lastnosti procesa diskretizacije sicer zveznih časovnih signalov, katerega osnove si bomo pogledali na tej vaji.</p>
 <section id="naloga">
-<h2><span class="section-number">7.1. </span>Naloga<a class="headerlink" href="#naloga" title="Link to this heading">#</a></h2>
+<h2>Naloga<a class="headerlink" href="#naloga" title="Link to this heading">#</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Domača naloga</p>
 <p>Z uporabo generatorja signalov in zajemnega sistema Arduino pripravite signal(e), s katerim boste demonstrirali v podatkih določeno lastnost diskretizacije signalov. Pri generiranju in zajemu signalov uporabite v podatkih predpisane parametre, manjkajoče parametre pa določite v skladu s predpisano lastnostjo diskretizacije.</p>
@@ -436,10 +437,10 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="diskretizacija-signalov">
-<h2><span class="section-number">7.2. </span>Diskretizacija signalov<a class="headerlink" href="#diskretizacija-signalov" title="Link to this heading">#</a></h2>
+<h2>Diskretizacija signalov<a class="headerlink" href="#diskretizacija-signalov" title="Link to this heading">#</a></h2>
 <p>Diskretizacija je postopek, pri katerem v času zvezno spremenljivko pretvorimo v diskretne vrednosti, primerne za predstavitev v računalniškem pomnilniku. Sestavljata jo dva ločena procesa, <strong>vzorčenje</strong> in <strong>kvantizacija</strong>.</p>
 <section id="enakomerno-casovno-vzorcenje">
-<h3><span class="section-number">7.2.1. </span>Enakomerno časovno vzorčenje<a class="headerlink" href="#enakomerno-casovno-vzorcenje" title="Link to this heading">#</a></h3>
+<h3>Enakomerno časovno vzorčenje<a class="headerlink" href="#enakomerno-casovno-vzorcenje" title="Link to this heading">#</a></h3>
 <p>Vzorčenje je postopek diskretizacije <em>neodvisne spremenljivke</em> (časa) zveznega procesa.</p>
 <p>Glavni parameter časovnega vzorčenja je <strong>interval (perioda) vzorčenja</strong>, <span class="math notranslate nohighlight">\(\Delta t\)</span>, ki definira <strong>frekvenco vzorčenja</strong>, <span class="math notranslate nohighlight">\(f_s = 1 / \Delta t\)</span>.</p>
 <p>Zvezni časovni signal tako vzorčimo pri diskretnih vrednostih časa <span class="math notranslate nohighlight">\(n \, \Delta t\)</span>.</p>
@@ -458,7 +459,7 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 </section>
 <section id="frekvencno-prekrivanje-aliasing">
-<h3><span class="section-number">7.2.2. </span>Frekvenčno prekrivanje (<em>aliasing</em>)<a class="headerlink" href="#frekvencno-prekrivanje-aliasing" title="Link to this heading">#</a></h3>
+<h3>Frekvenčno prekrivanje (<em>aliasing</em>)<a class="headerlink" href="#frekvencno-prekrivanje-aliasing" title="Link to this heading">#</a></h3>
 <p>Posledica periodičnosti Fourierove transformacije diskretnega signala je, da so frekvenčne komponente signla, višje od <span class="math notranslate nohighlight">\(f_s/2\)</span>, zrcaljene preko meje <span class="math notranslate nohighlight">\(f_s/2\)</span> in povzročajo t. i. <strong>frekvenčno prekrivanje</strong>. To povzroča anomalije v diskretno vzorčenem signalu.</p>
 <p>Frekvenco <span class="math notranslate nohighlight">\(f_N = f_s / 2\)</span> imenujemo tudi <em>Nyquistova frekvenca</em>.</p>
 <div class="admonition note">
@@ -504,7 +505,7 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 </div>
 <section id="filtriranje-za-odpravo-frekvencnega-nalaganja">
-<h4><span class="section-number">7.2.2.1. </span>Filtriranje za odpravo frekvenčnega nalaganja<a class="headerlink" href="#filtriranje-za-odpravo-frekvencnega-nalaganja" title="Link to this heading">#</a></h4>
+<h4>Filtriranje za odpravo frekvenčnega nalaganja<a class="headerlink" href="#filtriranje-za-odpravo-frekvencnega-nalaganja" title="Link to this heading">#</a></h4>
 <p>Frekvenčno nalaganje merjenega signala lahko preprečimo z uporabo nizkopasovnega filtriranja (ang. <em>anti-aliasing filter</em>), ki mora biti izvedeno <em>pred časovnim vzorčenjem signala</em>.</p>
 <div class="seealso admonition">
 <p class="admonition-title">Naloga 2 (10 minut)</p>
@@ -604,7 +605,7 @@ X_s(f)=X_s(f+r/\Delta t), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </section>
 </section>
 <section id="kvantizacija">
-<h3><span class="section-number">7.2.3. </span>Kvantizacija<a class="headerlink" href="#kvantizacija" title="Link to this heading">#</a></h3>
+<h3>Kvantizacija<a class="headerlink" href="#kvantizacija" title="Link to this heading">#</a></h3>
 <p>Kvantizacija je postopek diskretizacije <em>odvisne spremenljivke</em> zveznega procesa <span class="math notranslate nohighlight">\(x(t)\)</span>.</p>
 <p>Glavni parameter časovnega vzorčenja je <strong>število diskretnih nivojev</strong>, ki jih odvisna spremenljivka pri procesu kvantizacije lahko zavzame, ki določa <strong>dinamični razpon</strong> (globino) procesa. Običajno je podano s <strong>številom bitov</strong> <span class="math notranslate nohighlight">\(b\)</span> AD pretvornika. Prav tako je pri tem pomembno območje kvanzizacije <span class="math notranslate nohighlight">\(A = x_{\text{max}} - x_{\text{min}}\)</span>, ki določa interval možnih vrednosti neodvisne spremenljivke <span class="math notranslate nohighlight">\(x \in [x_{\text{min}}, x_{\text{max}}]\)</span>.</p>
 <p>Število diskretnih vrednosti kvantiziranega signala je:</p>
@@ -868,7 +869,7 @@ By Domen Gorjup
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>
