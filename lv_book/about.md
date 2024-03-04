@@ -4,6 +4,8 @@
 
 Avtor: Domen Gorjup
 
+Magistrski študijski program 2. stopnje Strojništvo, 2. letnik
+
 Univerza v Ljubljani, 
 Fakulteta za strojništvo
 
