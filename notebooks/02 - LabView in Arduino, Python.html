@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. LabView in Arduino, Python &#8212; Procesiranje signalov - Laboratorijske vaje</title>
+    <title>LabView in Arduino, Python &#8212; Procesiranje signalov - Laboratorijske vaje</title>
   
   
   
@@ -181,7 +181,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="01%20-%20Uvod%20v%20LabView.html">1. Uvod v LabView</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. LabView in Arduino, Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">LabView in Arduino, Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html">3. Fourierova integralska transformacija</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04%20-%20Lastnosti%20Fourierove%20transformacije.html">4. Lastnosti Fourierove transformacije</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05%20-%20LTI%20sistemi%2C%20zajem%20signalov.html">5. Linearni, časovno invariatni (LTI) sistemi - zajem signalov</a></li>
@@ -385,19 +385,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga">2.1. Naloga</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-hobbyist-toolkit">2.2. LabView Hobbyist Toolkit</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arduino-uno-atmega328p">2.2.1. Arduino Uno (Atmega328p)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-in-arduino">2.2.2. LabView in Arduino</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#povezava-z-arduinom-in-prvi-program">2.2.2.1. Povezava z Arduinom in prvi program</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#avtomatizacija-z-arduinom-digitalni-i-o-terminali">2.2.2.2. Avtomatizacija z Arduinom - digitalni I/O terminali</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga">Naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-hobbyist-toolkit">LabView Hobbyist Toolkit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arduino-uno-atmega328p">Arduino Uno (Atmega328p)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-in-arduino">LabView in Arduino</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#povezava-z-arduinom-in-prvi-program">Povezava z Arduinom in prvi program</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#avtomatizacija-z-arduinom-digitalni-i-o-terminali">Avtomatizacija z Arduinom - digitalni I/O terminali</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zajem-podatkov-z-arduinom">2.3. Zajem podatkov z Arduinom</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-branje-in-obdelava-zajetih-signalov">2.4. Python - branje in obdelava zajetih signalov</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-generatorja-signalov-rigol-dg1022">2.5. Uporaba generatorja signalov (RIGOL DG1022)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zajem-podatkov-z-arduinom">Zajem podatkov z Arduinom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-branje-in-obdelava-zajetih-signalov">Python - branje in obdelava zajetih signalov</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-generatorja-signalov-rigol-dg1022">Uporaba generatorja signalov (RIGOL DG1022)</a></li>
 </ul>
             </nav>
         </div>
@@ -424,20 +424,20 @@ document.write(`
 <div class="warning admonition">
 <p class="admonition-title">Naloga</p>
 <ul class="simple">
-<li><p>Z uporabo prikazanih funkcij v LabView-u zajamite signal s predpisanimi parametri, pripravljen z uporabo generatorja signalov (individualizirane podatke najdete v <a class="reference external" href="https://e-ucilnica.fs.uni-lj.si/">e-učilnici</a>).</p></li>
+<li><p>Z uporabo prikazanih funkcij v LabView-u zajemite signal s predpisanimi parametri, pripravljen z uporabo generatorja signalov (individualizirane podatke najdete v <a class="reference external" href="https://e-ucilnica.fs.uni-lj.si/">e-učilnici</a>).</p></li>
 <li><p>Grafično predstavite “surove” podatke.</p></li>
-<li><p>Na zajetem signalu smiselno prikažite uporabo predpisaneih numeričnih postopkov (<code class="docutils literal notranslate"><span class="pre">obdelava_#</span></code> v tabeli s podatki).</p></li>
+<li><p>Na zajetem signalu smiselno prikažite uporabo predpisanih numeričnih postopkov (<code class="docutils literal notranslate"><span class="pre">obdelava_#</span></code> v tabeli s podatki).</p></li>
 </ul>
-<p>Pripravite kratko poročilo v okolju Jupyter Notebook <em>(od 3 do 10 celic s kodo)</em>, iz katerega naj bodo razvidni podatki nalge (iz tabele), ter da ste vse parametre pri izvedbi naloge tudi upoštevali (ustrezno izpišite obliko signala…).
+<p>Pripravite kratko poročilo v okolju Jupyter Notebook <em>(od 3 do 10 celic s kodo)</em>, iz katerega naj bodo razvidni podatki naloge (iz tabele), ter da ste vse parametre pri izvedbi naloge tudi upoštevali (ustrezno izpišite obliko signala…).
 Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> obliki (glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
-<p><strong>Dodatek</strong>: Raziščite in prikažite uporabo frekvenčnega filtriranja podatkov, katerega namen je odprava neželenega visokofrekvenčnega šuma v zajetem signalu (uporaite lahko  <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.lfilter.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal.lfilter</span></code></a>). Pred tem zajetemu signalu po potrebi dodajte aditivno naključno komponento (šum).</p>
+<p><strong>Dodatek</strong>: Raziščite in prikažite uporabo frekvenčnega filtriranja podatkov, katerega namen je odprava neželenega visokofrekvenčnega šuma v zajetem signalu (uporabite lahko  <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.lfilter.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal.lfilter</span></code></a>). Pred tem zajetemu signalu po potrebi dodajte aditivno naključno komponento (šum).</p>
 </div>
 <hr class="docutils" />
-<p>Kljub sicer zaprti strukturi je del LabView ekosistema tudi upravljanik paketov <a class="reference external" href="https://www.vipm.io/">“VI Package manager (VIPM)”</a>, kjer lahko uporabniki delijo LabView kodo in pakete, s katerimi je mogoča uporaba funkcionalnost in opreme, ki je sam LabView sicer ne podpira.</p>
+<p>Kljub sicer zaprti strukturi je del LabView ekosistema tudi upravljalnik paketov <a class="reference external" href="https://www.vipm.io/">“VI Package manager (VIPM)”</a>, kjer lahko uporabniki delijo LabView kodo in pakete, s katerimi je mogoča uporaba funkcionalnost in opreme, ki je sam LabView sicer ne podpira.</p>
 <div class="note admonition">
 <p class="admonition-title">Namestitev LabView Community Edition</p>
 <p>Za nekomercialno rabo je brezplačno na voljo <a class="reference external" href="https://www.ni.com/sl-si/shop/labview/select-edition/labview-community-edition.html">LabView Community Edition</a>, ki omogoča uporabo vseh osnovnih funkcij LabView-a, ki jih potrebujemo pri Procesiranju signalov.</p>
-<p>LabView Community Edition je že pripravljen za uporabo s sistemom Arduino, ki ga bomo pri temu predmetu uporabljali za zajem signalov. Če želite preiszkusiti delovanje programa na lastni opremi, sledite <a class="reference external" href="https://learn.ni.com/learn/article/getting-started-with-arduino-and-labview-community-edition">navodilom na tejle povezavi</a>.</p>
+<p>LabView Community Edition je že pripravljen za uporabo s sistemom Arduino, ki ga bomo pri temu predmetu uporabljali za zajem signalov. Če želite preizkusiti delovanje programa na lastni opremi, sledite <a class="reference external" href="https://learn.ni.com/learn/article/getting-started-with-arduino-and-labview-community-edition">navodilom na tejle povezavi</a>.</p>
 <p><strong>Pozor:</strong> Zaradi težav pri povezovanju z našim zajemnim sistemom v novejših verzijah programa priporočamo prenos in namestitev starejše različice (Version) <strong>2022</strong></p>
 </div>
 </section>
@@ -464,10 +464,10 @@ Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre"
 <tr class="row-even"><td class="text-left"><p>Število analognih vhodov</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">6</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>ADC bitna gbina</p></td>
+<tr class="row-odd"><td class="text-left"><p>ADC bitna globina</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">bit</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>USB apajalna napetost (V<sub>CC</sub>)</p></td>
+<tr class="row-even"><td class="text-left"><p>USB napajalna napetost (V<sub>CC</sub>)</p></td>
 <td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">V</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Območje merjenja napetosti</p></td>
@@ -506,7 +506,7 @@ Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre"
 <span class="n">signal</span> <span class="o">=</span> <span class="n">V_pp</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">V_offset</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$V_{\mathrm</span><span class="si">{offset}</span><span class="s1">}$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$V_{</span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{offset}</span><span class="s1">}$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;merilno območje&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;dopustno območje&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">V_offset</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -521,7 +521,7 @@ Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre"
             <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">V_pp</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
             <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;&lt;|-|&gt;&#39;</span><span class="p">,</span> <span class="n">shrinkA</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shrinkB</span><span class="o">=</span><span class="mi">0</span><span class="p">,)</span>
             <span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.26</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;$V_{\mathrm</span><span class="si">{PP}</span><span class="s1">}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.26</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;$V_{</span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{PP}</span><span class="s1">}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
@@ -534,16 +534,6 @@ Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre"
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_15000\930176927.py:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.plot([0, 0], [0, 0], &#39;-.&#39;, c=&#39;k&#39;, lw=1, label=&#39;$V_{\mathrm{offset}}$&#39;)
-C:\Users\Domen\AppData\Local\Temp\ipykernel_15000\930176927.py:20: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.text(0.26, 3, &#39;$V_{\mathrm{PP}}$&#39;, fontsize=14,)
-</pre></div>
-</div>
 <img alt="../_images/71987735642e5fdc568195be262a01557dba6c57966a4dc591238dc2cc4cfa4b.png" src="../_images/71987735642e5fdc568195be262a01557dba6c57966a4dc591238dc2cc4cfa4b.png" />
 </div>
 </div>
@@ -558,8 +548,8 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_15000\930176927.py:20: SyntaxWarning
 <p>Za vzpostavitev povezave z Arduinom v LabView-u uporabimo posebno funkciji knjižnice LINX, <code class="docutils literal notranslate"><span class="pre">Open</span></code>.</p>
 <p>Osnovni parameter pri odpiranju povezave so <em>COM serijska vrata</em>, preko katerih je Arduino povezan na naš računalnik. Če je v sistem povezanih več podobnih serijskih naprav, lahko serijska vrata povezanega Arduina najdete z orodjem <code class="docutils literal notranslate"><span class="pre">Upravitelj</span> <span class="pre">naprav</span> <span class="pre">(Device</span> <span class="pre">Manager)</span></code>.</p>
 <p><img alt="device_manager" src="../_images/device_manager_com.png" /></p>
-<p>Druga pomembna nastavitev je hitrost serijske povezave (<em>baud rate</em>) z Arduinom. Privzeta vrednsot je <code class="docutils literal notranslate"><span class="pre">9600</span></code>, najvišja, ki jo Arduino Uno dopušča, pa <code class="docutils literal notranslate"><span class="pre">115200</span></code>.</p>
-<p>Po zaključenem delu z Arduinom v LabView programu moramo povezavo <strong>zapreti s funkcijo <code class="docutils literal notranslate"><span class="pre">Close</span></code></strong>, sicer bomo pri ponovnem poskusu vzpostavitve povezave imeli težave! Programa zato <strong>ne smemo nasilno prekiniti iz orodne vrstice LabView-a</strong>!</p>
+<p>Druga pomembna nastavitev je hitrost serijske povezave (<em>baud rate</em>) z Arduinom. Privzeta vrednost je <code class="docutils literal notranslate"><span class="pre">9600</span></code>, najvišja, ki jo Arduino Uno dopušča, pa <code class="docutils literal notranslate"><span class="pre">115200</span></code>.</p>
+<p>Če zgoraj niste vključili možnosti “Automatically close VISA sessions”, morate po zaključenem delu z Arduinom povezavo <strong>zapreti s funkcijo <code class="docutils literal notranslate"><span class="pre">Close</span></code></strong>, sicer boste pri ponovnem poskusu vzpostavitve povezave imeli težave.</p>
 <p><img alt="open_close" src="../_images/00_open_close.png" /></p>
 </section>
 <section id="avtomatizacija-z-arduinom-digitalni-i-o-terminali">
@@ -594,8 +584,8 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_15000\930176927.py:20: SyntaxWarning
 </section>
 <section id="zajem-podatkov-z-arduinom">
 <h2>Zajem podatkov z Arduinom<a class="headerlink" href="#zajem-podatkov-z-arduinom" title="Link to this heading">#</a></h2>
-<p>Pri zajemu podatkov gre običajno za pretvorbo merilnega signala (el. napetost) v digitalno obliko, ki poteka na A-D pretvorniku. Arduino Uno ima na voljo 6 analognih vhodov, ki so povezani za ADC komponento plošče.</p>
-<p>Za pretvorbo in zajem posamezne točke signala na analognih vhodih lahko uporabimo funkcijo “AnalogRead” (<code class="docutils literal notranslate"><span class="pre">Makerhub</span> <span class="pre">-&gt;</span> <span class="pre">LINX</span> <span class="pre">-&gt;</span> <span class="pre">Peripheral</span> <span class="pre">-&gt;</span> <span class="pre">Analog</span> <span class="pre">-&gt;</span> <span class="pre">Read</span></code>), ki omogoča hkratni zajem na več kanalih hkrati.</p>
+<p>Pri zajemu podatkov gre običajno za pretvorbo merilnega signala (el. napetost) v digitalno obliko, ki poteka na A-D pretvorniku. Arduino Uno ima na voljo 6 analognih vhodov, ki so povezani na ADC komponento plošče.</p>
+<p>Za pretvorbo in zajem posamezne točke signala na analognih vhodih lahko uporabimo funkcijo “AnalogRead” (<code class="docutils literal notranslate"><span class="pre">Makerhub</span> <span class="pre">-&gt;</span> <span class="pre">LINX</span> <span class="pre">-&gt;</span> <span class="pre">Peripheral</span> <span class="pre">-&gt;</span> <span class="pre">Analog</span> <span class="pre">-&gt;</span> <span class="pre">Read</span></code>), ki omogoča hkratni zajem na več kanalih.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Vezje, ki ga bomo pri Procesiranju signalov uporabili skupaj z Arduinom za povezavo zunanjih signalov z analognimi vhodi plošče preko koaksialnih, BNC priključkov, omogoča uporabo analognih kanalov <code class="docutils literal notranslate"><span class="pre">A0</span></code> in <code class="docutils literal notranslate"><span class="pre">A1</span></code>.</p>
@@ -613,7 +603,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_15000\930176927.py:20: SyntaxWarning
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Oblika podatkov, pridobljenih iz <code class="docutils literal notranslate"><span class="pre">N</span></code> kanalov pri nastavitvi v <code class="docutils literal notranslate"><span class="pre">n</span></code> iteracijah zanke, je <code class="docutils literal notranslate"><span class="pre">(n,</span> <span class="pre">N)</span></code> (torej <code class="docutils literal notranslate"><span class="pre">n</span></code> vrstic, <code class="docutils literal notranslate"><span class="pre">N</span></code> stolpcev).</p>
-<p>Podatke, zajete na posameznem analognem kanalu, dobimo z izbiro posameznega stolpca (<code class="docutils literal notranslate"><span class="pre">col</span></code>) v dobljenem <code class="docutils literal notranslate"><span class="pre">array</span></code>-u, z uporabo <code class="docutils literal notranslate"><span class="pre">Arra</span> <span class="pre">-&gt;</span> <span class="pre">Index</span> <span class="pre">Array</span></code> funkcije blokovnega diagrama.</p>
+<p>Podatke, zajete na posameznem analognem kanalu, dobimo z izbiro posameznega stolpca (<code class="docutils literal notranslate"><span class="pre">col</span></code>) v dobljenem <code class="docutils literal notranslate"><span class="pre">array</span></code>-u, z uporabo <code class="docutils literal notranslate"><span class="pre">Array</span> <span class="pre">-&gt;</span> <span class="pre">Index</span> <span class="pre">Array</span></code> funkcije blokovnega diagrama.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -624,12 +614,12 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_15000\930176927.py:20: SyntaxWarning
 <p>Zgornji program nadgradite tako, da:</p>
 <ul class="simple">
 <li><p>namesto trajanja pavze med zaporednimi iteracijami zajema omogoča izbiro <em>frekvence vzorčenja [Hz]</em>,</p></li>
-<li><p>omogoča izbiro izbranega števila zajetih segmentov signala z <code class="docutils literal notranslate"><span class="pre">n</span></code> vzorci,</p></li>
-<li><p>omogočja shranjevanje signala v <code class="docutils literal notranslate"><span class="pre">.lvm</span></code> datoteko.</p></li>
+<li><p>omogoča izbiro  števila zajetih segmentov signala z <code class="docutils literal notranslate"><span class="pre">n</span></code> vzorci,</p></li>
+<li><p>omogoča shranjevanje signala v <code class="docutils literal notranslate"><span class="pre">.lvm</span></code> datoteko.</p></li>
 </ul>
 </div>
 <p>Tako smo dobili enostaven sistem, ki ga že lahko uporabimo za zajem realnih merilnih signalov.</p>
-<p>Zmogljivosti takega sistema so seveda omejene. Pri merjenju običajno želimo nadzorovati čimveč parametrov merilne opreme. Naslednji primer VI omogoča tudi določitev občutljivosti posamenzih merilnih kanalov ter shranjevanje neodvisne spremenljivke (časa) skupaj z zajetimi signali.</p>
+<p>Zmogljivosti takega sistema so seveda omejene. Pri merjenju običajno želimo nadzorovati čim več parametrov merilne opreme. Naslednji primer VI omogoča tudi določitev občutljivosti posameznih merilnih kanalov ter shranjevanje neodvisne spremenljivke (časa) skupaj z zajetimi signali.</p>
 <p><img alt="open-loop-saving" src="../_images/05_continuous_N_channels_open_loop_saving.png" /></p>
 <p>Naslednji primer pa omogoča tudi krmiljenje dejanjske frekvence vzorčenja v enostavni povratni zanki:</p>
 <p><img alt="closed-loop-saving" src="../_images/07_continuous_N_channels_closed_loop_saving_new_feedback.png" /></p>
@@ -681,7 +671,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_15000\930176927.py:20: SyntaxWarning
 </div>
 </div>
 </div>
-<p>Vsak posameni segment je prav tako slovar, v katerem do surovih shranjenih podatkov dostopamo s ključem <code class="docutils literal notranslate"><span class="pre">'data'</span></code>:</p>
+<p>Vsak posamezni segment je prav tako slovar, v katerem do surovih shranjenih podatkov dostopamo s ključem <code class="docutils literal notranslate"><span class="pre">'data'</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loaded_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
@@ -714,7 +704,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_15000\930176927.py:20: SyntaxWarning
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1da923457c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x295111d5c70&gt;
 </pre></div>
 </div>
 <img alt="../_images/c9ee8586a32a230bafbacd9f4e0ca78766e3b93063b5376e5b531b6a7e26a0d5.png" src="../_images/c9ee8586a32a230bafbacd9f4e0ca78766e3b93063b5376e5b531b6a7e26a0d5.png" />
@@ -766,7 +756,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_15000\930176927.py:20: SyntaxWarning
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1da924036e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x2951130fb90&gt;
 </pre></div>
 </div>
 <img alt="../_images/ef8446f510afcf3f755523e3e17432ba9c4f831058d37f78b4d9b8a3afd69c65.png" src="../_images/ef8446f510afcf3f755523e3e17432ba9c4f831058d37f78b4d9b8a3afd69c65.png" />
@@ -808,7 +798,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_15000\930176927.py:20: SyntaxWarning
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1da92481730&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x295144c5c70&gt;
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
@@ -823,7 +813,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_15000\930176927.py:20: SyntaxWarning
 <p>Za simulacijo predpisane oblike periodičnega signala bomo uporabili generator signala.</p>
 <p>Spodanja slika prikazuje nadzorno ploščo modela RIGOL DG1022.</p>
 <p><img alt="rigol-dg1022" src="../_images/rigol_dg1022.png" /></p>
-<p>Za nastavitev izbranih parametrov signala uporabite kontrolne gumbe, na zgornji sliki označene z modro barvo. Pri tem bodite pozorni, da ste z gumbom <code class="docutils literal notranslate"><span class="pre">Channel</span> <span class="pre">Switch</span></code> izbrali kanal, na katerm želite oddajati signal.</p>
+<p>Za nastavitev izbranih parametrov signala uporabite kontrolne gumbe, na zgornji sliki označene z modro barvo. Pri tem bodite pozorni, da ste z gumbom <code class="docutils literal notranslate"><span class="pre">Channel</span> <span class="pre">Switch</span></code> izbrali kanal, na katerem želite oddajati signal.</p>
 <p>Generator signala signal oddaja preko koaksialne (BNC) povezave na desni strani krmilne plošče. Oddajanje nastavljenega signala poteka, kadar je osvetljen <code class="docutils literal notranslate"><span class="pre">Output</span></code> gumb izbranega kanala.</p>
 <p><img alt="rigol-nastavitev" src="../_images/rigol_nastavitev.png" /></p>
 <div class="important admonition">
@@ -897,19 +887,19 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_15000\930176927.py:20: SyntaxWarning
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga">2.1. Naloga</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-hobbyist-toolkit">2.2. LabView Hobbyist Toolkit</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arduino-uno-atmega328p">2.2.1. Arduino Uno (Atmega328p)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-in-arduino">2.2.2. LabView in Arduino</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#povezava-z-arduinom-in-prvi-program">2.2.2.1. Povezava z Arduinom in prvi program</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#avtomatizacija-z-arduinom-digitalni-i-o-terminali">2.2.2.2. Avtomatizacija z Arduinom - digitalni I/O terminali</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga">Naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-hobbyist-toolkit">LabView Hobbyist Toolkit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arduino-uno-atmega328p">Arduino Uno (Atmega328p)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-in-arduino">LabView in Arduino</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#povezava-z-arduinom-in-prvi-program">Povezava z Arduinom in prvi program</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#avtomatizacija-z-arduinom-digitalni-i-o-terminali">Avtomatizacija z Arduinom - digitalni I/O terminali</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zajem-podatkov-z-arduinom">2.3. Zajem podatkov z Arduinom</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-branje-in-obdelava-zajetih-signalov">2.4. Python - branje in obdelava zajetih signalov</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-generatorja-signalov-rigol-dg1022">2.5. Uporaba generatorja signalov (RIGOL DG1022)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zajem-podatkov-z-arduinom">Zajem podatkov z Arduinom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-branje-in-obdelava-zajetih-signalov">Python - branje in obdelava zajetih signalov</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-generatorja-signalov-rigol-dg1022">Uporaba generatorja signalov (RIGOL DG1022)</a></li>
 </ul>
   </nav></div>
 
