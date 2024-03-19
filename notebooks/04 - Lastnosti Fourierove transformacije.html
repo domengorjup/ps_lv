@@ -433,7 +433,7 @@ document.write(`
 LabView program za zajem lahko prenesete v obliki <a class="reference download internal" download="" href="../_downloads/fe35982e9ec10d562dca252f2f56a11d/labview_zajem.zip"><code class="xref download docutils literal notranslate"><span class="pre">zip</span> <span class="pre">arhiva</span></code></a>.</p>
 <p>Pripravite kratko poročilo v okolju Jupyter Notebook <em>(od 3 do 10 celic s kodo)</em>, v katerem naj bodo razvidni podatki naloge, ter demonstriran vpliv izbrane lastnosti Fourierove transformacije na zajeta signala (zglede poiščite v predlogah za predavanja in vaje).</p>
 <p>Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> obliki (glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
-<p><strong>Dodatek</strong>: Raziščite lastnost konvolucije / množenja signalov v povezavi s Fourierovo transformacijo in jo prikažite ter komentrirajte na primeru uporabe oken (uporabite <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/signal.windows.html#module-scipy.signal.windows"><code class="docutils literal notranslate"><span class="pre">scipy.signal.windows</span></code></a>) z enim izmed signalov, zajetih na vaji.</p>
+<p><strong>Dodatek</strong>: Raziščite lastnost konvolucije / množenja signalov v povezavi s Fourierovo transformacijo in jo prikažite ter komentirajte na primeru uporabe oken (uporabite <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/signal.windows.html#module-scipy.signal.windows"><code class="docutils literal notranslate"><span class="pre">scipy.signal.windows</span></code></a>) z enim izmed signalov, zajetih na vaji.</p>
 </div>
 <hr class="docutils" />
 <div class="note admonition">
@@ -504,19 +504,13 @@ LabView program za zajem lahko prenesete v obliki <a class="reference download i
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\1940199562.py:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.ylabel(&#39;$|\mathcal{F}(x)|$ [/]&#39;)
-</pre></div>
-</div>
 <img alt="../_images/e675afb08d82f11ea87eb717c48fb81b11bb2cc3d04e8a4b9645702e035431ed.png" src="../_images/e675afb08d82f11ea87eb717c48fb81b11bb2cc3d04e8a4b9645702e035431ed.png" />
 </div>
 </div>
@@ -537,30 +531,16 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\1940199562.py:5: SyntaxWarning
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">V</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\mathcal</span><span class="si">{F}</span><span class="s1">(x+y)$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="n">Y</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\mathcal</span><span class="si">{F}</span><span class="s1">(x) + \mathcal</span><span class="si">{F}</span><span class="s1">(y)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">V</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x+y)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="n">Y</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x) + </span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(y)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2498173900.py:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.plot(freq, np.abs(V), label=&#39;$\mathcal{F}(x+y)$&#39;)
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2498173900.py:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.plot(freq, np.abs(X + Y), label=&#39;$\mathcal{F}(x) + \mathcal{F}(y)$&#39;)
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2498173900.py:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.ylabel(&#39;$|\mathcal{F}(x)|$ [/]&#39;)
-</pre></div>
-</div>
 <img alt="../_images/d3516d4a64f8717b5ecb3b7b2f4fb4cc5624a58332ee2ad184f4b4845593229f.png" src="../_images/d3516d4a64f8717b5ecb3b7b2f4fb4cc5624a58332ee2ad184f4b4845593229f.png" />
 </div>
 </div>
@@ -580,30 +560,16 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2498173900.py:5: SyntaxWarning
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">V_Y</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\mathcal</span><span class="si">{F}</span><span class="s1">(x+y) - \mathcal</span><span class="si">{F}</span><span class="s1">(y)$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\mathcal</span><span class="si">{F}</span><span class="s1">(x)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">V_Y</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x+y) - </span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(y)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\3116940751.py:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.plot(freq, np.abs(V_Y), label=&#39;$\mathcal{F}(x+y) - \mathcal{F}(y)$&#39;)
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\3116940751.py:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.plot(freq, np.abs(X), label=&#39;$\mathcal{F}(x)$&#39;)
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\3116940751.py:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.ylabel(&#39;$|\mathcal{F}(x)|$ [/]&#39;)
-</pre></div>
-</div>
 <img alt="../_images/65a80d6957688c0f79c1863d8b280ccc7d65e6c9e4a6305a0b0ad02c45479bc4.png" src="../_images/65a80d6957688c0f79c1863d8b280ccc7d65e6c9e4a6305a0b0ad02c45479bc4.png" />
 </div>
 </div>
@@ -624,7 +590,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\3116940751.py:5: SyntaxWarning
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v_y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\mathrm</span><span class="si">{IFFT}</span><span class="s1">(\mathcal</span><span class="si">{F}</span><span class="s1">(x+y) - \mathcal</span><span class="si">{F}</span><span class="s1">(y))$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v_y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{IFFT}</span><span class="s1">(</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x+y) - </span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(y))$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
@@ -633,12 +599,6 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\3116940751.py:5: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\4245803650.py:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.plot(t, v_y, label=&#39;$\mathrm{IFFT}(\mathcal{F}(x+y) - \mathcal{F}(y))$&#39;)
-</pre></div>
-</div>
 <img alt="../_images/9906e94d504d6013ef4eaa20c7bf6a7c56981fc45f86fa76d77b4b0082780a97.png" src="../_images/9906e94d504d6013ef4eaa20c7bf6a7c56981fc45f86fa76d77b4b0082780a97.png" />
 </div>
 </div>
@@ -740,23 +700,17 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\4245803650.py:3: SyntaxWarning
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_a</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">at</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span> 
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\1569066033.py:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.ylabel(&#39;$|\mathcal{F}(x)|$ [/]&#39;)
-</pre></div>
-</div>
 <img alt="../_images/533984b0b57d59867544b08ccd64cf70d775e04bffe3a346bd83a35f56117b5a.png" src="../_images/533984b0b57d59867544b08ccd64cf70d775e04bffe3a346bd83a35f56117b5a.png" />
 </div>
 </div>
-<p>Lastnost čaovnega skaliranja pride v poštev, če se ga pri meritvi ne zavedamo:</p>
+<p>Časovno skaliranje nam v tem primeru povzroča težave, če se ga pri meritvi <strong>ne zavedamo</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freq_a_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">at</span><span class="p">),</span> <span class="n">dt</span><span class="p">)</span>
@@ -775,7 +729,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\1569066033.py:5: SyntaxWarning
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_a_s</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
 </pre></div>
@@ -783,12 +737,6 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\1569066033.py:5: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2430150567.py:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.ylabel(&#39;$|\mathcal{F}(x)|$ [/]&#39;)
-</pre></div>
-</div>
 <img alt="../_images/3d0e393e270dd7bc0c2b0784bb592fbc4d950a3e933df130326d9a3b964fadd0.png" src="../_images/3d0e393e270dd7bc0c2b0784bb592fbc4d950a3e933df130326d9a3b964fadd0.png" />
 </div>
 </div>
@@ -824,7 +772,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2430150567.py:5: SyntaxWarning
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_a_popravek</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Y_popravek</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Y_popravljen&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
 </pre></div>
@@ -832,12 +780,6 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2430150567.py:5: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\600843634.py:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.ylabel(&#39;$|\mathcal{F}(x)|$ [/]&#39;)
-</pre></div>
-</div>
 <img alt="../_images/bac8c34a2846c3f21db9a6bdd23ccad2d36ec7b2605f022a27701720f973ce85.png" src="../_images/bac8c34a2846c3f21db9a6bdd23ccad2d36ec7b2605f022a27701720f973ce85.png" />
 </div>
 </div>
@@ -913,14 +855,14 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\600843634.py:5: SyntaxWarning:
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$|\mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
 
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">X</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">Y</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle \mathcal</span><span class="si">{F}</span><span class="s1">(x)$ [rad]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle </span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)$ [rad]&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span> 
 </pre></div>
@@ -928,16 +870,6 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\600843634.py:5: SyntaxWarning:
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:11: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:11: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2574970836.py:4: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  ax[0].set_ylabel(&#39;$|\mathcal{F}(x)|$ [/]&#39;)
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2574970836.py:11: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  ax[1].set_ylabel(&#39;$\\angle \mathcal{F}(x)$ [rad]&#39;)
-</pre></div>
-</div>
 <img alt="../_images/9edf0072e76ade0a42718a79c902406ad6acaeca1aa4c7a331cf2e7224d1e2cc.png" src="../_images/9edf0072e76ade0a42718a79c902406ad6acaeca1aa4c7a331cf2e7224d1e2cc.png" />
 </div>
 </div>
@@ -958,14 +890,14 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2574970836.py:11: SyntaxWarnin
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_shift</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;shifted X&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$|\mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
 
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">X</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">X_shift</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;shifted X&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle \mathcal</span><span class="si">{F}</span><span class="s1">(x)$ [rad]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">angle </span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)$ [rad]&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span> 
 </pre></div>
@@ -973,16 +905,6 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2574970836.py:11: SyntaxWarnin
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:11: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:11: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\684776085.py:4: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  ax[0].set_ylabel(&#39;$|\mathcal{F}(x)|$ [/]&#39;)
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\684776085.py:11: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  ax[1].set_ylabel(&#39;$\\angle \mathcal{F}(x)$ [rad]&#39;)
-</pre></div>
-</div>
 <img alt="../_images/d32f99a9e1b839e45e0f8aa38c21cd2bb00e0814cb91e92fe7914f6e97bbce61.png" src="../_images/d32f99a9e1b839e45e0f8aa38c21cd2bb00e0814cb91e92fe7914f6e97bbce61.png" />
 </div>
 </div>
@@ -1002,7 +924,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\684776085.py:11: SyntaxWarning
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_shift</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\mathrm</span><span class="si">{IFFT}</span><span class="s1">(X_{\mathrm</span><span class="si">{shift}</span><span class="s1">})$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_shift</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{IFFT}</span><span class="s1">(X_{</span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{shift}</span><span class="s1">})$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;x(t - t_0)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x [/]&#39;</span><span class="p">)</span>
@@ -1012,13 +934,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\684776085.py:11: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\3440010890.py:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.plot(t, x_shift, label=&#39;$\mathrm{IFFT}(X_{\mathrm{shift}})$&#39;)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x271bc31ee40&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x22fe2c59c10&gt;
 </pre></div>
 </div>
 <img alt="../_images/42b64408269e730f6bef434fb907e1863611ba5fc2cb2039422b59cc8e01b81b.png" src="../_images/42b64408269e730f6bef434fb907e1863611ba5fc2cb2039422b59cc8e01b81b.png" />
@@ -1065,7 +981,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\3440010890.py:2: SyntaxWarning
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">mod</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;modulacijski signal&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x_{\mathrm</span><span class="si">{moduliran}</span><span class="s1">}(t)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x_{</span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{moduliran}</span><span class="s1">}(t)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
@@ -1074,12 +990,6 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\3440010890.py:2: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\425302092.py:4: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.plot(t, y, label=&#39;$x_{\mathrm{moduliran}}(t)$&#39;)
-</pre></div>
-</div>
 <img alt="../_images/166714df0fa825c7d53dee63c982fa9dafc394aead5bc37e8f6778dddf60efbb.png" src="../_images/166714df0fa825c7d53dee63c982fa9dafc394aead5bc37e8f6778dddf60efbb.png" />
 </div>
 </div>
@@ -1103,7 +1013,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\425302092.py:4: SyntaxWarning:
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span> 
 </pre></div>
@@ -1111,12 +1021,6 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\425302092.py:4: SyntaxWarning:
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\1772614321.py:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.ylabel(&#39;$|\mathcal{F}(x)|$ [/]&#39;)
-</pre></div>
-</div>
 <img alt="../_images/3cc9d7403a1a2606da89aa8425ba39b0480b6e62bb9d6ca9ae05b5ed33f11d93.png" src="../_images/3cc9d7403a1a2606da89aa8425ba39b0480b6e62bb9d6ca9ae05b5ed33f11d93.png" />
 </div>
 </div>
@@ -1178,7 +1082,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\1772614321.py:5: SyntaxWarning
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$y = \dot</span><span class="si">{x}</span><span class="s1">(t)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$y = </span><span class="se">\\</span><span class="s1">dot</span><span class="si">{x}</span><span class="s1">(t)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
@@ -1187,12 +1091,6 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\1772614321.py:5: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2293994865.py:3: SyntaxWarning: invalid escape sequence &#39;\d&#39;
-  plt.plot(t, y, label=&#39;$y = \dot{x}(t)$&#39;)
-</pre></div>
-</div>
 <img alt="../_images/49009a6f3350577d53947c329fe735f8aaaaea9268c377902538633ccfca3bd9.png" src="../_images/49009a6f3350577d53947c329fe735f8aaaaea9268c377902538633ccfca3bd9.png" />
 </div>
 </div>
@@ -1218,7 +1116,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2293994865.py:3: SyntaxWarning
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span> 
 </pre></div>
@@ -1226,12 +1124,6 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2293994865.py:3: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\3679891002.py:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.ylabel(&#39;$|\mathcal{F}(x)|$ [/]&#39;)
-</pre></div>
-</div>
 <img alt="../_images/5b0609a2c98daab5c295e080e7fbc38c0176b99b8918dbacc406532d352521b4.png" src="../_images/5b0609a2c98daab5c295e080e7fbc38c0176b99b8918dbacc406532d352521b4.png" />
 </div>
 </div>
@@ -1253,10 +1145,10 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\3679891002.py:5: SyntaxWarning
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">dX</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\mathrm</span><span class="si">{i}</span><span class="s1"> \, \omega X$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">dX</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{i}</span><span class="s1"> ~ </span><span class="se">\\</span><span class="s1">omega X$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span> 
 </pre></div>
@@ -1264,21 +1156,11 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\3679891002.py:5: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2067052454.py:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.plot(freq, np.abs(dX), label=&#39;$\mathrm{i} \, \omega X$&#39;)
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2067052454.py:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.ylabel(&#39;$|\mathcal{F}(x)|$ [/]&#39;)
-</pre></div>
-</div>
-<img alt="../_images/5f5748b8cba4524c5ce791dbfc2b34deec128ae873b602e32f4a148bdf861229.png" src="../_images/5f5748b8cba4524c5ce791dbfc2b34deec128ae873b602e32f4a148bdf861229.png" />
+<img alt="../_images/d8bd2985701a59abfd96d9e6f68104bd7e550fb645461a839d9a0769ea56a17d.png" src="../_images/d8bd2985701a59abfd96d9e6f68104bd7e550fb645461a839d9a0769ea56a17d.png" />
 </div>
 </div>
 <p>Integral v frekvenčni domeni:</p>
-<p><span class="math notranslate nohighlight">\(\mathcal{F}(x(t)) = 1 / (\mathrm{i} \, \omega) \, \mathcal{F}(\dot{x}(t))\)</span></p>
+<p><span class="math notranslate nohighlight">\(\mathcal{F}(x(t)) = 1 / (\mathrm{i} \, \omega) \cdot \mathcal{F}(\dot{x}(t))\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">omega</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1e-6</span>
@@ -1296,9 +1178,9 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2067052454.py:5: SyntaxWarning
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$X$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ing_Y</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$1/(\mathrm</span><span class="si">{i}</span><span class="s1"> \, \omega) \, Y$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">ing_Y</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$1/(</span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{i}</span><span class="s1"> ~ </span><span class="se">\\</span><span class="s1">omega) ~ Y$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span> 
 </pre></div>
@@ -1306,17 +1188,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2067052454.py:5: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\3006040352.py:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.plot(freq, np.abs(ing_Y), label=&#39;$1/(\mathrm{i} \, \omega) \, Y$&#39;)
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\3006040352.py:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.ylabel(&#39;$|\mathcal{F}(x)|$ [/]&#39;)
-</pre></div>
-</div>
-<img alt="../_images/5f11dacbc7211b2ba4fb4a111f4658f52c25452597fbbe86473d90da86c614c6.png" src="../_images/5f11dacbc7211b2ba4fb4a111f4658f52c25452597fbbe86473d90da86c614c6.png" />
+<img alt="../_images/82334cc953ad4232eadb0f7d7759163999b09a5d5faee341ed12ab00f0add3e3.png" src="../_images/82334cc953ad4232eadb0f7d7759163999b09a5d5faee341ed12ab00f0add3e3.png" />
 </div>
 </div>
 <div class="note admonition">
@@ -1377,7 +1249,7 @@ x(t)*y(t) = \int_{-\infty}^{+\infty} x(\tau)\,y(t-\tau)\,\textrm{d}\tau
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span> 
 </pre></div>
@@ -1385,12 +1257,6 @@ x(t)*y(t) = \int_{-\infty}^{+\infty} x(\tau)\,y(t-\tau)\,\textrm{d}\tau
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:4: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\3254701806.py:4: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.ylabel(&#39;$|\mathcal{F}(x)|$ [/]&#39;)
-</pre></div>
-</div>
 <img alt="../_images/e6396962974a3f1f32d4e58101d5a44bd97237a5d515bdc9051cb7c91b516c8c.png" src="../_images/e6396962974a3f1f32d4e58101d5a44bd97237a5d515bdc9051cb7c91b516c8c.png" />
 </div>
 </div>
@@ -1422,7 +1288,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\3254701806.py:4: SyntaxWarning
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">H</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;filter&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
 </pre></div>
@@ -1430,12 +1296,6 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\3254701806.py:4: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2816502356.py:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.ylabel(&#39;$|\mathcal{F}(x)|$ [/]&#39;)
-</pre></div>
-</div>
 <img alt="../_images/3536bafac3fa92c2c34c7f85a5ab01d97965ca7397f815e1e71003b4bf322ea8.png" src="../_images/3536bafac3fa92c2c34c7f85a5ab01d97965ca7397f815e1e71003b4bf322ea8.png" />
 </div>
 </div>
@@ -1456,9 +1316,9 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2816502356.py:5: SyntaxWarning
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$X$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_filtriran</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$X \cdot H$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_filtriran</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$X </span><span class="se">\\</span><span class="s1">cdot H$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
 </pre></div>
@@ -1466,16 +1326,6 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2816502356.py:5: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2974333546.py:3: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-  plt.plot(freq, np.abs(X_filtriran), label=&#39;$X \cdot H$&#39;)
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2974333546.py:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.ylabel(&#39;$|\mathcal{F}(x)|$ [/]&#39;)
-</pre></div>
-</div>
 <img alt="../_images/f36ac887a54b1cea3c267ab0777e664a0f4c887e2ba4b46be42365e5dae00c1b.png" src="../_images/f36ac887a54b1cea3c267ab0777e664a0f4c887e2ba4b46be42365e5dae00c1b.png" />
 </div>
 </div>
@@ -1502,15 +1352,12 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2974333546.py:5: SyntaxWarning
 <span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="s1">&#39;C1&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;filter&#39;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;filter [/]&#39;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x271baf0b5f0&gt;
-</pre></div>
-</div>
 <img alt="../_images/919e3b7fe1fb5f60a804831cfc723fa527c502a3e9954d60257015e757153d8d.png" src="../_images/919e3b7fe1fb5f60a804831cfc723fa527c502a3e9954d60257015e757153d8d.png" />
 </div>
 </div>
@@ -1532,7 +1379,6 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2974333546.py:5: SyntaxWarning
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_filtriran</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x * h$&#39;</span><span class="p">)</span>
-<span class="c1">#plt.plot(t, np.fft.irfft(X_filtriran*len(t)/2), label=&#39;$\mathrm{IFFT}(X \cdot h)$&#39;)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
@@ -1553,10 +1399,10 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2974333546.py:5: SyntaxWarning
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_filtriran</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$X \cdot H$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x_filtriran</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\mathcal</span><span class="si">{F}</span><span class="s1">(x*h)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_filtriran</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$X </span><span class="se">\\</span><span class="s1">cdot H$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x_filtriran</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x*h)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Frekvenčna domena&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
@@ -1565,20 +1411,6 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\2974333546.py:5: SyntaxWarning
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\517505713.py:2: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-  plt.plot(freq, np.abs(X_filtriran), label=&#39;$X \cdot H$&#39;)
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\517505713.py:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.plot(freq, np.abs(np.fft.rfft(x_filtriran)*2/len(t)), label=&#39;$\mathcal{F}(x*h)$&#39;)
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\517505713.py:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.ylabel(&#39;$|\mathcal{F}(x)|$ [/]&#39;)
-</pre></div>
-</div>
 <img alt="../_images/b9e62e65825caafe133bb365fc5a9287cb2e18a613e1b8a888cf97093cac55be.png" src="../_images/b9e62e65825caafe133bb365fc5a9287cb2e18a613e1b8a888cf97093cac55be.png" />
 </div>
 </div>
@@ -1591,7 +1423,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\517505713.py:5: SyntaxWarning:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_filtriran</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x * h$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">irfft</span><span class="p">(</span><span class="n">X_filtriran</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\mathrm</span><span class="si">{IFFT}</span><span class="s1">(X \cdot h)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">irfft</span><span class="p">(</span><span class="n">X_filtriran</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{IFFT}</span><span class="s1">(X </span><span class="se">\\</span><span class="s1">cdot h)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Časovna domena&#39;</span><span class="p">)</span>
@@ -1601,12 +1433,6 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\517505713.py:5: SyntaxWarning:
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_31780\1202138090.py:3: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.plot(t, np.fft.irfft(X_filtriran*len(t)/2), label=&#39;$\mathrm{IFFT}(X \cdot h)$&#39;)
-</pre></div>
-</div>
 <img alt="../_images/572a5248ef3e75fe78bc408cbcaa2050378835f959c0eb0a5ee51c8a659c4f35.png" src="../_images/572a5248ef3e75fe78bc408cbcaa2050378835f959c0eb0a5ee51c8a659c4f35.png" />
 </div>
 </div>
