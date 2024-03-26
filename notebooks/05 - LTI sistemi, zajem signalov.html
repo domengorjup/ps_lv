@@ -386,6 +386,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domaca-naloga">Domača naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frekvencna-in-impulzna-prenosna-funkcija">Frekvenčna in impulzna prenosna funkcija</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zajem-signalov-za-dolocitev-prenosnih-funkcij-lti-sistema">Zajem signalov za določitev prenosnih funkcij LTI sistema</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merilni-sistem">Merilni sistem</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-program">LabView program</a></li>
@@ -420,7 +421,6 @@ document.write(`
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="linearni-casovno-invariatni-lti-sistemi-zajem-signalov">
 <h1>Linearni, časovno invariatni (LTI) sistemi - zajem signalov<a class="headerlink" href="#linearni-casovno-invariatni-lti-sistemi-zajem-signalov" title="Link to this heading">#</a></h1>
-<p>Odzivni model linearnih, časovno invariantnih (ang. <em>Linear, Time-Invariant, LTI</em>) sistemov okarakteriziramo s t. i. <strong>prenosnimi funkcijami</strong>, ki povezujejo signale odziva in vzbujanja sistema, v frekvenčni (<em>frekvenčna prenosna funkcija</em>, <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span>) oz. časovni (<em>impulzna prenosna funkcija</em>, <span class="math notranslate nohighlight">\(h(t)\)</span>) domeni.</p>
 <section id="domaca-naloga">
 <h2>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Link to this heading">#</a></h2>
 <div class="warning admonition">
@@ -438,7 +438,11 @@ document.write(`
 <li><p>Simulirajte in prikažite odziv nosilca <span class="math notranslate nohighlight">\(x(t)\)</span> na vzbujanje z naključnim signalom sile <span class="math notranslate nohighlight">\(f_i(t)\)</span>. Naključni vzbujevalni signal pripravite po lastni presoji, na primer z uporabo modula <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code>.</p></li>
 </ul>
 </div>
+</section>
 <hr class="docutils" />
+<section id="frekvencna-in-impulzna-prenosna-funkcija">
+<h2>Frekvenčna in impulzna prenosna funkcija<a class="headerlink" href="#frekvencna-in-impulzna-prenosna-funkcija" title="Link to this heading">#</a></h2>
+<p>Odzivni model linearnih, časovno invariantnih (ang. <em>Linear, Time-Invariant, LTI</em>) sistemov okarakteriziramo s t. i. <strong>prenosnimi funkcijami</strong>, ki povezujejo signale odziva in vzbujanja sistema, v frekvenčni (<em>frekvenčna prenosna funkcija</em>, <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span>) oz. časovni (<em>impulzna prenosna funkcija</em>, <span class="math notranslate nohighlight">\(h(t)\)</span>) domeni.</p>
 <p><strong>Frekvenčna prenosna funkcija</strong> <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> predstavlja razmerje med (kompleksnimi) amplitudami harmonskega odziva in vzbujanja opazovanega sistema:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -657,6 +661,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domaca-naloga">Domača naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frekvencna-in-impulzna-prenosna-funkcija">Frekvenčna in impulzna prenosna funkcija</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zajem-signalov-za-dolocitev-prenosnih-funkcij-lti-sistema">Zajem signalov za določitev prenosnih funkcij LTI sistema</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merilni-sistem">Merilni sistem</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-program">LabView program</a></li>
