@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Linearni, časovno invariatni (LTI) sistemi 2 - prenosne funkcije &#8212; Procesiranje signalov - Laboratorijske vaje</title>
+    <title>Linearni, časovno invariantni (LTI) sistemi 2 - prenosne funkcije &#8212; Procesiranje signalov - Laboratorijske vaje</title>
   
   
   
@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Enakomerno časovno vzorčenje in frekvenčno prekrivanje" href="07%20-%20Enakomerno%20%C4%8Dasovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html" />
-    <link rel="prev" title="Linearni, časovno invariatni (LTI) sistemi - zajem signalov" href="05%20-%20LTI%20sistemi%2C%20zajem%20signalov.html" />
+    <link rel="prev" title="Linearni, časovno invariantni (LTI) sistemi - zajem signalov" href="05%20-%20LTI%20sistemi%2C%20zajem%20signalov.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -184,8 +184,8 @@
 <li class="toctree-l1"><a class="reference internal" href="02%20-%20LabView%20in%20Arduino%2C%20Python.html">LabView in Arduino, Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html">Fourierova integralska transformacija</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04%20-%20Lastnosti%20Fourierove%20transformacije.html">Lastnosti Fourierove transformacije</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05%20-%20LTI%20sistemi%2C%20zajem%20signalov.html">Linearni, časovno invariatni (LTI) sistemi - zajem signalov</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Linearni, časovno invariatni (LTI) sistemi 2 - prenosne funkcije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05%20-%20LTI%20sistemi%2C%20zajem%20signalov.html">Linearni, časovno invariantni (LTI) sistemi - zajem signalov</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Linearni, časovno invariantni (LTI) sistemi 2 - prenosne funkcije</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07%20-%20Enakomerno%20%C4%8Dasovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">Enakomerno časovno vzorčenje in frekvenčno prekrivanje</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08%20-%20DFT%20in%20osnove%20naklju%C4%8Dnih%20procesov.html">DFT in osnove naključnih procesov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.html">Naključno vzbujanje - zajem signalov</a></li>
@@ -375,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Linearni, časovno invariatni (LTI) sistemi 2 - prenosne funkcije</h1>
+    <h1>Linearni, časovno invariantni (LTI) sistemi 2 - prenosne funkcije</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -411,7 +411,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
+  <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
 <span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">12.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">]</span>
@@ -422,9 +427,10 @@ document.write(`
 </pre></div>
 </div>
 </div>
+</details>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="linearni-casovno-invariatni-lti-sistemi-2-prenosne-funkcije">
-<h1>Linearni, časovno invariatni (LTI) sistemi 2 - prenosne funkcije<a class="headerlink" href="#linearni-casovno-invariatni-lti-sistemi-2-prenosne-funkcije" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="linearni-casovno-invariantni-lti-sistemi-2-prenosne-funkcije">
+<h1>Linearni, časovno invariantni (LTI) sistemi 2 - prenosne funkcije<a class="headerlink" href="#linearni-casovno-invariantni-lti-sistemi-2-prenosne-funkcije" title="Link to this heading">#</a></h1>
 <section id="domaca-naloga">
 <h2>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Link to this heading">#</a></h2>
 <div class="warning admonition">
@@ -439,11 +445,11 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 \[\{A\}^r = \{A_0^r, A_1^r, \dots A_i^r \dots A_n^r\}\]</div>
 <p>kjer so <span class="math notranslate nohighlight">\(A^r_i\)</span> t. i. modalne konstante sistema pri lastni frekvenci <span class="math notranslate nohighlight">\(\omega_r\)</span>.</p>
 <p>Modalne konstante lahko ocenite <em>s poljubno metodo</em> (glejte spodnji zaznamek).</p>
-<p>Za identifikacijo modalnih konstant lahko uporabite tudi paket <a class="reference external" href="https://pypi.org/project/pyEMA/">pyEMA</a>. Pomagate si lahko s <a class="reference external" href="https://github.com/ladisk/pyEMA/blob/master/pyEMA%20Showcase.ipynb">temle primerom uporabe</a>.</p>
+<p>Za identifikacijo modalnih konstant lahko uporabite tudi paket <a class="reference external" href="https://pypi.org/project/sdypy-EMA/">sdypy-EMA</a>. Pomagate si lahko s <a class="reference external" href="https://github.com/sdypy/sdypy-EMA/blob/main/EMA%20Showcase.ipynb">temle primerom uporabe</a>.</p>
 </div>
 <div class="info admonition">
 <p class="admonition-title">Metoda največjih amplitud</p>
-<p>Ena najpreprostejših metod modalne identifikacije je <a class="reference external" href="https://link.springer.com/article/10.1007/s42452-019-0806-8#Sec2">metoda največjih amplitud</a> (<em>Peak amplitue</em>, tudi <em>Peak Picking method</em>):</p>
+<p>Ena najpreprostejših metod modalne identifikacije je <a class="reference external" href="https://link.springer.com/article/10.1007/s42452-019-0806-8#Sec2">metoda največjih amplitud</a> (<em>Peak amplitude</em>, tudi <em>Peak Picking method</em>):</p>
 <p><span class="math notranslate nohighlight">\(\omega_r = \text{arg max}(|\alpha(\omega)|)\)</span> (krožna frekvenca resonančnega vrha)</p>
 <p><span class="math notranslate nohighlight">\(\eta_r = \frac{\omega_a - \omega_b}{\omega_r}\)</span> (razmernik dušenja), kjer sta <span class="math notranslate nohighlight">\(\omega_a\)</span> in <span class="math notranslate nohighlight">\(\omega_b\)</span> t. i. točki polovične moči v okolici <span class="math notranslate nohighlight">\(\omega_r\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(|\alpha(\omega_{a, b})| = \frac{|\alpha(\omega_r)|} {\sqrt{2}}\)</span></p>
@@ -468,7 +474,7 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 </div>
 </details>
 </div>
-<p><strong>Frekvenčna prenosna funkcija</strong> <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> predstavlja razmerje med (kompleksnimi) amplitudami harmonskega odziva in vzbujana opazovanega sistema:</p>
+<p><strong>Frekvenčna prenosna funkcija</strong> <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> predstavlja razmerje med (kompleksnimi) amplitudami harmonskega odziva in vzbujanja opazovanega sistema:</p>
 <div class="math notranslate nohighlight">
 \[
 	\alpha(\omega) = \frac{X(\omega)}{F(\omega)}
@@ -572,7 +578,7 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 </div>
 <div class="important admonition">
 <p class="admonition-title">Naloga 1 (10 minut): uporaba <code class="docutils literal notranslate"><span class="pre">scipy.signal.lti</span></code></p>
-<p>Sistem linearnga oscilatorja definirajte z uporabo <code class="docutils literal notranslate"><span class="pre">scipy.signal.lti</span></code>. Pomagajte si z <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.lti.html#scipy.signal.lti">dokumentacijo</a>.</p>
+<p>Sistem linearnega oscilatorja definirajte z uporabo <code class="docutils literal notranslate"><span class="pre">scipy.signal.lti</span></code>. Pomagajte si z <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.lti.html#scipy.signal.lti">dokumentacijo</a>.</p>
 <p>Pri tem uporabite prenosno funkcijo sistema v <span class="math notranslate nohighlight">\(s\)</span>-domeni:</p>
 <div class="math notranslate nohighlight">
 \[H(s) = \frac{1}{m \, s^2 + c \, s + k}\]</div>
@@ -587,7 +593,7 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 </div>
 </div>
 </div>
-<p>Spomnimo se, frekvnečna prenosna funkcija <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> in impulzna prenosna funkcija <span class="math notranslate nohighlight">\(h(t)\)</span> sta Fourierov par:</p>
+<p>Spomnimo se, frekvenčna prenosna funkcija <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> in impulzna prenosna funkcija <span class="math notranslate nohighlight">\(h(t)\)</span> sta Fourierov par:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">irfft</span><span class="p">(</span><span class="n">H_f</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">c</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">freq</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
@@ -633,13 +639,13 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 \[ 
   a_1\,f_1(t)+a_2\,f_2(t)   \to   {\textrm{Linearen sistem}}  \to    a_1\,x_1(t)+a_2\,x_2(t)
 \]</div>
-<p>in lastnost časovne invariatnosti:</p>
+<p>in lastnost časovne invariantnosti:</p>
 <div class="math notranslate nohighlight">
 \[
   f(t-t_0)   \to   {\textrm{Časovno invarianten sistem}}  \to    x(t-t_0) 
 \]</div>
 <p>LTI sistema.</p>
-<p>Uporabite spodaj pripravjena signala <span class="math notranslate nohighlight">\(f_1\)</span>, <span class="math notranslate nohighlight">\(f_2\)</span> ter vrednosti konstant <span class="math notranslate nohighlight">\(a_1\)</span>, <span class="math notranslate nohighlight">\(a_2\)</span>.</p>
+<p>Uporabite spodaj pripravljena signala <span class="math notranslate nohighlight">\(f_1\)</span>, <span class="math notranslate nohighlight">\(f_2\)</span> ter vrednosti konstant <span class="math notranslate nohighlight">\(a_1\)</span>, <span class="math notranslate nohighlight">\(a_2\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -834,7 +840,7 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 </div>
 <section id="ekponentno-okno">
 <h3>Ekponentno okno<a class="headerlink" href="#ekponentno-okno" title="Link to this heading">#</a></h3>
-<p>Da zadostimo prdpostavki periodičnosti signala v primeru, ko se odziv sistema v zajetem časovnem intervalu ne izniha, uporabimo t. i. <em>eksponentno okno</em>:</p>
+<p>Da zadostimo predpostavki periodičnosti signala v primeru, ko se odziv sistema v zajetem časovnem intervalu ne izniha, uporabimo t. i. <em>eksponentno okno</em>:</p>
 <div class="math notranslate nohighlight">
 \[w_e(t) = \mathrm{e}^{-t / \tau}\]</div>
 <p>Namesto parametra časovne konstante <span class="math notranslate nohighlight">\(\tau\)</span> pogosto želimo podati končno amplitudo <span class="math notranslate nohighlight">\(p\)</span> (v obliki deleža začetne amplitude), ki jo okno doseže pri času <span class="math notranslate nohighlight">\(T\)</span>. Velja:</p>
@@ -925,7 +931,7 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 </div>
 </div>
 <p>Ker v opazovanem časovnem oknu nismo zajeli popolnoma periodičnega signala, v amplitudnem spektru opazimo pojav <em>frekvenčnega odtekanja</em> (ang. <a class="reference external" href="https://en.wikipedia.org/wiki/Spectral_leakage"><em>Spectral Leakage</em></a>).</p>
-<p>Odpravimo ga lahko z ustrenzno uporabo oknjenja.</p>
+<p>Odpravimo ga lahko z ustrezno uporabo oken.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_okno</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x_primer</span><span class="o">*</span><span class="n">w_exponential</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
@@ -1057,7 +1063,7 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 <h3>Force okno<a class="headerlink" href="#force-okno" title="Link to this heading">#</a></h3>
 <p>Da zmanjšamo vpliv šuma na vhodnem signalu <span class="math notranslate nohighlight">\(f(t)\)</span> uporabimo t. i. <em>“force” okno</em>, s katerim izničimo vrednosti signala sile po koncu udarca.</p>
 <p>Parameter “force” okna je dolžina segmenta okna (v obliki deleža skupne dolžine signala) z enotsko amplitudo, ki jo bomo označili z <span class="math notranslate nohighlight">\(l_w\)</span>.</p>
-<p>Pri pripravi “force” okna si lahko pomagamo z oknom cosinusnega upada <code class="docutils literal notranslate"><span class="pre">scipy.signal.windows.tukey</span></code>.</p>
+<p>Pri pripravi “force” okna si lahko pomagamo z oknom kosinusnega upada <code class="docutils literal notranslate"><span class="pre">scipy.signal.windows.tukey</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l_w</span> <span class="o">=</span> <span class="mf">0.1</span>
@@ -1206,7 +1212,7 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Linearni, časovno invariatni (LTI) sistemi - zajem signalov</p>
+        <p class="prev-next-title">Linearni, časovno invariantni (LTI) sistemi - zajem signalov</p>
       </div>
     </a>
     <a class="right-next"
