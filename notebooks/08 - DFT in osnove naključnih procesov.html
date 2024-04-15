@@ -184,8 +184,8 @@
 <li class="toctree-l1"><a class="reference internal" href="02%20-%20LabView%20in%20Arduino%2C%20Python.html">LabView in Arduino, Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html">Fourierova integralska transformacija</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04%20-%20Lastnosti%20Fourierove%20transformacije.html">Lastnosti Fourierove transformacije</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05%20-%20LTI%20sistemi%2C%20zajem%20signalov.html">Linearni, časovno invariatni (LTI) sistemi - zajem signalov</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06%20-%20LTI%20sistemi%202%2C%20prenosne%20funkcije.html">Linearni, časovno invariatni (LTI) sistemi 2 - prenosne funkcije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05%20-%20LTI%20sistemi%2C%20zajem%20signalov.html">Linearni, časovno invariantni (LTI) sistemi - zajem signalov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06%20-%20LTI%20sistemi%202%2C%20prenosne%20funkcije.html">Linearni, časovno invariantni (LTI) sistemi 2 - prenosne funkcije</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07%20-%20Enakomerno%20%C4%8Dasovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">Enakomerno časovno vzorčenje in frekvenčno prekrivanje</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">DFT in osnove naključnih procesov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.html">Naključno vzbujanje - zajem signalov</a></li>
@@ -420,7 +420,7 @@ document.write(`
 <h2>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Link to this heading">#</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Naloga</p>
-<p>Z uporabo generatorja signalov in zajemnega sistema Arduino zajamite naključni signal s parametri (srednjo vrednostjo <span class="math notranslate nohighlight">\(m\)</span>, amplitudo <span class="math notranslate nohighlight">\(A\)</span>) iz podatkov naloge. Zajem podatkov izvedite tako, da boste pri pretvorbi zajetega signala v frekvnečno domeno dobili spekter na podanem frekvenčnem območju <span class="math notranslate nohighlight">\([0, f_k]\)</span> ter z ločljivostjo v frekvenčni domeni <span class="math notranslate nohighlight">\(\Delta f\)</span> iz podatkov naloge.</p>
+<p>Z uporabo generatorja signalov in zajemnega sistema Arduino zajemite naključni signal s parametri (srednjo vrednostjo <span class="math notranslate nohighlight">\(m\)</span>, amplitudo <span class="math notranslate nohighlight">\(A\)</span>) iz podatkov naloge. Zajem podatkov izvedite tako, da boste pri pretvorbi zajetega signala v frekvenčno domeno dobili spekter na podanem frekvenčnem območju <span class="math notranslate nohighlight">\([0, f_k]\)</span> ter z ločljivostjo v frekvenčni domeni <span class="math notranslate nohighlight">\(\Delta f\)</span> iz podatkov naloge.</p>
 <p>LabView program za zajem signalov lahko prenesete v obliki <a class="reference download internal" download="" href="../_downloads/fe35982e9ec10d562dca252f2f56a11d/labview_zajem.zip"><code class="xref download docutils literal notranslate"><span class="pre">zip</span> <span class="pre">arhiva</span></code></a>.</p>
 <p>Pripravite kratko poročilo v okolju Jupyter Notebook <em>(od 3 do 10 celic s kodo)</em>, v katerem naj bodo razvidni podatki naloge ter prikaz in kratek komentar naslednjih lastnosti zajetega signala:</p>
 <ul class="simple">
@@ -431,7 +431,7 @@ document.write(`
 </ul>
 <p><strong>Dodatek</strong>:</p>
 <ul class="simple">
-<li><p>Ovrednotite in komentirajte <strong>stacionarnost</strong> ter <strong>ergodičnost</strong> zgoraj generiranega naključnega signala (po potrebi zajamite dodatne signale, ki jih za to potrebujete).</p></li>
+<li><p>Ovrednotite in komentirajte <strong>stacionarnost</strong> ter <strong>ergodičnost</strong> zgoraj generiranega naključnega signala (po potrebi zajemite dodatne signale, ki jih za to potrebujete).</p></li>
 <li><p>Numerično generirajte in komentirajte primera <strong>nestacionarnega gaussovega</strong> ter <strong>stacionarnega ne-gaussovega</strong> naključnega signala (glejte na primer <a class="reference external" href="https://pypi.org/project/pyExSi/">pyExSi</a>).</p></li>
 </ul>
 <p>Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> obliki (glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
@@ -500,7 +500,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 <section id="osnove-nakljucnih-procesov">
 <h2>Osnove naključnih procesov<a class="headerlink" href="#osnove-nakljucnih-procesov" title="Link to this heading">#</a></h2>
 <p>Procese, ki jih ne moremo obravnavati kot deterministične, pogosto modeliramo kot <strong>naključne procese</strong>.</p>
-<p>Za te je značilno, da njijovih dejanjskih vrednosti v času <span class="math notranslate nohighlight">\(x(t)\)</span> ne moremo natančno predvideti, lahko pa z določeno verjetnostjo <em>sklepamo o porazdelitvi njihovih vrednost</em>. Tako definiramo funkcijo <em>gostote porazdelitve verjetnost</em>, <span class="math notranslate nohighlight">\(p(x)\)</span>, ki podaja verjetnost, da se bo v vzorcu naključne spremenljivke <span class="math notranslate nohighlight">\(x(t)\)</span> pojavila določena vrednost <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Za te je značilno, da njihovih dejanskih vrednosti v času <span class="math notranslate nohighlight">\(x(t)\)</span> ne moremo natančno predvideti, lahko pa z določeno verjetnostjo <em>sklepamo o porazdelitvi njihovih vrednosti</em>. Tako definiramo funkcijo <em>gostote porazdelitve verjetnost</em>, <span class="math notranslate nohighlight">\(p(x)\)</span>, ki podaja verjetnost, da se bo v vzorcu naključne spremenljivke <span class="math notranslate nohighlight">\(x(t)\)</span> pojavila določena vrednost <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>Lastnosti takih signalov je pogosto smiselno obravnavati v frekvenčni domeni.</p>
 <div class="seealso admonition">
 <p class="admonition-title">Primer 2</p>
@@ -542,7 +542,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1.1723955140041654e-16
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-3.481659405224491e-16
 </pre></div>
 </div>
 </div>
@@ -555,7 +555,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.225305854016815
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.148711172551792
 </pre></div>
 </div>
 </div>
@@ -588,7 +588,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ac3054062701b4ed9d204c2691ac55b6042dd93509425546eeea9266a4b813ff.png" src="../_images/ac3054062701b4ed9d204c2691ac55b6042dd93509425546eeea9266a4b813ff.png" />
+<img alt="../_images/2a7eb7e4b80fae293781e075f3494c6027705af8735c274dd2ea7050eb92bd8c.png" src="../_images/2a7eb7e4b80fae293781e075f3494c6027705af8735c274dd2ea7050eb92bd8c.png" />
 </div>
 </div>
 <p>Porazdelitev verjetnosti ni nujno normalna (Gaussova):</p>
@@ -606,9 +606,10 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$z$&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x$ (Gauss)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$y$ (Gauss)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$z$ (Weibull)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;vzorec $i$ [/]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x_i$ [/]&#39;</span><span class="p">);</span>
 </pre></div>
@@ -616,7 +617,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/7866fc8488dda9ddca5bb6859724af5e03705ef3c46c094c9c5d5bebe90218a2.png" src="../_images/7866fc8488dda9ddca5bb6859724af5e03705ef3c46c094c9c5d5bebe90218a2.png" />
+<img alt="../_images/23f4502f9842776b613f5e8babd7e6c0cb2ce90e78b44f0f6c72f8dba64cea3f.png" src="../_images/23f4502f9842776b613f5e8babd7e6c0cb2ce90e78b44f0f6c72f8dba64cea3f.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -640,7 +641,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/4ebd1bcc2434dbc5fe2cc607c365125d32f9c9c20cb92f41dea6fea1812a0c15.png" src="../_images/4ebd1bcc2434dbc5fe2cc607c365125d32f9c9c20cb92f41dea6fea1812a0c15.png" />
+<img alt="../_images/0eb4c573f1885b8f0c712aee9836a1242b391112b096417d29f2eb2d34ca3ce7.png" src="../_images/0eb4c573f1885b8f0c712aee9836a1242b391112b096417d29f2eb2d34ca3ce7.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -650,12 +651,12 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 <div class="seealso admonition">
 <p class="admonition-title">Primer 3</p>
-<p>Opazujemo naključni proces <span class="math notranslate nohighlight">\(x(t)\)</span> z normalno porazdelitvijo verjetnosti (<span class="math notranslate nohighlight">\(\mu = -4\)</span>,  <span class="math notranslate nohighlight">\(\sigma = 1\)</span>), definiran v 10 časovnih točkah <span class="math notranslate nohighlight">\(t = [0, 1, \dots, 9]\)</span>. Posnamemo ansambel <span class="math notranslate nohighlight">\(N=50\)</span> realizacij naključnega pocesa.</p>
+<p>Opazujemo naključni proces <span class="math notranslate nohighlight">\(x(t)\)</span> z normalno porazdelitvijo verjetnosti (<span class="math notranslate nohighlight">\(\mu = -4\)</span>,  <span class="math notranslate nohighlight">\(\sigma = 1\)</span>), definiran v 25 časovnih točkah <span class="math notranslate nohighlight">\(t = [0, 1, \dots, 24]\)</span>. Posnamemo ansambel <span class="math notranslate nohighlight">\(N=50\)</span> realizacij naključnega procesa.</p>
 <p>Opazujmo razvoj srednje vrednosti in variance signala v času, <span class="math notranslate nohighlight">\(\mu_x(t)\)</span> in <span class="math notranslate nohighlight">\(\sigma^2_x(t)\)</span>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
 <span class="n">N</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">mu</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span>
 <span class="n">sigma</span> <span class="o">=</span> <span class="mi">1</span>
@@ -678,13 +679,13 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">ansambel</span><span class="p">:</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x(t) (N realizacij)&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/f9dc7c618087e1e5238ef7831bf2df3a69ad15639035bb535a92dc7b8e76d962.png" src="../_images/f9dc7c618087e1e5238ef7831bf2df3a69ad15639035bb535a92dc7b8e76d962.png" />
+<img alt="../_images/10a3afd10e6186b1e6655b0c0b370efdc904614b71d527ced45f65c46b09fc28.png" src="../_images/10a3afd10e6186b1e6655b0c0b370efdc904614b71d527ced45f65c46b09fc28.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -706,30 +707,55 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">mu_t</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">mu</span><span class="o">-</span><span class="n">sigma</span><span class="p">,</span> <span class="n">mu</span><span class="o">+</span><span class="n">sigma</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$\mu_x(t)$&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mu_x(t)$&#39;</span><span class="p">);</span>
 
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">var_t</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">sigma</span><span class="o">-</span><span class="n">sigma</span><span class="p">,</span> <span class="n">sigma</span><span class="o">+</span><span class="n">sigma</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$\sigma^2_x(t)$&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">sigma^2_x(t)$&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:10: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:10: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_25192\4143161239.py:5: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  ax[0].set_ylabel(&#39;$\mu_x(t)$&#39;);
-C:\Users\Domen\AppData\Local\Temp\ipykernel_25192\4143161239.py:10: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-  ax[1].set_ylabel(&#39;$\sigma^2_x(t)$&#39;);
+<img alt="../_images/9c628730c3f6e35c256667525be627f3de0646ce1278d21c3008dbc38c5b7d18.png" src="../_images/9c628730c3f6e35c256667525be627f3de0646ce1278d21c3008dbc38c5b7d18.png" />
+</div>
+</div>
+<p>Ker se srednja vrednost in varianca naključnih realizacij v isti točki procesa s časom ne spreminjata, lahko sklepamo, da gre za <strong>stacionaren</strong> proces.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu_ansambel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ansambel</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">var_ansambel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">ansambel</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ansambel</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="../_images/1207021b2f69a13efd3e186fc6ffb543c225aecfa85616a66dc64eb61edc60bb.png" src="../_images/1207021b2f69a13efd3e186fc6ffb543c225aecfa85616a66dc64eb61edc60bb.png" />
 </div>
 </div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">x_ansambel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mu_ansambel</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_ansambel</span><span class="p">,</span> <span class="n">mu_ansambel</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">mu</span><span class="o">-</span><span class="n">sigma</span><span class="p">,</span> <span class="n">mu</span><span class="o">+</span><span class="n">sigma</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mu_x(k)$&#39;</span><span class="p">);</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_ansambel</span><span class="p">,</span> <span class="n">var_ansambel</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">sigma</span><span class="o">-</span><span class="n">sigma</span><span class="p">,</span> <span class="n">sigma</span><span class="o">+</span><span class="n">sigma</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Realizacija procesa $k$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">sigma^2_x(k)$&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/a00945eadde0ec4a5a8cb502363e1a6fbb6f7ba8fef86cb298249aa2923fe273.png" src="../_images/a00945eadde0ec4a5a8cb502363e1a6fbb6f7ba8fef86cb298249aa2923fe273.png" />
+</div>
+</div>
+<p>Ker se srednja vrednost in varianca naključnega procesa <span class="math notranslate nohighlight">\(x(t)\)</span> pri večkratni realizaciji ne spreminjata, in sta enaki <span class="math notranslate nohighlight">\(\mu_x(t)\)</span> in <span class="math notranslate nohighlight">\(\sigma^2_x(t)\)</span> pri posameznem času, lahko sklepamo, da gre za <strong>ergodičen</strong> proces.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><strong>Ato-korelacijska</strong> funkcija <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span> je definirana z:</p>
@@ -751,7 +777,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_25192\4143161239.py:10: SyntaxWarnin
 <p>Opazujemo naključni proces <span class="math notranslate nohighlight">\(a(t)\)</span>, definiran z:</p>
 <div class="math notranslate nohighlight">
 \[a(t) = \sin(10 \, \pi \, t) + n(t),\]</div>
-<p>kjer je <span class="math notranslate nohighlight">\(n(t)\)</span> naključni šum z normalno porazdelitivjo (<span class="math notranslate nohighlight">\(\mu=0\)</span>, <span class="math notranslate nohighlight">\(\sigma=0.5\)</span>).</p>
+<p>kjer je <span class="math notranslate nohighlight">\(n(t)\)</span> naključni šum z normalno porazdelitvijo (<span class="math notranslate nohighlight">\(\mu=0\)</span>, <span class="math notranslate nohighlight">\(\sigma=0.5\)</span>).</p>
 <p>Opazujmo avtokorelacijsko funkcijo <span class="math notranslate nohighlight">\(R_{aa}(t)\)</span> in gostoto spektralne moči <span class="math notranslate nohighlight">\(S_{aa}(f)\)</span> signala <span class="math notranslate nohighlight">\(a(t)\)</span>.</p>
 </div>
 <div class="cell docutils container">
@@ -787,7 +813,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_25192\4143161239.py:10: SyntaxWarnin
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ce168a7d942426ba416ab0b2d1edd45b4f9376b6d836949f328fbdbf16538560.png" src="../_images/ce168a7d942426ba416ab0b2d1edd45b4f9376b6d836949f328fbdbf16538560.png" />
+<img alt="../_images/e9fb86de74cd380299bfdd8fa669ef7023ed388086fc578b6d94201bad41a04a.png" src="../_images/e9fb86de74cd380299bfdd8fa669ef7023ed388086fc578b6d94201bad41a04a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -812,7 +838,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_25192\4143161239.py:10: SyntaxWarnin
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/fa45ae4d166d4d0586857dba79ffb6bbea8f6279f7598e30be06cb0ed3905858.png" src="../_images/fa45ae4d166d4d0586857dba79ffb6bbea8f6279f7598e30be06cb0ed3905858.png" />
+<img alt="../_images/f9424f0d27fec2e8f1d5a4dd08c3c5a9e008c733526f3056752e89255a52e034.png" src="../_images/f9424f0d27fec2e8f1d5a4dd08c3c5a9e008c733526f3056752e89255a52e034.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -842,8 +868,8 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_25192\4143161239.py:10: SyntaxWarnin
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">G_aa_</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\mathcal</span><span class="si">{F}</span><span class="s1">(R_</span><span class="si">{aa}</span><span class="s1">)$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">G_aa</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$\mathcal</span><span class="si">{F}</span><span class="s1">(A)* \cdot \mathcal</span><span class="si">{F}</span><span class="s1">(A) * T$&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">G_aa_</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(R_</span><span class="si">{aa}</span><span class="s1">)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">G_aa</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(A)* </span><span class="se">\\</span><span class="s1">cdot </span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(A) * T$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">G_aa_scipy</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;PSD v Scipy&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
@@ -853,17 +879,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_25192\4143161239.py:10: SyntaxWarnin
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:1: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-&lt;&gt;:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-C:\Users\Domen\AppData\Local\Temp\ipykernel_25192\3078550257.py:1: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.plot(freq, np.abs(G_aa_), label=&#39;$\mathcal{F}(R_{aa})$&#39;)
-C:\Users\Domen\AppData\Local\Temp\ipykernel_25192\3078550257.py:2: SyntaxWarning: invalid escape sequence &#39;\m&#39;
-  plt.plot(freq, np.abs(G_aa), label=&#39;$\mathcal{F}(A)* \cdot \mathcal{F}(A) * T$&#39;)
-</pre></div>
-</div>
-<img alt="../_images/4386149fec5515e6d6ab2274ec81d96f7c8dbba79e74844b089299122ffa52d6.png" src="../_images/4386149fec5515e6d6ab2274ec81d96f7c8dbba79e74844b089299122ffa52d6.png" />
+<img alt="../_images/24aff1534103f294b78dad12d7d1ef5352a8ac6e1036971e67c9ea64cfc23b33.png" src="../_images/24aff1534103f294b78dad12d7d1ef5352a8ac6e1036971e67c9ea64cfc23b33.png" />
 </div>
 </div>
 <p>Parsevalov teorem:</p>
@@ -874,7 +890,7 @@ C:\Users\Domen\AppData\Local\Temp\ipykernel_25192\3078550257.py:2: SyntaxWarning
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.72216644997469, 0.7287710007147445)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.6452921491822378, 0.6453401548808186)
 </pre></div>
 </div>
 </div>
