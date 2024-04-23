@@ -184,8 +184,8 @@
 <li class="toctree-l1"><a class="reference internal" href="02%20-%20LabView%20in%20Arduino%2C%20Python.html">LabView in Arduino, Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html">Fourierova integralska transformacija</a></li>
 <li class="toctree-l1"><a class="reference internal" href="04%20-%20Lastnosti%20Fourierove%20transformacije.html">Lastnosti Fourierove transformacije</a></li>
-<li class="toctree-l1"><a class="reference internal" href="05%20-%20LTI%20sistemi%2C%20zajem%20signalov.html">Linearni, časovno invariatni (LTI) sistemi - zajem signalov</a></li>
-<li class="toctree-l1"><a class="reference internal" href="06%20-%20LTI%20sistemi%202%2C%20prenosne%20funkcije.html">Linearni, časovno invariatni (LTI) sistemi 2 - prenosne funkcije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05%20-%20LTI%20sistemi%2C%20zajem%20signalov.html">Linearni, časovno invariantni (LTI) sistemi - zajem signalov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06%20-%20LTI%20sistemi%202%2C%20prenosne%20funkcije.html">Linearni, časovno invariantni (LTI) sistemi 2 - prenosne funkcije</a></li>
 <li class="toctree-l1"><a class="reference internal" href="07%20-%20Enakomerno%20%C4%8Dasovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">Enakomerno časovno vzorčenje in frekvenčno prekrivanje</a></li>
 <li class="toctree-l1"><a class="reference internal" href="08%20-%20DFT%20in%20osnove%20naklju%C4%8Dnih%20procesov.html">DFT in osnove naključnih procesov</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Naključno vzbujanje - zajem signalov</a></li>
@@ -422,7 +422,7 @@ document.write(`
 <p>Spomnimo se:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>Frekvenčna prenosna funkcija</strong> <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> predstavlja razmerje med (kompleksnimi) amplitudami harmonskega odziva in vzbujana opazovanega sistema:</p>
+<p><strong>Frekvenčna prenosna funkcija</strong> <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> predstavlja razmerje med (kompleksnimi) amplitudami harmonskega odziva in vzbujanja opazovanega sistema:</p>
 <div class="math notranslate nohighlight">
 \[
 	\alpha(\omega) = \frac{X(\omega)}{F(\omega)}
@@ -430,7 +430,7 @@ document.write(`
 </div>
 <section id="zajem-signalov-za-dolocitev-prenosnih-funkcij-z-nakljucnim-vzbujanjem">
 <h2>Zajem signalov za določitev prenosnih funkcij z naključnim vzbujanjem<a class="headerlink" href="#zajem-signalov-za-dolocitev-prenosnih-funkcij-z-nakljucnim-vzbujanjem" title="Link to this heading">#</a></h2>
-<p>Določamo razmerje med odzivom sistema in znanim signlom vzbujanja, na podlagi izmerjenih signalov <span class="math notranslate nohighlight">\(x(t)\)</span>, <span class="math notranslate nohighlight">\(f(t)\)</span> pri <em>naključnem, širokospektralnem, stacionarnem</em> vzbujanju.</p>
+<p>Določamo razmerje med odzivom sistema in znanim signalom vzbujanja, na podlagi izmerjenih signalov <span class="math notranslate nohighlight">\(x(t)\)</span>, <span class="math notranslate nohighlight">\(f(t)\)</span> pri <em>naključnemu, širokospektralnemu, stacionarnemu</em> vzbujanju.</p>
 <p>Namen te vaje je spoznati laboratorijsko opremo in izvesti meritve signalov, potrebnih za določitev prenosnih funkcij mehanskega LTI sistema.</p>
 </section>
 <section id="naloga">
@@ -438,7 +438,7 @@ document.write(`
 <div class="warning admonition">
 <p class="admonition-title">Naloga: Meritev signalov za določitev prenosnih funkcij jeklenega nosilca</p>
 <p>Pripravite zajemni sistem in opravite meritve odziva (pospeška) jeklenega nosilca na naključno vzbujanje.</p>
-<p>Vsak naj izvede <strong>meritev odziva (pospšeka) nosilca v točki, podani v tabeli podatkov</strong>, ki jo najdete v e-učilnici.</p>
+<p>Vsak naj izvede <strong>meritev odziva (pospeška) nosilca v točki, podani v tabeli podatkov</strong>, ki jo najdete v e-učilnici.</p>
 <p>Strukturo vzbujamo z naključnim širokospektralnim profilom z uporabo elektrodinamskega stresalnika preko povezovalne palice (<em>stingerja</em>), v pripravljeni točki <span class="math notranslate nohighlight">\(0\)</span>.</p>
 <p>Delo v laboratoriju bo potekalo <strong>skupinsko</strong>. Nalogo sestavljajo trije vsebinski deli, ki so podrobneje opisani spodaj:</p>
 <ol class="arabic simple">
@@ -466,17 +466,17 @@ document.write(`
 <li><p>4 analogni vhodni kanali (BNC priključek).</p></li>
 <li><p><span class="math notranslate nohighlight">\(\pm\)</span> 5 V.</p></li>
 <li><p>Frekvenca vzorčenja do 51200 Hz (dovoljene vrednosti: <span class="math notranslate nohighlight">\(51200 / n\)</span>, <span class="math notranslate nohighlight">\(n \in [1, 2, 3, \dots, 31]\)</span>).</p></li>
-<li><p>24-bitna ločljvost.</p></li>
+<li><p>24-bitna ločljivost.</p></li>
 </ul>
 </li>
 </ul>
 <ul class="simple">
-<li><p>Vzbujevlana (AO) kartica <a class="reference external" href="https://www.ni.com/sl-si/support/model.ni-9263.html">NI 9263</a>:</p>
+<li><p>Vzbujevalna (AO) kartica <a class="reference external" href="https://www.ni.com/sl-si/support/model.ni-9263.html">NI 9263</a>:</p>
 <ul>
 <li><p>4 analogni izhodni kanali.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\pm\)</span> 10 V.</p></li>
 <li><p>Frekvenca vzorčenja do 100 000 Hz.</p></li>
-<li><p>16-bitna ločljvost.</p></li>
+<li><p>16-bitna ločljivost.</p></li>
 </ul>
 </li>
 </ul>
@@ -521,7 +521,7 @@ document.write(`
 <li><p>največja dopustna vhodna napetost: <span class="math notranslate nohighlight">\(\pm 1\)</span> V (<strong>ustrezno nastavite največjo napetost izhodnega kanala AO kartice!</strong>)</p></li>
 </ul>
 <p><strong>V izogib poškodbam merilne opreme pred meritvijo ojačanje napajalnika postavite na 0!</strong></p>
-<p>Ustrenzo nastavitev ojačanja poiščite pred začetkom meritve.</p>
+<p>Ustrezno nastavitev ojačanja poiščite pred začetkom meritve.</p>
 </li>
 </ul>
 <ul class="simple">
@@ -529,17 +529,17 @@ document.write(`
 </ul>
 <div class="important admonition">
 <p class="admonition-title">1. Postavitev merilne verige</p>
-<p>Povežite merilno verigo zajemnega sistema. Pomagajte si z zgornjim opisom meirlne opreme ter spodnjo sliko.</p>
-<p>Pri povezavi merilnih zaznaval (pospeškomer, silomer) na merilno kartico lahko uporabite poljubne vhodne kanale. Poskrbite, da boste izbiro upoštevali pri nastavitvi opraivil strojne opreme v aplikaciji NI MAX.</p>
+<p>Povežite merilno verigo zajemnega sistema. Pomagajte si z zgornjim opisom merilne opreme ter spodnjo sliko.</p>
+<p>Pri povezavi merilnih zaznaval (pospeškomer, silomer) na merilno kartico lahko uporabite poljubne vhodne kanale. Poskrbite, da boste izbiro upoštevali pri nastavitvi opravil strojne opreme v aplikaciji NI MAX.</p>
 <p><img alt="zajemni-sistem" src="../_images/00_zajemni_sistem1.png" /></p>
 </div>
 <div class="important admonition">
 <p class="admonition-title">2. Priprava programa meritve</p>
-<p>Meritev (generiranje signala vzbujanja in zajem) bomo krmilili v programskem jeziku Python, za komunikacijo z NI merilno opremo pa bomo uporaibili paket <a class="reference external" href="https://pythonhosted.org/PyDAQmx/">PyDAQmx</a> in vnaprej konfigurirana opravila (<em>task</em>-e) za upravljanje strojne opreme z aplikacijo National Instruments Automation explorer (<a class="reference external" href="https://www.ni.com/sl-si/support/documentation/supplemental/21/what-is-ni-measurement---automation-explorer--ni-max--.html">NI MAX</a>).</p>
-<p>Preden lahko v Pythonu vzpostavimo povezavo z merilno opremo, moramo ustrenzo konfigurirati opravila znotraj NI MAX.</p>
+<p>Meritev (generiranje signala vzbujanja in zajem) bomo krmilili v programskem jeziku Python, za komunikacijo z NI merilno opremo pa bomo uporabili paket <a class="reference external" href="https://pythonhosted.org/PyDAQmx/">PyDAQmx</a> in vnaprej konfigurirana opravila (<em>task</em>-e) za upravljanje strojne opreme z aplikacijo National Instruments Automation explorer (<a class="reference external" href="https://www.ni.com/sl-si/support/documentation/supplemental/21/what-is-ni-measurement---automation-explorer--ni-max--.html">NI MAX</a>).</p>
+<p>Preden lahko v Pythonu vzpostavimo povezavo z merilno opremo, moramo ustrezno konfigurirati opravila znotraj NI MAX.</p>
 <p><img alt="NIMAX" src="../_images/01_NIMAX_zagon.png" /></p>
 <p>V aplikaciji NI MAX sta že pripravljeni opravili za zajem (<code class="docutils literal notranslate"><span class="pre">PS_random_input</span></code>) in generiranje (<code class="docutils literal notranslate"><span class="pre">PS_random_output</span></code>) signalov.
-Preverite, da nastavitve opravil ustrezajo predpisanim parametrom zajema in generiranja podakotv:</p>
+Preverite, da nastavitve opravil ustrezajo predpisanim parametrom zajema in generiranja podatkov:</p>
 <p>Glavne nastavitve <strong>zajema</strong> so:</p>
 <ul class="simple">
 <li><p>Dva kanala: <em>sila</em> in <em>pospešek</em> (IEPE).</p></li>
@@ -553,9 +553,9 @@ Preverite, da nastavitve opravil ustrezajo predpisanim parametrom zajema in gene
 <ul class="simple">
 <li><p>Ena kanal: <em>napetost</em> signala na stresalniku.</p></li>
 <li><p>Število vzorcev v sekundi: 20000 Hz</p></li>
-<li><p>Trajanje vsakega generirranega segmenta: 2 s,</p></li>
+<li><p>Trajanje vsakega generiranega segmenta: 2 s,</p></li>
 <li><p>Kontinuirano generiranje segmentov (<code class="docutils literal notranslate"><span class="pre">Continuous</span> <span class="pre">Samples</span></code>).</p></li>
-<li><p>Profil naključnega vzbujevlanega signala konstantne amplitude na območju <span class="math notranslate nohighlight">\([10, 3000] Hz\)</span>,</p></li>
+<li><p>Profil naključnega vzbujevalnega signala konstantne amplitude na območju <span class="math notranslate nohighlight">\([10, 3000] Hz\)</span>,</p></li>
 <li><p>Povprečne amplitude vzbujevalne sile: <strong>1 N RMS</strong>.</p></li>
 </ul>
 <p><img alt="output_task" src="../_images/03_output_task.png" /></p>
@@ -574,23 +574,23 @@ Preverite, da nastavitve opravil ustrezajo predpisanim parametrom zajema in gene
 </li>
 </ul>
 <p>Uporabite lahko že pripravljen <a class="reference download internal" download="" href="../_downloads/e3481386657f93e05c69640ee0e42f96/meritev_python.zip"><code class="xref download docutils literal notranslate"><span class="pre">Python</span> <span class="pre">program</span> <span class="pre">zajema</span></code></a>. Po potrebi ga spremenite, da bodo parametri meritve ustrezali predpisanim (zgoraj).</p>
-<p><strong>Pozor:</strong> Vse nastavitve parametrov merilne opreme (nastavitev kanalov, občutjivost, frekenca vzorčenja, enote, št. vzorcev v segmentu) nastavite v NI MAX task-u! V Python programu nastavite parametre, povezane z obdelavo signalov (št. zajetih segmentov, profil signala vzbujanja, shranjevanje podatkov v datoteke).</p>
+<p><strong>Pozor:</strong> Vse nastavitve parametrov merilne opreme (nastavitev kanalov, občutljivost, frekvenca vzorčenja, enote, št. vzorcev v segmentu) nastavite v NI MAX task-u! V Python programu nastavite parametre, povezane z obdelavo signalov (št. zajetih segmentov, profil signala vzbujanja, shranjevanje podatkov v datoteke).</p>
 </div>
 </section>
 <section id="meritev">
 <h3>Meritev<a class="headerlink" href="#meritev" title="Link to this heading">#</a></h3>
 <div class="important admonition">
 <p class="admonition-title">3. Izvedba meritve signalov</p>
-<p>Vsak naj zajame predpisano število segmentov meritve odziva sistema v točki, predpisani v podatih naloge.</p>
+<p>Vsak naj zajame predpisano število segmentov meritve odziva sistema v točki, predpisani v podatkih naloge.</p>
 <p>Ker uporabljamo eno samo zaznavalo pospeška, je treba tega pred meritvijo namestiti na ustrezno merilno mesto. Za pritrditev uporabite majhno količino voščenega lepila.</p>
 <p><img alt="wax" src="../_images/05_UJ_0216_Beeswax.png" /></p>
-<p><em>Pred začetkom meritve nastavite ojačanaje (gain) ojačevalnika signla tako, da boste v meritvi dosegli predpisano povprečno amplitudo sile (1 N RMS)!</em> <strong>Preliminarno meritev začnite z ojačanjem 0, in tega ustrezno povečajte.</strong></p>
-<p>Ko ste ustrezno nastaivli merilni sistem, NI MAX opravila in parametre Python programa, meritev poženete z zagonom funkcije <code class="docutils literal notranslate"><span class="pre">IO_meritev()</span></code> v poglavju “Meritev” Python programa.</p>
+<p><em>Pred začetkom meritve nastavite ojačanje (gain) ojačevalnika signala tako, da boste v meritvi dosegli predpisano povprečno amplitudo sile (1 N RMS)!</em> <strong>Preliminarno meritev začnite z ojačanjem 0, in tega ustrezno povečajte.</strong></p>
+<p>Ko ste ustrezno nastavili merilni sistem, NI MAX opravila in parametre Python programa, meritev poženete z zagonom funkcije <code class="docutils literal notranslate"><span class="pre">IO_meritev()</span></code> v poglavju “Meritev” Python programa.</p>
 <p>Pri izvajanju meritve poskrbite, da:</p>
 <ul class="simple">
-<li><p>je pospeškomer nameščen na ustrenzno merilno mesto,</p></li>
+<li><p>je pospeškomer nameščen na ustrezno merilno mesto,</p></li>
 <li><p>je največja amplituda generiranega signala v dopustnih mejah <span class="math notranslate nohighlight">\(\pm 1\)</span> V,</p></li>
-<li><p>je ojačanje napajalnika nastavljeno tako, da vzbujate z ustreno amplitudo sile,</p></li>
+<li><p>je ojačanje napajalnika nastavljeno tako, da vzbujate z ustrezno amplitudo sile,</p></li>
 <li><p>ste zajeli ustrezno število segmentov meritve,</p></li>
 <li><p>zajete podatke shranite tako, da jih boste lahko kasneje odpirali in obdelali v Pythonu.</p></li>
 </ul>
