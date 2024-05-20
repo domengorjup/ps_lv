@@ -18,19 +18,21 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import numpy as np
-import matplotlib
-matplotlib.use('Agg')
-
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
-from ipywidgets import interact
 import warnings
 warnings.filterwarnings('ignore')
 
+import numpy as np
+
+%matplotlib inline
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+from orodja import plot_mode_shape
+from ipywidgets import interact
+
 import lvm_read
 import pyidi
-from sdypy import EMA as pyEMA
+import pyEMA
+from sdypy import FRF as  pyFRF
 ------------------
 
 ----- stderr -----
@@ -47,14 +49,17 @@ C:\Users\Domen\AppData\Local\Programs\Python\Python312\Lib\copy.py:151: Deprecat
   rv = reductor(4)
 C:\Users\Domen\AppData\Local\Programs\Python\Python312\Lib\copy.py:261: DeprecationWarning: Pickle, copy, and deepcopy support will be removed from itertools in Python 3.14.
   y.__setstate__(state)
+----- stderr -----
+C:\Users\Domen\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyEMA\__init__.py:12: UserWarning: This is the last version of pyEMA and will not longer be maintained since it is moving to the SDyPy package. To use the latest code from SDyPy: `pip install sdypy` and `from sdypy import EMA`.
+  warnings.warn('This is the last version of pyEMA and will not longer be maintained since it is moving to the SDyPy package. To use the latest code from SDyPy: `pip install sdypy` and `from sdypy import EMA`.')
 ------------------
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mImportError[0m                               Traceback (most recent call last)
-Cell [1;32mIn[1], line 13[0m
-[0;32m     11[0m [38;5;28;01mimport[39;00m [38;5;21;01mlvm_read[39;00m
-[0;32m     12[0m [38;5;28;01mimport[39;00m [38;5;21;01mpyidi[39;00m
-[1;32m---> 13[0m [38;5;28;01mfrom[39;00m [38;5;21;01msdypy[39;00m [38;5;28;01mimport[39;00m EMA [38;5;28;01mas[39;00m pyEMA
+Cell [1;32mIn[1], line 15[0m
+[0;32m     13[0m [38;5;28;01mimport[39;00m [38;5;21;01mpyidi[39;00m
+[0;32m     14[0m [38;5;28;01mimport[39;00m [38;5;21;01mpyEMA[39;00m
+[1;32m---> 15[0m [38;5;28;01mfrom[39;00m [38;5;21;01msdypy[39;00m [38;5;28;01mimport[39;00m FRF [38;5;28;01mas[39;00m  pyFRF
 
-[1;31mImportError[0m: cannot import name 'EMA' from 'sdypy' (unknown location)
+[1;31mImportError[0m: cannot import name 'FRF' from 'sdypy' (unknown location)
 

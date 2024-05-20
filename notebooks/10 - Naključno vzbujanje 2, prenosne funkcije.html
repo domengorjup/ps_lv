@@ -463,8 +463,8 @@ document.write(`
 <div class="seealso admonition">
 <p class="admonition-title">Parametri izvedene meritve</p>
 <p>Frekvenčne prenosne funkcije jeklenega nosilca bomo izračunali na podlagi meritev, izvedenih pri <a class="reference internal" href="#./notebooks/09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.ipynb"><span class="xref myst">vaji 9</span></a>.</p>
-<p>Pri procesiranju zajetih signalov so pomembni tudi parametri izvedene meritve. Če ste meritvah sledili navodilom, so osnovni parametri vaših signalov naslednji:</p>
-<p>Osnovni parametri zajema (<strong>če ste pri meritvi uporabili drugačne nastavitve, vrednosti po potrebi prilagodite!</strong>):</p>
+<p>Pri procesiranju zajetih signalov so pomembni tudi parametri izvedene meritve. Če ste meritvah sledili navodilom, so osnovni parametri vaših signalov naslednji (<strong>če ste pri meritvi uporabili drugačne nastavitve, vrednosti po potrebi prilagodite!</strong>):</p>
+<p>Osnovni parametri zajema:</p>
 <ul class="simple">
 <li><p>Dva kanala: <em>sila</em> in <em>pospešek</em> (IEPE).</p></li>
 <li><p>Frekvenca vzorčenja: 25600 Hz,</p></li>
@@ -510,7 +510,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Oblika shranjenih signalov (<code class="docutils literal notranslate"><span class="pre">segmenti,</span> <span class="pre">kanali,</span> <span class="pre">čas</span></code>)</p>
+<p>Oblika shranjenih signalov: <code class="docutils literal notranslate"><span class="pre">(segmenti,</span> <span class="pre">kanali,</span> <span class="pre">čas)</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">meritev</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -605,7 +605,7 @@ document.write(`
 <section id="cenilke-frekvencne-prenosne-funkcije">
 <h2>Cenilke frekvenčne prenosne funkcije<a class="headerlink" href="#cenilke-frekvencne-prenosne-funkcije" title="Link to this heading">#</a></h2>
 <p>Pri realnih meritvah se ne moremo izogniti naključnega šuma (merilne napake) v zajetih signalih.</p>
-<p>Ob upoštevanju odziva LTI sistemov na naključno vzbujanje z merilno napako, lahko zapišemo različne cenilke frekvenčnih prenosnih funkcij:</p>
+<p>Ob upoštevanju odziva LTI sistemov na naključno vzbujanje z merilno napako lahko zapišemo različne cenilke frekvenčnih prenosnih funkcij:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Cenilka <span class="math notranslate nohighlight">\(H_1(\omega)\)</span> predpostavlja nezanemarljivo količino naključnega šuma pri meritvi signala <em>odziva</em> <span class="math notranslate nohighlight">\(x(t)\)</span>. Izračunamo jo:</p>
@@ -640,7 +640,7 @@ H_2(\omega) = \frac{S_{xx}(\omega)}{S_{xf}(\omega)}.
 </div>
 <section id="izracun-cenilke-h1">
 <h3>Izračun cenilke <span class="math notranslate nohighlight">\(H1\)</span><a class="headerlink" href="#izracun-cenilke-h1" title="Link to this heading">#</a></h3>
-<p>Izračun spektrov (ker bomo pri izračunu FR spektre delili med sabo, amplitudno normiranje ni potrebno)</p>
+<p>Izračun spektrov: (ker bomo pri izračunu FR spektre delili med sabo, amplitudno normiranje ni nujno potrebno).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G_fa</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span> <span class="o">*</span> <span class="n">A</span> 

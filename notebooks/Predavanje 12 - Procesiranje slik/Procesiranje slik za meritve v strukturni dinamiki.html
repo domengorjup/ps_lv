@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Procesiranje slik za meritve v eksperimentalni modalni analizi &#8212; Procesiranje signalov - Laboratorijske vaje</title>
+    <title>Procesiranje slik za meritve v strukturni dinamiki &#8212; Procesiranje signalov - Laboratorijske vaje</title>
   
   
   
@@ -59,7 +59,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Predavanje 12 - Procesiranje slik/Procesiranje slik za meritve v eksperimentalni modalni analizi';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Predavanje 12 - Procesiranje slik/Procesiranje slik za meritve v strukturni dinamiki';</script>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -261,7 +261,7 @@
       
       
       
-      <li><a href="https://github.com/domengorjup/ps_lv/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Predavanje 12 - Procesiranje slik/Procesiranje slik za meritve v eksperimentalni modalni analizi.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/domengorjup/ps_lv/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Predavanje 12 - Procesiranje slik/Procesiranje slik za meritve v strukturni dinamiki.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -291,7 +291,7 @@
       
       
       
-      <li><a href="../../_sources/notebooks/Predavanje 12 - Procesiranje slik/Procesiranje slik za meritve v eksperimentalni modalni analizi.ipynb" target="_blank"
+      <li><a href="../../_sources/notebooks/Predavanje 12 - Procesiranje slik/Procesiranje slik za meritve v strukturni dinamiki.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -375,7 +375,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Procesiranje slik za meritve v eksperimentalni modalni analizi</h1>
+    <h1>Procesiranje slik za meritve v strukturni dinamiki</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -400,7 +400,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metoda-lucas-kanade">Metoda Lucas-Kanade:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izracun-frf">Izračun FRF</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eskperimentalna-modalna-analiza-samo-slikovna-meritev">Eskperimentalna modalna analiza (samo slikovna meritev):</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eskperimentalna-modalna-analiza-hibridna-metoda">Eskperimentalna modalna analiza - hibridna metoda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primerjava-z-meritivjo-pospeskomera">Primerjava z meritivjo pospeškomera</a></li>
 </ul>
             </nav>
         </div>
@@ -412,32 +412,32 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="procesiranje-slik-za-meritve-v-eksperimentalni-modalni-analizi">
-<h1>Procesiranje slik za meritve v eksperimentalni modalni analizi<a class="headerlink" href="#procesiranje-slik-za-meritve-v-eksperimentalni-modalni-analizi" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="procesiranje-slik-za-meritve-v-strukturni-dinamiki">
+<h1>Procesiranje slik za meritve v strukturni dinamiki<a class="headerlink" href="#procesiranje-slik-za-meritve-v-strukturni-dinamiki" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
 <h1>Table of Contents<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Slikovne-meritve" data-toc-modified-id="Slikovne-meritve-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Slikovne meritve</a></span><ul class="toc-item"><li><span><a href="#Parametri-zajema" data-toc-modified-id="Parametri-zajema-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Parametri zajema</a></span></li><li><span><a href="#Osvetlitev" data-toc-modified-id="Osvetlitev-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Osvetlitev</a></span></li><li><span><a href="#Priprava-površine-merjenca" data-toc-modified-id="Priprava-površine-merjenca-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Priprava površine merjenca</a></span></li><li><span><a href="#Pogoste-težave-pri-slikovnih-meritvah" data-toc-modified-id="Pogoste-težave-pri-slikovnih-meritvah-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Pogoste težave pri slikovnih meritvah</a></span><ul class="toc-item"><li><span><a href="#Neustrezno-izostrena-slika" data-toc-modified-id="Neustrezno-izostrena-slika-1.4.1"><span class="toc-item-num">1.4.1&nbsp;&nbsp;</span>Neustrezno izostrena slika</a></span></li><li><span><a href="#Neustrezna-osvetlitev" data-toc-modified-id="Neustrezna-osvetlitev-1.4.2"><span class="toc-item-num">1.4.2&nbsp;&nbsp;</span>Neustrezna osvetlitev</a></span></li></ul></li></ul></li><li><span><a href="#Določitev-pomikov-na-slikah-z-metodo-optičnega-toka-(Simplified-Optical-Flow)" data-toc-modified-id="Določitev-pomikov-na-slikah-z-metodo-optičnega-toka-(Simplified-Optical-Flow)-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Določitev pomikov na slikah z metodo optičnega toka (<em>Simplified Optical Flow</em>)</a></span></li><li><span><a href="#Metoda-Lucas-Kanade:" data-toc-modified-id="Metoda-Lucas-Kanade:-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Metoda Lucas-Kanade:</a></span></li><li><span><a href="#Izračun-FRF" data-toc-modified-id="Izračun-FRF-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Izračun FRF</a></span></li><li><span><a href="#Eskperimentalna-modalna-analiza-(samo-slikovn-meritev):" data-toc-modified-id="Eskperimentalna-modalna-analiza-(samo-slikovn-meritev):-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Eskperimentalna modalna analiza (samo slikovn meritev):</a></span></li><li><span><a href="#Eskperimentalna-modalna-analiza---hibridna-metoda" data-toc-modified-id="Eskperimentalna-modalna-analiza---hibridna-metoda-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Eskperimentalna modalna analiza - hibridna metoda</a></span></li></ul></div><p>V tej predstavitvi so uporabljeni naslednji paketi:</p>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Slikovne-meritve" data-toc-modified-id="Slikovne-meritve-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Slikovne meritve</a></span><ul class="toc-item"><li><span><a href="#Parametri-zajema" data-toc-modified-id="Parametri-zajema-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Parametri zajema</a></span></li><li><span><a href="#Osvetlitev" data-toc-modified-id="Osvetlitev-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Osvetlitev</a></span></li><li><span><a href="#Priprava-površine-merjenca" data-toc-modified-id="Priprava-površine-merjenca-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Priprava površine merjenca</a></span></li><li><span><a href="#Pogoste-težave-pri-slikovnih-meritvah" data-toc-modified-id="Pogoste-težave-pri-slikovnih-meritvah-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Pogoste težave pri slikovnih meritvah</a></span><ul class="toc-item"><li><span><a href="#Neustrezno-izostrena-slika" data-toc-modified-id="Neustrezno-izostrena-slika-1.4.1"><span class="toc-item-num">1.4.1&nbsp;&nbsp;</span>Neustrezno izostrena slika</a></span></li><li><span><a href="#Neustrezna-osvetlitev" data-toc-modified-id="Neustrezna-osvetlitev-1.4.2"><span class="toc-item-num">1.4.2&nbsp;&nbsp;</span>Neustrezna osvetlitev</a></span></li></ul></li></ul></li><li><span><a href="#Določitev-pomikov-na-slikah-z-metodo-optičnega-toka-(Simplified-Optical-Flow)" data-toc-modified-id="Določitev-pomikov-na-slikah-z-metodo-optičnega-toka-(Simplified-Optical-Flow)-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Določitev pomikov na slikah z metodo optičnega toka (<em>Simplified Optical Flow</em>)</a></span></li><li><span><a href="#Metoda-Lucas-Kanade:" data-toc-modified-id="Metoda-Lucas-Kanade:-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Metoda Lucas-Kanade:</a></span></li><li><span><a href="#Izračun-FRF" data-toc-modified-id="Izračun-FRF-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Izračun FRF</a></span></li><li><span><a href="#Eskperimentalna-modalna-analiza-(samo-slikovn-meritev):" data-toc-modified-id="Eskperimentalna-modalna-analiza-(samo-slikovn-meritev):-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Eskperimentalna modalna analiza (samo slikovn meritev):</a></span></li><li><span><a href="#Eskperimentalna-modalna-analiza---hibridna-metoda" data-toc-modified-id="Eskperimentalna-modalna-analiza---hibridna-metoda-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Eskperimentalna modalna analiza - hibridna metoda</a></span></li></ul></div><p>Vsi potrebni paketi so navedeni v <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">lvm_read</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sdypy-EMA</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pyidi</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-m</span> <span class="pre">requirements.txt</span></code></p></li>
 </ul>
 <p>Priprava paketov in nekaterih funkcij:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;Agg&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">patches</span>
+<span class="kn">from</span> <span class="nn">orodja</span> <span class="kn">import</span> <span class="n">plot_mode_shape</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">lvm_read</span>
 <span class="kn">import</span> <span class="nn">pyidi</span>
-<span class="kn">from</span> <span class="nn">sdypy</span> <span class="kn">import</span> <span class="n">EMA</span> <span class="k">as</span> <span class="n">pyEMA</span>
+<span class="kn">import</span> <span class="nn">pyEMA</span>
+<span class="kn">from</span> <span class="nn">sdypy</span> <span class="kn">import</span> <span class="n">FRF</span> <span class="k">as</span>  <span class="n">pyFRF</span>
 </pre></div>
 </div>
 </div>
@@ -458,46 +458,18 @@ C:\Users\Domen\AppData\Local\Programs\Python\Python312\Lib\copy.py:261: Deprecat
   y.__setstate__(state)
 </pre></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">13</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">import</span> <span class="nn">lvm_read</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">import</span> <span class="nn">pyidi</span>
-<span class="ne">---&gt; </span><span class="mi">13</span> <span class="kn">from</span> <span class="nn">sdypy</span> <span class="kn">import</span> <span class="n">EMA</span> <span class="k">as</span> <span class="n">pyEMA</span>
-
-<span class="ne">ImportError</span>: cannot import name &#39;EMA&#39; from &#39;sdypy&#39; (unknown location)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyEMA\__init__.py:12: UserWarning: This is the last version of pyEMA and will not longer be maintained since it is moving to the SDyPy package. To use the latest code from SDyPy: `pip install sdypy` and `from sdypy import EMA`.
+  warnings.warn(&#39;This is the last version of pyEMA and will not longer be maintained since it is moving to the SDyPy package. To use the latest code from SDyPy: `pip install sdypy` and `from sdypy import EMA`.&#39;)
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">15</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">import</span> <span class="nn">pyidi</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">import</span> <span class="nn">pyEMA</span>
+<span class="ne">---&gt; </span><span class="mi">15</span> <span class="kn">from</span> <span class="nn">sdypy</span> <span class="kn">import</span> <span class="n">FRF</span> <span class="k">as</span>  <span class="n">pyFRF</span>
 
-<span class="n">font_size</span> <span class="o">=</span> <span class="mi">15</span>
-<span class="n">fig_size</span> <span class="o">=</span> <span class="p">(</span><span class="mf">16.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">fig_size</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">font_size</span>
-
-
-<span class="k">def</span> <span class="nf">show_modal_data</span><span class="p">(</span><span class="n">nat_freq</span><span class="p">,</span> <span class="n">damping</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Show modal data in a table-like structure.&quot;&quot;&quot;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;   Nat. f.      Damping&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="mi">23</span><span class="o">*</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nat_freq</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">) </span><span class="si">{</span><span class="n">f</span><span class="si">:</span><span class="s1">6.1f</span><span class="si">}</span><span class="se">\t</span><span class="si">{</span><span class="n">damping</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s1">5.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        
-
-<span class="k">def</span> <span class="nf">plot_mode_shape</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot a mode shape in a consistent fashion.&quot;&quot;&quot;</span>
-    <span class="n">plot</span> <span class="o">=</span> <span class="n">axis</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">shape</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">shape</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> 
-                     <span class="n">style</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">frequency</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">axis</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mode shape - </span><span class="si">{</span><span class="n">frequency</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> Hz&#39;</span><span class="p">)</span>
-    <span class="n">axis</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="ne">ImportError</span>: cannot import name &#39;FRF&#39; from &#39;sdypy&#39; (unknown location)
 </pre></div>
 </div>
 </div>
@@ -522,20 +494,30 @@ C:\Users\Domen\AppData\Local\Programs\Python\Python312\Lib\copy.py:261: Deprecat
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>d:\pedagoško\_Procesiranje signalov\_VAJE\_PREDLOGE\Predavanje 12 - Procesiranje slik\venv\Lib\site-packages\pyMRAW.py:92: UserWarning: Not 12bit (8 bits)! clipped values?
+  warnings.warn(&#39;Not 12bit ({:g} bits)! clipped values?&#39;.format(bits))
+d:\pedagoško\_Procesiranje signalov\_VAJE\_PREDLOGE\Predavanje 12 - Procesiranje slik\venv\Lib\site-packages\pyMRAW.py:104: UserWarning: Clipped footage! (Total frame: 3750, Original total frame: 7500)
+  warnings.warn(&#39;Clipped footage! (Total frame: {}, Original total frame: {})&#39;.format(cih[&#39;Total Frame&#39;], cih[&#39;Original Total Frame&#39;] ))
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sequential_image_nr</span> <span class="o">=</span> <span class="mi">200</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">video</span><span class="o">.</span><span class="n">mraw</span><span class="p">[</span><span class="n">sequential_image_nr</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">video</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">mraw</span><span class="p">[</span><span class="n">sequential_image_nr</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e96648f89217394ea6817c6ced12d86ec1f85aa4b88b7253f2a2dcd323305312.png" src="../../_images/e96648f89217394ea6817c6ced12d86ec1f85aa4b88b7253f2a2dcd323305312.png" />
+<img alt="../../_images/15e55d1af295c866d7184cafd7005ede2e420baf1966cac041b6eb02f49ddb56.png" src="../../_images/15e55d1af295c866d7184cafd7005ede2e420baf1966cac041b6eb02f49ddb56.png" />
 </div>
 </div>
-<p><em>Posnetek je prilagojen prikazu in je zato slabše kavlaitete. Za natančne meritve običajno zajamemo zel oveliko količino podatkov.</em></p>
+<p><em>Posnetek je prilagojen prikazu in je zato slabše kavlaitete. Za natančne meritve običajno zajamemo zelo veliko količino podatkov.</em></p>
 <video controls loop src="figures/video.MOV" width="950" rotate="270deg"/><section id="parametri-zajema">
 <h3>Parametri zajema<a class="headerlink" href="#parametri-zajema" title="Link to this heading">#</a></h3>
 <p>Parametri nastavitve kamere so zapisani v atributu <code class="docutils literal notranslate"><span class="pre">info</span></code>:</p>
@@ -670,7 +652,11 @@ C:\Users\Domen\AppData\Local\Programs\Python\Python312\Lib\copy.py:261: Deprecat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fef89bee9ebfc8feb218027ef76d2d7eae4278a033b6b95b1849b77715ac7f26.png" src="../../_images/fef89bee9ebfc8feb218027ef76d2d7eae4278a033b6b95b1849b77715ac7f26.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>d:\pedagoško\_Procesiranje signalov\_VAJE\_PREDLOGE\Predavanje 12 - Procesiranje slik\venv\Lib\site-packages\pyidi\pyidi.py:268: DeprecationWarning: `self.mraw` is deprecated and will be removed in the next version. Please use `self.reader.mraw` instead.
+  warnings.warn(&#39;`self.mraw` is deprecated and will be removed in the next version. Please use `self.reader.mraw` instead.&#39;, DeprecationWarning)
+</pre></div>
+</div>
+<img alt="../../_images/a7b4530fc376c055e4ea0280b87ac7b6c918ee63380db5d489813900f07c8a12.png" src="../../_images/a7b4530fc376c055e4ea0280b87ac7b6c918ee63380db5d489813900f07c8a12.png" />
 </div>
 </div>
 </section>
@@ -706,7 +692,7 @@ C:\Users\Domen\AppData\Local\Programs\Python\Python312\Lib\copy.py:261: Deprecat
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/52d384b2867b94645911926a9c6dcd2831054ee1dcf0be42ea724d7e685fee35.png" src="../../_images/52d384b2867b94645911926a9c6dcd2831054ee1dcf0be42ea724d7e685fee35.png" />
+<img alt="../../_images/764b2ca8dc205c1c96faea31c79a03233fb43cd5a618938b4d839e5c0bc786c5.png" src="../../_images/764b2ca8dc205c1c96faea31c79a03233fb43cd5a618938b4d839e5c0bc786c5.png" />
 </div>
 </div>
 </section>
@@ -722,9 +708,7 @@ C:\Users\Domen\AppData\Local\Programs\Python\Python312\Lib\copy.py:261: Deprecat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyMRAW.py:91: UserWarning: Not 12bit (8 bits)! clipped values?
-  warnings.warn(&#39;Not 12bit ({:g} bits)! clipped values?&#39;.format(bits))
-C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyMRAW.py:103: UserWarning: Clipped footage! (Total frame: 1, Original total frame: 44)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>d:\pedagoško\_Procesiranje signalov\_VAJE\_PREDLOGE\Predavanje 12 - Procesiranje slik\venv\Lib\site-packages\pyMRAW.py:104: UserWarning: Clipped footage! (Total frame: 1, Original total frame: 44)
   warnings.warn(&#39;Clipped footage! (Total frame: {}, Original total frame: {})&#39;.format(cih[&#39;Total Frame&#39;], cih[&#39;Original Total Frame&#39;] ))
 </pre></div>
 </div>
@@ -733,7 +717,7 @@ C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyMRAW.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">video_layout</span><span class="o">.</span><span class="n">mraw</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">video_layout</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">mraw</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;gray&#39;</span><span class="p">)</span>
 
 <span class="c1"># Formating</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
@@ -742,7 +726,7 @@ C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyMRAW.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1059be389952c2dcb0852b193a8c2bcfd2d4a923b289729b2b36c60500b26755.png" src="../../_images/1059be389952c2dcb0852b193a8c2bcfd2d4a923b289729b2b36c60500b26755.png" />
+<img alt="../../_images/d218317434722e74ff9a06f1b1690dd4bfaf77a7e6fb9a0c02e849e22187423f.png" src="../../_images/d218317434722e74ff9a06f1b1690dd4bfaf77a7e6fb9a0c02e849e22187423f.png" />
 </div>
 </div>
 </section>
@@ -756,7 +740,7 @@ C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyMRAW.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyMRAW.py:103: UserWarning: Clipped footage! (Total frame: 1, Original total frame: 34)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>d:\pedagoško\_Procesiranje signalov\_VAJE\_PREDLOGE\Predavanje 12 - Procesiranje slik\venv\Lib\site-packages\pyMRAW.py:104: UserWarning: Clipped footage! (Total frame: 1, Original total frame: 34)
   warnings.warn(&#39;Clipped footage! (Total frame: {}, Original total frame: {})&#39;.format(cih[&#39;Total Frame&#39;], cih[&#39;Original Total Frame&#39;] ))
 </pre></div>
 </div>
@@ -768,9 +752,9 @@ C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyMRAW.
 <span class="n">y0</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">20</span>
 
 <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="n">x0</span><span class="p">):</span>
-    <span class="n">roi</span> <span class="o">=</span> <span class="n">video_light</span><span class="o">.</span><span class="n">mraw</span><span class="p">[</span><span class="n">selected_frame</span><span class="p">,</span> <span class="n">y0</span><span class="p">:</span><span class="n">y0</span><span class="o">+</span><span class="n">d</span><span class="p">,</span> <span class="n">x0</span><span class="p">:</span><span class="n">x0</span><span class="o">+</span><span class="n">d</span><span class="o">*</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">roi</span> <span class="o">=</span> <span class="n">video_light</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">mraw</span><span class="p">[</span><span class="n">selected_frame</span><span class="p">,</span> <span class="n">y0</span><span class="p">:</span><span class="n">y0</span><span class="o">+</span><span class="n">d</span><span class="p">,</span> <span class="n">x0</span><span class="p">:</span><span class="n">x0</span><span class="o">+</span><span class="n">d</span><span class="o">*</span><span class="mi">2</span><span class="p">]</span>
     <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">video_light</span><span class="o">.</span><span class="n">mraw</span><span class="p">[</span><span class="n">selected_frame</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">video_light</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">mraw</span><span class="p">[</span><span class="n">selected_frame</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">roi</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">);</span>
     <span class="c1"># Formating</span>
     <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="n">d</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
@@ -779,16 +763,17 @@ C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyMRAW.
     <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;n pixels [/]&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">260</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">interact</span><span class="p">(</span><span class="n">show</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">50</span><span class="p">));</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">show</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">500</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\ipykernel\pylab\backend_inline.py:11: DeprecationWarning: `ipykernel.pylab.backend_inline` is deprecated, directly use `matplotlib_inline.backend_inline`
-  warnings.warn(
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>d:\pedagoško\_Procesiranje signalov\_VAJE\_PREDLOGE\Predavanje 12 - Procesiranje slik\venv\Lib\site-packages\ipywidgets\widgets\interaction.py:43: DeprecationWarning: `ipykernel.pylab.backend_inline` is deprecated, directly use `matplotlib_inline.backend_inline`
+  from ipykernel.pylab.backend_inline import flush_figures
 </pre></div>
 </div>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "e6dee802995546f18da5f675f510991a", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "5b165d6774af452b8a9dadde0cf17b93", "version_major": 2, "version_minor": 0}</script><img alt="../../_images/52ee1766da7df47fe251eb91a5c94a1a0a153f15b6c3c1e94099dba63f52ec3c.png" src="../../_images/52ee1766da7df47fe251eb91a5c94a1a0a153f15b6c3c1e94099dba63f52ec3c.png" />
+</div>
 </div>
 </section>
 </section>
@@ -806,10 +791,10 @@ s(x_j,y_k,t)=\frac{f_0(x_j,y_k)-f(x_j,y_k,t)}{|\nabla f_0|}
 \)</span>$</p>
 <p><span class="math notranslate nohighlight">\(s(x_j,y_k,t) \dots\)</span> pomik točke v smeri lokalnega gadienta sivinskih vrednosti</p>
 <p>(<a class="reference external" href="https://github.com/ladisk/pyidi">Javh et al</a>)</p>
-<p>Računamo pomike glede na refernčno sliko:</p>
+<p>Računamo pomike glede na referenčno sliko:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reference_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">video</span><span class="o">.</span><span class="n">mraw</span><span class="p">[:</span><span class="mi">10</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reference_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">video</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">mraw</span><span class="p">[:</span><span class="mi">10</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -854,13 +839,13 @@ s(x_j,y_k,t)=\frac{f_0(x_j,y_k)-f(x_j,y_k,t)}{|\nabla f_0|}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e85dcdfe2848fc8b0003331f960c3eb1f50668d27c4de8118d2030a8442ddcfc.png" src="../../_images/e85dcdfe2848fc8b0003331f960c3eb1f50668d27c4de8118d2030a8442ddcfc.png" />
+<img alt="../../_images/ce6a29e98bf884a523529b430986a4e00cdecfe6918b76103957068ef097bbe6.png" src="../../_images/ce6a29e98bf884a523529b430986a4e00cdecfe6918b76103957068ef097bbe6.png" />
 </div>
 </div>
 <p>Enačba optičnega toka:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d_of</span> <span class="o">=</span> <span class="p">((</span><span class="n">reference_image</span><span class="p">[</span><span class="n">inds</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">inds</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">-</span> <span class="n">video</span><span class="o">.</span><span class="n">mraw</span><span class="p">[:,</span> <span class="n">inds</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">inds</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">inds</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">inds</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]]))</span><span class="o">.</span><span class="n">T</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d_of</span> <span class="o">=</span> <span class="p">((</span><span class="n">reference_image</span><span class="p">[</span><span class="n">inds</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">inds</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">-</span> <span class="n">video</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">mraw</span><span class="p">[:,</span> <span class="n">inds</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">inds</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">inds</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">inds</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]]))</span><span class="o">.</span><span class="n">T</span>
 <span class="n">d_of</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
@@ -882,10 +867,10 @@ s(x_j,y_k,t)=\frac{f_0(x_j,y_k)-f(x_j,y_k,t)}{|\nabla f_0|}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1ec652ad420&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1fbc4ec0560&gt;
 </pre></div>
 </div>
-<img alt="../../_images/fdd198753a26a65beafb29516572ab9aae33001530404a9eb46c17d206523609.png" src="../../_images/fdd198753a26a65beafb29516572ab9aae33001530404a9eb46c17d206523609.png" />
+<img alt="../../_images/d648c136c56191dd020105ecb1bfbf0bf4bd781f93461c39be1573affb848715.png" src="../../_images/d648c136c56191dd020105ecb1bfbf0bf4bd781f93461c39be1573affb848715.png" />
 </div>
 </div>
 <p>Izračun pomikov s <code class="docutils literal notranslate"><span class="pre">pyidi</span></code>:</p>
@@ -912,14 +897,14 @@ s(x_j,y_k,t)=\frac{f_0(x_j,y_k)-f(x_j,y_k,t)}{|\nabla f_0|}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████████████████████████████| 3750/3750 [00:07&lt;00:00, 478.55it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|█████████████████████████████████████████████████████████| 3750/3750 [00:03&lt;00:00, 1096.40it/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Averaging...
 Finished!
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyidi\methods\_simplified_optical_flow.py:138: UserWarning: Displacement larger than 0.5 pixel
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>d:\pedagoško\_Procesiranje signalov\_VAJE\_PREDLOGE\Predavanje 12 - Procesiranje slik\venv\Lib\site-packages\pyidi\methods\_simplified_optical_flow.py:141: UserWarning: Displacement larger than 0.5 pixel
   warnings.warn(&#39;Displacement larger than 0.5 pixel&#39;)
 </pre></div>
 </div>
@@ -943,10 +928,10 @@ Finished!
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1ec65ecd630&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1fbbf155a30&gt;
 </pre></div>
 </div>
-<img alt="../../_images/2573221dddf1cb1316c14f59edbd3debeda396698293a277980c4340a133f20f.png" src="../../_images/2573221dddf1cb1316c14f59edbd3debeda396698293a277980c4340a133f20f.png" />
+<img alt="../../_images/5954aee259a45423a3e687f1051ba642c7b05b891b79434cab8869a22069758a.png" src="../../_images/5954aee259a45423a3e687f1051ba642c7b05b891b79434cab8869a22069758a.png" />
 </div>
 </div>
 </section>
@@ -1012,49 +997,20 @@ SSD(\Delta \mathbf{x}) = \sum\limits_{x, y} \big[f(\mathbf{x} + \Delta \mathbf{x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b9c1dc31abdf4fdac2f706cbf8b2677719d049438e5197ec8470f49e9dec04f1.png" src="../../_images/b9c1dc31abdf4fdac2f706cbf8b2677719d049438e5197ec8470f49e9dec04f1.png" />
+<img alt="../../_images/46d1c52eb9afee29bd759b508e79882b065c4166305b5d05ab059df0a3bfe2e8.png" src="../../_images/46d1c52eb9afee29bd759b508e79882b065c4166305b5d05ab059df0a3bfe2e8.png" />
 </div>
 </div>
 <p>Izrčaun pomikov:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">displacements_lk</span> <span class="o">=</span> <span class="n">video</span><span class="o">.</span><span class="n">get_displacements</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mf">8e-5</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Starting new analysis ---
- 
-Computation start: 2022-05-31 09:17:18.199292
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyidi\methods\_lucas_kanade.py:464: ResourceWarning: unclosed file &lt;_io.BufferedWriter name=&#39;data\\temp_file\\settings.pkl&#39;&gt;
-  pickle.dump(settings, open(self.settings_filename, &#39;wb&#39;))
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
-C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyidi\methods\_lucas_kanade.py:466: ResourceWarning: unclosed file &lt;_io.BufferedWriter name=&#39;data\\temp_file\\points.pkl&#39;&gt;
-  pickle.dump(self.video.points, open(self.points_filename, &#39;wb&#39;))
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d046a8090f4d4b21bb569e0f2fe6e29a", "version_major": 2, "version_minor": 0}</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Computation duration: 00:01:45.95
-data\camera_pyidi_analysis\analysis_001\ analysis_001
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sys:1: ResourceWarning: unclosed socket &lt;zmq.Socket(zmq.PUSH) at 0x1ec65ccb160&gt;
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
-C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyidi\pyidi.py:225: ResourceWarning: unclosed file &lt;_io.BufferedWriter name=&#39;data\\camera_pyidi_analysis\\analysis_002\\results.pkl&#39;&gt;
-  pickle.dump(self.displacements, open(os.path.join(root, &#39;results.pkl&#39;), &#39;wb&#39;), protocol=-1)
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
-C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyidi\pyidi.py:226: ResourceWarning: unclosed file &lt;_io.BufferedWriter name=&#39;data\\camera_pyidi_analysis\\analysis_002\\points.pkl&#39;&gt;
-  pickle.dump(self.points, open(os.path.join(root, &#39;points.pkl&#39;), &#39;wb&#39;), protocol=-1)
-ResourceWarning: Enable tracemalloc to get the object allocation traceback
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#displacements_lk = video.get_displacements(processes=2) * 8e-5</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#displacements_lk = np.load(&#39;data/displacements_lk.npy&#39;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">displacements_lk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;data/displacements_lk.npy&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1078,10 +1034,10 @@ ResourceWarning: Enable tracemalloc to get the object allocation traceback
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1ec65dca320&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1fbc4e8fb00&gt;
 </pre></div>
 </div>
-<img alt="../../_images/17c080660827bb1255c7f5e98cfd9f9bd627446f52ee2a26f6bca3fcccea4966.png" src="../../_images/17c080660827bb1255c7f5e98cfd9f9bd627446f52ee2a26f6bca3fcccea4966.png" />
+<img alt="../../_images/ef4a12eea3370ea9a33cbdbf1768b3e142475ec447ac05673d2bf641686efb2e.png" src="../../_images/ef4a12eea3370ea9a33cbdbf1768b3e142475ec447ac05673d2bf641686efb2e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1179,16 +1135,16 @@ ResourceWarning: Enable tracemalloc to get the object allocation traceback
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8163c25d36810ec47e4c4a1a63c0bc22a0d436d8fe60a887e454f73c735954e6.png" src="../../_images/8163c25d36810ec47e4c4a1a63c0bc22a0d436d8fe60a887e454f73c735954e6.png" />
+<img alt="../../_images/950f332d5330c58dcbc518edb63fa685d2830b48b31802a418a17e180b61c462.png" src="../../_images/950f332d5330c58dcbc518edb63fa685d2830b48b31802a418a17e180b61c462.png" />
 </div>
 </div>
 </section>
 <section id="eskperimentalna-modalna-analiza-samo-slikovna-meritev">
 <h2>Eskperimentalna modalna analiza (samo slikovna meritev):<a class="headerlink" href="#eskperimentalna-modalna-analiza-samo-slikovna-meritev" title="Link to this heading">#</a></h2>
-<p>Za eksperimentalno modalnoa analizo uporabimo paket <a class="reference external" href="https://github.com/ladisk/pyidi"><code class="docutils literal notranslate"><span class="pre">pyEMA</span></code></a>.</p>
+<p>Za eksperimentalno modalno analizo uporabimo paket <a class="reference external" href="https://github.com/ladisk/pyidi"><code class="docutils literal notranslate"><span class="pre">pyEMA</span></code></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cam</span> <span class="o">=</span> <span class="n">pyEMA</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">frf_cam</span><span class="p">,</span> <span class="n">freq_cam</span><span class="p">,</span> <span class="n">pol_order_high</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="n">upper_f_limit</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cam</span> <span class="o">=</span> <span class="n">pyEMA</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">frf_cam</span><span class="p">,</span> <span class="n">freq_cam</span><span class="p">,</span> <span class="n">pol_order_high</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="n">upper_f_limit</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1201,7 +1157,7 @@ ResourceWarning: Enable tracemalloc to get the object allocation traceback
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|███████████████████████████████████████████████████████████████| 50/50 [00:01&lt;00:00, 35.75it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|███████████████████████████████████████████████████████████████| 75/75 [00:01&lt;00:00, 62.73it/s]
 </pre></div>
 </div>
 </div>
@@ -1209,24 +1165,22 @@ ResourceWarning: Enable tracemalloc to get the object allocation traceback
 <p>Izbrati moramo pole, ki se zdijo fizikalno smiselni (stabilni).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cam</span><span class="o">.</span><span class="n">stab_chart</span><span class="p">(</span><span class="n">cam</span><span class="o">.</span><span class="n">all_poles</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cam</span><span class="o">.</span><span class="n">select_poles</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyEMA\pyEMA.py:311: UserWarning: `stab_chart()` method is deprecated. Please use the `select_poles()` method.
-  warnings.warn(&#39;`stab_chart()` method is deprecated. Please use the `select_poles()` method.&#39;)
-100%|██████████████████████████████████████████████████████████████| 50/50 [00:00&lt;00:00, 150.28it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                        | 0/75 [00:00&lt;?, ?it/s]d:\pedagoško\_Procesiranje signalov\_VAJE\_PREDLOGE\Predavanje 12 - Procesiranje slik\venv\Lib\site-packages\pyEMA\stabilization.py:81: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  fn_temp[i, n - 1] = fn[i]
+d:\pedagoško\_Procesiranje signalov\_VAJE\_PREDLOGE\Predavanje 12 - Procesiranje slik\venv\Lib\site-packages\pyEMA\stabilization.py:82: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  xi_temp[i, n - 1] = xi[i]
+100%|██████████████████████████████████████████████████████████████| 75/75 [00:00&lt;00:00, 109.26it/s]
+d:\pedagoško\_Procesiranje signalov\_VAJE\_PREDLOGE\Predavanje 12 - Procesiranje slik\venv\Lib\site-packages\pyEMA\pyEMA.py:811: FutureWarning: `rcond` parameter will change to the default of machine precision times ``max(M, N)`` where M and N are the input matrix dimensions.
+To use the future default and silence this warning we advise to pass `rcond=None`, to keep using the old, explicitly pass `rcond=-1`.
+  A_ = np.linalg.lstsq(P[mask], Y[mask])[0].T
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SHIFT + LEFT mouse button to pick a pole.
-SHIFT + RIGHT mouse button to erase the last pick.
-1. Frequency: ~691 --&gt;	695.0653446992449 Hz	(xi = -0.0023)
-2. Frequency: ~1887 --&gt;	1897.4506429927983 Hz	(xi = -0.0016)
-3. Frequency: ~2464 --&gt;	2467.906640957225 Hz	(xi = -0.0093)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1152x576 with 0 Axes&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1600x800 with 0 Axes&gt;
 </pre></div>
 </div>
 </div>
@@ -1240,9 +1194,8 @@ SHIFT + RIGHT mouse button to erase the last pick.
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Nat. f.      Damping
 -----------------------
-1)  695.1	-0.0023
-2) 1897.5	-0.0016
-3) 2467.9	-0.0093
+1)  695.6	0.0016
+2) 1897.7	0.0004
 </pre></div>
 </div>
 </div>
@@ -1267,7 +1220,7 @@ SHIFT + RIGHT mouse button to erase the last pick.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f2553786507e834f30b52a1c754bbcb9e834797bfedc67cce960774d35b68d49.png" src="../../_images/f2553786507e834f30b52a1c754bbcb9e834797bfedc67cce960774d35b68d49.png" />
+<img alt="../../_images/08a054849d23d70dd64c4524f648109a3cf9282c97a7df55ec9263ff1fe1fdb8.png" src="../../_images/08a054849d23d70dd64c4524f648109a3cf9282c97a7df55ec9263ff1fe1fdb8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1279,12 +1232,12 @@ SHIFT + RIGHT mouse button to erase the last pick.
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ad5e003a20618db8a43eddac7c8b42cc324609cac4af0aa697e3ac185871dd84.png" src="../../_images/ad5e003a20618db8a43eddac7c8b42cc324609cac4af0aa697e3ac185871dd84.png" />
+<img alt="../../_images/8b810d32e1ae919a48ab9971a08f29474fbcacfd0620feea3c7c9f46eba425f2.png" src="../../_images/8b810d32e1ae919a48ab9971a08f29474fbcacfd0620feea3c7c9f46eba425f2.png" />
 </div>
 </div>
 </section>
-<section id="eskperimentalna-modalna-analiza-hibridna-metoda">
-<h2>Eskperimentalna modalna analiza - hibridna metoda<a class="headerlink" href="#eskperimentalna-modalna-analiza-hibridna-metoda" title="Link to this heading">#</a></h2>
+<section id="primerjava-z-meritivjo-pospeskomera">
+<h2>Primerjava z meritivjo pospeškomera<a class="headerlink" href="#primerjava-z-meritivjo-pospeskomera" title="Link to this heading">#</a></h2>
 <p>Pri hibridni metodi kombiniramo pomike s slik z visoko prostorsko ločljivostjo in meritve pospeška z visoko natančnostjo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1296,22 +1249,12 @@ SHIFT + RIGHT mouse button to erase the last pick.
 <p>Za oceno FRF lahk uporabimo paket <a class="reference external" href="https://github.com/ladisk/pyidi"><code class="docutils literal notranslate"><span class="pre">pyFRF</span></code></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyFRF</span>
-
-<span class="n">frf_</span> <span class="o">=</span> <span class="n">pyFRF</span><span class="o">.</span><span class="n">FRF</span><span class="p">(</span>
-    <span class="n">sampling_freq</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">dt</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frf_</span> <span class="o">=</span> <span class="n">pyFRF</span><span class="o">.</span><span class="n">FRF</span><span class="p">(</span>
+    <span class="n">sampling_freq</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">dt</span><span class="p">)),</span>
     <span class="n">exc</span><span class="o">=</span><span class="n">force</span><span class="p">,</span>
     <span class="n">resp</span><span class="o">=</span><span class="n">hyb_acc</span><span class="p">,</span>
-    <span class="n">exc_window</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">,</span>
-    <span class="n">resp_type</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span>
-    <span class="n">resp_window</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyFRF.py:173: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
-Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
-  self.curr_meas = np.int(0)
+    <span class="n">exc_type</span><span class="o">=</span><span class="s1">&#39;f&#39;</span><span class="p">,</span>
+    <span class="n">resp_type</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1320,7 +1263,7 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freq_acc</span> <span class="o">=</span> <span class="n">frf_</span><span class="o">.</span><span class="n">get_f_axis</span><span class="p">()</span>
-<span class="n">frf_acc</span> <span class="o">=</span> <span class="n">frf_</span><span class="o">.</span><span class="n">get_FRF</span><span class="p">(</span><span class="n">form</span><span class="o">=</span><span class="s1">&#39;receptance&#39;</span><span class="p">)</span>
+<span class="n">frf_acc</span> <span class="o">=</span> <span class="n">frf_</span><span class="o">.</span><span class="n">get_FRF</span><span class="p">(</span><span class="n">form</span><span class="o">=</span><span class="s1">&#39;accelerance&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 
 <span class="n">frf_acc</span> <span class="o">=</span> <span class="n">frf_acc</span><span class="p">[</span><span class="n">freq_acc</span><span class="o">&lt;</span><span class="n">upper_f_limit</span><span class="p">]</span>
 <span class="n">freq_acc</span> <span class="o">=</span> <span class="n">freq_acc</span><span class="p">[</span><span class="n">freq_acc</span><span class="o">&lt;</span><span class="n">upper_f_limit</span><span class="p">]</span>
@@ -1333,144 +1276,14 @@ Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdo
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq_cam</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">frf_cam</span><span class="p">[</span><span class="n">točka</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Camera FRF&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq_acc</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">frf_acc</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Accelerometer FRF&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq_acc</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">frf_acc</span> <span class="o">/</span> <span class="o">-</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">freq_acc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Accelerometer FRF&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Camera-based response at accelerometer location&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ff1e32269cc9f0284b6080b6d471fcd8d289a2b1ae607fd592d46791579545cf.png" src="../../_images/ff1e32269cc9f0284b6080b6d471fcd8d289a2b1ae607fd592d46791579545cf.png" />
-</div>
-</div>
-<p>Poli modela FRF so izrčaunani s hibridno metodo na podlagi meritev pospeška:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc</span> <span class="o">=</span> <span class="n">pyEMA</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">frf_acc</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">freq_acc</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">pol_order_high</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="n">upper_f_limit</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc</span><span class="o">.</span><span class="n">get_poles</span><span class="p">(</span><span class="n">show_progress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|███████████████████████████████████████████████████████████████| 50/50 [00:01&lt;00:00, 35.33it/s]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc</span><span class="o">.</span><span class="n">stab_chart</span><span class="p">(</span><span class="n">acc</span><span class="o">.</span><span class="n">all_poles</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Domen\AppData\Local\Programs\Python\Python310\lib\site-packages\pyEMA\pyEMA.py:311: UserWarning: `stab_chart()` method is deprecated. Please use the `select_poles()` method.
-  warnings.warn(&#39;`stab_chart()` method is deprecated. Please use the `select_poles()` method.&#39;)
-100%|██████████████████████████████████████████████████████████████| 50/50 [00:00&lt;00:00, 103.18it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SHIFT + LEFT mouse button to pick a pole.
-SHIFT + RIGHT mouse button to erase the last pick.
-1. Frequency: ~719 --&gt;	694.9558637688194 Hz	(xi = 0.0047)
-2. Frequency: ~1891 --&gt;	1897.5325587429413 Hz	(xi = 0.0031)
-3. Frequency: ~2772 --&gt;	2777.3298298887007 Hz	(xi = 0.0024)
-4. Frequency: ~3681 --&gt;	3671.181158516763 Hz	(xi = 0.0020)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1152x576 with 0 Axes&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acc</span><span class="o">.</span><span class="n">print_modal_data</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Nat. f.      Damping
------------------------
-1)  695.0	0.0047
-2) 1897.5	0.0031
-3) 2777.3	0.0024
-4) 3671.2	0.0020
-</pre></div>
-</div>
-</div>
-</div>
-<p>Poli, izračunani na podlagi pospeškov, so zanesljivejši. TUporabimo jih pri rekonstrukciji FRF s pomiki, pomerjen s kamero.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cam_hyb</span> <span class="o">=</span> <span class="n">pyEMA</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">frf_cam</span><span class="p">,</span> <span class="n">freq_cam</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Rekonstrukcijo naredimo z uporabo polov iz pospeškomera:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frf_hyb</span><span class="p">,</span> <span class="n">shapes_hybrid</span> <span class="o">=</span> <span class="n">cam_hyb</span><span class="o">.</span><span class="n">get_constants</span><span class="p">(</span><span class="n">whose_poles</span><span class="o">=</span><span class="n">acc</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq_cam</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">frf_cam</span><span class="p">[</span><span class="n">točka</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Camera FRF&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq_acc</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">frf_acc</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Accelerometer FRF&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq_cam</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">frf_hyb</span><span class="p">[</span><span class="n">točka</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Reconstructed FRF&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/7d2e0a6619db32b2d25cdb67cd206dce246819be433e929aa8b0b597d158f58e.png" src="../../_images/7d2e0a6619db32b2d25cdb67cd206dce246819be433e929aa8b0b597d158f58e.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">shapes_cam</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
-    <span class="n">cam_freq</span> <span class="o">=</span> <span class="n">cam</span><span class="o">.</span><span class="n">nat_freq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="n">hybrid_f_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">acc</span><span class="o">.</span><span class="n">nat_freq</span> <span class="o">-</span> <span class="n">cam_freq</span><span class="p">))</span>
-    <span class="n">plot_mode_shape</span><span class="p">(</span><span class="n">shapes_hybrid</span><span class="p">[:,</span> <span class="n">hybrid_f_index</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> 
-                    <span class="n">frequency</span><span class="o">=</span><span class="n">acc</span><span class="o">.</span><span class="n">nat_freq</span><span class="p">[</span><span class="n">hybrid_f_index</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Hybrid&#39;</span><span class="p">)</span>
-    <span class="n">plot_mode_shape</span><span class="p">(</span><span class="n">shapes_cam</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">a</span> <span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Camera&#39;</span><span class="p">)</span>
-    <span class="n">a</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1ec65bba2c0&gt;
-</pre></div>
-</div>
-<img alt="../../_images/0f30092e271ca3e0f177fe674336aa5e2b0f2f8dcf875bd0454d5dee9a025a59.png" src="../../_images/0f30092e271ca3e0f177fe674336aa5e2b0f2f8dcf875bd0454d5dee9a025a59.png" />
-</div>
-</div>
-<p>Na ta način smo pri stabilizaciji zaznali dodatno lasnto obliko:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">fig_size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">fig_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">plot_mode_shape</span><span class="p">(</span><span class="n">shapes_hybrid</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">(),</span> 
-                <span class="n">frequency</span><span class="o">=</span><span class="n">acc</span><span class="o">.</span><span class="n">nat_freq</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Hybrid&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1ec6937b280&gt;
-</pre></div>
-</div>
-<img alt="../../_images/bde003aa0a5629bcd0aa10936ebdf9c5b9b6346970cbbdd1469899c8bbf7de1c.png" src="../../_images/bde003aa0a5629bcd0aa10936ebdf9c5b9b6346970cbbdd1469899c8bbf7de1c.png" />
+<img alt="../../_images/b2c0007ba62dcd84d65c1a2c10ed2331e3a3fc4ac43ad5983e9fc426083f5252.png" src="../../_images/b2c0007ba62dcd84d65c1a2c10ed2331e3a3fc4ac43ad5983e9fc426083f5252.png" />
 </div>
 </div>
 </section>
@@ -1537,7 +1350,7 @@ SHIFT + RIGHT mouse button to erase the last pick.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metoda-lucas-kanade">Metoda Lucas-Kanade:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izracun-frf">Izračun FRF</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eskperimentalna-modalna-analiza-samo-slikovna-meritev">Eskperimentalna modalna analiza (samo slikovna meritev):</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eskperimentalna-modalna-analiza-hibridna-metoda">Eskperimentalna modalna analiza - hibridna metoda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primerjava-z-meritivjo-pospeskomera">Primerjava z meritivjo pospeškomera</a></li>
 </ul>
   </nav></div>
 
