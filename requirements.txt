@@ -3,7 +3,8 @@ scipy
 matplotlib
 pandas
 jupyter
-sdypy-EMA
+pyEMA
+sdypy-FRF
 pyFRF
 jupyter-book
 ghp-import

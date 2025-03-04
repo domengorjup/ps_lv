@@ -130,3 +130,5 @@ dmypy.json
 
 _build/
 _source/
+camera_pyidi_analysis/
+temp_file/
