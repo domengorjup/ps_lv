@@ -397,7 +397,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zajem-podatkov-z-arduinom">Zajem podatkov z Arduinom</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-branje-in-obdelava-zajetih-signalov">Python - branje in obdelava zajetih signalov</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-generatorja-signalov-rigol-dg1022">Uporaba generatorja signalov (RIGOL DG1022)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-generatorja-signalov-siglent-sdg-1032x">Uporaba generatorja signalov (Siglent SDG 1032X)</a></li>
 </ul>
             </nav>
         </div>
@@ -705,7 +705,7 @@ Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x25ca43dca10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x23f7f7eab70&gt;
 </pre></div>
 </div>
 <img alt="../_images/c9ee8586a32a230bafbacd9f4e0ca78766e3b93063b5376e5b531b6a7e26a0d5.png" src="../_images/c9ee8586a32a230bafbacd9f4e0ca78766e3b93063b5376e5b531b6a7e26a0d5.png" />
@@ -757,7 +757,7 @@ Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x25ca75de6c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x23f7fa983b0&gt;
 </pre></div>
 </div>
 <img alt="../_images/ef8446f510afcf3f755523e3e17432ba9c4f831058d37f78b4d9b8a3afd69c65.png" src="../_images/ef8446f510afcf3f755523e3e17432ba9c4f831058d37f78b4d9b8a3afd69c65.png" />
@@ -799,7 +799,7 @@ Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x25ca44246e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x23f7fae5700&gt;
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
@@ -809,14 +809,15 @@ Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 </section>
-<section id="uporaba-generatorja-signalov-rigol-dg1022">
-<span id="uporaba-rigol"></span><h2>Uporaba generatorja signalov (RIGOL DG1022)<a class="headerlink" href="#uporaba-generatorja-signalov-rigol-dg1022" title="Link to this heading">#</a></h2>
+<section id="uporaba-generatorja-signalov-siglent-sdg-1032x">
+<span id="uporaba-rigol"></span><h2>Uporaba generatorja signalov (Siglent SDG 1032X)<a class="headerlink" href="#uporaba-generatorja-signalov-siglent-sdg-1032x" title="Link to this heading">#</a></h2>
 <p>Za simulacijo predpisane oblike periodičnega signala bomo uporabili generator signala.</p>
-<p>Spodanja slika prikazuje nadzorno ploščo modela RIGOL DG1022.</p>
-<p><img alt="rigol-dg1022" src="../_images/rigol_dg1022.png" /></p>
-<p>Za nastavitev izbranih parametrov signala uporabite kontrolne gumbe, na zgornji sliki označene z modro barvo. Pri tem bodite pozorni, da ste z gumbom <code class="docutils literal notranslate"><span class="pre">Channel</span> <span class="pre">Switch</span></code> izbrali kanal, na katerem želite oddajati signal.</p>
-<p>Generator signala signal oddaja preko koaksialne (BNC) povezave na desni strani krmilne plošče. Oddajanje nastavljenega signala poteka, kadar je osvetljen <code class="docutils literal notranslate"><span class="pre">Output</span></code> gumb izbranega kanala.</p>
-<p><img alt="rigol-nastavitev" src="../_images/rigol_nastavitev.png" /></p>
+<p>Spodanja slika prikazuje nadzorno ploščo modela Siglent SDG 1032X.</p>
+<p><img alt="rigol-dg1022" src="../_images/siglent_sdg_1032x.png" /></p>
+<p>Za izbiro parametra signala, ki ga želite nastaviti, uporabite kontrolne gumbe, na zgornji sliki označene z modro barvo. Vrednost izbranega parametra spreminjate s številčnico ali vrtljivim gumbom. Pri tem bodite pozorni, da ste z gumbom <code class="docutils literal notranslate"><span class="pre">Ch1</span> <span class="pre">/</span> <span class="pre">Ch2</span></code> (rumena barva) izbrali kanal, za katerega želite nastaviti signal. V pomoč pri nastavitvah podanih parametrov naj vam bo spodnja slika.</p>
+<p>Meni za izbiro oblike generiranega signala prikličete z gumbom <code class="docutils literal notranslate"><span class="pre">Waveforms</span></code> (vijolična barva). Nazaj v meni za nastavitev parametrov signala pridete z gumbom <code class="docutils literal notranslate"><span class="pre">Ch1</span> <span class="pre">/</span> <span class="pre">Ch2</span></code> (rumena barva) ali gumbom <code class="docutils literal notranslate"><span class="pre">Parameter</span></code>.</p>
+<p>Generator signala signal oddaja preko koaksialne (BNC) povezave na desni strani krmilne plošče. Oddajanje nastavljenega signala poteka, kadar je osvetljen <code class="docutils literal notranslate"><span class="pre">Output</span></code> gumb izbranega kanala (zelena barva).</p>
+<p><img alt="rigol-nastavitev" src="../_images/siglent_nastavitev.png" /></p>
 <div class="important admonition">
 <p class="admonition-title">Opozorilo</p>
 <p>Preden vključite oddajanje signala z ustreznim <code class="docutils literal notranslate"><span class="pre">Channel</span></code> gumbom <strong>preverite, da so vse nastavitve izbranega kanala pravilne, in da niste presegli merilnega območja zajemnega sistema</strong>. Šele za tem priključite zajemni sistem na izhodni kanal generatorja signala!</p>
@@ -900,7 +901,7 @@ Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre"
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zajem-podatkov-z-arduinom">Zajem podatkov z Arduinom</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-branje-in-obdelava-zajetih-signalov">Python - branje in obdelava zajetih signalov</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-generatorja-signalov-rigol-dg1022">Uporaba generatorja signalov (RIGOL DG1022)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uporaba-generatorja-signalov-siglent-sdg-1032x">Uporaba generatorja signalov (Siglent SDG 1032X)</a></li>
 </ul>
   </nav></div>
 
