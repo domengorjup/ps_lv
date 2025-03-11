@@ -33,28 +33,92 @@ import pyidi
 from sdypy import EMA as pyEMA
 ------------------
 
------ stderr -----
-C:\Users\Domen\AppData\Local\Programs\Python\Python312\Lib\site-packages\napari\layers\utils\layer_utils.py:10: DeprecationWarning: 
-Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
-(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
-but was not found to be installed on your system.
-If this would cause problems for you,
-please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
-        
-  import pandas as pd
------ stderr -----
-C:\Users\Domen\AppData\Local\Programs\Python\Python312\Lib\copy.py:151: DeprecationWarning: Pickle, copy, and deepcopy support will be removed from itertools in Python 3.14.
-  rv = reductor(4)
-C:\Users\Domen\AppData\Local\Programs\Python\Python312\Lib\copy.py:261: DeprecationWarning: Pickle, copy, and deepcopy support will be removed from itertools in Python 3.14.
-  y.__setstate__(state)
-------------------
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mImportError[0m                               Traceback (most recent call last)
-Cell [1;32mIn[1], line 13[0m
+Cell [1;32mIn[1], line 12[0m
+[0;32m      9[0m warnings[38;5;241m.[39mfilterwarnings([38;5;124m'[39m[38;5;124mignore[39m[38;5;124m'[39m)
 [0;32m     11[0m [38;5;28;01mimport[39;00m [38;5;21;01mlvm_read[39;00m
-[0;32m     12[0m [38;5;28;01mimport[39;00m [38;5;21;01mpyidi[39;00m
-[1;32m---> 13[0m [38;5;28;01mfrom[39;00m [38;5;21;01msdypy[39;00m [38;5;28;01mimport[39;00m EMA [38;5;28;01mas[39;00m pyEMA
+[1;32m---> 12[0m [38;5;28;01mimport[39;00m [38;5;21;01mpyidi[39;00m
+[0;32m     13[0m [38;5;28;01mfrom[39;00m [38;5;21;01msdypy[39;00m [38;5;28;01mimport[39;00m EMA [38;5;28;01mas[39;00m pyEMA
 
-[1;31mImportError[0m: cannot import name 'EMA' from 'sdypy' (unknown location)
+File [1;32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyidi\__init__.py:2[0m
+[0;32m      1[0m __version__ [38;5;241m=[39m [38;5;124m'[39m[38;5;124m0.30.1[39m[38;5;124m'[39m
+[1;32m----> 2[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m[38;5;21;01mpyidi[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
+[0;32m      3[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m [38;5;28;01mimport[39;00m tools
+[0;32m      4[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m [38;5;28;01mimport[39;00m postprocessing
+
+File [1;32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyidi\pyidi.py:18[0m
+[0;32m     16[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m [38;5;28;01mimport[39;00m tools
+[0;32m     17[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m [38;5;28;01mimport[39;00m selection
+[1;32m---> 18[0m [38;5;28;01mfrom[39;00m [38;5;21;01m.[39;00m [38;5;28;01mimport[39;00m gui
+[0;32m     20[0m available_method_shortcuts [38;5;241m=[39m [
+[0;32m     21[0m     ([38;5;124m'[39m[38;5;124msof[39m[38;5;124m'[39m, SimplifiedOpticalFlow),
+[0;32m     22[0m     ([38;5;124m'[39m[38;5;124mlk[39m[38;5;124m'[39m, LucasKanade),
+[1;32m   (...)[0m
+[0;32m     25[0m     [38;5;66;03m# ('gb', GradientBasedOpticalFlow)[39;00m
+[0;32m     26[0m     ]
+[0;32m     29[0m [38;5;28;01mclass[39;00m [38;5;21;01mpyIDI[39;00m():
+
+File [1;32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\pyidi\gui.py:1[0m
+[1;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnapari[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcomponents[39;00m [38;5;28;01mimport[39;00m viewer_model
+[0;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[0;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mnapari[39;00m
+
+File [1;32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\napari\components\__init__.py:17[0m
+[0;32m      1[0m [38;5;124;03m"""napari.components provides the public-facing models for widgets[39;00m
+[0;32m      2[0m [38;5;124;03mand other utilities that the user will be able to programmatically interact[39;00m
+[0;32m      3[0m [38;5;124;03mwith.[39;00m
+[1;32m   (...)[0m
+[0;32m     14[0m [38;5;124;03m    layer-related controls.[39;00m
+[0;32m     15[0m [38;5;124;03m"""[39;00m
+[1;32m---> 17[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnapari[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcomponents[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcamera[39;00m [38;5;28;01mimport[39;00m Camera
+[0;32m     18[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnapari[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcomponents[39;00m[38;5;21;01m.[39;00m[38;5;21;01mdims[39;00m [38;5;28;01mimport[39;00m Dims
+[0;32m     19[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnapari[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcomponents[39;00m[38;5;21;01m.[39;00m[38;5;21;01mlayerlist[39;00m [38;5;28;01mimport[39;00m LayerList
+
+File [1;32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\napari\components\camera.py:8[0m
+[0;32m      5[0m [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mspatial[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtransform[39;00m [38;5;28;01mimport[39;00m Rotation [38;5;28;01mas[39;00m R
+[0;32m      7[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnapari[39;00m[38;5;21;01m.[39;00m[38;5;21;01m_pydantic_compat[39;00m [38;5;28;01mimport[39;00m validator
+[1;32m----> 8[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnapari[39;00m[38;5;21;01m.[39;00m[38;5;21;01mutils[39;00m[38;5;21;01m.[39;00m[38;5;21;01mevents[39;00m [38;5;28;01mimport[39;00m EventedModel
+[0;32m      9[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnapari[39;00m[38;5;21;01m.[39;00m[38;5;21;01mutils[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmisc[39;00m [38;5;28;01mimport[39;00m ensure_n_tuple
+[0;32m     10[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnapari[39;00m[38;5;21;01m.[39;00m[38;5;21;01mutils[39;00m[38;5;21;01m.[39;00m[38;5;21;01mtranslations[39;00m [38;5;28;01mimport[39;00m trans
+
+File [1;32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\napari\utils\__init__.py:8[0m
+[0;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnapari[39;00m[38;5;21;01m.[39;00m[38;5;21;01mutils[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcolormaps[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcolormap[39;00m [38;5;28;01mimport[39;00m (
+[0;32m      3[0m     Colormap,
+[0;32m      4[0m     CyclicLabelColormap,
+[0;32m      5[0m     DirectLabelColormap,
+[0;32m      6[0m )
+[0;32m      7[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnapari[39;00m[38;5;21;01m.[39;00m[38;5;21;01mutils[39;00m[38;5;21;01m.[39;00m[38;5;21;01minfo[39;00m [38;5;28;01mimport[39;00m citation_text, sys_info
+[1;32m----> 8[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnapari[39;00m[38;5;21;01m.[39;00m[38;5;21;01mutils[39;00m[38;5;21;01m.[39;00m[38;5;21;01mnotebook_display[39;00m [38;5;28;01mimport[39;00m nbscreenshot
+[0;32m      9[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnapari[39;00m[38;5;21;01m.[39;00m[38;5;21;01mutils[39;00m[38;5;21;01m.[39;00m[38;5;21;01mprogress[39;00m [38;5;28;01mimport[39;00m cancelable_progress, progrange, progress
+[0;32m     11[0m __all__ [38;5;241m=[39m (
+[0;32m     12[0m     [38;5;124m'[39m[38;5;124mColormap[39m[38;5;124m'[39m,
+[0;32m     13[0m     [38;5;124m'[39m[38;5;124mDirectLabelColormap[39m[38;5;124m'[39m,
+[1;32m   (...)[0m
+[0;32m     21[0m     [38;5;124m'[39m[38;5;124msys_info[39m[38;5;124m'[39m,
+[0;32m     22[0m )
+
+File [1;32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\napari\utils\notebook_display.py:9[0m
+[0;32m      7[0m     [38;5;28;01mfrom[39;00m [38;5;21;01mlxml[39;00m[38;5;21;01m.[39;00m[38;5;21;01metree[39;00m [38;5;28;01mimport[39;00m ParserError
+[0;32m      8[0m     [38;5;28;01mfrom[39;00m [38;5;21;01mlxml[39;00m[38;5;21;01m.[39;00m[38;5;21;01mhtml[39;00m [38;5;28;01mimport[39;00m document_fromstring
+[1;32m----> 9[0m     [38;5;28;01mfrom[39;00m [38;5;21;01mlxml[39;00m[38;5;21;01m.[39;00m[38;5;21;01mhtml[39;00m[38;5;21;01m.[39;00m[38;5;21;01mclean[39;00m [38;5;28;01mimport[39;00m Cleaner
+[0;32m     11[0m     lxml_unavailable [38;5;241m=[39m [38;5;28;01mFalse[39;00m
+[0;32m     12[0m [38;5;28;01mexcept[39;00m [38;5;167;01mModuleNotFoundError[39;00m:
+
+File [1;32m~\AppData\Local\Programs\Python\Python312\Lib\site-packages\lxml\html\clean.py:18[0m
+[0;32m      8[0m     __all__ [38;5;241m=[39m [
+[0;32m      9[0m         [38;5;124m"[39m[38;5;124mclean_html[39m[38;5;124m"[39m,
+[0;32m     10[0m         [38;5;124m"[39m[38;5;124mclean[39m[38;5;124m"[39m,
+[1;32m   (...)[0m
+[0;32m     15[0m         [38;5;124m"[39m[38;5;124mword_break_html[39m[38;5;124m"[39m,
+[0;32m     16[0m     ]
+[0;32m     17[0m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m:
+[1;32m---> 18[0m     [38;5;28;01mraise[39;00m [38;5;167;01mImportError[39;00m(
+[0;32m     19[0m         [38;5;124m"[39m[38;5;124mlxml.html.clean module is now a separate project lxml_html_clean.[39m[38;5;130;01m\n[39;00m[38;5;124m"[39m
+[0;32m     20[0m         [38;5;124m"[39m[38;5;124mInstall lxml[html_clean] or lxml_html_clean directly.[39m[38;5;124m"[39m
+[0;32m     21[0m     ) [38;5;28;01mfrom[39;00m [38;5;28;01mNone[39;00m
+
+[1;31mImportError[0m: lxml.html.clean module is now a separate project lxml_html_clean.
+Install lxml[html_clean] or lxml_html_clean directly.
 
