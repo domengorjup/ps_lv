@@ -422,7 +422,7 @@ document.write(`
 <p class="admonition-title">Naloga</p>
 <p>Z uporabo generatorja signalov in zajemnega sistema Arduino zajemite naključni signal s parametri (srednjo vrednostjo <span class="math notranslate nohighlight">\(m\)</span>, amplitudo <span class="math notranslate nohighlight">\(A\)</span>) iz podatkov naloge. Zajem podatkov izvedite tako, da boste pri pretvorbi zajetega signala v frekvenčno domeno dobili spekter na podanem frekvenčnem območju <span class="math notranslate nohighlight">\([0, f_k]\)</span> ter z ločljivostjo v frekvenčni domeni <span class="math notranslate nohighlight">\(\Delta f\)</span> iz podatkov naloge.</p>
 <p>LabView program za zajem signalov lahko prenesete v obliki <a class="reference download internal" download="" href="../_downloads/fe35982e9ec10d562dca252f2f56a11d/labview_zajem.zip"><code class="xref download docutils literal notranslate"><span class="pre">zip</span> <span class="pre">arhiva</span></code></a>.</p>
-<p>Pripravite kratko poročilo <em>(obseg od 3 do 10 celic s kodo v okolju Jupyter Notebook)</em>, iz katerega naj bodo razvidni podatki naloge (iz tabele), ter da ste vse parametre in zahteve naloge naloge tudi upoštevali. Vsebuje naj prikaz in kratek komentar naslednjih lastnosti zajetega signala:</p>
+<p>Pripravite kratko poročilo v okolju Jupyter Notebook <em>(od 3 do 10 celic s kodo)</em>, v katerem naj bodo razvidni podatki naloge ter prikaz in kratek komentar naslednjih lastnosti zajetega signala:</p>
 <ul class="simple">
 <li><p>zajeto frekvenčno območje in frekvenčna ločljivost,</p></li>
 <li><p>ocena gostote porazdelitve verjetnosti vrednosti <span class="math notranslate nohighlight">\(p(x)\)</span> zajetega signala <span class="math notranslate nohighlight">\(x(t)\)</span>,</p></li>
@@ -542,7 +542,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-9.947598300641404e-16
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.501466032204917e-16
 </pre></div>
 </div>
 </div>
@@ -555,7 +555,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.7314402993196594
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.757750115198039
 </pre></div>
 </div>
 </div>
@@ -588,7 +588,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/f921b872f336798615336d10d7d61ad56749003397e486dfe7ba3e6ab600606b.png" src="../_images/f921b872f336798615336d10d7d61ad56749003397e486dfe7ba3e6ab600606b.png" />
+<img alt="../_images/a54446f5fefa4302e37aab5b39d8c757daaf5e3c5f4c9364ce95b7f054c38c60.png" src="../_images/a54446f5fefa4302e37aab5b39d8c757daaf5e3c5f4c9364ce95b7f054c38c60.png" />
 </div>
 </div>
 <p>Porazdelitev verjetnosti ni nujno normalna (Gaussova):</p>
@@ -617,7 +617,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/12ab769c5cd1ee74ca21beddc9b1e377fb082f49f68b93d6a5bdb8d383fcde6e.png" src="../_images/12ab769c5cd1ee74ca21beddc9b1e377fb082f49f68b93d6a5bdb8d383fcde6e.png" />
+<img alt="../_images/ddf68fb7349ca272726c62fce35b29e9afbe2ae2e0f59eea9c01834b94cf4ab8.png" src="../_images/ddf68fb7349ca272726c62fce35b29e9afbe2ae2e0f59eea9c01834b94cf4ab8.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -641,7 +641,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/1119a6accef400654c6a10e30b5797299acc15232dde3de778ebcdb50b336b6a.png" src="../_images/1119a6accef400654c6a10e30b5797299acc15232dde3de778ebcdb50b336b6a.png" />
+<img alt="../_images/1dd8ba059cce1d23aa91ecc5fa905e887b27222c0210a7655e1e48115e1bd4ee.png" src="../_images/1dd8ba059cce1d23aa91ecc5fa905e887b27222c0210a7655e1e48115e1bd4ee.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -665,6 +665,12 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 <span class="k">for</span> <span class="n">ponovitev</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
     <span class="n">ansambel</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="n">mu</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sigma</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)))</span>
 <span class="n">ansambel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ansambel</span><span class="p">)</span>
+<span class="n">ansambel</span><span class="o">.</span><span class="n">shape</span> <span class="c1"># (50 realizacij, 25 &quot;časovnih&quot; točk)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(50, 25)
 </pre></div>
 </div>
 </div>
@@ -685,9 +691,10 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/9bb29ff789d2f31af62818046a565137aee4aee035e8cc5e0d30bcf0e4da90e8.png" src="../_images/9bb29ff789d2f31af62818046a565137aee4aee035e8cc5e0d30bcf0e4da90e8.png" />
+<img alt="../_images/c68b5307c9a71381e18217755122b8b3ce9b0abb15b048dc5ab3478cdaa14d07.png" src="../_images/c68b5307c9a71381e18217755122b8b3ce9b0abb15b048dc5ab3478cdaa14d07.png" />
 </div>
 </div>
+<p><strong>Srednja vrednost in varianca pri vsakem časovnem trenutku procesa (izračunana po osi realizacij):</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ansambel</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -718,14 +725,15 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/6667a749cebeb0df697db93c590c1ffdd67cac0beb4482eef47cf4b4d8499425.png" src="../_images/6667a749cebeb0df697db93c590c1ffdd67cac0beb4482eef47cf4b4d8499425.png" />
+<img alt="../_images/6f8342dfcaf595b9735445f0c2892c4a2583b4081f5c14a036727fed9d96fe5a.png" src="../_images/6f8342dfcaf595b9735445f0c2892c4a2583b4081f5c14a036727fed9d96fe5a.png" />
 </div>
 </div>
 <p>Ker se srednja vrednost in varianca naključnih realizacij v isti točki procesa s časom ne spreminjata, lahko sklepamo, da gre za <strong>stacionaren</strong> proces.</p>
+<p><strong>Srednja vrednost in varianca posameznih realizacij procesa (izračunana po osi časa):</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mu_ansambel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ansambel</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">var_ansambel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">ansambel</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ansambel</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">var_ansambel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">ansambel</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">ansambel</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -752,16 +760,16 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/e67d3f01fd8d11fa1575896cacba072a81474a34b4680406db0d7c7ef3bac7d1.png" src="../_images/e67d3f01fd8d11fa1575896cacba072a81474a34b4680406db0d7c7ef3bac7d1.png" />
+<img alt="../_images/6368b4da09d7527d11a5e1ab1f9185ca9b65b0ea90517f0c17666f2f0e564d63.png" src="../_images/6368b4da09d7527d11a5e1ab1f9185ca9b65b0ea90517f0c17666f2f0e564d63.png" />
 </div>
 </div>
 <p>Ker se srednja vrednost in varianca naključnega procesa <span class="math notranslate nohighlight">\(x(t)\)</span> pri večkratni realizaciji ne spreminjata, in sta enaki <span class="math notranslate nohighlight">\(\mu_x(t)\)</span> in <span class="math notranslate nohighlight">\(\sigma^2_x(t)\)</span> pri posameznem času, lahko sklepamo, da gre za <strong>ergodičen</strong> proces.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><strong>Ato-korelacijska</strong> funkcija <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span> je definirana z:</p>
+<p><strong>Avto-korelacijska</strong> funkcija <span class="math notranslate nohighlight">\(R_{xx}(\tau)\)</span> je definirana z:</p>
 <div class="math notranslate nohighlight">
 \[R_{xx}(\tau) = E[ x_k(t) \, x_k(t+\tau)]\]</div>
-<p>in je enaka avto-kovariančni funkciji v primeru procesa z ničelno srednjo vrednostjo.</p>
+<p>in je enaka avto-kovariančni funkciji v primeru procesa z nično srednjo vrednostjo.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -786,6 +794,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 <span class="n">T</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">fs</span><span class="o">*</span><span class="n">T</span><span class="p">)</span> <span class="o">/</span> <span class="n">fs</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span><span class="o">*</span><span class="mf">0.5</span>
 </pre></div>
 </div>
@@ -793,7 +802,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R_aa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">correlate</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">a</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R_aa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">correlate</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">a</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">N</span>
 </pre></div>
 </div>
 </div>
@@ -813,7 +822,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/1b3f6ced8ec8bf6ec58d66c97296d3dd9b3580ebc562562366cca1d44810d3f1.png" src="../_images/1b3f6ced8ec8bf6ec58d66c97296d3dd9b3580ebc562562366cca1d44810d3f1.png" />
+<img alt="../_images/231256b75a0e22f6084776c0ac787efc993b659827ebf23446497d58b2322d83.png" src="../_images/231256b75a0e22f6084776c0ac787efc993b659827ebf23446497d58b2322d83.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -838,16 +847,16 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/07f75ebefc4e475e43661beb62d81026271b261e223bde6f06c44b43f10d8036.png" src="../_images/07f75ebefc4e475e43661beb62d81026271b261e223bde6f06c44b43f10d8036.png" />
+<img alt="../_images/0c2d2e8986d9d214dfe13928e1bab6592acb841dced7fe3a57523968dbb91898.png" src="../_images/0c2d2e8986d9d214dfe13928e1bab6592acb841dced7fe3a57523968dbb91898.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G_aa_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">R_aa</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">R_aa</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">T</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G_aa_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">R_aa</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">fs</span> <span class="c1"># Ne delimo z N, ker smo normirali že R_aa</span>
 
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="c1"># Ne delimo z N, ker bomo normiranje opravili pri izračunu G_aa</span>
 <span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="mi">1</span><span class="o">/</span><span class="n">fs</span><span class="p">)</span>
-<span class="n">G_aa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">*</span> <span class="n">A</span>  <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">T</span>
+<span class="n">G_aa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">conj</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">*</span> <span class="n">A</span>  <span class="o">*</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">fs</span> <span class="o">/</span> <span class="n">N</span>
 </pre></div>
 </div>
 </div>
@@ -869,7 +878,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">G_aa_</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(R_</span><span class="si">{aa}</span><span class="s1">)$&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">G_aa</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(A)* </span><span class="se">\\</span><span class="s1">cdot </span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(A) * T$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">G_aa</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(A)* </span><span class="se">\\</span><span class="s1">cdot </span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(A)$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">G_aa_scipy</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;PSD v Scipy&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
@@ -879,7 +888,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/77b1e9a396b2cbc8c0911ff4a194dc17872a3c85254bfaad5cdf8f70d0a6cb43.png" src="../_images/77b1e9a396b2cbc8c0911ff4a194dc17872a3c85254bfaad5cdf8f70d0a6cb43.png" />
+<img alt="../_images/dc7f9a41af8e268939c9f6938ef5061ea8fa02c504fd44927e935377f5426ddb.png" src="../_images/dc7f9a41af8e268939c9f6938ef5061ea8fa02c504fd44927e935377f5426ddb.png" />
 </div>
 </div>
 <p>Parsevalov teorem:</p>
@@ -890,7 +899,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.6770081822103924, 0.6776733221523139)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.6789372496229779, 0.67906597617761)
 </pre></div>
 </div>
 </div>
