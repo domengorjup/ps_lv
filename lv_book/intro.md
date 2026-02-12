@@ -37,13 +37,16 @@ Naloge, ki jih boste na vajah reševali samostojno.
 Domače naloge in naloge, namenjene preverjanju sodelovanja na vajah.
 ```
 
+## Ocena sprotnega dela na vajah
+
+### Domače naloge
+
 (intro-domace-naloge)=
 ```{admonition} Domače naloge
 :class: warning
 Vsebina domačih nalog bo individualizirana, podatke za svojo nalogo najdete v [e-učilnici](https://e-ucilnica.fs.uni-lj.si/).
 
 V skaldu z navodilom naloge pripravite **kratko** poročilo (od 3 do **maksimalno 10 celic s kodo**), v katerem najprej povzamete *zahteve naloge* ter *svoje podatke*. V poročilo vključite tako *kodo rešitve* kot *kratke komentarje* na nalogo (primerna oblika je npr. Jupyter Notebook).
-
 
 **Dodatek:** Za možnost višje ocene sodelovanja na vajah bodite pozorni na predloge razširitve domače naloge.
 
@@ -57,7 +60,7 @@ Jupyter Notebook datoteko enostavno pretvorite v PDF `File -> Print Preview -> P
 ```
 ![jupyter_pretvorba](notebooks/images/00/pretvorba_jupyter_notebook.png)
 
-```{admonition} Kriterij ocenjevanja sprotnega dela
+```{admonition} Kriterij ocenjevanja domačih nalog
 :class: warning
 | <div style="width:65pt">Ocena [%]</div> | Komentar |
 | ----- | -------- |
@@ -68,8 +71,54 @@ Jupyter Notebook datoteko enostavno pretvorite v PDF `File -> Print Preview -> P
 | (80, 90] | Izpolnjene osnovne zahteve naloge, dodatna vsebina s pomanjkljivostmi (npr. pomankljivo interpretirani rezultati...). |
 | (90, 100] | Ustrezno uporabljena, predstavljena in interpretirana dodatna vsebina. |
 
+<br>
+
 V primeru **zamude** se ocena domače naloge zniža (10% / dan).
 ```
+
+### Seminar
+
+(intro-seminar)=
+```{admonition} Izbirni seminar
+:class: warning
+
+Del ocene sprotnega dela pridobite na podlagi neobveznega individualnega seminarja. Seminar pripravite na temo izbrane vsebine laboratorijskih vaj in predstavite v obliki 30-minutne predstavitve v rednem terminu laboratorijske vaje.
+
+**Zahteve:**
+
+- Predstavitev služi kot uvod v laboratorijsko vajo in mora biti dovolj podrobna, da omogoča samostojno izvedbo individualnega dela vaje.
+- Seminar izvedete v okolju Jupyter Notebook z ustreznimi opisi teoretičnega ozadja metod ter praktičnimi primeri.
+- Kot izhodišče lahko uporabite objavljeno predlogo laboratorijske vaje, obvezna pa je uporaba dodatnih ustrezno citiranih virov, primerov in literature.
+
+**Kriteriji:**
+
+Seminar se ocenjuje po naslednjih kriterijih z utežmi:
+
+| Kriterij | Utež |
+| -------- | ---- |
+| Jasnost in strukturiranost predstavitve | 25% |
+| Zanimivost in didaktična vrednost | 20% |
+| Vsebinska pravilnost | 30% |
+| Tehnična izvedba (Jupyter Notebook, primeri, citiranje) | 25% |  
+
+<br>
+
+**Ocenjevalna lestvica:**
+
+| Ocena [%] | Komentar |
+| --------- | -------- |
+| < 50 | Predstavitev ne zadošča za izvedbo vaje **in** minimalne zahteve niso izpolnjene (manjkajoči viri, pomanjkljiv Jupyter Notebook). |
+| < 60 | Predstavitev ne zadošča za izvedbo vaje **ali** minimalne zahteve niso izpolnjene (manjkajoči citati, nepopolna razlaga metod). |
+| (60, 70] | Osnovne zahteve so izpolnjene s pomanjkljivostmi (npr. površna razlaga ozadja, primeri brez zadostnih komentarjev, pomanjkljivo citiranje). |
+| (70, 80] | Izpolnjene osnovne zahteve, predstavitev zadošča za izvedbo vaje, ustrezno citiranje virov. |
+| (80, 90] | Izpolnjene osnovne zahteve, dodatna vsebina (npr. primerjava metod, dodatni primeri) s pomanjkljivostmi v interpretaciji ali izvedbi. |
+| (90, 100] | Odlična predstavitev z dodatno vsebino, primeri so ustrezno interpretirani, jasna didaktična vrednost, tehnično brezhibna izvedba. |  
+  
+<br>
+
+V primeru, da se za seminar ne odločite, se pri izračunu končne ocene sodelovanja na vajah upošteva ocena $SN=0 %$.
+```
+
 
 
 ## Vsebina
