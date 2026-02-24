@@ -4,7 +4,7 @@
 
 ## Uvod
 
-[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://domengorjup.github.io/ps_lv/)
+[![Jupyter Book Badge](./badge.svg)](https://domengorjup.github.io/ps_lv/)
 
 Tukaj najdete predloge laboratorijskih vaj pri predmetu [Procesiranje signalov](https://www.ladisk.si/?what=incfl&flnm=procesiranje%20signalov.php), ki se izvaja v letnem semestru 1. letnika Magistrskega študijskega programa na Fakulteti za Strojništvo v Ljubljani.
 
@@ -38,6 +38,10 @@ Domače naloge in naloge, namenjene preverjanju sodelovanja na vajah.
 ```
 
 ## Ocena sprotnega dela na vajah
+
+### [E-učilnica - Procesiranje signalov](https://e-ucilnica.fs.uni-lj.si/course/view.php?id=328)
+
+Samovpis, geslo: `PRSMM-26`
 
 ### Domače naloge
 
