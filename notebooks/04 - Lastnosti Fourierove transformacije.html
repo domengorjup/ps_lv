@@ -395,7 +395,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga">Naloga</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearnost">Linearnost</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casovno-skaliranje">Časovno skaliranje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casovno-skaliranje">Časovno skaliranje</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-1-gaussov-impulz">Primer 1: Gaussov impulz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-2-simulacija-meritve-sinusnega-signala">Primer 2: Simulacija meritve sinusnega signala</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casovni-premik">Časovni premik</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitudna-modulacija">Amplitudna modulacija</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#odvajanje-in-integriranje">Odvajanje in integriranje</a></li>
@@ -629,6 +633,77 @@ LabView program za zajem lahko prenesete v obliki <a class="reference download i
 \mathcal{F}\{x(a\,t)\} = \frac{1}{|a|}\,X(f/a).
 \]</div>
 </div>
+<section id="primer-1-gaussov-impulz">
+<h3>Primer 1: Gaussov impulz<a class="headerlink" href="#primer-1-gaussov-impulz" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>         <span class="c1"># faktor časovnega skaliranja: a&gt;1: &quot;kompresija&quot; v časovni domeni, &quot;raztezanje&quot; na frekvenčni osi (in obratno)                                                                                                                                                            </span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.15</span>  <span class="c1"># Širina gaussovega okna[s]</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="mf">1.0</span>      <span class="c1"># Center pulza</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Osnovni signal: Gaussov impulz</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">t</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>                   
+
+<span class="c1"># Saignal pri skaliranem času a*t</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">t</span> <span class="o">-</span> <span class="n">t0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>                                                                                                                                                                                              
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$x(t)$&#39;</span><span class="p">)</span>                                                                                                                                                                                                          
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$x(a</span><span class="se">\\</span><span class="s1">,t),</span><span class="se">\\</span><span class="s1"> a=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>                                                                                                                                                                                                                 
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;x [/]&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>                                
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Časovna domena — časovna kompresija za $a&gt;1$&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Časovna domena — časovni razteg za $a&lt;1$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>                                                                                                                                                                                                                            
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">dt</span><span class="p">)</span>                                                                                                                                                                                                        
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$X(f)$&#39;</span><span class="p">)</span>                                                                                                                                                                                               
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Y</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">mathcal</span><span class="se">{{</span><span class="s1">F</span><span class="se">}}\\{{</span><span class="s1">x(at)</span><span class="se">\\}}</span><span class="s1">,</span><span class="se">\\</span><span class="s1"> a=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>                                                                                                                                                                                                                
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$|</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{F}</span><span class="s1">(x)|$ [/]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">fs</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Frekvenčna domena — razširitev spektra in zmanjšanje amplitude&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Frekvenčna domena — kompresija spektra in povečanje amplitude&#39;</span><span class="p">)</span>                                                                                                                                                       
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/3f4286a2712e7465633905ad6a8a3f6a03668046fbebe0f5c542c7a14fed1354.png" src="../_images/3f4286a2712e7465633905ad6a8a3f6a03668046fbebe0f5c542c7a14fed1354.png" />
+</div>
+</div>
+<p>Gaussov pulz je aperiodičen signal s končno energijo, zato časovna kompresija dejansko zmanjša njegovo “površino” in s tem amplitudo spektra za faktor <span class="math notranslate nohighlight">\(1/|a|\)</span>.</p>
+<p>Pri periodičnem, didskretnem  sinusnem signalu v naslendjem primeru bomo imeli z demonstracijo tega vpliva malo več težav.</p>
+</section>
+<section id="primer-2-simulacija-meritve-sinusnega-signala">
+<h3>Primer 2: Simulacija meritve sinusnega signala<a class="headerlink" href="#primer-2-simulacija-meritve-sinusnega-signala" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
@@ -738,6 +813,19 @@ LabView program za zajem lahko prenesete v obliki <a class="reference download i
 </div>
 </div>
 </div>
+<p>Za demonstracijo efekta časovnega skaliranja podobno “napako” naredimo tudi pri normiranju spektrov:</p>
+<p><em>Nevede smo merili z vzorčno frekvenco <code class="docutils literal notranslate"><span class="pre">a*fs</span></code> namesto <code class="docutils literal notranslate"><span class="pre">fs</span></code>. Rezultat bomo torej (neustrezno) normirali z <code class="docutils literal notranslate"><span class="pre">N=T/fs</span></code></em>.</p>
+<p>(Jasno je, da v praksi take napake ne bi naredili - dejanjsko število vzorcev je očitno razvidno iz pomerjenega signala. Težave s časovnim skaliranjem imamo, kadar se ga ne zavedamo - gre za hipotetičen scenarij.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">X</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">2</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">Y</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># tukaj nastane težava - dejanjska dolžina signala y je krajša od vektorja t</span>
+<span class="n">Y</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell tag_hide-input docutils container">
 <details class="admonition hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -757,7 +845,7 @@ LabView program za zajem lahko prenesete v obliki <a class="reference download i
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/65ea90ad35c58889323776d1f955e1425bfe50b7ec451aebecd92477f9dfd945.png" src="../_images/65ea90ad35c58889323776d1f955e1425bfe50b7ec451aebecd92477f9dfd945.png" />
+<img alt="../_images/d5f30263185639bc0101dcd2a0f45a40dc99f8c619f93cde11772b0869cfe9db.png" src="../_images/d5f30263185639bc0101dcd2a0f45a40dc99f8c619f93cde11772b0869cfe9db.png" />
 </div>
 </div>
 <p><strong>Korekcija časovnega skaliranja</strong></p>
@@ -800,9 +888,10 @@ LabView program za zajem lahko prenesete v obliki <a class="reference download i
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/719d6e0b7a9ee9080349b60939b299891c8f404a8dac2aafdda7cbc535323aa3.png" src="../_images/719d6e0b7a9ee9080349b60939b299891c8f404a8dac2aafdda7cbc535323aa3.png" />
+<img alt="../_images/859071fd6b55d9dbbb7fd63a230f0b6c4872c3f7d762ca73551607cf7e35f17c.png" src="../_images/859071fd6b55d9dbbb7fd63a230f0b6c4872c3f7d762ca73551607cf7e35f17c.png" />
 </div>
 </div>
+</section>
 </section>
 <section id="casovni-premik">
 <h2>Časovni premik<a class="headerlink" href="#casovni-premik" title="Link to this heading">#</a></h2>
@@ -957,7 +1046,7 @@ LabView program za zajem lahko prenesete v obliki <a class="reference download i
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe8de8cf110&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f3d806dc410&gt;
 </pre></div>
 </div>
 <img alt="../_images/b5a8f7a3335c5ecb197e7f45716c48ac3f60bac33076fa45fac822b3e8cb06d8.png" src="../_images/b5a8f7a3335c5ecb197e7f45716c48ac3f60bac33076fa45fac822b3e8cb06d8.png" />
@@ -1538,7 +1627,11 @@ x(t)*y(t) = \int_{-\infty}^{+\infty} x(\tau)\,y(t-\tau)\,\textrm{d}\tau
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga">Naloga</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearnost">Linearnost</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casovno-skaliranje">Časovno skaliranje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casovno-skaliranje">Časovno skaliranje</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-1-gaussov-impulz">Primer 1: Gaussov impulz</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-2-simulacija-meritve-sinusnega-signala">Primer 2: Simulacija meritve sinusnega signala</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#casovni-premik">Časovni premik</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#amplitudna-modulacija">Amplitudna modulacija</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#odvajanje-in-integriranje">Odvajanje in integriranje</a></li>
