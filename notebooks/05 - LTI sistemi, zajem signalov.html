@@ -437,7 +437,7 @@ document.write(`
 <ul class="simple">
 <li><p>prikaz (časovnih vrst ter amplitudnih spektrov) vseh meritev, ki ste jih opravili v skupini (pri vseh podanih točkah vzbujanja), <em>na istem grafu</em>,</p></li>
 <li><p>prikaz časovne vrste ter amplitudnega spektra vaše meritve (pri vzbujanju v točki, podani v podatkih naloge),</p></li>
-<li><p>prikaz frekvenčne prenosne funkcije v vaši izmerjeni točki (<span class="math notranslate nohighlight">\(i\)</span>), ki jo ocenite z <span class="math notranslate nohighlight">\(\alpha_i(\omega) = X_i(\omega) / F_i(\omega)\)</span>.</p></li>
+<li><p>prikaz frekvenčne prenosne funkcije v vaši izmerjeni točki (<span class="math notranslate nohighlight">\(i\)</span>), ki jo ocenite z <span class="math notranslate nohighlight">\(H_i(\omega) = X_i(\omega) / F_i(\omega)\)</span>.</p></li>
 </ul>
 <p>Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> obliki (glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
 <p><strong>Dodatek</strong>:</p>
@@ -446,15 +446,21 @@ document.write(`
 <li><p>Simulirajte in prikažite odziv nosilca <span class="math notranslate nohighlight">\(x(t)\)</span> na vzbujanje z naključnim signalom sile <span class="math notranslate nohighlight">\(f_i(t)\)</span>. Naključni vzbujevalni signal pripravite po lastni presoji, na primer z uporabo modula <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code>.</p></li>
 </ul>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Opmoba</p>
+<p><span class="math notranslate nohighlight">\(X(\omega)\)</span> in <span class="math notranslate nohighlight">\(x(t)\)</span> v tej predlogi označujeta odziv, <span class="math notranslate nohighlight">\(F(\omega)\)</span> in <span class="math notranslate nohighlight">\(f(t)\)</span> vzbujanje sistema <span class="math notranslate nohighlight">\(H(\omega)\)</span> pa frekvenčno prenosno funkcijo, brez predpostavk o merjenih fizikalnih veličinah.</p>
+<p>V našem primeru gre za merjene signale <strong>pospeška</strong> in <strong>sile</strong>, oblika izračunane frekvenčne prenosne funkcije pa je torej <strong>pospešenost</strong>.</p>
+</div>
 </section>
 <hr class="docutils" />
 <section id="frekvencna-in-impulzna-prenosna-funkcija">
 <h2>Frekvenčna in impulzna prenosna funkcija<a class="headerlink" href="#frekvencna-in-impulzna-prenosna-funkcija" title="Link to this heading">#</a></h2>
-<p>Odzivni model linearnih, časovno invariantnih (ang. <em>Linear, Time-Invariant, LTI</em>) sistemov okarakteriziramo s t. i. <strong>prenosnimi funkcijami</strong>, ki povezujejo signale odziva in vzbujanja sistema, v frekvenčni (<em>frekvenčna prenosna funkcija</em>, <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span>) oz. časovni (<em>impulzna prenosna funkcija</em>, <span class="math notranslate nohighlight">\(h(t)\)</span>) domeni.</p>
-<p><strong>Frekvenčna prenosna funkcija</strong> <span class="math notranslate nohighlight">\(\alpha(\omega)\)</span> predstavlja razmerje med (kompleksnimi) amplitudami harmonskega odziva in vzbujanja opazovanega sistema:</p>
+<p>Odzivni model linearnih, časovno invariantnih (ang. <em>Linear, Time-Invariant, LTI</em>) sistemov okarakteriziramo s t. i. <strong>prenosnimi funkcijami</strong>, ki povezujejo signale odziva in vzbujanja sistema, v frekvenčni (<em>frekvenčna prenosna funkcija</em>, <span class="math notranslate nohighlight">\(H(\omega)\)</span>) oz. časovni (<em>impulzna prenosna funkcija</em>, <span class="math notranslate nohighlight">\(h(t)\)</span>) domeni.</p>
+<p><strong>Frekvenčna prenosna funkcija</strong> <span class="math notranslate nohighlight">\(H(\omega)\)</span> predstavlja razmerje med (kompleksnimi) amplitudami harmonskega odziva in vzbujanja opazovanega sistema:</p>
 <div class="math notranslate nohighlight">
 \[
-	\alpha(\omega) = \frac{X(\omega)}{F(\omega)}
+	H(\omega) = \frac{X(\omega)}{F(\omega)}
 \]</div>
 <p><strong>Impulzna prenosna funkcija</strong> <span class="math notranslate nohighlight">\(h(t)\)</span> pa podaja odziv sistema na impulzno motnjo.</p>
 <p>Odziv na poljubno vzbujanje (signal <span class="math notranslate nohighlight">\(f(t)\)</span>) določa naslednja zveza:</p>
@@ -468,8 +474,8 @@ document.write(`
 <p>Impulzna prenosna funkcija in frekvenčna prenosna funkcija sta <strong>Fourierov par</strong>:</p>
 <div class="math notranslate nohighlight">
 \[
-	h(t)=\mathcal{F}^{-1}\{\alpha(\omega)\}\qquad\textrm{ali}\qquad%
-	\alpha(\omega)=\mathcal{F}\{h(t)\}.
+	h(t)=\mathcal{F}^{-1}\{H(\omega)\}\qquad\textrm{ali}\qquad%
+	H(\omega)=\mathcal{F}\{h(t)\}.
 \]</div>
 </div>
 </section>
