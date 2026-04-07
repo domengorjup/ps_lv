@@ -867,7 +867,7 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 \[w_e(t) = \mathrm{e}^{-t / \tau}\]</div>
 <p>Namesto parametra časovne konstante <span class="math notranslate nohighlight">\(\tau\)</span> pogosto želimo podati končno amplitudo <span class="math notranslate nohighlight">\(p\)</span> (v obliki deleža začetne amplitude), ki jo okno doseže pri času <span class="math notranslate nohighlight">\(T\)</span>. Velja:</p>
 <div class="math notranslate nohighlight">
-\[\tau = \frac{T}{\log(p)}\]</div>
+\[\tau = -\frac{T}{\log(p)}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="c1"># 1 %</span>
@@ -915,14 +915,14 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 <span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;F [N]&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;a [m/s$^2$]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;x [m]&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/92cd72dee690ff21d52077530b1def96e0fb15d64ab123d9e72b183c103098f0.png" src="../_images/92cd72dee690ff21d52077530b1def96e0fb15d64ab123d9e72b183c103098f0.png" />
+<img alt="../_images/30c66794e720cb5a23b2785bce196f8b1b8f375bda25cbcd173d91f925aaebf4.png" src="../_images/30c66794e720cb5a23b2785bce196f8b1b8f375bda25cbcd173d91f925aaebf4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -942,14 +942,14 @@ Na podlagi pripravljenih FPF pri različnih točkah nosilca ocenite prvo lastno 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_primer</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|H(f)|$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|X(f)|$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/e9870353dec50d3c5345f3ef3cdd319d5a2dd575fd7b023e490ff3b2f2cbb362.png" src="../_images/e9870353dec50d3c5345f3ef3cdd319d5a2dd575fd7b023e490ff3b2f2cbb362.png" />
+<img alt="../_images/cb03b41b9a38cbcc6312196dd150df2595d4e4ca97f66a11a8b5906f8429545d.png" src="../_images/cb03b41b9a38cbcc6312196dd150df2595d4e4ca97f66a11a8b5906f8429545d.png" />
 </div>
 </div>
 <p>Ker v opazovanem časovnem oknu nismo zajeli popolnoma periodičnega signala, v amplitudnem spektru opazimo pojav <em>frekvenčnega odtekanja</em> (ang. <a class="reference external" href="https://en.wikipedia.org/wiki/Spectral_leakage"><em>Spectral Leakage</em></a>).</p>
