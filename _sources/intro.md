@@ -122,7 +122,9 @@ Seminar se ocenjuje po naslednjih kriterijih z utežmi:
 
 V primeru, da se za seminar ne odločite, se pri izračunu končne ocene sodelovanja na vajah upošteva ocena $SN=0 %$.
 
-V tednu, ko zagovarjate individualni seminar **z oceno vsaj 80%**, ta šteje tudi kot opravljena domača naloge. Namesto poročila domače naloge ta teden oddate samo PDF dokument s pojasnilom, da ste opravili individualni seminar.
+**Domača naloga**
+
+V tednu, ko zagovarjate individualni seminar **z oceno vsaj 80%**, ta šteje tudi kot opravljena domača naloga. Namesto poročila domače naloge ta teden oddate samo PDF dokument s pojasnilom, da ste opravili individualni seminar.
 ```
 
 
