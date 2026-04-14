@@ -683,7 +683,10 @@ X_s(f)=X_s(f+r \, f_s), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
     <span class="n">x2</span><span class="p">[</span><span class="n">x</span><span class="o">&gt;=</span><span class="n">hi</span><span class="p">]</span> <span class="o">=</span> <span class="n">hi</span>
     <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">bits</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">qnt</span> <span class="o">=</span> <span class="n">lo</span> <span class="o">+</span> <span class="n">delta</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="n">x2</span> <span class="o">-</span> <span class="n">lo</span><span class="p">)</span> <span class="o">/</span> <span class="n">delta</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">qnt</span>
+
+    <span class="n">levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">qnt</span><span class="p">)</span> <span class="o">-</span> <span class="n">delta</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">qnt</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">delta</span><span class="p">,</span> <span class="n">delta</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">qnt</span><span class="p">,</span> <span class="n">levels</span>
 </pre></div>
 </div>
 </div>
@@ -691,7 +694,7 @@ X_s(f)=X_s(f+r \, f_s), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 <p>Kvantiziran signal</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_kvantiziran</span> <span class="o">=</span> <span class="n">kvantizacija</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">adc_range</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_kvantiziran</span><span class="p">,</span> <span class="n">nivoji</span> <span class="o">=</span> <span class="n">kvantizacija</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">adc_range</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -713,7 +716,12 @@ X_s(f)=X_s(f+r \, f_s), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;x(t)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_šum</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;šum&#39;</span><span class="p">)</span>
+
+<span class="c1"># Prikaz nove kvantizacije</span>
+<span class="k">for</span> <span class="n">nivo</span> <span class="ow">in</span> <span class="n">nivoji</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">nivo</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_kvantiziran</span><span class="p">,</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;nova kvantizacija&#39;</span><span class="p">)</span>
+
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x(t)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
@@ -722,7 +730,7 @@ X_s(f)=X_s(f+r \, f_s), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/122ad5cb383f5463a5e62d84b5038785658c925ec716a54a4b1fe322736141a7.png" src="../_images/122ad5cb383f5463a5e62d84b5038785658c925ec716a54a4b1fe322736141a7.png" />
+<img alt="../_images/c892a04a36416804182fcb95d7b99e510997b7ac2b1572ea61ba6ba330cc249c.png" src="../_images/c892a04a36416804182fcb95d7b99e510997b7ac2b1572ea61ba6ba330cc249c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -754,7 +762,7 @@ X_s(f)=X_s(f+r \, f_s), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/7fa69fcfa825aae7931276476e71132c81d4750497a795ea0258a13dc068e474.png" src="../_images/7fa69fcfa825aae7931276476e71132c81d4750497a795ea0258a13dc068e474.png" />
+<img alt="../_images/ce26610d19be4d9a244401fa9f11b5ce3ba813428017cdcd6b95414e8cc760a9.png" src="../_images/ce26610d19be4d9a244401fa9f11b5ce3ba813428017cdcd6b95414e8cc760a9.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -775,7 +783,7 @@ X_s(f)=X_s(f+r \, f_s), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/51909782e2da0acdea56ce803e24930c0c1615d4fca9db4b53aca0ca6fd9a5a4.png" src="../_images/51909782e2da0acdea56ce803e24930c0c1615d4fca9db4b53aca0ca6fd9a5a4.png" />
+<img alt="../_images/a5e11522fb3965ab04644e5542b19fdb6d785b7b5f7aac3f5abc909d6f88e6f6.png" src="../_images/a5e11522fb3965ab04644e5542b19fdb6d785b7b5f7aac3f5abc909d6f88e6f6.png" />
 </div>
 </div>
 </section>
