@@ -64,7 +64,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Naključno vzbujanje - zajem signalov" href="09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.html" />
-    <link rel="prev" title="Enakomerno časovno vzorčenje in frekvenčno prekrivanje" href="07%20-%20Enakomerno%20%C4%8Dasovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html" />
+    <link rel="prev" title="Enakomerno časovno vzorčenje in kvantizacija" href="07%20-%20Enakomerno%20%C4%8Dasovno%20vzor%C4%8Denje%20in%20kvantizacija.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,7 +190,7 @@
 <li class="toctree-l1"><a class="reference internal" href="04%20-%20Lastnosti%20Fourierove%20transformacije.html">Lastnosti Fourierove transformacije</a></li>
 <li class="toctree-l1"><a class="reference internal" href="05%20-%20LTI%20sistemi%2C%20zajem%20signalov.html">Linearni, časovno invariantni (LTI) sistemi - zajem signalov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="06%20-%20LTI%20sistemi%202%2C%20prenosne%20funkcije.html">Linearni, časovno invariantni (LTI) sistemi 2 - prenosne funkcije</a></li>
-<li class="toctree-l1"><a class="reference internal" href="07%20-%20Enakomerno%20%C4%8Dasovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html">Enakomerno časovno vzorčenje in frekvenčno prekrivanje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07%20-%20Enakomerno%20%C4%8Dasovno%20vzor%C4%8Denje%20in%20kvantizacija.html">Enakomerno časovno vzorčenje in kvantizacija</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">DFT in osnove naključnih procesov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.html">Naključno vzbujanje - zajem signalov</a></li>
 <li class="toctree-l1"><a class="reference internal" href="10%20-%20Naklju%C4%8Dno%20vzbujanje%202%2C%20prenosne%20funkcije.html">Naključno vzbujanje - ocena frekvenčnih prenosnih funkcij</a></li>
@@ -550,7 +550,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(4.796163466380677e-16)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(-6.181721801112871e-16)
 </pre></div>
 </div>
 </div>
@@ -563,7 +563,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(3.8997668767830813)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(4.390680792692079)
 </pre></div>
 </div>
 </div>
@@ -596,7 +596,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8a979f3359d985429353838ce11eef87d608a2c3cfa33ea4ee322272569cc064.png" src="../_images/8a979f3359d985429353838ce11eef87d608a2c3cfa33ea4ee322272569cc064.png" />
+<img alt="../_images/4d101541d3f98e4ef9c6a857d46ea9b7e4ddeeb4de633fd090668b4c9c61b2e6.png" src="../_images/4d101541d3f98e4ef9c6a857d46ea9b7e4ddeeb4de633fd090668b4c9c61b2e6.png" />
 </div>
 </div>
 <p>Porazdelitev verjetnosti ni nujno normalna (Gaussova):</p>
@@ -625,7 +625,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/6018aec486c8166765d0e1bb4a8d90ce0d8d1f26dfb011c24f65e59637c290ca.png" src="../_images/6018aec486c8166765d0e1bb4a8d90ce0d8d1f26dfb011c24f65e59637c290ca.png" />
+<img alt="../_images/5a1b1969867e11bf58bcc15688cc545b7a5eda89525a3165b0a425954856da92.png" src="../_images/5a1b1969867e11bf58bcc15688cc545b7a5eda89525a3165b0a425954856da92.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -649,7 +649,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/1ea3c7d592eae361dc6147130865e5fabdec6adf9d64a373aa1a2988734650b3.png" src="../_images/1ea3c7d592eae361dc6147130865e5fabdec6adf9d64a373aa1a2988734650b3.png" />
+<img alt="../_images/aa81cce86494925c14d6226f2eafec28eb8fa79fab237f9b34606c90e551d932.png" src="../_images/aa81cce86494925c14d6226f2eafec28eb8fa79fab237f9b34606c90e551d932.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -699,7 +699,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/6c0090a831f25739c30e5b6ae8c617d5fd7fd471ec3771a92ee920621319caea.png" src="../_images/6c0090a831f25739c30e5b6ae8c617d5fd7fd471ec3771a92ee920621319caea.png" />
+<img alt="../_images/debfc6d6b404e067fab03bbde76bf09f18b8ef9bdcb784cb3b12fdb7baa677d5.png" src="../_images/debfc6d6b404e067fab03bbde76bf09f18b8ef9bdcb784cb3b12fdb7baa677d5.png" />
 </div>
 </div>
 <p><strong>Srednja vrednost in varianca pri vsakem časovnem trenutku procesa (izračunana po osi realizacij):</strong></p>
@@ -733,7 +733,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/29f0a7575b9afca54df436b65cf87eb2b65e3ea87ade1bb499ba9a3f8c6eca35.png" src="../_images/29f0a7575b9afca54df436b65cf87eb2b65e3ea87ade1bb499ba9a3f8c6eca35.png" />
+<img alt="../_images/3a0c0009a117c69360bbaf5c1764bd21aab18dbcfe17a1ee60893bb8de4ec9be.png" src="../_images/3a0c0009a117c69360bbaf5c1764bd21aab18dbcfe17a1ee60893bb8de4ec9be.png" />
 </div>
 </div>
 <p>Ker se srednja vrednost in varianca naključnih realizacij v isti točki procesa s časom ne spreminjata, lahko sklepamo, da gre za <strong>stacionaren</strong> proces.</p>
@@ -768,7 +768,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/d7dd6ed70bdc6d6e6fd58e1c4c98697303bcf3fe1c3c03e5ed550ac024e9109d.png" src="../_images/d7dd6ed70bdc6d6e6fd58e1c4c98697303bcf3fe1c3c03e5ed550ac024e9109d.png" />
+<img alt="../_images/b54b019a6be08189a80acd846a5a8151a1415222b947b49318e4cbc450fb9f9a.png" src="../_images/b54b019a6be08189a80acd846a5a8151a1415222b947b49318e4cbc450fb9f9a.png" />
 </div>
 </div>
 <p>Ker se srednja vrednost in varianca naključnega procesa <span class="math notranslate nohighlight">\(x(t)\)</span> pri večkratni realizaciji ne spreminjata, in sta enaki <span class="math notranslate nohighlight">\(\mu_x(t)\)</span> in <span class="math notranslate nohighlight">\(\sigma^2_x(t)\)</span> pri posameznem času, lahko sklepamo, da gre za <strong>ergodičen</strong> proces.</p>
@@ -830,7 +830,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/88b13f7b2872487571665d6ba98c499a4f7ace2b04073ab176461ac6f66dce45.png" src="../_images/88b13f7b2872487571665d6ba98c499a4f7ace2b04073ab176461ac6f66dce45.png" />
+<img alt="../_images/ff3d12af92a6008753fec37a4fe617652d69749a52a2b1d8b23ea8f181e656ce.png" src="../_images/ff3d12af92a6008753fec37a4fe617652d69749a52a2b1d8b23ea8f181e656ce.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -855,7 +855,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/8489baf186ddc3ee46f00f331972f53b44086e2012e9a60c7ac8862dd1673bf2.png" src="../_images/8489baf186ddc3ee46f00f331972f53b44086e2012e9a60c7ac8862dd1673bf2.png" />
+<img alt="../_images/1d32c1066bbda617bd2677955567f0d211dd49eee6ec6e0110457e07a80e0362.png" src="../_images/1d32c1066bbda617bd2677955567f0d211dd49eee6ec6e0110457e07a80e0362.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -896,7 +896,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/378dedaf86badefdbda64b1bad18e801610f64e131e19ce2668de8c6860bb569.png" src="../_images/378dedaf86badefdbda64b1bad18e801610f64e131e19ce2668de8c6860bb569.png" />
+<img alt="../_images/920550d8567ac24f982e7979854861e812b4061f24b868bd4b55ce878a70fe54.png" src="../_images/920550d8567ac24f982e7979854861e812b4061f24b868bd4b55ce878a70fe54.png" />
 </div>
 </div>
 <p>Parsevalov teorem:</p>
@@ -956,12 +956,12 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="07%20-%20Enakomerno%20%C4%8Dasovno%20vzor%C4%8Denje%20in%20frekven%C4%8Dno%20prekrivanje.html"
+       href="07%20-%20Enakomerno%20%C4%8Dasovno%20vzor%C4%8Denje%20in%20kvantizacija.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Enakomerno časovno vzorčenje in frekvenčno prekrivanje</p>
+        <p class="prev-next-title">Enakomerno časovno vzorčenje in kvantizacija</p>
       </div>
     </a>
     <a class="right-next"

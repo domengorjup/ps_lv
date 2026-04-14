@@ -1,0 +1,914 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Enakomerno časovno vzorčenje in kvantizacija &#8212; Procesiranje signalov - Laboratorijske vaje</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/07 - Enakomerno časovno vzorčenje in kvantizacija';</script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="DFT in osnove naključnih procesov" href="08%20-%20DFT%20in%20osnove%20naklju%C4%8Dnih%20procesov.html" />
+    <link rel="prev" title="Linearni, časovno invariantni (LTI) sistemi 2 - prenosne funkcije" href="06%20-%20LTI%20sistemi%202%2C%20prenosne%20funkcije.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/lv_logo.png" class="logo__image only-light" alt="Procesiranje signalov - Laboratorijske vaje - Home"/>
+    <script>document.write(`<img src="../_static/lv_logo.png" class="logo__image only-dark" alt="Procesiranje signalov - Laboratorijske vaje - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Procesiranje signalov
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Predloge laboratorijskih vaj</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01%20-%20Uvod%20v%20LabView.html">Uvod v LabView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02%20-%20LabView%20in%20Arduino%2C%20Python.html">LabView in Arduino, Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03%20-%20Fourierova%20integralska%20transformacija.html">Fourierova integralska transformacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04%20-%20Lastnosti%20Fourierove%20transformacije.html">Lastnosti Fourierove transformacije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05%20-%20LTI%20sistemi%2C%20zajem%20signalov.html">Linearni, časovno invariantni (LTI) sistemi - zajem signalov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06%20-%20LTI%20sistemi%202%2C%20prenosne%20funkcije.html">Linearni, časovno invariantni (LTI) sistemi 2 - prenosne funkcije</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Enakomerno časovno vzorčenje in kvantizacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08%20-%20DFT%20in%20osnove%20naklju%C4%8Dnih%20procesov.html">DFT in osnove naključnih procesov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.html">Naključno vzbujanje - zajem signalov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10%20-%20Naklju%C4%8Dno%20vzbujanje%202%2C%20prenosne%20funkcije.html">Naključno vzbujanje - ocena frekvenčnih prenosnih funkcij</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">O zbirki predlog</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Procesiranje signalov</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/domengorjup/ps_lv" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/domengorjup/ps_lv/issues/new?title=Issue%20on%20page%20%2Fnotebooks/07 - Enakomerno časovno vzorčenje in kvantizacija.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/07 - Enakomerno časovno vzorčenje in kvantizacija.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Enakomerno časovno vzorčenje in kvantizacija</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga">Naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diskretizacija-signalov">Diskretizacija signalov</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enakomerno-casovno-vzorcenje">Enakomerno časovno vzorčenje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frekvencno-prekrivanje-aliasing">Frekvenčno prekrivanje (<em>aliasing</em>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nyquistova-frekvenca">Nyquistova frekvenca</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtriranje-za-odpravo-frekvencnega-prekrivanja">Filtriranje za odpravo frekvenčnega prekrivanja</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kvantizacija">Kvantizacija</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="enakomerno-casovno-vzorcenje-in-kvantizacija">
+<h1>Enakomerno časovno vzorčenje in kvantizacija<a class="headerlink" href="#enakomerno-casovno-vzorcenje-in-kvantizacija" title="Link to this heading">#</a></h1>
+<p>Pri procesiranju merjenih podatkov imamo opravka z diskretno vzorčenimi signali. Pomembno se je zavedati lastnosti procesa diskretizacije sicer zveznih časovnih signalov, katerega osnove si bomo pogledali na tej vaji.</p>
+<section id="naloga">
+<h2>Naloga<a class="headerlink" href="#naloga" title="Link to this heading">#</a></h2>
+<div class="warning admonition">
+<p class="admonition-title">Domača naloga</p>
+<p>Z uporabo generatorja signalov in zajemnega sistema Arduino pripravite signal(e), s katerim boste demonstrirali v podatkih določeno lastnost diskretizacije signalov (<strong>frekvenčno nalaganje zaradi neustreznega vzorčenja</strong> ali <strong>napako zaradi kvantizacije</strong> signala). Pri generiranju in zajemu signalov uporabite v podatkih predpisane parametre, manjkajoče parametre pa določite v skladu s predpisano lastnostjo diskretizacije.</p>
+<p><strong>Dodatek</strong>: Signal(e) pripravite tako, da boste lahko prikazali tudi drugo od obravnavanih lastnosti diskretizacije (<em>časovno vzorčenje</em> oz. <em>kvantizacija</em>). Tudi to na kratko komentirajte.</p>
+<p>LabView program za zajem signalov lahko prenesete v obliki <a class="reference download internal" download="" href="../_downloads/fe35982e9ec10d562dca252f2f56a11d/labview_zajem.zip"><code class="xref download docutils literal notranslate"><span class="pre">zip</span> <span class="pre">arhiva</span></code></a>.</p>
+<p><em>Da bo delo na generatorju signalov potekalo čimbolj učinkovito, lahko izbrane parametre signala in zajema najprej preizkusite z numerično simulacijo. Pomagajte si s primeri v tej predlogi in modulom <code class="docutils literal notranslate"><span class="pre">scipy.signal</span></code>.</em></p>
+<p>Pripravite kratko poročilo <em>(obseg od 3 do 10 celic s kodo v okolju Jupyter Notebook)</em>, iz katerega naj bodo razvidni podatki naloge (iz tabele), ter da ste vse parametre in zahteve naloge naloge tudi upoštevali. Prikažite vpliv določene lastnosti diskretizacije s kratkimi komentarji, podprtimi s teoretičnimi izhodišči.</p>
+<p>Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> obliki (glejte <a class="reference internal" href="../intro.html#intro-domace-naloge"><span class="std std-ref">navodila za oddajo domačih nalog</span></a>).</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="diskretizacija-signalov">
+<h2>Diskretizacija signalov<a class="headerlink" href="#diskretizacija-signalov" title="Link to this heading">#</a></h2>
+<p>Diskretizacija je postopek, pri katerem v času zvezno spremenljivko pretvorimo v diskretne vrednosti, primerne za predstavitev v računalniškem pomnilniku. Sestavljata jo dva ločena procesa, <strong>vzorčenje</strong> in <strong>kvantizacija</strong>.</p>
+<section id="enakomerno-casovno-vzorcenje">
+<h3>Enakomerno časovno vzorčenje<a class="headerlink" href="#enakomerno-casovno-vzorcenje" title="Link to this heading">#</a></h3>
+<p>Vzorčenje je postopek diskretizacije <em>neodvisne spremenljivke</em> (časa) zveznega procesa.</p>
+<p>Glavni parameter časovnega vzorčenja je <strong>interval (perioda) vzorčenja</strong>, <span class="math notranslate nohighlight">\(\Delta t\)</span>, ki definira <strong>frekvenco vzorčenja</strong>, <span class="math notranslate nohighlight">\(f_s = 1 / \Delta t\)</span>.</p>
+<p>Zvezni časovni signal tako vzorčimo pri diskretnih vrednostih časa <span class="math notranslate nohighlight">\(n \, \Delta t\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Spomnimo se: <strong>Fourierova transformacija</strong> signala <span class="math notranslate nohighlight">\(x(t)\)</span>, vzorčenega s periodo <span class="math notranslate nohighlight">\(\Delta t\)</span> je definirana kot vsota:</p>
+<div class="math notranslate nohighlight">
+\[
+X_s(f)=\sum_{n=-\infty}^{+\infty}\,x(n\,\Delta t)\,e^{-\textrm{i}\,2\pi\,f\,n\,\Delta t}
+\]</div>
+<p>in je v <em>frekvenčni domeni</em> periodična s frekvenco <span class="math notranslate nohighlight">\(f_s\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+X_s(f)=X_s(f+r \, f_s), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
+\]</div>
+</div>
+</section>
+<section id="frekvencno-prekrivanje-aliasing">
+<h3>Frekvenčno prekrivanje (<em>aliasing</em>)<a class="headerlink" href="#frekvencno-prekrivanje-aliasing" title="Link to this heading">#</a></h3>
+<p>Posledica periodičnosti Fourierove transformacije diskretnega signala je, da so frekvenčne komponente signala, višje od <span class="math notranslate nohighlight">\(f_s/2\)</span>, zrcaljene preko meje <span class="math notranslate nohighlight">\(f_s/2\)</span> in povzročajo t. i. <strong>frekvenčno prekrivanje</strong>. To povzroča anomalije v diskretno vzorčenem signalu.</p>
+</section>
+<section id="nyquistova-frekvenca">
+<h3>Nyquistova frekvenca<a class="headerlink" href="#nyquistova-frekvenca" title="Link to this heading">#</a></h3>
+<p>Frekvenca <span class="math notranslate nohighlight">\(f_N = f_s / 2\)</span> je torej najvišja frekvenca v diskretiziranem signalu, ki jo pri izbrani <span class="math notranslate nohighlight">\(f_s\)</span> še lahko ustrezno predstavimo. Imenujemo jo tudi <strong>Nyquistova frekvenca</strong>.</p>
+<p>Z izbiro hitrosti merjenja <span class="math notranslate nohighlight">\(\Delta t = 1 / f_s\)</span> torej določimo frekvenčno območje <span class="math notranslate nohighlight">\([0, f_s / 2]\)</span>, ki ga v izmerjenem signalu lahko opazujemo.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pojav frekvenčnega prekrivanja je zanimivo opazovati na primeru digitalnih slik, kjer je neodvisna spremenljivka razdalja (višina, širina slike) in govorimo o <em>prostorski frekvenci</em> <span class="math notranslate nohighlight">\(\upsilon\)</span>.</p>
+<p><img alt="image-aliasing" src="../_images/image_aliasing.png" /></p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Naloga 1 (10 minut)</p>
+<p>Za primer signala:</p>
+<p><span class="math notranslate nohighlight">\(x(t) = X_1 \, \sin(2\pi \, f_1 \, t) + X_2 \, \cos(2\pi \, f_2 \, t)\)</span></p>
+<p>simulirajte vzorčenje z vzorčno frekvenco <span class="math notranslate nohighlight">\(f_s\)</span>, nato pa še z vzorčno frekvenco <span class="math notranslate nohighlight">\(f_s / 2\)</span>.</p>
+<p>Prikažite obe časovni vrsti, s pomočjo izrisa amplitudnih spektrov obeh signalov pa komentirajte pojav frekvenčnega prekrivanja.</p>
+<p>Podatki:</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">f_1</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">f_2</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">X_1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">X_2</span> <span class="o">=</span> <span class="mf">1.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/f52df28b29499e463f1c9220fa48efd91305e9f6eed8163baeca19d3479c67ff.png" src="../_images/f52df28b29499e463f1c9220fa48efd91305e9f6eed8163baeca19d3479c67ff.png" />
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_hide-input tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/748181407395f73dfbd60d604219032b80882419374ebdb23dc6aab5f62c2e64.png" src="../_images/748181407395f73dfbd60d604219032b80882419374ebdb23dc6aab5f62c2e64.png" />
+</div>
+</div>
+<section id="filtriranje-za-odpravo-frekvencnega-prekrivanja">
+<h4>Filtriranje za odpravo frekvenčnega prekrivanja<a class="headerlink" href="#filtriranje-za-odpravo-frekvencnega-prekrivanja" title="Link to this heading">#</a></h4>
+<p>Frekvenčno prekrivanje merjenega signala lahko preprečimo z uporabo nizkopasovnega filtriranja (ang. <em>anti-aliasing filter</em>), ki mora biti izvedeno <em>pred časovnim vzorčenjem signala</em>.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Naloga 2 (10 minut)</p>
+<p>Na zgornjem primeru signala <span class="math notranslate nohighlight">\(x(t)\)</span> prikažimo uporabo <em>anti-aliasing</em> filtriranja z uporabo <code class="docutils literal notranslate"><span class="pre">scipy.signal</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Priprava digitalnega nizkoprepustnega filtra:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_cutoff</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">sos</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">butter</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">f_cutoff</span><span class="p">,</span> <span class="s1">&#39;low&#39;</span><span class="p">,</span> <span class="n">analog</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="s1">&#39;sos&#39;</span><span class="p">)</span>
+<span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">sosfreqz</span><span class="p">(</span><span class="n">sos</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="n">whole</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="mi">20</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">h</span><span class="p">)),</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">f_cutoff</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;h(f) [dB]&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;X(f)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/393251584dc84adffc5e49d68f9c5a70748c00133e4f895d08267a6e010b2157.png" src="../_images/393251584dc84adffc5e49d68f9c5a70748c00133e4f895d08267a6e010b2157.png" />
+</div>
+</div>
+<p>Filtriranje signala</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_filtered</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">sosfiltfilt</span><span class="p">(</span><span class="n">sos</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">x_f_2</span> <span class="o">=</span> <span class="n">x_filtered</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x_filtered</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_filtered</span><span class="p">)</span>
+<span class="n">X_f</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">*=</span> <span class="mi">2</span>
+
+<span class="n">X_f_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x_f_2</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_f_2</span><span class="p">)</span>
+<span class="n">X_f_2</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">*=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="mi">20</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">h</span><span class="p">)),</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">f_cutoff</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f_s$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_f</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f_s, filter$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_f_2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$f_s/2, filter$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">fs_2</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;h(f) [dB]&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;X(f)&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/01f107a346a153e86600ec0adb684faa49c0e30fbb507bf6ab80fb7dc2603858.png" src="../_images/01f107a346a153e86600ec0adb684faa49c0e30fbb507bf6ab80fb7dc2603858.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="kvantizacija">
+<h3>Kvantizacija<a class="headerlink" href="#kvantizacija" title="Link to this heading">#</a></h3>
+<p>Kvantizacija je postopek diskretizacije <em>odvisne spremenljivke</em> zveznega procesa <span class="math notranslate nohighlight">\(x(t)\)</span>.</p>
+<p>Glavni parameter časovnega vzorčenja je <strong>število diskretnih nivojev</strong>, ki jih odvisna spremenljivka pri procesu kvantizacije lahko zavzame, ki določa <strong>dinamični razpon</strong> (globino) procesa. Običajno je podano s <strong>številom bitov</strong> <span class="math notranslate nohighlight">\(b\)</span> AD pretvornika. Prav tako je pri tem pomembno območje kvantizacije <span class="math notranslate nohighlight">\(A = x_{\text{max}} - x_{\text{min}}\)</span>, ki določa interval možnih vrednosti neodvisne spremenljivke <span class="math notranslate nohighlight">\(x \in [x_{\text{min}}, x_{\text{max}}]\)</span>.</p>
+<p>Število diskretnih vrednosti kvantiziranega signala je:</p>
+<div class="math notranslate nohighlight">
+\[N = 2^b\]</div>
+<p><strong>Napako kvantizacije</strong> lahko modeliramo kot naključni šum normalne porazdelitve s standardno deviacijo:</p>
+<div class="math notranslate nohighlight">
+\[\sigma_e = \frac{A/2^b}{\sqrt{12}}\]</div>
+<p><em>Dinamični razpon</em> meritve je določen z razmerjem med koristnim signalom in šumom (napako kvantizacije), <em>SNR</em> (<em>Signal-Nosie Ratio</em>):</p>
+<div class="math notranslate nohighlight">
+\[SNR = 10 \, \log_{10} \, \frac{\sigma_x^2}{\sigma_e^2} = 20 \, \log_{10} \, \frac{\sigma_x}{\sigma_e} \approx 6\,b - 1.25 dB \]</div>
+<p>(ob predpostavki <span class="math notranslate nohighlight">\(\sigma_x = A/4\)</span>, da ne dosežemo mej dovoljenega intervala neodvisne spremenljivke).</p>
+<div class="seealso admonition">
+<p class="admonition-title">Naloga 3 (10 minut)</p>
+<p>Na primeru signala <span class="math notranslate nohighlight">\(x(t)\)</span> iz naloge 1 simulirajmo vpliv kvantizacije signala s parametri:</p>
+<p><span class="math notranslate nohighlight">\(x \in [-20, 20]\\\)</span>
+<span class="math notranslate nohighlight">\(b = 6\)</span></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">adc_range</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">adc_range</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">adc_range</span><span class="p">)</span> 
+<span class="n">b</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">std_e</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span><span class="o">/</span><span class="mi">2</span><span class="o">**</span><span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">std_x</span> <span class="o">=</span> <span class="n">A</span><span class="o">/</span><span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SN</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">std_x</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">std_e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">SN</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(34.874212113594744)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span><span class="o">*</span><span class="n">b</span> <span class="o">-</span> <span class="mf">1.25</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34.75
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kvantizacija</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">bits</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">adc_range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Kvantizacija signala `x` z izbranimi parametri (s predavanj).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">x2</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span> <span class="o">=</span> <span class="n">adc_range</span>
+    <span class="n">x2</span><span class="p">[</span><span class="n">x</span><span class="o">&lt;=</span><span class="n">lo</span><span class="p">]</span> <span class="o">=</span> <span class="n">lo</span>
+    <span class="n">x2</span><span class="p">[</span><span class="n">x</span><span class="o">&gt;=</span><span class="n">hi</span><span class="p">]</span> <span class="o">=</span> <span class="n">hi</span>
+    <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">bits</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">qnt</span> <span class="o">=</span> <span class="n">lo</span> <span class="o">+</span> <span class="n">delta</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="n">x2</span> <span class="o">-</span> <span class="n">lo</span><span class="p">)</span> <span class="o">/</span> <span class="n">delta</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">qnt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kvantiziran signal</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_kvantiziran</span> <span class="o">=</span> <span class="n">kvantizacija</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">adc_range</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Signal s šumom</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_šum</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">*</span><span class="n">std_e</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;x(t)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_šum</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;šum&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_kvantiziran</span><span class="p">,</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;nova kvantizacija&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x(t)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/122ad5cb383f5463a5e62d84b5038785658c925ec716a54a4b1fe322736141a7.png" src="../_images/122ad5cb383f5463a5e62d84b5038785658c925ec716a54a4b1fe322736141a7.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x_kvantiziran</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_kvantiziran</span><span class="p">)</span> 
+<span class="n">X_k</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">*=</span> <span class="mi">2</span>
+
+<span class="n">X_šum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x_šum</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_šum</span><span class="p">)</span> 
+<span class="n">X_šum</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">*=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X(f)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_šum</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;šum&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_k</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;nova kvantizacija&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;X(f)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/7fa69fcfa825aae7931276476e71132c81d4750497a795ea0258a13dc068e474.png" src="../_images/7fa69fcfa825aae7931276476e71132c81d4750497a795ea0258a13dc068e474.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X(f)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_šum</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;šum&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_k</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;nova kvantizacija&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;X(f)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/51909782e2da0acdea56ce803e24930c0c1615d4fca9db4b53aca0ca6fd9a5a4.png" src="../_images/51909782e2da0acdea56ce803e24930c0c1615d4fca9db4b53aca0ca6fd9a5a4.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="06%20-%20LTI%20sistemi%202%2C%20prenosne%20funkcije.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Linearni, časovno invariantni (LTI) sistemi 2 - prenosne funkcije</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="08%20-%20DFT%20in%20osnove%20naklju%C4%8Dnih%20procesov.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">DFT in osnove naključnih procesov</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naloga">Naloga</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diskretizacija-signalov">Diskretizacija signalov</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enakomerno-casovno-vzorcenje">Enakomerno časovno vzorčenje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frekvencno-prekrivanje-aliasing">Frekvenčno prekrivanje (<em>aliasing</em>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nyquistova-frekvenca">Nyquistova frekvenca</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtriranje-za-odpravo-frekvencnega-prekrivanja">Filtriranje za odpravo frekvenčnega prekrivanja</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kvantizacija">Kvantizacija</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Domen Gorjup
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
