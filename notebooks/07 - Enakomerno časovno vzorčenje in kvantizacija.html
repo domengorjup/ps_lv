@@ -398,7 +398,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enakomerno-casovno-vzorcenje">Enakomerno časovno vzorčenje</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frekvencno-prekrivanje-aliasing">Frekvenčno prekrivanje (<em>aliasing</em>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nyquistova-frekvenca">Nyquistova frekvenca</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtriranje-za-odpravo-frekvencnega-prekrivanja">Filtriranje za odpravo frekvenčnega prekrivanja</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtriranje-za-odpravo-frekvencnega-nalaganja">Filtriranje za odpravo frekvenčnega nalaganja</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kvantizacija">Kvantizacija</a></li>
@@ -490,9 +490,9 @@ X_s(f)=X_s(f+r \, f_s), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">f_1</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">f_2</span> <span class="o">=</span> <span class="mi">30</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fs</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># Hz</span>
+<span class="n">f_1</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># Hz</span>
+<span class="n">f_2</span> <span class="o">=</span> <span class="mi">30</span> <span class="c1"># Hz</span>
 <span class="n">X_1</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">X_2</span> <span class="o">=</span> <span class="mf">1.5</span>
 </pre></div>
@@ -501,11 +501,19 @@ X_s(f)=X_s(f+r \, f_s), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">dt</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">x_c</span> <span class="o">=</span> <span class="n">X_1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f_1</span><span class="o">*</span><span class="n">t_c</span> <span class="p">)</span> <span class="o">+</span> <span class="n">X_2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f_2</span><span class="o">*</span><span class="n">t_c</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell tag_remove-input docutils container">
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/f52df28b29499e463f1c9220fa48efd91305e9f6eed8163baeca19d3479c67ff.png" src="../_images/f52df28b29499e463f1c9220fa48efd91305e9f6eed8163baeca19d3479c67ff.png" />
+<img alt="../_images/dfcff757bbecfbf3c4c54f0f3b94455e378b789f13bec22fe87d6bc260a869fa.png" src="../_images/dfcff757bbecfbf3c4c54f0f3b94455e378b789f13bec22fe87d6bc260a869fa.png" />
 </div>
 </div>
 <div class="cell tag_remove-input docutils container">
@@ -514,12 +522,12 @@ X_s(f)=X_s(f+r \, f_s), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 </div>
 <div class="cell tag_hide-input tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/748181407395f73dfbd60d604219032b80882419374ebdb23dc6aab5f62c2e64.png" src="../_images/748181407395f73dfbd60d604219032b80882419374ebdb23dc6aab5f62c2e64.png" />
+<img alt="../_images/0a8e2d20a8db46a2d7c67adfc5b46e9e9446a1e68acc3ea11003a50f55ba5223.png" src="../_images/0a8e2d20a8db46a2d7c67adfc5b46e9e9446a1e68acc3ea11003a50f55ba5223.png" />
 </div>
 </div>
-<section id="filtriranje-za-odpravo-frekvencnega-prekrivanja">
-<h4>Filtriranje za odpravo frekvenčnega prekrivanja<a class="headerlink" href="#filtriranje-za-odpravo-frekvencnega-prekrivanja" title="Link to this heading">#</a></h4>
-<p>Frekvenčno prekrivanje merjenega signala lahko preprečimo z uporabo nizkopasovnega filtriranja (ang. <em>anti-aliasing filter</em>), ki mora biti izvedeno <em>pred časovnim vzorčenjem signala</em>.</p>
+<section id="filtriranje-za-odpravo-frekvencnega-nalaganja">
+<h4>Filtriranje za odpravo frekvenčnega nalaganja<a class="headerlink" href="#filtriranje-za-odpravo-frekvencnega-nalaganja" title="Link to this heading">#</a></h4>
+<p>Frekvenčno nalaganje merjenega signala lahko preprečimo z uporabo nizkopasovnega filtriranja (ang. <em>anti-aliasing filter</em>), ki mora biti izvedeno <em>pred časovnim vzorčenjem signala</em>.</p>
 <div class="seealso admonition">
 <p class="admonition-title">Naloga 2 (10 minut)</p>
 <p>Na zgornjem primeru signala <span class="math notranslate nohighlight">\(x(t)\)</span> prikažimo uporabo <em>anti-aliasing</em> filtriranja z uporabo <code class="docutils literal notranslate"><span class="pre">scipy.signal</span></code>.</p>
@@ -622,7 +630,7 @@ X_s(f)=X_s(f+r \, f_s), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 <p>Število diskretnih vrednosti kvantiziranega signala je:</p>
 <div class="math notranslate nohighlight">
 \[N = 2^b\]</div>
-<p><strong>Napako kvantizacije</strong> lahko modeliramo kot naključni šum normalne porazdelitve s standardno deviacijo:</p>
+<p><strong>Napako kvantizacije</strong> lahko modeliramo kot naključni šum enakomerne porazdelitve v intervalu <span class="math notranslate nohighlight">\([-\frac{A/2^b}{2}, \frac{A/2^b}{2}]\)</span>, s standardno deviacijo:</p>
 <div class="math notranslate nohighlight">
 \[\sigma_e = \frac{A/2^b}{\sqrt{12}}\]</div>
 <p><em>Dinamični razpon</em> meritve je določen z razmerjem med koristnim signalom in šumom (napako kvantizacije), <em>SNR</em> (<em>Signal-Nosie Ratio</em>):</p>
@@ -682,8 +690,9 @@ X_s(f)=X_s(f+r \, f_s), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
     <span class="n">x2</span><span class="p">[</span><span class="n">x</span><span class="o">&lt;=</span><span class="n">lo</span><span class="p">]</span> <span class="o">=</span> <span class="n">lo</span>
     <span class="n">x2</span><span class="p">[</span><span class="n">x</span><span class="o">&gt;=</span><span class="n">hi</span><span class="p">]</span> <span class="o">=</span> <span class="n">hi</span>
     <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">hi</span> <span class="o">-</span> <span class="n">lo</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">bits</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">qnt</span> <span class="o">=</span> <span class="n">lo</span> <span class="o">+</span> <span class="n">delta</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">((</span><span class="n">x2</span> <span class="o">-</span> <span class="n">lo</span><span class="p">)</span> <span class="o">/</span> <span class="n">delta</span><span class="p">)</span>
+    <span class="n">qnt</span> <span class="o">=</span> <span class="n">lo</span> <span class="o">+</span> <span class="n">delta</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">((</span><span class="n">x2</span> <span class="o">-</span> <span class="n">lo</span><span class="p">)</span> <span class="o">/</span> <span class="n">delta</span><span class="p">)</span>
 
+    <span class="c1"># Za enostaven prikaz diskretnih nivojev kvantizacije</span>
     <span class="n">levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">qnt</span><span class="p">)</span> <span class="o">-</span> <span class="n">delta</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">qnt</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">delta</span><span class="p">,</span> <span class="n">delta</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">qnt</span><span class="p">,</span> <span class="n">levels</span>
@@ -694,7 +703,7 @@ X_s(f)=X_s(f+r \, f_s), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 <p>Kvantiziran signal</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_kvantiziran</span><span class="p">,</span> <span class="n">nivoji</span> <span class="o">=</span> <span class="n">kvantizacija</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">adc_range</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_kvantiziran</span><span class="p">,</span> <span class="n">nivoji</span> <span class="o">=</span> <span class="n">kvantizacija</span><span class="p">(</span><span class="n">x_c</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">adc_range</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -702,44 +711,62 @@ X_s(f)=X_s(f+r \, f_s), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 <p>Signal s šumom</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_šum</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">*</span><span class="n">std_e</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">uniform_noise</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">sigma</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<details class="admonition hide above-input">
-<summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;x(t)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_šum</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;šum&#39;</span><span class="p">)</span>
-
-<span class="c1"># Prikaz nove kvantizacije</span>
-<span class="k">for</span> <span class="n">nivo</span> <span class="ow">in</span> <span class="n">nivoji</span><span class="p">:</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">nivo</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">x_kvantiziran</span><span class="p">,</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;nova kvantizacija&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x(t)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
-</pre></div>
-</div>
-</div>
-</details>
-<div class="cell_output docutils container">
-<img alt="../_images/c892a04a36416804182fcb95d7b99e510997b7ac2b1572ea61ba6ba330cc249c.png" src="../_images/c892a04a36416804182fcb95d7b99e510997b7ac2b1572ea61ba6ba330cc249c.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x_kvantiziran</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_kvantiziran</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_šum</span> <span class="o">=</span> <span class="n">x_c</span> <span class="o">+</span> <span class="n">uniform_noise</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_c</span><span class="p">),</span> <span class="n">std_e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_c</span><span class="p">,</span> <span class="n">x_c</span><span class="p">,</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;x(t)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Prikaz nove kvantizacije</span>
+<span class="k">for</span> <span class="n">nivo</span> <span class="ow">in</span> <span class="n">nivoji</span><span class="p">:</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">nivo</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_c</span><span class="p">,</span> <span class="n">x_kvantiziran</span><span class="p">,</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;nova kvantizacija&#39;</span><span class="p">)</span>
+
+<span class="c1"># plt.plot(t, x_šum, label=&#39;šum&#39;)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;x(t)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/67867c2fff29908f22e278e602cba7b86fc0ca276bc95c12ddd2a7f7330c63b2.png" src="../_images/67867c2fff29908f22e278e602cba7b86fc0ca276bc95c12ddd2a7f7330c63b2.png" />
+</div>
+</div>
+<p>Izračun amplitudnih spektrov signalov za prikaz napake kvantizacije:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x_c</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_c</span><span class="p">)</span> 
+<span class="n">X</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">*=</span> <span class="mi">2</span>
+
+<span class="n">X_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x_kvantiziran</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_kvantiziran</span><span class="p">)</span> 
 <span class="n">X_k</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">*=</span> <span class="mi">2</span>
 
 <span class="n">X_šum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">x_šum</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_šum</span><span class="p">)</span> 
 <span class="n">X_šum</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">*=</span> <span class="mi">2</span>
+
+<span class="n">freq_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t_c</span><span class="p">),</span> <span class="n">t_c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t_c</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -751,18 +778,20 @@ X_s(f)=X_s(f+r \, f_s), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 <p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X(f)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_šum</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;šum&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_k</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;nova kvantizacija&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_c</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X(f)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_c</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_šum</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;šum&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_c</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_k</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;nova kvantizacija&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;X(f)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ce26610d19be4d9a244401fa9f11b5ce3ba813428017cdcd6b95414e8cc760a9.png" src="../_images/ce26610d19be4d9a244401fa9f11b5ce3ba813428017cdcd6b95414e8cc760a9.png" />
+<img alt="../_images/87c5cc3ad94770a788c1c80259cf1c37f74b406015e9d235d09f2ae472a331da.png" src="../_images/87c5cc3ad94770a788c1c80259cf1c37f74b406015e9d235d09f2ae472a331da.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -772,18 +801,20 @@ X_s(f)=X_s(f+r \, f_s), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 <p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X(f)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_šum</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;šum&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_k</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;nova kvantizacija&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq_c</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;X(f)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq_c</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_šum</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;šum&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq_c</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">X_k</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;nova kvantizacija&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;f [Hz]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;X(f)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/a5e11522fb3965ab04644e5542b19fdb6d785b7b5f7aac3f5abc909d6f88e6f6.png" src="../_images/a5e11522fb3965ab04644e5542b19fdb6d785b7b5f7aac3f5abc909d6f88e6f6.png" />
+<img alt="../_images/0224d9538468710806dcec0f080aaa19175065dd4c34d02169bdea7838059fa8.png" src="../_images/0224d9538468710806dcec0f080aaa19175065dd4c34d02169bdea7838059fa8.png" />
 </div>
 </div>
 </section>
@@ -859,7 +890,7 @@ X_s(f)=X_s(f+r \, f_s), \qquad \textrm{kjer je:}\quad r\in \mathbb{Z}.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enakomerno-casovno-vzorcenje">Enakomerno časovno vzorčenje</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frekvencno-prekrivanje-aliasing">Frekvenčno prekrivanje (<em>aliasing</em>)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nyquistova-frekvenca">Nyquistova frekvenca</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtriranje-za-odpravo-frekvencnega-prekrivanja">Filtriranje za odpravo frekvenčnega prekrivanja</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filtriranje-za-odpravo-frekvencnega-nalaganja">Filtriranje za odpravo frekvenčnega nalaganja</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kvantizacija">Kvantizacija</a></li>
