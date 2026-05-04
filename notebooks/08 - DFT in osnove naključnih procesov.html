@@ -415,8 +415,9 @@ document.write(`
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span><span class="p">,</span> <span class="n">signal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -550,7 +551,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.5631940186722203e-16)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(5.826450433232822e-16)
 </pre></div>
 </div>
 </div>
@@ -563,7 +564,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(3.8770815133890055)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(3.9849576777869724)
 </pre></div>
 </div>
 </div>
@@ -596,7 +597,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c70dac8f46321525f0e0031b5d3f9b4c9953a44dbbec440f96fca85a88f2a31c.png" src="../_images/c70dac8f46321525f0e0031b5d3f9b4c9953a44dbbec440f96fca85a88f2a31c.png" />
+<img alt="../_images/d5406a61886a3ea5fe2ec2648e48f52d0a0652576b577952a96bc9d582abe122.png" src="../_images/d5406a61886a3ea5fe2ec2648e48f52d0a0652576b577952a96bc9d582abe122.png" />
 </div>
 </div>
 <p>Porazdelitev verjetnosti ni nujno normalna (Gaussova):</p>
@@ -625,7 +626,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/ed051096f85c1bf8a86b811bc49dc30a7bb7518542722d9d7d873583eb7f8c77.png" src="../_images/ed051096f85c1bf8a86b811bc49dc30a7bb7518542722d9d7d873583eb7f8c77.png" />
+<img alt="../_images/7a6050ee59d50266b7487a05a01fccd5014fdb80db1ff3f83c328fe7e8520bd2.png" src="../_images/7a6050ee59d50266b7487a05a01fccd5014fdb80db1ff3f83c328fe7e8520bd2.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -649,7 +650,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/d0acc0225de31d903d0bacf6838268b2f3f94e93c8843e7610dfe3073d1bd201.png" src="../_images/d0acc0225de31d903d0bacf6838268b2f3f94e93c8843e7610dfe3073d1bd201.png" />
+<img alt="../_images/1fa318a2c67d4734f6fe6e983769882cf4ac5079279762e066a9ecaf56838507.png" src="../_images/1fa318a2c67d4734f6fe6e983769882cf4ac5079279762e066a9ecaf56838507.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -699,7 +700,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3dffad2eeed731d0a6d28f608ffab9030661857cdcf1652744d8fb25f4ef272c.png" src="../_images/3dffad2eeed731d0a6d28f608ffab9030661857cdcf1652744d8fb25f4ef272c.png" />
+<img alt="../_images/7b7ceddb7a2e6d51b277cc94f6870f2d50f3d0bba94d4580b90c5114bb88d919.png" src="../_images/7b7ceddb7a2e6d51b277cc94f6870f2d50f3d0bba94d4580b90c5114bb88d919.png" />
 </div>
 </div>
 <p><strong>Srednja vrednost in varianca pri vsakem časovnem trenutku procesa (izračunana po osi realizacij):</strong></p>
@@ -733,7 +734,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/bf8c8c21e2b9e9ebc9310018eec3ba37c1adc1baa22c9fec286e34356159f7d4.png" src="../_images/bf8c8c21e2b9e9ebc9310018eec3ba37c1adc1baa22c9fec286e34356159f7d4.png" />
+<img alt="../_images/41f3047d0ef414219e79404a18094a48c97315098f91465295438c69d0b48fa4.png" src="../_images/41f3047d0ef414219e79404a18094a48c97315098f91465295438c69d0b48fa4.png" />
 </div>
 </div>
 <p>Ker se srednja vrednost in varianca naključnih realizacij v isti točki procesa s časom ne spreminjata, lahko sklepamo, da gre za <strong>stacionaren</strong> proces.</p>
@@ -768,7 +769,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/318f203d4558c22c50a22a9762c668cd5656cc5118a6f59562e70d790f983289.png" src="../_images/318f203d4558c22c50a22a9762c668cd5656cc5118a6f59562e70d790f983289.png" />
+<img alt="../_images/5170cc3ff8e10859f1bb00f18652d4db0ac3584b6a5d56de7da8ea97491fe67b.png" src="../_images/5170cc3ff8e10859f1bb00f18652d4db0ac3584b6a5d56de7da8ea97491fe67b.png" />
 </div>
 </div>
 <p>Ker se srednja vrednost in varianca naključnega procesa <span class="math notranslate nohighlight">\(x(t)\)</span> pri večkratni realizaciji ne spreminjata, in sta enaki <span class="math notranslate nohighlight">\(\mu_x(t)\)</span> in <span class="math notranslate nohighlight">\(\sigma^2_x(t)\)</span> pri posameznem času, lahko sklepamo, da gre za <strong>ergodičen</strong> proces.</p>
@@ -830,7 +831,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/5f6fb8dd275f10e7c65a25b72259d6bcf6bb49064c8aa0733b46f37c619e4a56.png" src="../_images/5f6fb8dd275f10e7c65a25b72259d6bcf6bb49064c8aa0733b46f37c619e4a56.png" />
+<img alt="../_images/14f1664f8602d8ba15888077530ae1854e535e42250cc33a70e97ae5d4bb3a81.png" src="../_images/14f1664f8602d8ba15888077530ae1854e535e42250cc33a70e97ae5d4bb3a81.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -855,7 +856,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3015c4c1ed30bed2feba51fe1276f64803cab3f3ccbdaad9c8b3c193747053ff.png" src="../_images/3015c4c1ed30bed2feba51fe1276f64803cab3f3ccbdaad9c8b3c193747053ff.png" />
+<img alt="../_images/c25301f358bec83ddac5d242b0229d1bb049cff3e47c0c27b137ac40e1725d5d.png" src="../_images/c25301f358bec83ddac5d242b0229d1bb049cff3e47c0c27b137ac40e1725d5d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -896,28 +897,18 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/bef6dc5900767490532c4eefdf2bfb06c9b4a7825cda91f7b16770390c9d9d0a.png" src="../_images/bef6dc5900767490532c4eefdf2bfb06c9b4a7825cda91f7b16770390c9d9d0a.png" />
+<img alt="../_images/dce9120df616e8871f977f72e3d9ccc4b55fbd845b79bc07e96bb5df0aee1035.png" src="../_images/dce9120df616e8871f977f72e3d9ccc4b55fbd845b79bc07e96bb5df0aee1035.png" />
 </div>
 </div>
 <p>Parsevalov teorem:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">var</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">G_aa</span><span class="p">),</span> <span class="n">freq</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">var</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">trapezoid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">G_aa</span><span class="p">),</span> <span class="n">freq</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">a</span><span class="o">.</span><span class="n">var</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">G_aa</span><span class="p">),</span> <span class="n">freq</span><span class="p">)</span>
-
-<span class="nn">File /mnt/data/pedagoško/_Procesiranje signalov/_VAJE/_ps_lv/.venv/lib/python3.13/site-packages/numpy/__init__.py:792,</span> in <span class="ni">__getattr__</span><span class="nt">(attr)</span>
-<span class="g g-Whitespace">    </span><span class="mi">789</span>     <span class="kn">import</span><span class="w"> </span><span class="nn">numpy.char</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">char</span>
-<span class="g g-Whitespace">    </span><span class="mi">790</span>     <span class="k">return</span> <span class="n">char</span><span class="o">.</span><span class="n">chararray</span>
-<span class="ne">--&gt; </span><span class="mi">792</span> <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;module </span><span class="si">{</span><span class="vm">__name__</span><span class="si">!r}</span><span class="s2"> has no attribute </span><span class="si">{</span><span class="n">attr</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: module &#39;numpy&#39; has no attribute &#39;trapz&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(0.7983769899479717), np.float64(0.7996229661497231))
 </pre></div>
 </div>
 </div>

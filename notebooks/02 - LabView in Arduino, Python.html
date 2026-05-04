@@ -417,13 +417,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
+  <div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="labview-in-arduino-python">
 <h1>LabView in Arduino, Python<a class="headerlink" href="#labview-in-arduino-python" title="Link to this heading">#</a></h1>
@@ -713,10 +720,10 @@ Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f0b3089a490&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f1fe686e490&gt;
 </pre></div>
 </div>
-<img alt="../_images/6ac940c2f435d78e665a1e468934df12a266dde21b3fb2b696319e2f67816bfe.png" src="../_images/6ac940c2f435d78e665a1e468934df12a266dde21b3fb2b696319e2f67816bfe.png" />
+<img alt="../_images/d410b01fa3008cb8040a8ad2a29a59b682a6eb20167f4b6915f22a277e0e40a4.png" src="../_images/d410b01fa3008cb8040a8ad2a29a59b682a6eb20167f4b6915f22a277e0e40a4.png" />
 </div>
 </div>
 <p>Poglejmo še primer, ko je v <code class="docutils literal notranslate"><span class="pre">.lvm</span></code> datoteki shranjenih več segmentov, ki so pri shranjevanju ločeni z glavami (<em>header</em>):</p>
@@ -765,10 +772,10 @@ Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f0b305ea5d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f1fe640e5d0&gt;
 </pre></div>
 </div>
-<img alt="../_images/892d7958d5e756bb1563976ea695a958bce35a184665dd89ad7bf40edfba5ba2.png" src="../_images/892d7958d5e756bb1563976ea695a958bce35a184665dd89ad7bf40edfba5ba2.png" />
+<img alt="../_images/d1944b70a4db8ad3504291ad98eab4e07d8b73745ef686c6c77f1704a4c74083.png" src="../_images/d1944b70a4db8ad3504291ad98eab4e07d8b73745ef686c6c77f1704a4c74083.png" />
 </div>
 </div>
 <p>Lahko pa vse segmente združite (in poljubno obdelujete) z uporabo ustreznih Numpy funkcij:</p>
@@ -807,13 +814,13 @@ Poročilo oddajte v <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f0b30acde50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f1fe6b3de50&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1500x500 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="../_images/1c125bc375082b1c57fcb985b09bd8aeed06e52ec9afd18ddcd4871dce4dbdf3.png" src="../_images/1c125bc375082b1c57fcb985b09bd8aeed06e52ec9afd18ddcd4871dce4dbdf3.png" />
+<img alt="../_images/04bf5292fab93b9fddd5640df2f4d69198dd6aca1bcbd00c77cc5061f4bb5a8e.png" src="../_images/04bf5292fab93b9fddd5640df2f4d69198dd6aca1bcbd00c77cc5061f4bb5a8e.png" />
 </div>
 </div>
 </section>
