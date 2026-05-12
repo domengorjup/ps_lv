@@ -429,7 +429,7 @@ document.write(`
 <h2>Domača naloga<a class="headerlink" href="#domaca-naloga" title="Link to this heading">#</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Naloga</p>
-<p>Z uporabo generatorja signalov in zajemnega sistema Arduino zajemite naključni signal s parametri (srednjo vrednostjo <span class="math notranslate nohighlight">\(m\)</span>, amplitudo <span class="math notranslate nohighlight">\(A\)</span>) iz podatkov naloge. Zajem podatkov izvedite tako, da boste pri pretvorbi zajetega signala v frekvenčno domeno dobili spekter na podanem frekvenčnem območju <span class="math notranslate nohighlight">\([0, f_k]\)</span> ter z ločljivostjo v frekvenčni domeni <span class="math notranslate nohighlight">\(\Delta f\)</span> iz podatkov naloge.</p>
+<p>Z uporabo generatorja signalov in zajemnega sistema Arduino zajemite naključni signal s parametri (srednjo vrednostjo <span class="math notranslate nohighlight">\(m\)</span>, standardno deviacijo <span class="math notranslate nohighlight">\(\sigma\)</span>) iz podatkov naloge. Zajem podatkov izvedite tako, da boste pri pretvorbi zajetega signala v frekvenčno domeno dobili spekter na podanem frekvenčnem območju <span class="math notranslate nohighlight">\([0, f_k]\)</span> ter z ločljivostjo v frekvenčni domeni <span class="math notranslate nohighlight">\(\Delta f\)</span> iz podatkov naloge.</p>
 <p>LabView program za zajem signalov lahko prenesete v obliki <a class="reference download internal" download="" href="../_downloads/fe35982e9ec10d562dca252f2f56a11d/labview_zajem.zip"><code class="xref download docutils literal notranslate"><span class="pre">zip</span> <span class="pre">arhiva</span></code></a>.</p>
 <p>Pripravite kratko poročilo v okolju Jupyter Notebook <em>(od 3 do 10 celic s kodo)</em>, v katerem naj bodo razvidni podatki naloge ter prikaz in kratek komentar naslednjih lastnosti zajetega signala:</p>
 <ul class="simple">
@@ -551,7 +551,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(9.769962616701378e-17)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.5987211554602254e-16)
 </pre></div>
 </div>
 </div>
@@ -564,7 +564,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(3.9597394385576257)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(3.9406844648384176)
 </pre></div>
 </div>
 </div>
@@ -597,7 +597,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/1860bd8fc36e36b7f75e55ae2e7262c5b6464d30f14669db9914021cbfca1302.png" src="../_images/1860bd8fc36e36b7f75e55ae2e7262c5b6464d30f14669db9914021cbfca1302.png" />
+<img alt="../_images/d8d288e3df722cead02f6a06606d8d41658f0e1c9dc4a55c71d079d1758c2233.png" src="../_images/d8d288e3df722cead02f6a06606d8d41658f0e1c9dc4a55c71d079d1758c2233.png" />
 </div>
 </div>
 <p>Porazdelitev verjetnosti ni nujno normalna (Gaussova):</p>
@@ -626,7 +626,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/1b0c37590cafdc9ce1a30d6c843622bb7cbd05fa8739da56454f76fb4caf1c43.png" src="../_images/1b0c37590cafdc9ce1a30d6c843622bb7cbd05fa8739da56454f76fb4caf1c43.png" />
+<img alt="../_images/7a5118087b38cfcc8dfea794b48154d3670e9e1622c0b28df928ff35fbecf1ed.png" src="../_images/7a5118087b38cfcc8dfea794b48154d3670e9e1622c0b28df928ff35fbecf1ed.png" />
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
@@ -650,7 +650,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/1ce482481bcc84a499f0b15534d4a3b638986ab17b403f6a9ecde42760c9cc88.png" src="../_images/1ce482481bcc84a499f0b15534d4a3b638986ab17b403f6a9ecde42760c9cc88.png" />
+<img alt="../_images/dba13a9e1f79da0de723a32a26ab2aa924355c82f42a261bba3815e2cbddc25e.png" src="../_images/dba13a9e1f79da0de723a32a26ab2aa924355c82f42a261bba3815e2cbddc25e.png" />
 </div>
 </div>
 <div class="admonition note">
@@ -700,7 +700,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/9404b3f4a586fe3f37d4347cfd599c2ef73ef002310546baf5ebb66c376ef154.png" src="../_images/9404b3f4a586fe3f37d4347cfd599c2ef73ef002310546baf5ebb66c376ef154.png" />
+<img alt="../_images/20e8a767dbf1878cc24fd3aef8727aed19562b700764c367fd3a9144e2748ca6.png" src="../_images/20e8a767dbf1878cc24fd3aef8727aed19562b700764c367fd3a9144e2748ca6.png" />
 </div>
 </div>
 <p><strong>Srednja vrednost in varianca pri vsakem časovnem trenutku procesa (izračunana po osi realizacij):</strong></p>
@@ -734,7 +734,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/bb4e939e96a0d71f01836e0eef707a3783cf1c5c0d442a2292545f620c30f98c.png" src="../_images/bb4e939e96a0d71f01836e0eef707a3783cf1c5c0d442a2292545f620c30f98c.png" />
+<img alt="../_images/f6752782c494a228f184ff6b5bd138d5e4e32558d2fd5d718c414c23c34bbf86.png" src="../_images/f6752782c494a228f184ff6b5bd138d5e4e32558d2fd5d718c414c23c34bbf86.png" />
 </div>
 </div>
 <p>Ker se srednja vrednost in varianca naključnih realizacij v isti točki procesa s časom ne spreminjata, lahko sklepamo, da gre za <strong>stacionaren</strong> proces.</p>
@@ -769,7 +769,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/7866b98e34b6ccc299f6c19adf367ead7611ff509571cefa7383788ff62a8a4b.png" src="../_images/7866b98e34b6ccc299f6c19adf367ead7611ff509571cefa7383788ff62a8a4b.png" />
+<img alt="../_images/f130b3efa1a1d9710e0d9920b28c53c139ad4b05c94e31b98a4a333ebd001d12.png" src="../_images/f130b3efa1a1d9710e0d9920b28c53c139ad4b05c94e31b98a4a333ebd001d12.png" />
 </div>
 </div>
 <p>Ker se srednja vrednost in varianca naključnega procesa <span class="math notranslate nohighlight">\(x(t)\)</span> pri večkratni realizaciji ne spreminjata, in sta enaki <span class="math notranslate nohighlight">\(\mu_x(t)\)</span> in <span class="math notranslate nohighlight">\(\sigma^2_x(t)\)</span> pri posameznem času, lahko sklepamo, da gre za <strong>ergodičen</strong> proces.</p>
@@ -831,7 +831,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/dfdf23f4942139ab66f748d19143a6f09ae4533a643f51ae27a0af7c48650e3a.png" src="../_images/dfdf23f4942139ab66f748d19143a6f09ae4533a643f51ae27a0af7c48650e3a.png" />
+<img alt="../_images/bbed0969ff64b4a4d8f0709565c58024805a4be184746ba3948d566fe9476376.png" src="../_images/bbed0969ff64b4a4d8f0709565c58024805a4be184746ba3948d566fe9476376.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -857,7 +857,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3de5e252c533e7bf54869ffd5498cc60fbbd84659878f265b258af14a83582f4.png" src="../_images/3de5e252c533e7bf54869ffd5498cc60fbbd84659878f265b258af14a83582f4.png" />
+<img alt="../_images/e2c58b34ad9a8a92c174e7ad2bc300ca81665b231471a2cfe1dc82db761a29b1.png" src="../_images/e2c58b34ad9a8a92c174e7ad2bc300ca81665b231471a2cfe1dc82db761a29b1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -899,7 +899,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/23748939f20982eeb49e91e649efa61b2e2d6b61ac2f1f930c8643aa226abdf1.png" src="../_images/23748939f20982eeb49e91e649efa61b2e2d6b61ac2f1f930c8643aa226abdf1.png" />
+<img alt="../_images/ca33ba530a45c67be3a92a8e1ce8c499edfc91e91a37288a01ab995cf8c397e5.png" src="../_images/ca33ba530a45c67be3a92a8e1ce8c499edfc91e91a37288a01ab995cf8c397e5.png" />
 </div>
 </div>
 <p>Parsevalov teorem:</p>
@@ -910,7 +910,7 @@ X_k = \sum_{n=0}^{N-1} x_n\,e^{-\mathrm{i}\,2\pi\,k\,n/N}.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(0.7217504051153123), np.float64(0.7217576823435169))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(0.7052870815562242), np.float64(0.705721770631593))
 </pre></div>
 </div>
 </div>
