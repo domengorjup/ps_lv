@@ -1,9 +1,8 @@
 numpy
 matplotlib
 ipympl
-jupyter
-notebook
+ipykernel
 lvm_read
-pyEMA
+sdypy-EMA
 sdypy-FRF
 pyidi>=0.30.2
