@@ -1,0 +1,740 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Linear time-invariant systems - signal acquisition &#8212; Signal Processing - Laboratory Exercises</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/en/05 - LTI systems, signal acquisition';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Linear time-invariant (LTI) systems 2 - frequency response functions" href="06%20-%20LTI%20systems%202%2C%20frequency%20response%20functions.html" />
+    <link rel="prev" title="Properties of the Fourier transform" href="04%20-%20Properties%20of%20the%20Fourier%20transform.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro_en.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/lv_logo.png" class="logo__image only-light" alt="Signal Processing - Laboratory Exercises - Home"/>
+    <script>document.write(`<img src="../../_static/lv_logo.png" class="logo__image only-dark" alt="Signal Processing - Laboratory Exercises - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro_en.html">
+                    Signal Processing
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratory exercise handouts</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01%20-%20Introduction%20to%20LabVIEW.html">Introduction to LabVIEW</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02%20-%20LabVIEW%20and%20Arduino%2C%20Python.html">LabVIEW and Arduino, Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03%20-%20Fourier%20integral%20transform.html">Fourier integral transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04%20-%20Properties%20of%20the%20Fourier%20transform.html">Properties of the Fourier transform</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Linear time-invariant systems - signal acquisition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06%20-%20LTI%20systems%202%2C%20frequency%20response%20functions.html">Linear time-invariant (LTI) systems 2 - frequency response functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07%20-%20Uniform%20sampling%20and%20quantization.html">Uniform sampling and quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08%20-%20DFT%20and%20fundamentals%20of%20random%20processes.html">DFT and fundamentals of random processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09%20-%20Random%20excitation%2C%20signal%20acquisition.html">Random excitation - signal acquisition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10%20-%20Random%20excitation%202%2C%20frequency%20response%20functions.html">Random excitation - estimation of frequency response functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About this collection</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../about_en.html">Signal Processing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item"><a class="btn btn-sm lang-switch" href="https://domengorjup.github.io/ps_lv/" title="Slovenska različica" style="font-weight: bold;">SL</a></div>
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/domengorjup/ps_lv" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/domengorjup/ps_lv/issues/new?title=Issue%20on%20page%20%2Fnotebooks/en/05 - LTI systems, signal acquisition.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/en/05 - LTI systems, signal acquisition.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Linear time-invariant systems - signal acquisition</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework">Homework</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-response-function-and-impulse-response-function">Frequency response function and impulse response function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-acquisition-for-determining-the-response-functions-of-a-linear-time-invariant-system">Signal acquisition for determining the response functions of a linear time-invariant system</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-system">Measurement system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-program">LabVIEW program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement">Measurement</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="linear-time-invariant-systems-signal-acquisition">
+<h1>Linear time-invariant systems - signal acquisition<a class="headerlink" href="#linear-time-invariant-systems-signal-acquisition" title="Link to this heading">#</a></h1>
+<section id="homework">
+<h2>Homework<a class="headerlink" href="#homework" title="Link to this heading">#</a></h2>
+<div class="warning admonition">
+<p class="admonition-title">Homework</p>
+<p>Prepare a short report <em>(3 to 10 code cells in a Jupyter Notebook environment)</em> that shows the task data (from the table) and that you have taken all the parameters and requirements of the task into account. The report should also contain:</p>
+<ul class="simple">
+<li><p>a plot (of the time series and the amplitude spectra) of all the measurements you made in the group (at all the given excitation points), <em>on the same graph</em>,</p></li>
+<li><p>a plot of the time series and the amplitude spectrum of your measurement (with excitation at the point given in the task data),</p></li>
+<li><p>a plot of the frequency response function at your measured point (<span class="math notranslate nohighlight">\(i\)</span>), which you estimate as <span class="math notranslate nohighlight">\(H_i(\omega) = X_i(\omega) / F_i(\omega)\)</span>.</p></li>
+</ul>
+<p>Submit the report in <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> format (see the <a class="reference internal" href="../../intro_en.html#intro-domace-naloge"><span class="std std-ref">homework submission instructions</span></a>).</p>
+<p><strong>Addendum</strong>:</p>
+<ul class="simple">
+<li><p>Based on the performed measurement, also determine the impulse response function <span class="math notranslate nohighlight">\(h_i(t)\)</span> of the beam for excitation at your point (<span class="math notranslate nohighlight">\(i\)</span>).</p></li>
+<li><p>Simulate and plot the response <span class="math notranslate nohighlight">\(x(t)\)</span> of the beam to excitation with a random force signal <span class="math notranslate nohighlight">\(f_i(t)\)</span>. Prepare the random excitation signal as you see fit, for example using the <code class="docutils literal notranslate"><span class="pre">numpy.random</span></code> module.</p></li>
+</ul>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p><span class="math notranslate nohighlight">\(X(\omega)\)</span> and <span class="math notranslate nohighlight">\(x(t)\)</span> in these notes denote the response, <span class="math notranslate nohighlight">\(F(\omega)\)</span> and <span class="math notranslate nohighlight">\(f(t)\)</span> the excitation of the system <span class="math notranslate nohighlight">\(H(\omega)\)</span>, and <span class="math notranslate nohighlight">\(H(\omega)\)</span> the frequency response function, without assumptions about the measured physical quantities.</p>
+<p>In our case, the measured signals are <strong>acceleration</strong> and <strong>force</strong>, so the computed frequency response function takes the form of <strong>accelerance</strong>.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="frequency-response-function-and-impulse-response-function">
+<h2>Frequency response function and impulse response function<a class="headerlink" href="#frequency-response-function-and-impulse-response-function" title="Link to this heading">#</a></h2>
+<p>The response model of linear time-invariant (<em>LTI</em>) systems is characterized by so-called <strong>response functions</strong>, which relate the response and excitation signals of the system in the frequency domain (<em>frequency response function</em>, <span class="math notranslate nohighlight">\(H(\omega)\)</span>) and the time domain (<em>impulse response function</em>, <span class="math notranslate nohighlight">\(h(t)\)</span>), respectively.</p>
+<p>The <strong>frequency response function</strong> <span class="math notranslate nohighlight">\(H(\omega)\)</span> is the ratio between the (complex) amplitudes of the harmonic response and excitation of the observed system:</p>
+<div class="math notranslate nohighlight">
+\[
+	H(\omega) = \frac{X(\omega)}{F(\omega)}
+\]</div>
+<p>The <strong>impulse response function</strong> <span class="math notranslate nohighlight">\(h(t)\)</span> gives the response of the system to an impulse disturbance.</p>
+<p>The response to an arbitrary excitation (signal <span class="math notranslate nohighlight">\(f(t)\)</span>) is determined by the following relation:</p>
+<div class="math notranslate nohighlight">
+\[
+	x(t) = f(t) * h(t)= h(t)*f(t),
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(*\)</span> denotes convolution.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The impulse response function and the frequency response function are a <strong>Fourier pair</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+	h(t)=\mathcal{F}^{-1}\{H(\omega)\}\qquad\textrm{or}\qquad%
+	H(\omega)=\mathcal{F}\{h(t)\}.
+\]</div>
+</div>
+</section>
+<section id="signal-acquisition-for-determining-the-response-functions-of-a-linear-time-invariant-system">
+<h2>Signal acquisition for determining the response functions of a linear time-invariant system<a class="headerlink" href="#signal-acquisition-for-determining-the-response-functions-of-a-linear-time-invariant-system" title="Link to this heading">#</a></h2>
+<p>In the experimental characterization of a linear time-invariant system, we therefore determine the relation between the response of the system and the known excitation signal, based on the measured signals <span class="math notranslate nohighlight">\(x(t)\)</span>, <span class="math notranslate nohighlight">\(f(t)\)</span>.</p>
+<p>The purpose of this exercise is to become familiar with the laboratory equipment and to perform the signal measurements needed to determine the response functions of a mechanical linear time-invariant system.</p>
+<div class="warning admonition">
+<p class="admonition-title">Task: Measurement of the response functions of a steel beam</p>
+<p>Prepare the acquisition system and measure the response (acceleration) of a steel beam to impulse excitation at different points. Each of you should measure the response (acceleration) of the beam with <strong>impact hammer excitation at the point given in the task data table</strong>, which you can find in Moodle.</p>
+<p>The work in the laboratory will be done <strong>in groups</strong>. The task consists of three parts, described in more detail below:</p>
+<ol class="arabic simple">
+<li><p>Setting up and connecting the measurement equipment.</p></li>
+<li><p>Preparing the LabVIEW program for signal acquisition.</p></li>
+<li><p>Measuring the excitation force and the system response signals under impulse excitation at different points.</p></li>
+</ol>
+</div>
+<section id="measurement-system">
+<h3>Measurement system<a class="headerlink" href="#measurement-system" title="Link to this heading">#</a></h3>
+<p>The measurement setup consists of the following components:</p>
+<ul class="simple">
+<li><p>Acquisition card <a class="reference external" href="https://www.ni.com/sl-si/support/model.ni-9234.html">NI 9234</a>:</p>
+<ul>
+<li><p>4 analog input channels (BNC connector).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\pm\)</span> 5 V.</p></li>
+<li><p>Sampling frequency up to 51200 Hz (allowed values: <span class="math notranslate nohighlight">\(51200 / n\)</span>, <span class="math notranslate nohighlight">\(n \in [1, 2, 3, \dots, 31]\)</span>).</p></li>
+<li><p>24-bit resolution.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Steel beam:</p>
+<ul>
+<li><p>Length: 500 mm.</p></li>
+<li><p>11 marked measurement points (at positions <span class="math notranslate nohighlight">\([25, 475]\)</span> mm, spacing <span class="math notranslate nohighlight">\(45\)</span> mm).</p></li>
+<li><p>Response measured at location <span class="math notranslate nohighlight">\(0\)</span>, excitation at locations <span class="math notranslate nohighlight">\(i \in [1, 2, \dots 10]\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Impact hammer <a class="reference external" href="https://www.pcb.com/products?m=TLD086C03">PCB TLD086C03</a>:</p>
+<ul>
+<li><p>IEPE force transducer.</p></li>
+<li><p>BNC connection to the analog input of the acquisition card.</p></li>
+<li><p>Measurement range: <span class="math notranslate nohighlight">\(\pm\)</span> 2224 N.</p></li>
+<li><p>Sensitivity: value on the instrument box.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Accelerometer <a class="reference external" href="https://www.pcb.com/products?model=333B30">PCB  333B30</a>:</p>
+<ul>
+<li><p>IEPE accelerometer.</p></li>
+<li><p>BNC connection to the analog input of the acquisition card.</p></li>
+<li><p>Measurement range: <span class="math notranslate nohighlight">\(\pm\)</span> 490 <span class="math notranslate nohighlight">\(m/s^2\)</span>.</p></li>
+<li><p>Sensitivity: value on the instrument box.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Measurement computer (USB connection).</p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title">1. Setting up the measurement setup</p>
+<p>Connect the measurement setup of the acquisition system. Use the description of the measurement equipment above and the figure below.</p>
+<p>When connecting the sensors (accelerometer, force transducer) to the acquisition card, you can use any input channels. Make sure you take your choice into account when setting up the LabVIEW program.</p>
+<p><img alt="zajemni-sistem" src="../../_images/00_zajemni_sistem.png" /></p>
+</div>
+</section>
+<section id="labview-program">
+<h3>LabVIEW program<a class="headerlink" href="#labview-program" title="Link to this heading">#</a></h3>
+<div class="important admonition">
+<p class="admonition-title">2. Preparing the LabVIEW program</p>
+<p>Prepare a LabVIEW program for acquiring the excitation and response signals of the observed beam.</p>
+<p>The main acquisition settings are:</p>
+<ul class="simple">
+<li><p>Sampling frequency: 25600 Hz,</p></li>
+<li><p>Length of the acquired signal after each hit: 1 s (25600 points),</p></li>
+<li><p>Number of pre-samples (saved before the hit is detected): 100,</p></li>
+<li><p>File saving: <code class="docutils literal notranslate"><span class="pre">.lvm</span></code> format, one hit per segment.</p></li>
+</ul>
+<p>In a loop (until manually stopped), the program should:</p>
+<ul>
+<li><p>Acquire the acceleration and force signals on the appropriate channels of the acquisition card (<a class="reference external" href="https://knowledge.ni.com/KnowledgeArticleDetails?id=kA03q000000x0QHCAY&amp;amp;l=sl-SI"><code class="docutils literal notranslate"><span class="pre">Express</span> <span class="pre">-&gt;</span> <span class="pre">Input</span> <span class="pre">-&gt;</span> <span class="pre">DAQ</span> <span class="pre">Assistant</span></code></a>):</p>
+<ul class="simple">
+<li><p>set up the acquisition of the excitation (“Force (IEPE)”) and the response (“Acceleration IEPE”) on the connected channels,</p></li>
+</ul>
+<p><img alt="channels" src="../../_images/01_physical_channels.png" /></p>
+<ul class="simple">
+<li><p>set the sensitivities of the sensors and the acquisition parameters according to the data,</p></li>
+</ul>
+<p><img alt="acquisotion-config" src="../../_images/05_channel_config.png" /></p>
+<ul class="simple">
+<li><p>(you can display the acquired signals as they are acquired (<code class="docutils literal notranslate"><span class="pre">Right</span> <span class="pre">click</span> <span class="pre">on</span> <span class="pre">the</span> <span class="pre">signal</span> <span class="pre">-&gt;</span> <span class="pre">Create</span> <span class="pre">Graph</span> <span class="pre">indicator</span></code>)).</p></li>
+</ul>
+</li>
+<li><p>Trigger saving and display when a hit is detected (<code class="docutils literal notranslate"><span class="pre">Express</span> <span class="pre">-&gt;</span> <span class="pre">Signal</span> <span class="pre">Manipulation</span> <span class="pre">-&gt;</span> <span class="pre">Trigger</span> <span class="pre">and</span> <span class="pre">Gate</span></code>):</p>
+<ul class="simple">
+<li><p>set the appropriate force level that represents hit detection,</p></li>
+<li><p>set the appropriate trigger channel (“Trigger channel”),</p></li>
+<li><p>set the prescribed number of pre-samples (“Pre samples”),</p></li>
+<li><p>set the appropriate number of samples saved after hit detection (“Samples”).</p></li>
+</ul>
+<p><img alt="trigger" src="../../_images/07_trigger_settings.png" /></p>
+</li>
+<li><p><em>If</em> a hit is detected (<code class="docutils literal notranslate"><span class="pre">Trigger</span> <span class="pre">and</span> <span class="pre">Gate:</span> <span class="pre">Data</span> <span class="pre">Available</span></code>), write the set number of samples from the trigger to the <code class="docutils literal notranslate"><span class="pre">lvm</span></code> file:</p>
+<ul class="simple">
+<li><p>make sure that each repetition of the measurement is read as a separate segment of the file (“Segment headers”).</p></li>
+</ul>
+</li>
+<li><p>(After a hit is detected, you can display the signal from the trigger on a graph.)</p></li>
+<li><p>(You can also display a graph of the frequency spectrum of the signal in the trigger (<code class="docutils literal notranslate"><span class="pre">Express</span> <span class="pre">-&gt;</span> <span class="pre">Signal</span> <span class="pre">Analysis</span> <span class="pre">-&gt;</span> <span class="pre">Spectral</span></code>).)</p></li>
+</ul>
+</div>
+<p>An example of the block diagram and front panel of the completed program:</p>
+<p><img alt="vi" src="../../_images/08_vi.png" /></p>
+</section>
+<section id="measurement">
+<h3>Measurement<a class="headerlink" href="#measurement" title="Link to this heading">#</a></h3>
+<div class="important admonition">
+<p class="admonition-title">3. Performing the signal measurement</p>
+<p>With a properly prepared LabVIEW program, the acquisition of each segment (hit) is triggered automatically using the trigger (<code class="docutils literal notranslate"><span class="pre">Trigger</span> <span class="pre">and</span> <span class="pre">gate</span></code>).</p>
+<p>When performing the measurement, make sure that:</p>
+<ul class="simple">
+<li><p>you excite the system with a hit at the marked point, in the direction normal to the top surface of the beam,</p></li>
+<li><p>the force of each hit is not too high (a suitable hit force is <span class="math notranslate nohighlight">\(~200\)</span> N),</p></li>
+<li><p>there are no multiple hits in the acquired segment (check that the trigger signal contains only a single distinct force peak).</p></li>
+</ul>
+<p><img alt="double-hit" src="../../_images/09_neustrezno_dvojni_udarec.png" /></p>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/en"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="04%20-%20Properties%20of%20the%20Fourier%20transform.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Properties of the Fourier transform</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="06%20-%20LTI%20systems%202%2C%20frequency%20response%20functions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Linear time-invariant (LTI) systems 2 - frequency response functions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework">Homework</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequency-response-function-and-impulse-response-function">Frequency response function and impulse response function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-acquisition-for-determining-the-response-functions-of-a-linear-time-invariant-system">Signal acquisition for determining the response functions of a linear time-invariant system</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement-system">Measurement system</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-program">LabVIEW program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measurement">Measurement</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Domen Gorjup
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -62,7 +62,7 @@ Sistem omogoča oddajo več datotek. Če poročilo domače naloge pripravite v p
 
 Jupyter Notebook datoteko enostavno pretvorite v PDF `File -> Print Preview -> Print to PDF`.
 ```
-![jupyter_pretvorba](notebooks/images/00/pretvorba_jupyter_notebook.png)
+![jupyter_pretvorba](notebooks/sl/images/00/pretvorba_jupyter_notebook.png)
 
 ```{admonition} Kriterij ocenjevanja domačih nalog
 :class: warning

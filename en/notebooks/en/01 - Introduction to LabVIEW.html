@@ -1,0 +1,776 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction to LabVIEW &#8212; Signal Processing - Laboratory Exercises</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/en/01 - Introduction to LabVIEW';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="LabVIEW and Arduino, Python" href="02%20-%20LabVIEW%20and%20Arduino%2C%20Python.html" />
+    <link rel="prev" title="Signal Processing" href="../../intro_en.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro_en.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/lv_logo.png" class="logo__image only-light" alt="Signal Processing - Laboratory Exercises - Home"/>
+    <script>document.write(`<img src="../../_static/lv_logo.png" class="logo__image only-dark" alt="Signal Processing - Laboratory Exercises - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro_en.html">
+                    Signal Processing
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratory exercise handouts</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to LabVIEW</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02%20-%20LabVIEW%20and%20Arduino%2C%20Python.html">LabVIEW and Arduino, Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03%20-%20Fourier%20integral%20transform.html">Fourier integral transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04%20-%20Properties%20of%20the%20Fourier%20transform.html">Properties of the Fourier transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05%20-%20LTI%20systems%2C%20signal%20acquisition.html">Linear time-invariant systems - signal acquisition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06%20-%20LTI%20systems%202%2C%20frequency%20response%20functions.html">Linear time-invariant (LTI) systems 2 - frequency response functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07%20-%20Uniform%20sampling%20and%20quantization.html">Uniform sampling and quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08%20-%20DFT%20and%20fundamentals%20of%20random%20processes.html">DFT and fundamentals of random processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09%20-%20Random%20excitation%2C%20signal%20acquisition.html">Random excitation - signal acquisition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10%20-%20Random%20excitation%202%2C%20frequency%20response%20functions.html">Random excitation - estimation of frequency response functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About this collection</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../about_en.html">Signal Processing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item"><a class="btn btn-sm lang-switch" href="https://domengorjup.github.io/ps_lv/" title="Slovenska različica" style="font-weight: bold;">SL</a></div>
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/domengorjup/ps_lv" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/domengorjup/ps_lv/issues/new?title=Issue%20on%20page%20%2Fnotebooks/en/01 - Introduction to LabVIEW.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/en/01 - Introduction to LabVIEW.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to LabVIEW</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework">Homework</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#software-installation">Software installation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-first-program">The first program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-shortcuts">Useful shortcuts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-in-labview">Programming in LabVIEW</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subprograms">Subprograms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-statements">Control statements</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-case-statement">The <code class="docutils literal notranslate"><span class="pre">Case</span></code> statement</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-for-while">Loops (<code class="docutils literal notranslate"><span class="pre">For</span></code>, <code class="docutils literal notranslate"><span class="pre">While</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-for-loop">The <code class="docutils literal notranslate"><span class="pre">For</span></code> loop</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-while-loop">The <code class="docutils literal notranslate"><span class="pre">While</span></code> loop</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-generation">Signal generation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-data-to-files">Saving data to files</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-labview">
+<h1>Introduction to LabVIEW<a class="headerlink" href="#introduction-to-labview" title="Link to this heading">#</a></h1>
+<section id="homework">
+<h2>Homework<a class="headerlink" href="#homework" title="Link to this heading">#</a></h2>
+<div class="warning admonition">
+<p class="admonition-title">Homework</p>
+<p>Using the functions shown here, create a signal with the prescribed parameters in LabVIEW (you can find your individual data in <a class="reference external" href="https://e-ucilnica.fs.uni-lj.si/">Moodle</a>).</p>
+<p>In a short report in the Jupyter Notebook environment <em>(3 to 10 code cells)</em>, explore and show how to read and plot the saved signal in a programming environment of your choice (e.g., Jupyter Notebook). Submit the report as a <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> file - see the <a class="reference internal" href="../../intro_en.html#intro-domace-naloge"><span class="std std-ref">instructions for submitting homework</span></a>.</p>
+<p><strong>Bonus:</strong> Explore the use of a signal processing method of your choice (for example from the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/signal.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal</span></code></a> or <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/fft.html"><code class="docutils literal notranslate"><span class="pre">scipy.fft</span></code></a> module). Show how the method is applied to the saved signal.</p>
+</div>
+<hr class="docutils" />
+<p><a class="reference external" href="https://www.ni.com/sl-si/shop/software/products/labview.html">NI LabVIEW</a> is a graphical programming environment from National Instruments, intended primarily for signal acquisition, control of laboratory instruments, and automation. Although it is essentially a closed environment, LabVIEW supports various standard protocols besides communication with National Instruments hardware, and can therefore be connected to a wide range of other hardware.</p>
+<p>The graphical programming language (also called “G”) is based on the flow of data, which the user routes to program elements by means of connections (<em>wires</em>). Each program element executes as soon as all the data it needs, carried by the wires, are available. Multiprocessing is also supported.</p>
+<section id="software-installation">
+<h3>Software installation<a class="headerlink" href="#software-installation" title="Link to this heading">#</a></h3>
+<div class="note admonition">
+<p class="admonition-title">LabVIEW Community Edition</p>
+<p><a class="reference external" href="https://www.ni.com/sl-si/shop/labview/select-edition/labview-community-edition.html">LabVIEW Community Edition</a> is available free of charge for non-commercial use. It provides all the basic LabVIEW functions that we need in Signal Processing.</p>
+<p>To install LabVIEW Community Edition on your computer, download the installer from the link above. The installation and activation instructions are <a class="reference external" href="https://learn.ni.com/learn/article/getting-started-with-arduino-and-labview-community-edition">in steps 1 and 2 at this link</a>.</p>
+</div>
+</section>
+</section>
+<section id="the-first-program">
+<h2>The first program<a class="headerlink" href="#the-first-program" title="Link to this heading">#</a></h2>
+<p>The basic program structure is the “Virtual Instrument” (VI), which consists of a <strong>block diagram</strong> (<em>Block Diagram</em>) and a <strong>front panel</strong> (<em>Front Panel</em>).</p>
+<p>An example of the simplest “Hello, World!” program in LabVIEW.</p>
+<p><img alt="hello-world" src="../../_images/00_Hello_World.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>LabVIEW can export a program as a <code class="docutils literal notranslate"><span class="pre">.png</span></code> image, which can then be loaded into a VI.</p>
+<p>Export the selected elements as an image with <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">-&gt;</span> <span class="pre">Create</span> <span class="pre">VI</span> <span class="pre">Snippet</span> <span class="pre">from</span> <span class="pre">Selection</span></code>.</p>
+<p>To import the VI, simply drag the image prepared in this way into the block diagram.</p>
+</div>
+<p>We run the program with the “Run” button at the top of the block diagram or the front panel.</p>
+<p><img alt="run-program" src="../../_images/run_program.png" /></p>
+</section>
+<hr class="docutils" />
+<section id="useful-shortcuts">
+<h2>Useful shortcuts<a class="headerlink" href="#useful-shortcuts" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Shortcut</p></th>
+<th class="head text-left"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">E</span></code></p></td>
+<td class="text-left"><p>Toggle between front panel and block diagram</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">H</span></code></p></td>
+<td class="text-left"><p>Show help</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">space</span></code></p></td>
+<td class="text-left"><p>Quickly add functions (<em>Quick Drop</em>)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">B</span></code></p></td>
+<td class="text-left"><p>Remove broken wires</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">U</span></code></p></td>
+<td class="text-left"><p>Automatically arrange program elements</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">+</span> <span class="pre">shift</span> <span class="pre">+</span> <span class="pre">A</span></code></p></td>
+<td class="text-left"><p>Align selected elements in a row</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="programming-in-labview">
+<h2>Programming in LabVIEW<a class="headerlink" href="#programming-in-labview" title="Link to this heading">#</a></h2>
+<p>We can start programming in the block diagram, where a <em>right mouse click</em> opens the menu of program functions, or in the front panel, where a right click opens the set of <em>controls</em>.</p>
+<p><img alt="block-diagram-front-pannel" src="../../_images/blokovni_diagram_krmilna_plosca.png" /></p>
+<p>Changes in one view are automatically reflected in the other. We complete the addition of an element by connecting the elements in the block diagram.</p>
+<div class="important admonition">
+<p class="admonition-title">Task 1</p>
+<p>Let us create a LabVIEW program that shows on a gauge the speed value set with a slider, converting the value from [m/s] to [km/h].</p>
+</div>
+<p><img alt="n01-definicija" src="../../_images/n01_def_pretvorba_hitrosti.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We visualize the data flow and the order of program execution with the “Highlight execution” option:</p>
+</div>
+<p><img alt="highlight-execution" src="../../_images/highlight_execution.png" /></p>
+<section id="data-types">
+<h3>Data types<a class="headerlink" href="#data-types" title="Link to this heading">#</a></h3>
+<p>As in most programming languages, data types are important in LabVIEW programs as well.</p>
+<p>Conversion between compatible data types is automatic (<code class="docutils literal notranslate"><span class="pre">Integer</span></code>, <code class="docutils literal notranslate"><span class="pre">Double</span></code>). For conversion between some other data types we have to use the appropriate functions.</p>
+<p>The conversion functions are found in the function menu of the block diagram, in the tab of the relevant data type (e.g., for conversion between numeric data and strings: <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">-&gt;</span> <span class="pre">Number/String</span> <span class="pre">Conversion</span></code>).</p>
+<div class="seealso admonition">
+<p class="admonition-title">Task 2</p>
+<p>Let us look at an example of a LabVIEW program that shows the conversion between the <code class="docutils literal notranslate"><span class="pre">Integer</span></code>, <code class="docutils literal notranslate"><span class="pre">Double</span></code>, and <code class="docutils literal notranslate"><span class="pre">String</span></code> data types.</p>
+</div>
+<p><img alt="pretvorba-podatkov" src="../../_images/02_data_types.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If an error occurs when running the program, we can view the list of errors by clicking “List Errors”:</p>
+</div>
+<p><img alt="list-errors" src="../../_images/list_errors.png" /></p>
+</section>
+<section id="subprograms">
+<h3>Subprograms<a class="headerlink" href="#subprograms" title="Link to this heading">#</a></h3>
+<p>A part of the program that we want to use several times can be packaged into a <em>subprogram</em> (<em>Sub VI</em>).</p>
+<p>Select the part of the program that you want to package into a subprogram and choose <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">-&gt;</span> <span class="pre">Create</span> <span class="pre">SubVI</span></code>.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Task 3</p>
+<p>An example of a LabVIEW program in which the part of the code that converts units in Task 1 is packaged into a subprogram.</p>
+</div>
+<p><img alt="sub-vi" src="../../_images/03_sub_vi.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>After changing a subprogram, it is sometimes necessary to also update the link to the subprogram in the main program. To do this, right-click the subprogram icon and choose <code class="docutils literal notranslate"><span class="pre">Relink</span> <span class="pre">to</span> <span class="pre">SubVi</span></code>.</p>
+</div>
+</section>
+<section id="control-statements">
+<h3>Control statements<a class="headerlink" href="#control-statements" title="Link to this heading">#</a></h3>
+<p>Control statements, as in other programming languages, affect the flow of execution of a LabVIEW program.</p>
+<p>Control statements are found in the function menu of the block diagram, in the <em>Structures</em> tab.</p>
+<p><img alt="structures" src="../../_images/structures.png" /></p>
+<section id="the-case-statement">
+<h4>The <code class="docutils literal notranslate"><span class="pre">Case</span></code> statement<a class="headerlink" href="#the-case-statement" title="Link to this heading">#</a></h4>
+<p>In a <code class="docutils literal notranslate"><span class="pre">Case</span></code> statement, we decide, based on the selected condition, which of the predefined parts of the program is executed.</p>
+<p>(The <code class="docutils literal notranslate"><span class="pre">Case</span></code> statement in LabVIEW is thus similar to the Python <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.)</p>
+<div class="important admonition">
+<p class="admonition-title">Task 4</p>
+<p>Extend the unit conversion program from Task 1 with a <code class="docutils literal notranslate"><span class="pre">Case</span></code> statement, which uses a control switch to turn the unit conversion on and off.</p>
+<p><em>Hint:</em> You can start by adding a button in the front panel, which you later connect to the <code class="docutils literal notranslate"><span class="pre">Case</span></code> statement.</p>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">Task 5</p>
+<p>We upgrade the subprogram from Task 3 with a <code class="docutils literal notranslate"><span class="pre">Case</span></code> statement. For this, we have to add an additional input parameter to the subprogram, which can be connected to a switch on the front panel.</p>
+</div>
+<p><img alt="podprogram-case" src="../../_images/05_podprogram_case.png" /></p>
+</section>
+</section>
+<section id="loops-for-while">
+<h3>Loops (<code class="docutils literal notranslate"><span class="pre">For</span></code>, <code class="docutils literal notranslate"><span class="pre">While</span></code>)<a class="headerlink" href="#loops-for-while" title="Link to this heading">#</a></h3>
+<p>Loops are used for iterations, i.e., repeated execution of a part of the program.</p>
+<section id="the-for-loop">
+<h4>The <code class="docutils literal notranslate"><span class="pre">For</span></code> loop<a class="headerlink" href="#the-for-loop" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">For</span></code> loops are used for iterating with an exactly defined number of repetitions.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Task 6</p>
+<p>Let us create a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop that iterates over an array of numeric values (<code class="docutils literal notranslate"><span class="pre">Array</span></code>).</p>
+<p>The easiest way to prepare the array is in the front panel (the “Data Containers” tab), and to fill it with the desired controls (e.g., <code class="docutils literal notranslate"><span class="pre">Numeric</span> <span class="pre">control</span></code>).</p>
+</div>
+<p><img alt="array_for_loop.png" src="../../_images/07_array_for_loop.png" /></p>
+<div class="important admonition">
+<p class="admonition-title">Task 7</p>
+<p>Extend the speed unit conversion program from Task 4 so that it reads the speed values in [m/s] from a numeric array and, in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, updates the gauge display accordingly.</p>
+</div>
+<p><img alt="n07-definicija" src="../../_images/n07_def_pretvorba_hitrosti_zanka.png" /></p>
+</section>
+<section id="the-while-loop">
+<h4>The <code class="docutils literal notranslate"><span class="pre">While</span></code> loop<a class="headerlink" href="#the-while-loop" title="Link to this heading">#</a></h4>
+<p>We usually use a <code class="docutils literal notranslate"><span class="pre">While</span></code> loop when we want to repeat the execution of the program until we stop it ourselves.</p>
+<div class="important admonition">
+<p class="admonition-title">Task 8</p>
+<p>Extend the speed unit conversion program from Task 4 so that it continuously checks the currently selected speed value in [m/s] and, in a loop, updates the gauge display accordingly.</p>
+<p><em>Hint</em>: All controls whose values you want to read continuously should be inside the loop.</p>
+<p><em>Bonus</em>: Try using a graph (<code class="docutils literal notranslate"><span class="pre">Waveform</span> <span class="pre">Chart</span></code>) instead of the gauge to display the value.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="signal-generation">
+<h2>Signal generation<a class="headerlink" href="#signal-generation" title="Link to this heading">#</a></h2>
+<p>Although we will usually use LabVIEW for signal acquisition, sometimes we also want to generate signals with it.</p>
+<p>We can use the function <a class="reference external" href="https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z0000019NVOSA2&amp;amp;l=sl-SI">“Simulate Signal”</a> (<code class="docutils literal notranslate"><span class="pre">Express</span> <span class="pre">-&gt;</span> <span class="pre">Input</span> <span class="pre">-&gt;</span> <span class="pre">Simulate</span> <span class="pre">Sig</span></code>).</p>
+<p><img alt="simulate-signal" src="../../_images/simulate_signal.png" /></p>
+<div class="seealso admonition">
+<p class="admonition-title">Task 9</p>
+<p>Let us continuously generate and display on a graph 1 second (1000 samples at a sampling frequency of 1000 Hz) of a sinusoidal signal with a frequency of 1.5 Hz and an amplitude of 2.</p>
+</div>
+<p><img alt="simulate-signal-loop" src="../../_images/09_simulate_signal_loop.png" /></p>
+</section>
+<section id="saving-data-to-files">
+<h2>Saving data to files<a class="headerlink" href="#saving-data-to-files" title="Link to this heading">#</a></h2>
+<p>Although LabVIEW includes powerful functions for signal processing, in this course we will usually use other tools (Python) to process the acquired data.</p>
+<p>We therefore want to write the data acquired with LabVIEW to files so that we can read and process them later.</p>
+<p>A useful function for saving data in LabVIEW is “Write To Measurement File” (<code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">I/O</span> <span class="pre">-&gt;</span> <span class="pre">Write</span> <span class="pre">Meas</span> <span class="pre">File</span></code>).</p>
+<p><img alt="write-lvm" src="../../_images/write_meas_file.png" /></p>
+<div class="seealso admonition">
+<p class="admonition-title">Task 10</p>
+<p>Let us save the generated sinusoidal signal in text format (<code class="docutils literal notranslate"><span class="pre">.lvm</span></code>). We append the signal segments generated in the loop to the end of the file if it already exists.</p>
+</div>
+<p><img alt="simulate-signal-loop" src="../../_images/10_simulate_signal_save.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To read the saved <code class="docutils literal notranslate"><span class="pre">.lvm</span></code> files in Python, you can use the <a class="reference external" href="https://pypi.org/project/lvm-read/">lvm_read</a> package. We also recommend looking at the example of use at <a class="reference external" href="https://github.com/openmodal/lvm_read/blob/master/Showcase%20lvm_read.ipynb">this link</a>. Basic use is shown below.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">lvm_read</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;../data/01/sinus.lvm&#39;</span>
+<span class="n">saved_data</span> <span class="o">=</span> <span class="n">lvm_read</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">saved_data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;Decimal_Separator&#39;, &#39;Writer_Version&#39;, &#39;Reader_Version&#39;, &#39;Separator&#39;, &#39;Multi_Headings&#39;, &#39;X_Columns&#39;, &#39;Time_Pref&#39;, &#39;Operator&#39;, &#39;Date&#39;, &#39;Time&#39;, 0, &#39;Segments&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/en"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../intro_en.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Signal Processing</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02%20-%20LabVIEW%20and%20Arduino%2C%20Python.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">LabVIEW and Arduino, Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#homework">Homework</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#software-installation">Software installation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-first-program">The first program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-shortcuts">Useful shortcuts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-in-labview">Programming in LabVIEW</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subprograms">Subprograms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-statements">Control statements</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-case-statement">The <code class="docutils literal notranslate"><span class="pre">Case</span></code> statement</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-for-while">Loops (<code class="docutils literal notranslate"><span class="pre">For</span></code>, <code class="docutils literal notranslate"><span class="pre">While</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-for-loop">The <code class="docutils literal notranslate"><span class="pre">For</span></code> loop</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-while-loop">The <code class="docutils literal notranslate"><span class="pre">While</span></code> loop</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-generation">Signal generation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-data-to-files">Saving data to files</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Domen Gorjup
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

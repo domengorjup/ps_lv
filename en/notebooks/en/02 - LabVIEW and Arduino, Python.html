@@ -1,0 +1,980 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>LabVIEW and Arduino, Python &#8212; Signal Processing - Laboratory Exercises</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/en/02 - LabVIEW and Arduino, Python';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Fourier integral transform" href="03%20-%20Fourier%20integral%20transform.html" />
+    <link rel="prev" title="Introduction to LabVIEW" href="01%20-%20Introduction%20to%20LabVIEW.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro_en.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/lv_logo.png" class="logo__image only-light" alt="Signal Processing - Laboratory Exercises - Home"/>
+    <script>document.write(`<img src="../../_static/lv_logo.png" class="logo__image only-dark" alt="Signal Processing - Laboratory Exercises - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro_en.html">
+                    Signal Processing
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratory exercise handouts</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01%20-%20Introduction%20to%20LabVIEW.html">Introduction to LabVIEW</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">LabVIEW and Arduino, Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03%20-%20Fourier%20integral%20transform.html">Fourier integral transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04%20-%20Properties%20of%20the%20Fourier%20transform.html">Properties of the Fourier transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05%20-%20LTI%20systems%2C%20signal%20acquisition.html">Linear time-invariant systems - signal acquisition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06%20-%20LTI%20systems%202%2C%20frequency%20response%20functions.html">Linear time-invariant (LTI) systems 2 - frequency response functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07%20-%20Uniform%20sampling%20and%20quantization.html">Uniform sampling and quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08%20-%20DFT%20and%20fundamentals%20of%20random%20processes.html">DFT and fundamentals of random processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09%20-%20Random%20excitation%2C%20signal%20acquisition.html">Random excitation - signal acquisition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10%20-%20Random%20excitation%202%2C%20frequency%20response%20functions.html">Random excitation - estimation of frequency response functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About this collection</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../about_en.html">Signal Processing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item"><a class="btn btn-sm lang-switch" href="https://domengorjup.github.io/ps_lv/" title="Slovenska različica" style="font-weight: bold;">SL</a></div>
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/domengorjup/ps_lv" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/domengorjup/ps_lv/issues/new?title=Issue%20on%20page%20%2Fnotebooks/en/02 - LabVIEW and Arduino, Python.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/en/02 - LabVIEW and Arduino, Python.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>LabVIEW and Arduino, Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-hobbyist-toolkit">LabVIEW Hobbyist Toolkit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arduino-uno-atmega328p">Arduino Uno (Atmega328p)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-and-arduino">LabVIEW and Arduino</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-the-arduino-and-the-first-program">Connecting to the Arduino and the first program</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#automation-with-the-arduino-digital-i-o-terminals">Automation with the Arduino - digital I/O terminals</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-acquisition-with-the-arduino">Data acquisition with the Arduino</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-reading-and-processing-the-acquired-signals">Python - reading and processing the acquired signals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-signal-generator-siglent-sdg-1032x">Using the signal generator (Siglent SDG 1032X)</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="labview-and-arduino-python">
+<h1>LabVIEW and Arduino, Python<a class="headerlink" href="#labview-and-arduino-python" title="Link to this heading">#</a></h1>
+<section id="task">
+<h2>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
+<div class="warning admonition">
+<p class="admonition-title">Task</p>
+<ul class="simple">
+<li><p>Using the functions shown here, acquire in LabVIEW a signal with the prescribed parameters, generated with a signal generator (you can find your individual data in <a class="reference external" href="https://e-ucilnica.fs.uni-lj.si/">Moodle</a>).</p></li>
+<li><p>Plot the “raw” data.</p></li>
+<li><p>Show a sensible application of the prescribed numerical procedures (<code class="docutils literal notranslate"><span class="pre">obdelava_#</span></code> in the table with the data) to the acquired signal.</p></li>
+</ul>
+<p>Prepare a short report in the Jupyter Notebook environment <em>(3 to 10 code cells)</em>. It should show the data of the task (from the table) and make clear that you took all the parameters into account when carrying out the task (print out the signal shape appropriately…).
+Submit the report in <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> format (see the <a class="reference internal" href="../../intro_en.html#intro-domace-naloge"><span class="std std-ref">instructions for submitting homework</span></a>).</p>
+<p><strong>Bonus:</strong> Explore and show the use of frequency filtering of data, whose purpose is to remove unwanted high-frequency noise from the acquired signal (you can use <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.lfilter.html"><code class="docutils literal notranslate"><span class="pre">scipy.signal.lfilter</span></code></a>). Before that, add an additive random component (noise) to the acquired signal if needed.</p>
+</div>
+<hr class="docutils" />
+<p>Despite its otherwise closed structure, the LabVIEW ecosystem includes the package manager <a class="reference external" href="https://www.vipm.io/">“VI Package Manager (VIPM)”</a>, where users can share LabVIEW code and packages that enable features and hardware that LabVIEW itself does not support.</p>
+<div class="note admonition">
+<p class="admonition-title">Installing LabVIEW Community Edition</p>
+<p><a class="reference external" href="https://www.ni.com/sl-si/shop/labview/select-edition/labview-community-edition.html">LabVIEW Community Edition</a> is available free of charge for non-commercial use. It provides all the basic LabVIEW functions that we need in Signal Processing.</p>
+<p>LabVIEW Community Edition is already set up for use with the Arduino system, which we will use for signal acquisition in this course. If you want to try the program on your own equipment, follow the <a class="reference external" href="https://learn.ni.com/learn/article/getting-started-with-arduino-and-labview-community-edition">instructions at this link</a>.</p>
+</div>
+</section>
+<section id="labview-hobbyist-toolkit">
+<h2>LabVIEW Hobbyist Toolkit<a class="headerlink" href="#labview-hobbyist-toolkit" title="Link to this heading">#</a></h2>
+<p>One of the free packages developed by the community is the <a class="reference external" href="https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z0000019TmpSAE&amp;amp;l=sl-SI">LabVIEW Hobbyist Toolkit (formerly LINX)</a>, which allows LabVIEW to control Arduino, Raspberry Pi, and BeagleBone Black hardware.</p>
+<p>If you installed LabVIEW Community Edition, the LabVIEW Hobbyist Toolkit is already installed on your system.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To make working with the Arduino acquisition system easier in what follows, we recommend enabling the option <strong>Automatically close VISA sessions</strong> in the LabVIEW settings, in the menu <strong>Tools &gt; Options &gt; Environment</strong>.</p>
+</div>
+<p><img alt="visa_sessions" src="../../_images/000_visa_sessions.png" /></p>
+<section id="arduino-uno-atmega328p">
+<h3>Arduino Uno (Atmega328p)<a class="headerlink" href="#arduino-uno-atmega328p" title="Link to this heading">#</a></h3>
+<p>In Signal Processing, owing to its simple integration into LabVIEW acquisition systems and its analog-to-digital conversion capability, we will learn the basics of using the <a class="reference external" href="http://store.arduino.cc/products/arduino-uno-rev3">Arduino Uno</a> development board, which is based on the <a class="reference external" href="https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf">Atmega328p</a> microcontroller.</p>
+<p>The specifications of the Arduino Uno board that are essential for analog-to-digital conversion and signal acquisition are collected in the table below.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Parameter</p></th>
+<th class="head text-left"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Number of analog inputs</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">6</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>ADC bit depth</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">bit</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>USB supply voltage (V<sub>CC</sub>)</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">V</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Voltage measurement range</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">V</span> <span class="pre">to</span> <span class="pre">5</span> <span class="pre">V</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Input voltage limits</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">-0.5</span> <span class="pre">V</span> <span class="pre">to</span> <span class="pre">VCC</span> <span class="pre">+</span> <span class="pre">0.5</span> <span class="pre">V</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Warning</p>
+<p>When acquiring signals, we must take care not to exceed the extreme allowed input voltage values of the acquisition device.</p>
+<p>The <strong>measurement range</strong> of the Arduino is <code class="docutils literal notranslate"><span class="pre">(0-5</span> <span class="pre">V)</span></code>, and the <strong>allowed input voltage range</strong>* in our case is <code class="docutils literal notranslate"><span class="pre">(-0.5-5.5</span> <span class="pre">V)</span></code> (see the table above). If we exceed the measurement range of the device, the signal will not be captured completely. If we exceed the allowed voltage, we can damage the acquisition system!</p>
+<p>* The allowed voltage limit is even stricter when the system is not powered (<code class="docutils literal notranslate"><span class="pre">VCC</span> <span class="pre">=</span> <span class="pre">0</span></code>). If the Arduino power cable (USB) is not connected to a USB port that supplies 5 V, the allowed input voltage range is <code class="docutils literal notranslate"><span class="pre">(-0.5-0.5</span> <span class="pre">V)</span></code>!</p>
+</div>
+<p>Before acquiring signals with the Arduino (<strong>before we connect the signal cable to the input terminal</strong>), we must therefore <strong>always check that the system is powered through the USB connection</strong>, and that <strong>the signal we connect to any of the input terminals stays within the limits</strong>:</p>
+<div class="math notranslate nohighlight">
+\[V_{\mathrm{in}} = V_{\mathrm{offset}} \pm V_{\mathrm{PP}} / 2 \in [0, 5] \mathrm{ V}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V_offset</span> <span class="o">=</span> <span class="mf">2.5</span>
+<span class="n">V_pp</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">signal</span> <span class="o">=</span> <span class="n">V_pp</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">V_offset</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$V_{</span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{offset}</span><span class="s1">}$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Measurement range&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Allowed input range&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">V_offset</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">signal</span><span class="p">),</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">signal</span><span class="p">),</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mf">5.5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Signal&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">V_pp</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
+            <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;&lt;|-|&gt;&#39;</span><span class="p">,</span> <span class="n">shrinkA</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shrinkB</span><span class="o">=</span><span class="mi">0</span><span class="p">,)</span>
+            <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.26</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;$V_{</span><span class="se">\\</span><span class="s1">mathrm</span><span class="si">{PP}</span><span class="s1">}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time [s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Signal [V]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/dac96e74555c362265ae66b970d490abbe7d81bc210846a291e144bbfdd26d7f.png" src="../../_images/dac96e74555c362265ae66b970d490abbe7d81bc210846a291e144bbfdd26d7f.png" />
+</div>
+</div>
+</section>
+<section id="labview-and-arduino">
+<h3>LabVIEW and Arduino<a class="headerlink" href="#labview-and-arduino" title="Link to this heading">#</a></h3>
+<div class="important admonition">
+<p class="admonition-title">Note</p>
+<p>Depending on the version of the software installed on your computer, you will find the <em>LabVIEW Hobbyist Toolkit</em> functions presented below either in the <strong>Hobbyist</strong> menu or in the <strong>MakerHub -&gt; LINX</strong> menu.</p>
+</div>
+<p>The LINX package provides access from LabVIEW to the analog input channels and the digital I/O channels of the Arduino board. It also supports connecting the Arduino to external devices, for example through an SPI or I2C serial connection.</p>
+<p>We access the supported program elements through a special menu in the function palette of the block diagram, <code class="docutils literal notranslate"><span class="pre">MakerHub</span> <span class="pre">-&gt;</span> <span class="pre">LINX</span></code>.</p>
+<p><img alt="linx_functions" src="../../_images/makerhub_functions.png" /></p>
+<section id="connecting-to-the-arduino-and-the-first-program">
+<h4>Connecting to the Arduino and the first program<a class="headerlink" href="#connecting-to-the-arduino-and-the-first-program" title="Link to this heading">#</a></h4>
+<p>To establish a connection with the Arduino in LabVIEW, we use the special LINX library function <code class="docutils literal notranslate"><span class="pre">Open</span></code>.</p>
+<p>The basic parameter when opening the connection is the <em>COM serial port</em> through which the Arduino is connected to our computer. If several similar serial devices are connected to the system, you can find the serial port of the connected Arduino with the <code class="docutils literal notranslate"><span class="pre">Device</span> <span class="pre">Manager</span></code> tool.</p>
+<p><img alt="device_manager" src="../../_images/device_manager_com.png" /></p>
+<p>The second important setting is the speed of the serial connection (<em>baud rate</em>) with the Arduino. The default value is <code class="docutils literal notranslate"><span class="pre">9600</span></code>, and the highest value that the Arduino Uno allows is <code class="docutils literal notranslate"><span class="pre">115200</span></code>.</p>
+<p>If you did not enable the option “Automatically close VISA sessions” above, you have to <strong>close the connection with the <code class="docutils literal notranslate"><span class="pre">Close</span></code> function</strong> after you finish working with the Arduino. Otherwise, you will have problems the next time you try to establish a connection.</p>
+<p><img alt="open_close" src="../../_images/00_open_close.png" /></p>
+</section>
+<section id="automation-with-the-arduino-digital-i-o-terminals">
+<h4>Automation with the Arduino - digital I/O terminals<a class="headerlink" href="#automation-with-the-arduino-digital-i-o-terminals" title="Link to this heading">#</a></h4>
+<p>Although the Arduino includes a relatively capable 10-bit analog-to-digital converter with 6 analog input channels, owing to its relatively limited processing power it is <em>often not the optimal choice for more advanced signal acquisition applications</em> (for the purposes of this course, however, the capabilities of the Arduino are of course sufficient).</p>
+<p>A more typical area of use is therefore automation and the integration of various measurement elements and hardware. This is made possible by a wide range of multipurpose digital I/O terminals (GPIO).</p>
+<p>Let us look at the basic use of the Arduino GPIO channels, using the example of turning on / off the LED integrated on the Arduino board, whose state is tied to the value of GPIO terminal <code class="docutils literal notranslate"><span class="pre">13</span></code>.</p>
+<p><img alt="uno-led" src="../../_images/uno_led.png" /></p>
+<p>To write the <code class="docutils literal notranslate"><span class="pre">Boolean</span></code> value of the appropriate GPIO terminal, we will use the function <code class="docutils literal notranslate"><span class="pre">Makerhub</span> <span class="pre">-&gt;</span> <span class="pre">LINX</span> <span class="pre">-&gt;</span> <span class="pre">Peripheral</span> <span class="pre">-&gt;</span> <span class="pre">Digital</span> <span class="pre">-&gt;</span> <span class="pre">Write</span></code>.</p>
+<p><img alt="digital-write" src="../../_images/digital_write.png" /></p>
+<div class="seealso admonition">
+<p class="admonition-title">Task 1</p>
+<p>Let us create a LabVIEW program that:</p>
+<ul class="simple">
+<li><p>establishes a connection with the Arduino on the selected serial port,</p></li>
+<li><p>writes the selected <code class="docutils literal notranslate"><span class="pre">Boolean</span></code> value to digital terminal no. <code class="docutils literal notranslate"><span class="pre">13</span></code>,</p></li>
+<li><p>closes the connection with the Arduino.</p></li>
+</ul>
+</div>
+<p><img alt="digital-out" src="../../_images/01_digital_out.png" /></p>
+<div class="important admonition">
+<p class="admonition-title">Task 2 (5 minutes)</p>
+<p>Extend the program above so that it:</p>
+<ul class="simple">
+<li><p>allows setting the state of the LED (on / off) in real time,</p></li>
+<li><p>plots the history of states on a graph after each write.</p></li>
+</ul>
+<p>Hint: in the previous exercise we plotted numeric values on a graph, but the state read from the digital terminal has to be converted appropriately before it is displayed!</p>
+</div>
+</section>
+</section>
+</section>
+<section id="data-acquisition-with-the-arduino">
+<h2>Data acquisition with the Arduino<a class="headerlink" href="#data-acquisition-with-the-arduino" title="Link to this heading">#</a></h2>
+<p>Data acquisition usually means converting the measured signal (electric voltage) into digital form, which takes place in an analog-to-digital converter (ADC). The Arduino Uno has 6 analog inputs, which are connected to the ADC component of the board.</p>
+<p>To convert and acquire a single point of the signal on the analog inputs, we can use the function “AnalogRead” (<code class="docutils literal notranslate"><span class="pre">Makerhub</span> <span class="pre">-&gt;</span> <span class="pre">LINX</span> <span class="pre">-&gt;</span> <span class="pre">Peripheral</span> <span class="pre">-&gt;</span> <span class="pre">Analog</span> <span class="pre">-&gt;</span> <span class="pre">Read</span></code>), which allows simultaneous acquisition on several channels.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The circuit that we will use with the Arduino in Signal Processing to connect external signals to the analog inputs of the board through coaxial BNC connectors allows the use of analog channels <code class="docutils literal notranslate"><span class="pre">A0</span></code> and <code class="docutils literal notranslate"><span class="pre">A1</span></code>.</p>
+</div>
+<p><img alt="bnc_shield" src="../../_images/arduino_bnc_shield.png" /></p>
+<div class="seealso admonition">
+<p class="admonition-title">Task 3</p>
+<p>Let us create a LabVIEW program that:</p>
+<ul class="simple">
+<li><p>establishes a connection with the Arduino on the selected serial port,</p></li>
+<li><p>in a loop, plots on a graph the set number of data points acquired from two analog input channels.</p></li>
+</ul>
+</div>
+<p><img alt="analog-read" src="../../_images/03_analog_read.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The shape of the data obtained from <code class="docutils literal notranslate"><span class="pre">N</span></code> channels with the setting of <code class="docutils literal notranslate"><span class="pre">n</span></code> loop iterations is <code class="docutils literal notranslate"><span class="pre">(n,</span> <span class="pre">N)</span></code> (that is, <code class="docutils literal notranslate"><span class="pre">n</span></code> rows and <code class="docutils literal notranslate"><span class="pre">N</span></code> columns).</p>
+<p>We obtain the data acquired on an individual analog channel by selecting an individual column (<code class="docutils literal notranslate"><span class="pre">col</span></code>) of the resulting <code class="docutils literal notranslate"><span class="pre">array</span></code>, using the <code class="docutils literal notranslate"><span class="pre">Array</span> <span class="pre">-&gt;</span> <span class="pre">Index</span> <span class="pre">Array</span></code> function of the block diagram.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since the data obtained after the selected number of acquisition loop iterations are now in the form of an array (<code class="docutils literal notranslate"><span class="pre">array</span></code>), we use the function “Waveform Graph” (<code class="docutils literal notranslate"><span class="pre">Graph</span> <span class="pre">-&gt;</span> <span class="pre">Waveform</span> <span class="pre">Graph</span></code> on the front panel) to display them.</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Task 4 (10 minutes)</p>
+<p>Extend the program above so that it:</p>
+<ul class="simple">
+<li><p>allows choosing the <em>sampling frequency [Hz]</em> instead of the pause duration between successive iterations of the acquisition,</p></li>
+<li><p>allows choosing the number of acquired signal segments with <code class="docutils literal notranslate"><span class="pre">n</span></code> samples,</p></li>
+<li><p>allows saving the signal to an <code class="docutils literal notranslate"><span class="pre">.lvm</span></code> file.</p></li>
+</ul>
+</div>
+<p>We have thus obtained a simple system that we can already use to acquire real measurement signals.</p>
+<p>The capabilities of such a system are of course limited. In measurements, we usually want to control as many parameters of the measurement equipment as possible. The following example VI also allows setting the sensitivity of the individual measurement channels and saving the independent variable (time) together with the acquired signals.</p>
+<p><img alt="open-loop-saving" src="../../_images/05_continuous_N_channels_open_loop_saving.png" /></p>
+<p>The following example also allows controlling the actual sampling frequency in a simple feedback loop:</p>
+<p><img alt="closed-loop-saving" src="../../_images/07_continuous_N_channels_closed_loop_saving_new_feedback.png" /></p>
+<p>The following subprogram is also used here:</p>
+<p><img alt="closed-loop-saving-subvi" src="../../_images/07_01_clip_fs_SubVI.png" /></p>
+<p>You can also download both as a <a class="reference download internal" download="" href="../../_downloads/fe35982e9ec10d562dca252f2f56a11d/labview_zajem.zip"><code class="xref download docutils literal notranslate"><span class="pre">zip</span> <span class="pre">archive</span></code></a>.</p>
+</section>
+<section id="python-reading-and-processing-the-acquired-signals">
+<h2>Python - reading and processing the acquired signals<a class="headerlink" href="#python-reading-and-processing-the-acquired-signals" title="Link to this heading">#</a></h2>
+<p>To read data saved in <code class="docutils literal notranslate"><span class="pre">.lvm</span></code> files, you can use the <a class="reference external" href="https://pypi.org/project/lvm-read/"><code class="docutils literal notranslate"><span class="pre">lvm_read</span></code></a> package.</p>
+<p>Let us look at an example of use below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">lvm_read</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;../data/02/test_01.lvm&#39;</span>
+<span class="n">loaded_data</span> <span class="o">=</span> <span class="n">lvm_read</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="n">loaded_data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;Decimal_Separator&#39;, &#39;Writer_Version&#39;, &#39;Reader_Version&#39;, &#39;Separator&#39;, &#39;Multi_Headings&#39;, &#39;X_Columns&#39;, &#39;Time_Pref&#39;, &#39;Operator&#39;, &#39;Date&#39;, &#39;Time&#39;, 0, &#39;Segments&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>The loaded data are structured as a dictionary. The entry <code class="docutils literal notranslate"><span class="pre">'Segments'</span></code> tells us how many segments we acquired:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loaded_data</span><span class="p">[</span><span class="s1">&#39;Segments&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<p>A data segment is stored in the dictionary under the key of its sequential index. If only one segment is saved, the only available index is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loaded_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;Channels&#39;, &#39;Samples&#39;, &#39;Date&#39;, &#39;Time&#39;, &#39;X_Dimension&#39;, &#39;X0&#39;, &#39;Delta_X&#39;, &#39;data&#39;, &#39;Channel names&#39;])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each individual segment is also a dictionary, in which we access the raw saved data with the key <code class="docutils literal notranslate"><span class="pre">'data'</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">loaded_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(100, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The individual columns of data each represent one saved channel:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kanal_1</span><span class="p">,</span> <span class="n">kanal_2</span> <span class="o">=</span> <span class="n">loaded_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kanal_1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Channel 1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kanal_2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Channel 2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sample [-]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage [V]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd28e68e5d0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/30811b1278e3ea50e620a59a486ca10679408a90ea1691ce009e64b264f337fb.png" src="../../_images/30811b1278e3ea50e620a59a486ca10679408a90ea1691ce009e64b264f337fb.png" />
+</div>
+</div>
+<p>Let us also look at the case where several segments are saved in the <code class="docutils literal notranslate"><span class="pre">.lvm</span></code> file, separated by headers (<em>header</em>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_2</span> <span class="o">=</span> <span class="s1">&#39;../data/02/test_segments.lvm&#39;</span>
+<span class="n">loaded_data_2</span> <span class="o">=</span> <span class="n">lvm_read</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">file_2</span><span class="p">)</span>
+<span class="n">loaded_data_2</span><span class="p">[</span><span class="s1">&#39;Segments&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can iterate over the saved segments:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_segments</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">seg</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">loaded_data_2</span><span class="p">[</span><span class="s1">&#39;Segments&#39;</span><span class="p">]):</span>
+    <span class="n">all_segments</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">loaded_data_2</span><span class="p">[</span><span class="n">seg</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this case, the file also contains a column of the independent variable (time):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+
+<span class="n">t_start</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">segment</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">all_segments</span><span class="p">):</span>
+    <span class="n">t</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">k2</span> <span class="o">=</span> <span class="n">segment</span><span class="o">.</span><span class="n">T</span>
+    <span class="n">t_segment</span> <span class="o">=</span> <span class="n">t</span> <span class="o">+</span> <span class="n">t_start</span>
+    <span class="n">t_start</span> <span class="o">=</span> <span class="n">t_segment</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_segment</span><span class="p">,</span> <span class="n">k1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Channel 1, segment </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_segment</span><span class="p">,</span> <span class="n">k2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Channel 2, segment </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sample [-]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage [V]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd28e22a710&gt;
+</pre></div>
+</div>
+<img alt="../../_images/045d960f8c25d8e59ccca89f093c0ab5cb831c896d01ca3479374bccd3bf29e3.png" src="../../_images/045d960f8c25d8e59ccca89f093c0ab5cb831c896d01ca3479374bccd3bf29e3.png" />
+</div>
+</div>
+<p>You can also combine all the segments (and process them as you like) using the appropriate NumPy functions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">complete_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">all_segments</span><span class="p">)</span>
+<span class="n">complete_data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(250, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="p">,</span> <span class="n">channel_1</span><span class="p">,</span> <span class="n">channel_2</span> <span class="o">=</span> <span class="n">complete_data</span><span class="o">.</span><span class="n">T</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">_</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">t_complete</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">channel_1</span><span class="p">))</span> <span class="o">*</span> <span class="n">dt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_complete</span><span class="p">,</span> <span class="n">channel_1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Channel 1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_complete</span><span class="p">,</span> <span class="n">channel_2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Channel 2&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sample [-]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Voltage [V]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd28e8bcb90&gt;
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1500x500 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="../../_images/34548cad9e8313b9f25d04f0a80dfedf6ba1e4dfe71f28e4b153c37f3aeae2e9.png" src="../../_images/34548cad9e8313b9f25d04f0a80dfedf6ba1e4dfe71f28e4b153c37f3aeae2e9.png" />
+</div>
+</div>
+</section>
+<section id="using-the-signal-generator-siglent-sdg-1032x">
+<span id="uporaba-rigol"></span><h2>Using the signal generator (Siglent SDG 1032X)<a class="headerlink" href="#using-the-signal-generator-siglent-sdg-1032x" title="Link to this heading">#</a></h2>
+<p>We will use a signal generator to simulate a periodic signal of a prescribed shape.</p>
+<p>The figure below shows the control panel of the Siglent SDG 1032X model.</p>
+<p><img alt="rigol-dg1022" src="../../_images/siglent_sdg_1032x.png" /></p>
+<p>To select the signal parameter that you want to set, use the control buttons marked in blue in the figure above. You change the value of the selected parameter with the numeric keypad or the rotary knob. Make sure that you have selected, with the <code class="docutils literal notranslate"><span class="pre">Ch1</span> <span class="pre">/</span> <span class="pre">Ch2</span></code> button (yellow), the channel for which you want to set the signal. The figure below should help you with setting the given parameters.</p>
+<p>You open the menu for selecting the waveform of the generated signal with the <code class="docutils literal notranslate"><span class="pre">Waveforms</span></code> button (purple). You return to the menu for setting the signal parameters with the <code class="docutils literal notranslate"><span class="pre">Ch1</span> <span class="pre">/</span> <span class="pre">Ch2</span></code> button (yellow) or the <code class="docutils literal notranslate"><span class="pre">Parameter</span></code> button.</p>
+<p>The signal generator outputs the signal through the coaxial (BNC) connection on the right side of the control panel. The set signal is being output when the <code class="docutils literal notranslate"><span class="pre">Output</span></code> button of the selected channel is lit (green).</p>
+<p><img alt="rigol-nastavitev" src="../../_images/siglent_nastavitev.png" /></p>
+<p>For more information, see also the <a class="reference download internal" download="" href="../../_downloads/11df7a5bc1e8f12ac84c0bf298b2f63b/SDG1000X_QuickStart.pdf"><span class="xref download myst">quick user guide</span></a>.</p>
+<div class="important admonition">
+<p class="admonition-title">Warning</p>
+<p>Before you turn on the signal output with the appropriate <code class="docutils literal notranslate"><span class="pre">Channel</span></code> button, <strong>check that all the settings of the selected channel are correct and that you have not exceeded the measurement range of the acquisition system</strong>. Only then connect the acquisition system to the output channel of the signal generator!</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/en"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="01%20-%20Introduction%20to%20LabVIEW.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction to LabVIEW</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="03%20-%20Fourier%20integral%20transform.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Fourier integral transform</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-hobbyist-toolkit">LabVIEW Hobbyist Toolkit</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arduino-uno-atmega328p">Arduino Uno (Atmega328p)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labview-and-arduino">LabVIEW and Arduino</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#connecting-to-the-arduino-and-the-first-program">Connecting to the Arduino and the first program</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#automation-with-the-arduino-digital-i-o-terminals">Automation with the Arduino - digital I/O terminals</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-acquisition-with-the-arduino">Data acquisition with the Arduino</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-reading-and-processing-the-acquired-signals">Python - reading and processing the acquired signals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-signal-generator-siglent-sdg-1032x">Using the signal generator (Siglent SDG 1032X)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Domen Gorjup
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

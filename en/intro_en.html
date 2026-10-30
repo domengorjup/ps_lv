@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Signal Processing &#8212; Signal Processing - Laboratory Exercises</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'intro_en';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction to LabVIEW" href="notebooks/en/01%20-%20Introduction%20to%20LabVIEW.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/lv_logo.png" class="logo__image only-light" alt="Signal Processing - Laboratory Exercises - Home"/>
+    <script>document.write(`<img src="_static/lv_logo.png" class="logo__image only-dark" alt="Signal Processing - Laboratory Exercises - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Signal Processing
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratory exercise handouts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/01%20-%20Introduction%20to%20LabVIEW.html">Introduction to LabVIEW</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/02%20-%20LabVIEW%20and%20Arduino%2C%20Python.html">LabVIEW and Arduino, Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/03%20-%20Fourier%20integral%20transform.html">Fourier integral transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/04%20-%20Properties%20of%20the%20Fourier%20transform.html">Properties of the Fourier transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/05%20-%20LTI%20systems%2C%20signal%20acquisition.html">Linear time-invariant systems - signal acquisition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/06%20-%20LTI%20systems%202%2C%20frequency%20response%20functions.html">Linear time-invariant (LTI) systems 2 - frequency response functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/07%20-%20Uniform%20sampling%20and%20quantization.html">Uniform sampling and quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/08%20-%20DFT%20and%20fundamentals%20of%20random%20processes.html">DFT and fundamentals of random processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/09%20-%20Random%20excitation%2C%20signal%20acquisition.html">Random excitation - signal acquisition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/10%20-%20Random%20excitation%202%2C%20frequency%20response%20functions.html">Random excitation - estimation of frequency response functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About this collection</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="about_en.html">Signal Processing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item"><a class="btn btn-sm lang-switch" href="https://domengorjup.github.io/ps_lv/" title="Slovenska različica" style="font-weight: bold;">SL</a></div>
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/domengorjup/ps_lv" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/domengorjup/ps_lv/issues/new?title=Issue%20on%20page%20%2Fintro_en.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/intro_en.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Signal Processing</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-of-continuous-work-in-the-exercises">Assessment of continuous work in the exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moodle-signal-processing">Moodle - Signal Processing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-assignments">Homework assignments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seminar">Seminar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p><em>A collection of laboratory exercise templates for the course</em></p>
+<section class="tex2jax_ignore mathjax_ignore" id="signal-processing">
+<h1>Signal Processing<a class="headerlink" href="#signal-processing" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://domengorjup.github.io/ps_lv/"><img alt="Jupyter Book Badge" src="_images/badge.svg" /></a></p>
+<p>Here you will find the laboratory exercise templates for the course <a class="reference external" href="https://www.ladisk.si/?what=incfl&amp;amp;flnm=procesiranje%20signalov.php">Signal Processing</a>, which is taught in the summer semester of the 1st year of the Master’s study program at the Faculty of Mechanical Engineering in Ljubljana.</p>
+<p>The templates are prepared as interactive <a class="reference external" href="https://jupyter.org/">Jupyter Notebook</a> documents. Their source code is published as well and is intended for preparing and carrying out the laboratory exercises.</p>
+<div class="warning admonition">
+<p class="admonition-title">Participation in the exercises</p>
+<p>In the laboratory exercises we will work with the acquisition and processing of real signals. Therefore, <strong>come prepared</strong> by studying the exercise template in advance; its content also relates to the current lecture. Participation in the exercises will be assessed with weekly assignments.</p>
+</div>
+<p>The templates contain highlighted boxes with a special meaning. They hold the following:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Additional useful information related to the material.</p>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">Task</p>
+<p>Tasks that we will explore together during the exercises.</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Task</p>
+<p>Tasks that you will solve on your own during the exercises.</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Assessment</p>
+<p>Homework assignments and tasks intended for assessing participation in the exercises.</p>
+</div>
+</section>
+<section id="assessment-of-continuous-work-in-the-exercises">
+<h2>Assessment of continuous work in the exercises<a class="headerlink" href="#assessment-of-continuous-work-in-the-exercises" title="Link to this heading">#</a></h2>
+<section id="moodle-signal-processing">
+<h3><a class="reference external" href="https://e-ucilnica.fs.uni-lj.si/course/view.php?id=328">Moodle - Signal Processing</a><a class="headerlink" href="#moodle-signal-processing" title="Link to this heading">#</a></h3>
+<p>Self-enrollment, password: <code class="docutils literal notranslate"><span class="pre">PRSMM-26</span></code></p>
+</section>
+<section id="homework-assignments">
+<h3>Homework assignments<a class="headerlink" href="#homework-assignments" title="Link to this heading">#</a></h3>
+<div class="warning admonition" id="intro-domace-naloge">
+<p class="admonition-title">Homework assignments</p>
+<p>The content of the homework assignments will be individualized; you will find the data for your assignment in <a class="reference external" href="https://e-ucilnica.fs.uni-lj.si/">Moodle</a>.</p>
+<p>In accordance with the assignment instructions, prepare a <strong>short</strong> report (from 3 to <strong>at most 10 code cells</strong>) in which you first summarize the <em>requirements of the assignment</em> and <em>your data</em>. Include both the <em>solution code</em> and <em>short comments</em> on the assignment in the report (a suitable format is, e.g., a Jupyter Notebook).</p>
+<p><strong>Bonus:</strong> For a chance of a higher participation grade, pay attention to the suggested bonus tasks of the homework assignment.</p>
+<p><strong>HOMEWORK IS SUBMITTED</strong> via Moodle.</p>
+<p>The <strong>submission deadline</strong> is <em>the day of the next lecture of the course</em>, unless the assignment defines otherwise.</p>
+<p>The system allows you to submit several files. If you prepare the homework report in a programming environment (e.g., a Jupyter Notebook), submit <strong>the report in <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> format as well</strong> to the Moodle.</p>
+<p>You can easily convert a Jupyter Notebook file to PDF with <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">-&gt;</span> <span class="pre">Print</span> <span class="pre">Preview</span> <span class="pre">-&gt;</span> <span class="pre">Print</span> <span class="pre">to</span> <span class="pre">PDF</span></code>.</p>
+</div>
+<p><img alt="jupyter_conversion" src="_images/pretvorba_jupyter_notebook.png" /></p>
+<div class="warning admonition">
+<p class="admonition-title">Homework grading criteria</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><div style="width:65pt">Grade [%]</div></p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>&lt; 50</p></td>
+<td><p>You are not adequately prepared for the exercise <strong>and</strong> the minimum requirements of the assignment are not met / the report was not submitted properly.</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt; 60</p></td>
+<td><p>You are not adequately prepared for the exercise <strong>or</strong> the minimum requirements of the homework assignment are not met.</p></td>
+</tr>
+<tr class="row-even"><td><p>(60, 70]</p></td>
+<td><p>The basic requirements of the assignment are met with deficiencies (e.g., inadequately presented assignment data, incompletely labeled plots, no comment on the main findings…).</p></td>
+</tr>
+<tr class="row-odd"><td><p>(70, 80]</p></td>
+<td><p>The basic requirements of the assignment are met, adequate report.</p></td>
+</tr>
+<tr class="row-even"><td><p>(80, 90]</p></td>
+<td><p>The basic requirements of the assignment are met, additional content with deficiencies (e.g., poorly interpreted results…).</p></td>
+</tr>
+<tr class="row-odd"><td><p>(90, 100]</p></td>
+<td><p>Additional content is appropriately applied, presented and interpreted.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<br>
+<p>In case of a <strong>late submission</strong>, the homework grade is reduced (10% / day).</p>
+</div>
+</section>
+<section id="seminar">
+<h3>Seminar<a class="headerlink" href="#seminar" title="Link to this heading">#</a></h3>
+<div class="warning admonition" id="intro-seminar">
+<p class="admonition-title">Optional seminar</p>
+<p>Part of the continuous-work grade is earned through an optional individual seminar. Prepare the seminar on a topic chosen from the content of the laboratory exercises and present it in a 30-minute presentation during the regular laboratory exercise slot.</p>
+<p><strong>Requirements:</strong></p>
+<ul class="simple">
+<li><p>The presentation serves as an introduction to the laboratory exercise and must be detailed enough to enable independent completion of the individual part of the exercise.</p></li>
+<li><p>You carry out the seminar in the Jupyter Notebook environment, with appropriate descriptions of the theoretical background of the methods and practical examples.</p></li>
+<li><p>You may use the published laboratory exercise template as a starting point, but the use of additional, properly cited sources, examples and literature is mandatory.</p></li>
+</ul>
+<p><strong>Criteria:</strong></p>
+<p>The seminar is assessed according to the following weighted criteria:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Criterion</p></th>
+<th class="head"><p>Weight</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Clarity and structure of the presentation</p></td>
+<td><p>25%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Interest and didactic value</p></td>
+<td><p>20%</p></td>
+</tr>
+<tr class="row-even"><td><p>Correctness of content</p></td>
+<td><p>30%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Technical execution (Jupyter Notebook, examples, citations)</p></td>
+<td><p>25%</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<br>
+<p><strong>Grading scale:</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Grade [%]</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>&lt; 50</p></td>
+<td><p>The presentation is not sufficient for carrying out the exercise <strong>and</strong> the minimum requirements are not met (missing sources, deficient Jupyter Notebook).</p></td>
+</tr>
+<tr class="row-odd"><td><p>&lt; 60</p></td>
+<td><p>The presentation is not sufficient for carrying out the exercise <strong>or</strong> the minimum requirements are not met (missing citations, incomplete explanation of the methods).</p></td>
+</tr>
+<tr class="row-even"><td><p>(60, 70]</p></td>
+<td><p>The basic requirements are met with deficiencies (e.g., superficial explanation of the background, examples without sufficient comments, inadequate citing).</p></td>
+</tr>
+<tr class="row-odd"><td><p>(70, 80]</p></td>
+<td><p>The basic requirements are met, the presentation is sufficient for carrying out the exercise, sources are properly cited.</p></td>
+</tr>
+<tr class="row-even"><td><p>(80, 90]</p></td>
+<td><p>The basic requirements are met, additional content (e.g., comparison of methods, additional examples) with deficiencies in interpretation or execution.</p></td>
+</tr>
+<tr class="row-odd"><td><p>(90, 100]</p></td>
+<td><p>Excellent presentation with additional content, examples are properly interpreted, clear didactic value, technically flawless execution.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<br>
+<p>If you do not opt for the seminar, the grade <span class="math notranslate nohighlight">\(SN=0 %\)</span> is used when calculating the final participation grade.</p>
+<p><strong>Homework assignment</strong></p>
+<p>In the week when you defend the individual seminar <strong>with a grade of at least 80%</strong>, it also counts as a completed homework assignment. Instead of the homework report, you submit only a PDF document stating that you completed the individual seminar that week.</p>
+</div>
+</section>
+</section>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Laboratory exercise handouts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/01%20-%20Introduction%20to%20LabVIEW.html">Introduction to LabVIEW</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/02%20-%20LabVIEW%20and%20Arduino%2C%20Python.html">LabVIEW and Arduino, Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/03%20-%20Fourier%20integral%20transform.html">Fourier integral transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/04%20-%20Properties%20of%20the%20Fourier%20transform.html">Properties of the Fourier transform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/05%20-%20LTI%20systems%2C%20signal%20acquisition.html">Linear time-invariant systems - signal acquisition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/06%20-%20LTI%20systems%202%2C%20frequency%20response%20functions.html">Linear time-invariant (LTI) systems 2 - frequency response functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/07%20-%20Uniform%20sampling%20and%20quantization.html">Uniform sampling and quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/08%20-%20DFT%20and%20fundamentals%20of%20random%20processes.html">DFT and fundamentals of random processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/09%20-%20Random%20excitation%2C%20signal%20acquisition.html">Random excitation - signal acquisition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/en/10%20-%20Random%20excitation%202%2C%20frequency%20response%20functions.html">Random excitation - estimation of frequency response functions</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About this collection</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about_en.html">Signal Processing</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="notebooks/en/01%20-%20Introduction%20to%20LabVIEW.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction to LabVIEW</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessment-of-continuous-work-in-the-exercises">Assessment of continuous work in the exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#moodle-signal-processing">Moodle - Signal Processing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homework-assignments">Homework assignments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seminar">Seminar</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Domen Gorjup
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

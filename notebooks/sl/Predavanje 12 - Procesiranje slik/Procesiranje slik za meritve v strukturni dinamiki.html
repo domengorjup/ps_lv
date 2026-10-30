@@ -1,0 +1,1516 @@
+
+<!DOCTYPE html>
+
+
+<html lang="sl" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Procesiranje slik za meritve v strukturni dinamiki &#8212; Procesiranje signalov - Laboratorijske vaje</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=a3a20203"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../../_static/translations.js?v=852ec8ec"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/sl/Predavanje 12 - Procesiranje slik/Procesiranje slik za meritve v strukturni dinamiki';</script>
+    <link rel="author" title="O dokumentih" href="../../../about.html" />
+    <link rel="index" title="Abecedni seznam" href="../../../genindex.html" />
+    <link rel="search" title="Išči" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="sl"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Išči po knjigi..."
+         aria-label="Išči po knjigi..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/lv_logo.png" class="logo__image only-light" alt="Procesiranje signalov - Laboratorijske vaje - Home"/>
+    <script>document.write(`<img src="../../../_static/lv_logo.png" class="logo__image only-dark" alt="Procesiranje signalov - Laboratorijske vaje - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Išči</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Procesiranje signalov
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Predloge laboratorijskih vaj</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01%20-%20Uvod%20v%20LabView.html">Uvod v LabView</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02%20-%20LabView%20in%20Arduino%2C%20Python.html">LabView in Arduino, Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03%20-%20Fourierova%20integralska%20transformacija.html">Fourierova integralska transformacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04%20-%20Lastnosti%20Fourierove%20transformacije.html">Lastnosti Fourierove transformacije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05%20-%20LTI%20sistemi%2C%20zajem%20signalov.html">Linearni, časovno invariantni (LTI) sistemi - zajem signalov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06%20-%20LTI%20sistemi%202%2C%20prenosne%20funkcije.html">Linearni, časovno invariantni (LTI) sistemi 2 - prenosne funkcije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07%20-%20Enakomerno%20%C4%8Dasovno%20vzor%C4%8Denje%20in%20kvantizacija.html">Enakomerno časovno vzorčenje in kvantizacija</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08%20-%20DFT%20in%20osnove%20naklju%C4%8Dnih%20procesov.html">DFT in osnove naključnih procesov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.html">Naključno vzbujanje - zajem signalov</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10%20-%20Naklju%C4%8Dno%20vzbujanje%202%2C%20prenosne%20funkcije.html">Naključno vzbujanje - ocena frekvenčnih prenosnih funkcij</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">O zbirki predlog</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">Procesiranje signalov</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item"><a class="btn btn-sm lang-switch" href="https://domengorjup.github.io/ps_lv/en/" title="English version" style="font-weight: bold;">EN</a></div>
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/domengorjup/ps_lv" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Izvorno skladišče"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/domengorjup/ps_lv/issues/new?title=Issue%20on%20page%20%2Fnotebooks/sl/Predavanje 12 - Procesiranje slik/Procesiranje slik za meritve v strukturni dinamiki.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Odprite številko"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Prenesite to stran">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/notebooks/sl/Predavanje 12 - Procesiranje slik/Procesiranje slik za meritve v strukturni dinamiki.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Prenesite izvorno datoteko"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Natisni v PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Celozaslonski način"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Išči" aria-label="Išči" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Procesiranje slik za meritve v strukturni dinamiki</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Vsebina </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slikovne-meritve">Slikovne meritve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametri-zajema">Parametri zajema</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osvetlitev">Osvetlitev</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priprava-povrsine-merjenca">Priprava površine merjenca</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pogoste-tezave-pri-slikovnih-meritvah">Pogoste težave pri slikovnih meritvah</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neustrezno-izostrena-slika">Neustrezno izostrena slika</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neustrezna-osvetlitev">Neustrezna osvetlitev</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dolocitev-pomikov-na-slikah-z-metodo-opticnega-toka">Določitev pomikov na slikah z metodo optičnega toka</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metoda-lucas-kanade">Metoda Lucas-Kanade:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izracun-frf">Izračun FRF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eskperimentalna-modalna-analiza-samo-slikovna-meritev">Eskperimentalna modalna analiza (samo slikovna meritev):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primerjava-z-meritivjo-pospeskomera">Primerjava z meritivjo pospeškomera</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="procesiranje-slik-za-meritve-v-strukturni-dinamiki">
+<h1>Procesiranje slik za meritve v strukturni dinamiki<a class="headerlink" href="#procesiranje-slik-za-meritve-v-strukturni-dinamiki" title="Link to this heading">#</a></h1>
+<hr class="docutils" />
+<h1>Table of Contents<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Slikovne-meritve" data-toc-modified-id="Slikovne-meritve-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Slikovne meritve</a></span><ul class="toc-item"><li><span><a href="#Parametri-zajema" data-toc-modified-id="Parametri-zajema-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Parametri zajema</a></span></li><li><span><a href="#Osvetlitev" data-toc-modified-id="Osvetlitev-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Osvetlitev</a></span></li><li><span><a href="#Priprava-površine-merjenca" data-toc-modified-id="Priprava-površine-merjenca-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Priprava površine merjenca</a></span></li><li><span><a href="#Pogoste-težave-pri-slikovnih-meritvah" data-toc-modified-id="Pogoste-težave-pri-slikovnih-meritvah-1.4"><span class="toc-item-num">1.4&nbsp;&nbsp;</span>Pogoste težave pri slikovnih meritvah</a></span><ul class="toc-item"><li><span><a href="#Neustrezno-izostrena-slika" data-toc-modified-id="Neustrezno-izostrena-slika-1.4.1"><span class="toc-item-num">1.4.1&nbsp;&nbsp;</span>Neustrezno izostrena slika</a></span></li><li><span><a href="#Neustrezna-osvetlitev" data-toc-modified-id="Neustrezna-osvetlitev-1.4.2"><span class="toc-item-num">1.4.2&nbsp;&nbsp;</span>Neustrezna osvetlitev</a></span></li></ul></li></ul></li><li><span><a href="#Določitev-pomikov-na-slikah-z-metodo-optičnega-toka-(Simplified-Optical-Flow)" data-toc-modified-id="Določitev-pomikov-na-slikah-z-metodo-optičnega-toka-(Simplified-Optical-Flow)-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Določitev pomikov na slikah z metodo optičnega toka (<em>Simplified Optical Flow</em>)</a></span></li><li><span><a href="#Metoda-Lucas-Kanade:" data-toc-modified-id="Metoda-Lucas-Kanade:-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Metoda Lucas-Kanade:</a></span></li><li><span><a href="#Izračun-FRF" data-toc-modified-id="Izračun-FRF-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Izračun FRF</a></span></li><li><span><a href="#Eskperimentalna-modalna-analiza-(samo-slikovn-meritev):" data-toc-modified-id="Eskperimentalna-modalna-analiza-(samo-slikovn-meritev):-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Eskperimentalna modalna analiza (samo slikovn meritev):</a></span></li><li><span><a href="#Eskperimentalna-modalna-analiza---hibridna-metoda" data-toc-modified-id="Eskperimentalna-modalna-analiza---hibridna-metoda-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Eskperimentalna modalna analiza - hibridna metoda</a></span></li></ul></div><p>Vsi potrebni paketi so navedeni v <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-m</span> <span class="pre">requirements.txt</span></code></p></li>
+</ul>
+<p>Priprava paketov in nekaterih funkcij:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">DeprecationWarning</span><span class="p">)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">patches</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">orodja</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_mode_shape</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">interact</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">lvm_read</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyidi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sdypy</span><span class="w"> </span><span class="kn">import</span> <span class="n">EMA</span> <span class="k">as</span> <span class="n">pyEMA</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sdypy</span><span class="w"> </span><span class="kn">import</span> <span class="n">FRF</span> <span class="k">as</span> <span class="n">pyFRF</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">14</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">interact</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">import</span><span class="w"> </span><span class="nn">lvm_read</span>
+<span class="ne">---&gt; </span><span class="mi">14</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pyidi</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sdypy</span><span class="w"> </span><span class="kn">import</span> <span class="n">EMA</span> <span class="k">as</span> <span class="n">pyEMA</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sdypy</span><span class="w"> </span><span class="kn">import</span> <span class="n">FRF</span> <span class="k">as</span> <span class="n">pyFRF</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pyidi&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="slikovne-meritve">
+<h2>Slikovne meritve<a class="headerlink" href="#slikovne-meritve" title="Link to this heading">#</a></h2>
+<p><strong>Postavitev eksperimenta:</strong></p>
+<img src="figures/experiment_setup.jpg" width="80%"><p><strong>Vzbujanje z modalnim kladivom:</strong></p>
+<video controls loop src="figures/experiment.mp4" width="100%" rotate="270deg"/><p>Datoteke s slikami:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cam_fname</span> <span class="o">=</span> <span class="s1">&#39;data/camera.cih&#39;</span>
+<span class="n">lvm_fname</span> <span class="o">=</span> <span class="s1">&#39;data/acceleration.lvm&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Odpiranje posnetka s paketom <a class="reference external" href="https://github.com/ladisk/pyidi">pyidi</a>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">video</span> <span class="o">=</span> <span class="n">pyidi</span><span class="o">.</span><span class="n">video_reader</span><span class="o">.</span><span class="n">VideoReader</span><span class="p">(</span><span class="n">cam_fname</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frames</span> <span class="o">=</span> <span class="n">video</span><span class="o">.</span><span class="n">get_frames</span><span class="p">()</span> <span class="c1"># (N, h, w)</span>
+<span class="n">frames</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">frames</span><span class="o">.</span><span class="n">dtype</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((3750, 40, 640), dtype(&#39;uint8&#39;))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">frames</span><span class="p">[:,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">200</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f3e47bad310&gt;]
+</pre></div>
+</div>
+<img alt="../../../_images/36f49117ed78571caabc1b24dd6feb6a6b280be6a92d2b97bcad6ac2cacf7989.png" src="../../../_images/36f49117ed78571caabc1b24dd6feb6a6b280be6a92d2b97bcad6ac2cacf7989.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frames</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3750, 40, 640)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frames</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">frames</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="mi">12</span> <span class="o">/</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">20000</span> <span class="o">/</span> <span class="mf">1e6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>768.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">image_nr</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">frames</span><span class="p">[</span><span class="n">image_nr</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/1c1cc2dda75c512062e2478c5b503e7ee372e6b06d1d6380c3486ae4a48182c6.png" src="../../../_images/1c1cc2dda75c512062e2478c5b503e7ee372e6b06d1d6380c3486ae4a48182c6.png" />
+</div>
+</div>
+<p><em>Posnetek je prilagojen prikazu in je zato slabše kavlaitete. Za natančne meritve običajno zajamemo zelo veliko količino podatkov.</em></p>
+<video controls loop src="figures/video.mov" width="950" rotate="270deg"/><section id="parametri-zajema">
+<h3>Parametri zajema<a class="headerlink" href="#parametri-zajema" title="Link to this heading">#</a></h3>
+<p>Parametri nastavitve kamere so zapisani v atributu <code class="docutils literal notranslate"><span class="pre">info</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">video</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;Color Bit&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="osvetlitev">
+<h3>Osvetlitev<a class="headerlink" href="#osvetlitev" title="Link to this heading">#</a></h3>
+<p>Ustrezna osvetlitev je eden najpomembnejših parametrov pri zajemu slik s hitro kamero.</p>
+<p>Pri oceni ustreznosti osvetlitve si lahko pomagamo s hitrogramom sivinskih vrendosti:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected_frame</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1"># position of observed rectangle</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">roi</span> <span class="o">=</span> <span class="n">frames</span><span class="p">[</span><span class="n">selected_frame</span><span class="p">,</span> <span class="n">y0</span><span class="p">:</span><span class="n">y0</span><span class="o">+</span><span class="n">d</span><span class="p">,</span> <span class="n">x0</span><span class="p">:</span><span class="n">x0</span><span class="o">+</span><span class="n">d</span><span class="p">]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">frames</span><span class="p">[</span><span class="n">selected_frame</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">roi</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">);</span>
+
+<span class="c1"># Formating</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="n">d</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Grayscale value [/]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;n pixels [/]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/90fe0c5bf2bfddfe255c824860ad91b7cfaed0bfbf2c4edaa44c91cac1d588ec.png" src="../../../_images/90fe0c5bf2bfddfe255c824860ad91b7cfaed0bfbf2c4edaa44c91cac1d588ec.png" />
+</div>
+</div>
+</section>
+<section id="priprava-povrsine-merjenca">
+<h3>Priprava površine merjenca<a class="headerlink" href="#priprava-povrsine-merjenca" title="Link to this heading">#</a></h3>
+<p>Za delovanje metod določanja pomikov s slik na osnovi gradientov sivinskih vrendosti je nujno, da je površina merjenca ustrezno pripravljena.</p>
+<p>Pogosto na opazovano površino apliciramo visokokontrasntni vzorec pack (<em>speckle</em>) ali črt. Identifikacija pomikov je najzaneslivejša v smeri gradienta sivinskih vrendosti.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(40, 640)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grad0</span><span class="p">,</span> <span class="n">grad1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">frames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">))</span> <span class="c1"># gradient computation</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grad0</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(40, 640)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">grad0</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f3e4572dd10&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/9a99dc526eedf0cc2a6c2acc05964bcf9732ac4278f1def06ed5b52f6e148b16.png" src="../../../_images/9a99dc526eedf0cc2a6c2acc05964bcf9732ac4278f1def06ed5b52f6e148b16.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grad1</span><span class="p">[</span><span class="mi">25</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f3e463f8b90&gt;]
+</pre></div>
+</div>
+<img alt="../../../_images/88abb01496c3c251f8e0059cb6ffe10f9704e50bf0581ae2725ceaf603208f16.png" src="../../../_images/88abb01496c3c251f8e0059cb6ffe10f9704e50bf0581ae2725ceaf603208f16.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grad0</span><span class="p">[:,</span> <span class="mi">200</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f3e45f78050&gt;]
+</pre></div>
+</div>
+<img alt="../../../_images/2bd0eff5fc21df3b0bb717de3db10f70076c623c6ec45e43bab318931ec3556a.png" src="../../../_images/2bd0eff5fc21df3b0bb717de3db10f70076c623c6ec45e43bab318931ec3556a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span> <span class="mi">200</span> <span class="c1"># position of cross section</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">video</span><span class="o">.</span><span class="n">get_frames</span><span class="p">()[</span><span class="n">selected_frame</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">video</span><span class="o">.</span><span class="n">get_frames</span><span class="p">()[</span><span class="n">selected_frame</span><span class="p">,</span> <span class="p">:,</span> <span class="n">x0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Grayscale value&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grad0</span><span class="p">[:,</span> <span class="n">x0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Gradient&#39;</span><span class="p">)</span>
+<span class="c1"># Formating</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">vlines</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x0</span><span class="o">+</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Cross section&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x0</span><span class="o">+</span><span class="mi">50</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">35</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Image height [px]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Grayscale/gradient value [/]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/7bf3be9708bd49cb794d71ef4b825ccf3a1beb6c1d3ed86b87a179d0fa5d7da6.png" src="../../../_images/7bf3be9708bd49cb794d71ef4b825ccf3a1beb6c1d3ed86b87a179d0fa5d7da6.png" />
+</div>
+</div>
+</section>
+<section id="pogoste-tezave-pri-slikovnih-meritvah">
+<h3>Pogoste težave pri slikovnih meritvah<a class="headerlink" href="#pogoste-tezave-pri-slikovnih-meritvah" title="Link to this heading">#</a></h3>
+<section id="neustrezno-izostrena-slika">
+<h4>Neustrezno izostrena slika<a class="headerlink" href="#neustrezno-izostrena-slika" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">layout_fname</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;data/focus.cih&#39;</span>
+<span class="n">video_layout</span> <span class="o">=</span> <span class="n">pyidi</span><span class="o">.</span><span class="n">video_reader</span><span class="o">.</span><span class="n">VideoReader</span><span class="p">(</span><span class="n">layout_fname</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">video_layout</span><span class="o">.</span><span class="n">get_frames</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/736f4dcaf063b28057e6022da9099daddfb716dbd9e6420acdc357098cb17b19.png" src="../../../_images/736f4dcaf063b28057e6022da9099daddfb716dbd9e6420acdc357098cb17b19.png" />
+</div>
+</div>
+</section>
+<section id="neustrezna-osvetlitev">
+<h4>Neustrezna osvetlitev<a class="headerlink" href="#neustrezna-osvetlitev" title="Link to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">light_fname</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;data/illumination.cih&#39;</span>
+<span class="n">video_light</span> <span class="o">=</span> <span class="n">pyidi</span><span class="o">.</span><span class="n">video_reader</span><span class="o">.</span><span class="n">VideoReader</span><span class="p">(</span><span class="n">light_fname</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> ipympl
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">selected_frame</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">y0</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">20</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span><span class="n">x0</span><span class="p">):</span>
+    <span class="n">roi</span> <span class="o">=</span> <span class="n">video_light</span><span class="o">.</span><span class="n">get_frames</span><span class="p">()[</span><span class="n">selected_frame</span><span class="p">,</span> <span class="n">y0</span><span class="p">:</span><span class="n">y0</span><span class="o">+</span><span class="n">d</span><span class="p">,</span> <span class="n">x0</span><span class="p">:</span><span class="n">x0</span><span class="o">+</span><span class="n">d</span><span class="o">*</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">video_light</span><span class="o">.</span><span class="n">get_frames</span><span class="p">()[</span><span class="n">selected_frame</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">roi</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">);</span>
+    <span class="c1"># Formating</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="n">d</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Grayscale value [/]&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;n pixels [/]&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">260</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">show</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mi">100</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "d6c2c6af0cb54382b1794b9a26e71dd8", "version_major": 2, "version_minor": 0}</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="dolocitev-pomikov-na-slikah-z-metodo-opticnega-toka">
+<h2>Določitev pomikov na slikah z metodo optičnega toka<a class="headerlink" href="#dolocitev-pomikov-na-slikah-z-metodo-opticnega-toka" title="Link to this heading">#</a></h2>
+<p>Svetlost na sliki se ohranja:
+$<span class="math notranslate nohighlight">\(
+	f(x, y, t) = f(x + \Delta x, y + \Delta y, t+ \Delta t).
+\)</span>$</p>
+<p>Sledi enačba poenostavljene metode optičnega toka za posamezno točko na sliki:
+$<span class="math notranslate nohighlight">\(
+s(x_j,y_k,t)=\frac{f_0(x_j,y_k)-f(x_j,y_k,t)}{|\nabla f_0|}
+\)</span>$</p>
+<p><span class="math notranslate nohighlight">\(s(x_j,y_k,t) \dots\)</span> pomik točke v smeri lokalnega gadienta sivinskih vrednosti</p>
+<p>(<a class="reference external" href="https://github.com/ladisk/pyidi">Javh et al</a>)</p>
+<p>Računamo pomike glede na referenčno sliko:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reference_image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">video</span><span class="o">.</span><span class="n">get_frames</span><span class="p">()[:</span><span class="mi">10</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Potrebujemo slike gradienta v smeri <code class="docutils literal notranslate"><span class="pre">x</span></code> (1) in <code class="docutils literal notranslate"><span class="pre">y</span></code> (0):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grad0</span><span class="p">,</span> <span class="n">grad1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">reference_image</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">grad0</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">grad1</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Za obdelavo so primerne točke z visoko vrednostjo gradienta:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">border</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">border_h</span> <span class="o">=</span> <span class="mi">12</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>   <span class="c1"># število vrstic mreže točk</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">16</span>  <span class="c1"># število stolpcev mreže točk</span>
+
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">border</span><span class="p">,</span> <span class="n">reference_image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">border</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">border</span> <span class="o">-</span> <span class="n">reference_image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">border</span><span class="p">)</span><span class="o">//</span><span class="n">N</span><span class="p">)</span> <span class="c1"># stolpci mreže točk</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">grad0</span><span class="p">[</span><span class="n">border_h</span><span class="p">:</span><span class="o">-</span><span class="n">border_h</span><span class="p">,</span> <span class="n">w</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="o">-</span><span class="n">n</span><span class="p">:,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span> <span class="o">+</span> <span class="n">border_h</span> <span class="c1"># vrstice mreže točk - z najvišjo absolutno vrednostjo gradienta</span>
+
+<span class="n">inds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">h</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">w</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 26,  20],
+       [ 17,  20],
+       [ 17,  60],
+       [ 26,  60],
+       [ 18, 100],
+       [ 26, 100],
+       [ 18, 140],
+       [ 26, 140],
+       [ 18, 180],
+       [ 26, 180],
+       [ 18, 220],
+       [ 26, 220],
+       [ 18, 260],
+       [ 26, 260],
+       [ 18, 300],
+       [ 26, 300],
+       [ 18, 340],
+       [ 26, 340],
+       [ 18, 380],
+       [ 26, 380],
+       [ 26, 420],
+       [ 18, 420],
+       [ 26, 460],
+       [ 18, 460],
+       [ 26, 500],
+       [ 18, 500],
+       [ 26, 540],
+       [ 18, 540],
+       [ 27, 580],
+       [ 18, 580]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">grad0</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">inds</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">inds</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Image width [px]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Image height [px]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Gradient slike in izbrane točke&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/91cf5b5f9daea1f38a1b62b7399b731953e1aab0bce011e8d3168f91b0bb5dbb.png" src="../../../_images/91cf5b5f9daea1f38a1b62b7399b731953e1aab0bce011e8d3168f91b0bb5dbb.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inds</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(30, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">inds</span><span class="o">.</span><span class="n">T</span>
+<span class="n">frames</span> <span class="o">=</span> <span class="n">video</span><span class="o">.</span><span class="n">get_frames</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Enačba optičnega toka:</p>
+<div class="math notranslate nohighlight">
+\[
+s(x_j,y_k,t)=\frac{f_0(x_j,y_k)-f(x_j,y_k,t)}{|\nabla f_0|}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d_of</span> <span class="o">=</span> <span class="p">((</span><span class="n">reference_image</span><span class="p">[</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">]</span> <span class="o">-</span> <span class="n">frames</span><span class="p">[:,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">])</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="p">]))</span><span class="o">.</span><span class="n">T</span>
+<span class="n">d_of</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(30, 3750)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d_of</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Direction 0 (y)&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Image [/]]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Displacement [px]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f3dfe136490&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/317392c57d6761ddd2cee19acf8ad45ff1a2feeb88259845d288b518e2d8c475.png" src="../../../_images/317392c57d6761ddd2cee19acf8ad45ff1a2feeb88259845d288b518e2d8c475.png" />
+</div>
+</div>
+<p>Izračun pomikov s <code class="docutils literal notranslate"><span class="pre">pyidi</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sof_analiza</span> <span class="o">=</span> <span class="n">pyidi</span><span class="o">.</span><span class="n">SimplifiedOpticalFlow</span><span class="p">(</span><span class="n">video</span><span class="p">)</span> <span class="c1"># ustvari objekt za analizo</span>
+<span class="n">sof_analiza</span><span class="o">.</span><span class="n">set_points</span><span class="p">(</span><span class="n">points</span><span class="o">=</span><span class="n">inds</span><span class="p">)</span> <span class="c1"># izbira točk za analizo</span>
+<span class="n">sof_analiza</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">mean_n_neighbours</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># povprečimo sosednji dve točki (v istem stolpcu)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Izračun pomikov z <code class="docutils literal notranslate"><span class="pre">get_displacements()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">displacements</span> <span class="o">=</span> <span class="n">sof_analiza</span><span class="o">.</span><span class="n">get_displacements</span><span class="p">()</span> <span class="o">*</span> <span class="mf">8e-5</span> <span class="c1"># pretvorba [piksel] &gt; [m]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|█████████████████████████████████████████████████████████| 3750/3750 [00:01&lt;00:00, 1944.07it/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Averaging...
+Finished!
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/mnt/data/pedagoško/_Procesiranje signalov/_VAJE/_PREDLOGE/.venv/lib/python3.13/site-packages/pyidi/methods/_simplified_optical_flow.py:155: UserWarning: Displacement larger than 0.5 pixel
+  warnings.warn(&#39;Displacement larger than 0.5 pixel&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">displacements</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(15, 3750, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">location</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">displacements</span><span class="p">[</span><span class="n">location</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Direction 0 (y)&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Image [/]]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Displacement [m]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f3dfd09a490&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/86961c5d32433699cc25c0d867814ad2dc526436f0552a1016fc55654723dbf4.png" src="../../../_images/86961c5d32433699cc25c0d867814ad2dc526436f0552a1016fc55654723dbf4.png" />
+</div>
+</div>
+</section>
+<section id="metoda-lucas-kanade">
+<h2>Metoda Lucas-Kanade:<a class="headerlink" href="#metoda-lucas-kanade" title="Link to this heading">#</a></h2>
+<p>Če enačbe optičnega toka zapišemo za podobmočje več točk na sliki, dobimo predoločen sistem enačb.</p>
+<p>Rešitev predoločenega sistema v smislu najmanjše kvadratične napake nam da pomik podobmočja:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
+	\begin{bmatrix}
+		\Delta x \\
+		\Delta y
+	\end{bmatrix} =
+	\begin{bmatrix}
+		\sum g_x^2 &amp;\sum  g_x \, g_y \\
+		\sum  g_x \, g_y &amp;\sum g_y^2
+	\end{bmatrix}^{-1}
+	\begin{bmatrix}
+		\sum g_x \, (f-g) \\
+		\sum g_y \, (f-g)
+	\end{bmatrix}
+\end{equation}
+\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(f(\mathbf{x}) \dots\)</span> trenutna (premaknjena) slika</p>
+<p><span class="math notranslate nohighlight">\(g(\mathbf{x}) \dots\)</span> referenčna slika</p>
+<p>Do enake rešitve pridemo, če rešim opzimizacijski problem, v katerem iščemo parametre <span class="math notranslate nohighlight">\(\Delta \mathbf{x}\)</span>, ki premaknjeno trenutno sliko <span class="math notranslate nohighlight">\(f(\mathbf{x} + \Delta \mathbf{x})\)</span> poravnajo z referenčno <span class="math notranslate nohighlight">\(g(\mathbf{x})\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+SSD(\Delta \mathbf{x}) = \sum\limits_{x, y} \big[f(\mathbf{x} + \Delta \mathbf{x}) - g(\mathbf{x})\big]^2.
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">points_lk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="o">*</span><span class="n">video</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;Image Height&#39;</span><span class="p">]</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">w</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lk_analiza</span> <span class="o">=</span> <span class="n">pyidi</span><span class="o">.</span><span class="n">LucasKanade</span><span class="p">(</span><span class="n">video</span><span class="p">)</span> <span class="c1"># ustvari objekt za analizo z metodo Lucas-Kanade</span>
+<span class="n">lk_analiza</span><span class="o">.</span><span class="n">set_points</span><span class="p">(</span><span class="n">points_lk</span><span class="p">)</span>
+<span class="n">lk_analiza</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">roi_size</span><span class="o">=</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span> <span class="mi">23</span><span class="p">),</span> <span class="n">max_nfev</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">int_order</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lk_analiza</span><span class="o">.</span><span class="n">show_points</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/9e8d337c4b84b84f7c96666aa755217bd834f9d4f0e197be38c99d6617cf99e0.png" src="../../../_images/9e8d337c4b84b84f7c96666aa755217bd834f9d4f0e197be38c99d6617cf99e0.png" />
+</div>
+</div>
+<p>Izrčaun pomikov:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">displacements_lk</span> <span class="o">=</span> <span class="n">lk_analiza</span><span class="o">.</span><span class="n">get_displacements</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mf">8e-5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "467dccb3b3634733a970a5fed70fe49f", "version_major": 2, "version_minor": 0}</script><div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">/home/dgorjup/.local/share/uv/python/cpython-3.13.9-linux-x86_64-gnu/lib/python3.13/multiprocessing/popen_fork.py:6
+7: DeprecationWarning: This process (pid=854592) is multi-threaded, use of fork() may lead to deadlocks in the 
+child.
+  self.pid = os.fork()
+</pre>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Starting new analysis ---
+ 
+Computation start: 2026-05-26 13:16:51.974550
+</pre></div>
+</div>
+<div class="output text_html"><pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Computation duration: 00:00:44.02
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">displacements_lk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;data/displacements_lk.npy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">točka</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">displacements_lk</span><span class="p">[</span><span class="n">location</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Direction 0 (y), DIC&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">displacements</span><span class="p">[</span><span class="n">location</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Direction 0 (y), optični tok&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Image [/]]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Displacement [m]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f3dfcf2a490&gt;
+</pre></div>
+</div>
+<img alt="../../../_images/2bd53f94502d7778f6df00fb5112aba31a34d5b775bfe05d7d9916eb8e380da5.png" src="../../../_images/2bd53f94502d7778f6df00fb5112aba31a34d5b775bfe05d7d9916eb8e380da5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">displacements</span> <span class="o">=</span> <span class="n">displacements_lk</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="izracun-frf">
+<h2>Izračun FRF<a class="headerlink" href="#izracun-frf" title="Link to this heading">#</a></h2>
+<p>Izračun amplitudnih spektrov pomikov:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">video</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;Total Frame&#39;</span><span class="p">])</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="nb">int</span><span class="p">(</span><span class="n">video</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;Record Rate(fps)&#39;</span><span class="p">])</span>
+<span class="mi">1</span><span class="o">/</span><span class="n">dt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15000.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">dt</span><span class="o">*</span><span class="n">N</span>
+<span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.25
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">upper_f_limit</span> <span class="o">=</span> <span class="mi">4000</span> <span class="c1"># zgornja frekvenčna meja, ki nas zanima</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freq_cam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+<span class="n">fft_cam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">displacements</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">N</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Opazujemo le frekvence pod mejo <code class="docutils literal notranslate"><span class="pre">upper_f_limit</span></code> Hz:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fft_cam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">fft_cam</span><span class="p">[:,</span> <span class="n">freq_cam</span><span class="o">&lt;</span><span class="n">upper_f_limit</span><span class="p">])</span>
+<span class="n">freq_cam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">freq_cam</span><span class="p">[</span><span class="n">freq_cam</span><span class="o">&lt;</span><span class="n">upper_f_limit</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Silo vzbujanja smo merili s silomerom.</p>
+<p>Da lahko meritiv kombiniaramo, je pomembna <strong>ujemajoča frekvenčna ločljivost</strong>!</p>
+<p>Tudi tukaj se omejimo do <code class="docutils literal notranslate"><span class="pre">upper_f_limit</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lvm</span> <span class="o">=</span> <span class="n">lvm_read</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">lvm_fname</span><span class="p">)</span>
+<span class="n">force</span> <span class="o">=</span> <span class="n">lvm</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">][:</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 30 predvzorcev</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">force</span><span class="p">)</span><span class="o">//</span><span class="mi">4</span> <span class="c1"># dolžina shranjenega videa je 0.25 s</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">lvm</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;Delta_X&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">fft_force</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfft</span><span class="p">(</span><span class="n">force</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span> <span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="n">N</span>
+<span class="n">freq_force</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">rfftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+
+<span class="n">fft_force</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">fft_force</span><span class="p">[</span><span class="n">freq_force</span><span class="o">&lt;</span><span class="n">upper_f_limit</span><span class="p">])</span>
+<span class="n">freq_force</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">freq_force</span><span class="p">[</span><span class="n">freq_force</span><span class="o">&lt;</span><span class="n">upper_f_limit</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_cam</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq_force</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f3eb2e020d0&gt;]
+</pre></div>
+</div>
+<img alt="../../../_images/a5082d4059fac64d6b46e057d2619075aa0a8034d6aadd8bb173eb4b2ac90024.png" src="../../../_images/a5082d4059fac64d6b46e057d2619075aa0a8034d6aadd8bb173eb4b2ac90024.png" />
+</div>
+</div>
+<p>Ker smo zajeli le en segment ne moremo uporabiti natančnejše cneilke FRF:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frf_cam</span> <span class="o">=</span> <span class="n">fft_cam</span><span class="o">/</span><span class="n">fft_force</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq_cam</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">frf_cam</span><span class="p">[</span><span class="n">točka</span><span class="p">]));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency [Hz]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;FRF [m/N]&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/04107a4b652fd5aaf6b1f0094050d8bb21b9284171a8074cd0adf0737c6c1832.png" src="../../../_images/04107a4b652fd5aaf6b1f0094050d8bb21b9284171a8074cd0adf0737c6c1832.png" />
+</div>
+</div>
+</section>
+<section id="eskperimentalna-modalna-analiza-samo-slikovna-meritev">
+<h2>Eskperimentalna modalna analiza (samo slikovna meritev):<a class="headerlink" href="#eskperimentalna-modalna-analiza-samo-slikovna-meritev" title="Link to this heading">#</a></h2>
+<p>Za eksperimentalno modalno analizo uporabimo paket <a class="reference external" href="https://github.com/ladisk/pyidi"><code class="docutils literal notranslate"><span class="pre">sdypy-EMA</span></code></a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cam</span> <span class="o">=</span> <span class="n">pyEMA</span><span class="o">.</span><span class="n">Model</span><span class="p">(</span><span class="n">frf_cam</span><span class="p">,</span> <span class="n">freq_cam</span><span class="p">,</span> <span class="n">pol_order_high</span><span class="o">=</span><span class="mi">75</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="n">upper_f_limit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Izračun polov modela frekvenčne prenosne funkcije:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cam</span><span class="o">.</span><span class="n">get_poles</span><span class="p">(</span><span class="n">show_progress</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                        | 0/75 [00:00&lt;?, ?it/s]/mnt/data/pedagoško/_Procesiranje signalov/_VAJE/_PREDLOGE/.venv/lib/python3.13/site-packages/sdypy/EMA/EMA.py:454: RuntimeWarning: invalid value encountered in log
+  poles = -np.log(sr) / self.sampling_time
+100%|███████████████████████████████████████████████████████████████| 75/75 [00:01&lt;00:00, 44.74it/s]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Izbrati moramo pole, ki se zdijo fizikalno smiselni (stabilni).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cam</span><span class="o">.</span><span class="n">select_poles</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████████████████████████████████| 75/75 [00:00&lt;00:00, 259.83it/s]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1600x800 with 0 Axes&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cam</span><span class="o">.</span><span class="n">print_modal_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Nat. f.      Damping
+-----------------------
+1)  695.4	0.0016
+2) 1898.0	0.0004
+</pre></div>
+</div>
+</div>
+</div>
+<p>Za rekonstrukcijo modela FRF uporabimo metodo LSFD:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frf_rec</span><span class="p">,</span> <span class="n">shapes_cam</span> <span class="o">=</span> <span class="n">cam</span><span class="o">.</span><span class="n">get_constants</span><span class="p">(</span><span class="n">FRF_ind</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq_cam</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">frf_cam</span><span class="p">[</span><span class="n">točka</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Camera FRF&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq_cam</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">frf_rec</span><span class="p">[</span><span class="n">točka</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Reconstructed FRF&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;frequency [Hz]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Receptance&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/716588db0d37efb6ef0aa23d242a3d0760f6fe5d3914dcd422020538d83ca7ed.png" src="../../../_images/716588db0d37efb6ef0aa23d242a3d0760f6fe5d3914dcd422020538d83ca7ed.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">shapes_cam</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
+    <span class="n">plot_mode_shape</span><span class="p">(</span><span class="n">shapes_cam</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">frequency</span><span class="o">=</span><span class="n">cam</span><span class="o">.</span><span class="n">nat_freq</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/mnt/data/pedagoško/_Procesiranje signalov/_VAJE/_PREDLOGE/.venv/lib/python3.13/site-packages/matplotlib/cbook.py:1719: ComplexWarning: Casting complex values to real discards the imaginary part
+  return math.isfinite(val)
+/mnt/data/pedagoško/_Procesiranje signalov/_VAJE/_PREDLOGE/.venv/lib/python3.13/site-packages/matplotlib/cbook.py:1355: ComplexWarning: Casting complex values to real discards the imaginary part
+  return np.asarray(x, float)
+</pre></div>
+</div>
+<img alt="../../../_images/04e54871c4e8778be185884bc3136119beb2f2522e0f6fc68d502220e99a0f93.png" src="../../../_images/04e54871c4e8778be185884bc3136119beb2f2522e0f6fc68d502220e99a0f93.png" />
+</div>
+</div>
+</section>
+<section id="primerjava-z-meritivjo-pospeskomera">
+<h2>Primerjava z meritivjo pospeškomera<a class="headerlink" href="#primerjava-z-meritivjo-pospeskomera" title="Link to this heading">#</a></h2>
+<p>Pri hibridni metodi kombiniramo pomike s slik z visoko prostorsko ločljivostjo in meritve pospeška z visoko natančnostjo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hyb_acc</span> <span class="o">=</span> <span class="n">lvm</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">][:</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mf">9.81</span> <span class="c1"># pospeškomer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Za oceno FRF lahk uporabimo paket <a class="reference external" href="https://github.com/ladisk/pyidi"><code class="docutils literal notranslate"><span class="pre">pyFRF</span></code></a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frf_</span> <span class="o">=</span> <span class="n">pyFRF</span><span class="o">.</span><span class="n">FRF</span><span class="p">(</span>
+    <span class="n">sampling_freq</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">dt</span><span class="p">)),</span>
+    <span class="n">exc</span><span class="o">=</span><span class="n">force</span><span class="p">,</span>
+    <span class="n">resp</span><span class="o">=</span><span class="n">hyb_acc</span><span class="p">,</span>
+    <span class="n">exc_type</span><span class="o">=</span><span class="s1">&#39;f&#39;</span><span class="p">,</span>
+    <span class="n">resp_type</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/mnt/data/pedagoško/_Procesiranje signalov/_VAJE/_PREDLOGE/.venv/lib/python3.13/site-packages/pyFRF.py:421: RuntimeWarning: divide by zero encountered in divide
+  self.frf_conversion = np.power(-1.j / self.get_w_axis(), 2)
+/mnt/data/pedagoško/_Procesiranje signalov/_VAJE/_PREDLOGE/.venv/lib/python3.13/site-packages/pyFRF.py:421: RuntimeWarning: invalid value encountered in divide
+  self.frf_conversion = np.power(-1.j / self.get_w_axis(), 2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Opazujemo le frekvenčno območj do <code class="docutils literal notranslate"><span class="pre">upper_f_limit</span></code> Hz:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">freq_acc</span> <span class="o">=</span> <span class="n">frf_</span><span class="o">.</span><span class="n">get_f_axis</span><span class="p">()</span>
+<span class="n">frf_acc</span> <span class="o">=</span> <span class="n">frf_</span><span class="o">.</span><span class="n">get_FRF</span><span class="p">(</span><span class="n">form</span><span class="o">=</span><span class="s1">&#39;accelerance&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">frf_acc</span> <span class="o">=</span> <span class="n">frf_acc</span><span class="p">[</span><span class="n">freq_acc</span><span class="o">&lt;</span><span class="n">upper_f_limit</span><span class="p">]</span>
+<span class="n">freq_acc</span> <span class="o">=</span> <span class="n">freq_acc</span><span class="p">[</span><span class="n">freq_acc</span><span class="o">&lt;</span><span class="n">upper_f_limit</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pospeškomer je bil nameščen v točki z indeksom 3:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq_cam</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">frf_cam</span><span class="p">[</span><span class="n">točka</span><span class="p">]),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Camera FRF&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">freq_acc</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">frf_acc</span> <span class="o">/</span> <span class="o">-</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">freq_acc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Accelerometer FRF&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Camera-based response at accelerometer location&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../../_images/018ae6ba7cf59c678bcc844fa7fcdf2fc9d97dce8df791f6c57e49b6c8cda319.png" src="../../../_images/018ae6ba7cf59c678bcc844fa7fcdf2fc9d97dce8df791f6c57e49b6c8cda319.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/sl/Predavanje 12 - Procesiranje slik"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Vsebina
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slikovne-meritve">Slikovne meritve</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametri-zajema">Parametri zajema</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osvetlitev">Osvetlitev</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#priprava-povrsine-merjenca">Priprava površine merjenca</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pogoste-tezave-pri-slikovnih-meritvah">Pogoste težave pri slikovnih meritvah</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neustrezno-izostrena-slika">Neustrezno izostrena slika</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neustrezna-osvetlitev">Neustrezna osvetlitev</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dolocitev-pomikov-na-slikah-z-metodo-opticnega-toka">Določitev pomikov na slikah z metodo optičnega toka</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metoda-lucas-kanade">Metoda Lucas-Kanade:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izracun-frf">Izračun FRF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eskperimentalna-modalna-analiza-samo-slikovna-meritev">Eskperimentalna modalna analiza (samo slikovna meritev):</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primerjava-z-meritivjo-pospeskomera">Primerjava z meritivjo pospeškomera</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Avtor Domen Gorjup
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
