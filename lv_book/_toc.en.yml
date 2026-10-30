@@ -1,0 +1,26 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro_en
+options:
+  numbered: true
+  maxdepth: 1
+parts:
+
+- caption: Laboratory exercise handouts
+  chapters:
+  - file: notebooks/en/01 - Introduction to LabVIEW.ipynb
+  - file: notebooks/en/02 - LabVIEW and Arduino, Python.ipynb
+  - file: notebooks/en/03 - Fourier integral transform.ipynb
+  - file: notebooks/en/04 - Properties of the Fourier transform.ipynb
+  - file: notebooks/en/05 - LTI systems, signal acquisition.ipynb
+  - file: notebooks/en/06 - LTI systems 2, frequency response functions.ipynb
+  - file: notebooks/en/07 - Uniform sampling and quantization.ipynb
+  - file: notebooks/en/08 - DFT and fundamentals of random processes.ipynb
+  - file: notebooks/en/09 - Random excitation, signal acquisition.ipynb
+  - file: notebooks/en/10 - Random excitation 2, frequency response functions.ipynb
+
+- caption: About this collection
+  chapters:
+  - file: about_en

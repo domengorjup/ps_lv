@@ -8,3 +8,4 @@ sdypy-FRF
 pyFRF
 jupyter-book<2
 ghp-import
+sphinx-reredirects

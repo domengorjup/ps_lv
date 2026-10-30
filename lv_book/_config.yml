@@ -6,10 +6,10 @@ author: Domen Gorjup
 logo: lv_logo.png
 copyright: "2026"
 
-# Force re-execution of notebooks on each build.
+# Reuse cached outputs; re-executes only changed notebooks.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: cache
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -19,6 +19,12 @@ latex:
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references.bib
+
+# Do not build the other language (Sphinx defaults are kept by Jupyter Book)
+exclude_patterns:
+  - notebooks/en/**
+  - intro_en.md
+  - about_en.md
 
 # Information about where the book exists on the web
 repository:
@@ -32,6 +38,36 @@ html:
   use_issues_button: true
   use_repository_button: true
 
-# sphinx:  
-#   config:
-#     html_show_copyright: false
+sphinx:
+  recursive_update: true  # merge html_theme_options with Jupyter Book's own (keeps repo/issues buttons)
+  extra_extensions:
+    - sphinx_reredirects
+  config:
+    language: sl
+    templates_path:
+      - _templates
+    html_theme_options:
+      search_bar_text: "Išči po knjigi..."
+      article_header_end:
+        - lang-switch.html
+        - article-header-buttons.html
+    html_context:
+      lang_switch_label: "EN"
+      lang_switch_url: "https://domengorjup.github.io/ps_lv/en/"
+      lang_switch_title: "English version"
+    # Old (flat) page names -> new notebooks/sl/ locations; targets are relative html paths
+    redirects:
+      "notebooks/01 - Uvod v LabView.html": "sl/01%20-%20Uvod%20v%20LabView.html"
+      "notebooks/02 - LabView in Arduino, Python.html": "sl/02%20-%20LabView%20in%20Arduino%2C%20Python.html"
+      "notebooks/03 - Fourierova integralska transformacija.html": "sl/03%20-%20Fourierova%20integralska%20transformacija.html"
+      "notebooks/04 - Lastnosti Fourierove transformacije.html": "sl/04%20-%20Lastnosti%20Fourierove%20transformacije.html"
+      "notebooks/05 - LTI sistemi, zajem signalov.html": "sl/05%20-%20LTI%20sistemi%2C%20zajem%20signalov.html"
+      "notebooks/06 - LTI sistemi 2, prenosne funkcije.html": "sl/06%20-%20LTI%20sistemi%202%2C%20prenosne%20funkcije.html"
+      "notebooks/07 - Enakomerno časovno vzorčenje in kvantizacija.html": "sl/07%20-%20Enakomerno%20%C4%8Dasovno%20vzor%C4%8Denje%20in%20kvantizacija.html"
+      "notebooks/08 - DFT in osnove naključnih procesov.html": "sl/08%20-%20DFT%20in%20osnove%20naklju%C4%8Dnih%20procesov.html"
+      "notebooks/08-1 - Normiranje PSD.html": "sl/08-1%20-%20Normiranje%20PSD.html"
+      "notebooks/09 - Naključno vzbujanje, zajem signalov.html": "sl/09%20-%20Naklju%C4%8Dno%20vzbujanje%2C%20zajem%20signalov.html"
+      "notebooks/10 - Naključno vzbujanje 2, prenosne funkcije.html": "sl/10%20-%20Naklju%C4%8Dno%20vzbujanje%202%2C%20prenosne%20funkcije.html"
+      "notebooks/03-1 - Od Fourierove vrste do DFT v praksi/03-1 - Od Fourierove vrste do DFT v praksi.html": "../sl/03-1%20-%20Od%20Fourierove%20vrste%20do%20DFT%20v%20praksi/03-1%20-%20Od%20Fourierove%20vrste%20do%20DFT%20v%20praksi.html"
+      "notebooks/Predavanje 12 - Procesiranje slik/Procesiranje slik za meritve v strukturni dinamiki.html": "../sl/Predavanje%2012%20-%20Procesiranje%20slik/Procesiranje%20slik%20za%20meritve%20v%20strukturni%20dinamiki.html"
+      "notebooks/sdg1x signal generator/sdg1032_example.html": "../sl/sdg1x%20signal%20generator/sdg1032_example.html"

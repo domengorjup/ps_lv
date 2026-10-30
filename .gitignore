@@ -134,3 +134,19 @@ camera_pyidi_analysis/
 temp_file/
 .vscode/
 .claude/
+
+# AI assistant configs
+CLAUDE.md
+CLAUDE.local.md
+AGENTS.md
+.cursor/
+.cursorrules
+.aider*
+.codex/
+.gemini/
+.windsurf/
+.windsurfrules
+.github/copilot-instructions.md
+
+# Deploy staging
+_site/
